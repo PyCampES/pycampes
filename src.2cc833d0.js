@@ -3,4 +3,4 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"./../../public/images/masthead.jpg":[["masthead.baa8153b.jpg","TP0W"],"TP0W"]}],"2u/B":[function(require,module,exports) {
 "use strict";require("./styles/styles.scss");
 },{"./styles/styles.scss":"x3RG"}]},{},["2u/B"], null)
-//# sourceMappingURL=/src.234c8784.js.map
+//# sourceMappingURL=src.2cc833d0.js.map
