@@ -23,7 +23,10 @@
 
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/camp.svg" />
-    <script src="https://kit.fontawesome.com/738e427f6d.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/738e427f6d.js"
+      crossorigin="anonymous"
+    ></script>
 
     <title>PyCamp España</title>
   </head>
@@ -33,23 +36,22 @@
       <div class="container">
         <a class="navbar-brand" href="#">PyCamp España</a>
         <ul class="list-inline mb-0">
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="text-secondary fab fa-facebook fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="text-secondary fab fa-twitter-square fa-2x fa-fw"></i>
-              </a>
-            </li>
-            <li class="list-inline-item mr-3">
-              <a href="#">
-                <i class="text-secondary fab fa-instagram fa-2x fa-fw"></i>
-              </a>
-            </li>
-
-          </ul>
+          <li class="list-inline-item mr-3">
+            <a href="#">
+              <i class="text-secondary fab fa-facebook fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#">
+              <i class="text-secondary fab fa-twitter-square fa-2x fa-fw"></i>
+            </a>
+          </li>
+          <li class="list-inline-item mr-3">
+            <a href="#">
+              <i class="text-secondary fab fa-instagram fa-2x fa-fw"></i>
+            </a>
+          </li>
+        </ul>
       </div>
     </nav>
 
@@ -63,23 +65,48 @@
               Suscribite para recibir las ultimas novedades!
             </h1>
           </div>
-          <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-            <form>
-              <div class="form-row">
+          <div id="mc_embed_signup" class="col-md-10 col-lg-8 col-xl-7 mx-auto">
+            <form
+              action="https://gmail.us20.list-manage.com/subscribe/post?u=14411abdd5b5c38809a459da7&amp;id=ef7898fbc2"
+              method="post"
+              id="mc-embedded-subscribe-form"
+              name="mc-embedded-subscribe-form"
+              class="validate"
+              target="_blank"
+              novalidate
+            >
+              <div id="mc_embed_signup_scroll" class="form-row">
                 <div class="col-12 col-md-9 mb-2 mb-md-0">
                   <input
                     type="email"
+                    value=""
+                    name="EMAIL"
                     class="form-control form-control-lg"
+                    id="mce-EMAIL"
                     placeholder="Ingresa tu email..."
+                    required
                   />
+                  <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                  <div
+                    style="position: absolute; left: -5000px;"
+                    aria-hidden="true"
+                  >
+                    <input
+                      type="text"
+                      name="b_14411abdd5b5c38809a459da7_ef7898fbc2"
+                      tabindex="-1"
+                      value=""
+                    />
+                  </div>
                 </div>
                 <div class="col-12 col-md-3">
-                  <button
+                  <input
                     type="submit"
+                    value="Enviar!"
+                    name="subscribe"
+                    id="mc-embedded-subscribe"
                     class="btn btn-block btn-lg btn-primary"
-                  >
-                    Enviar!
-                  </button>
+                  />
                 </div>
               </div>
             </form>
@@ -89,27 +116,39 @@
     </header>
 
     <!-- Image Showcases -->
-  <section class="showcase">
+    <section class="showcase">
       <div class="container-fluid p-0">
         <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('images/bg-showcase-1.jpg');"></div>
+          <div
+            class="col-lg-6 order-lg-2 text-white showcase-img"
+            style="background-image: url('images/bg-showcase-1.jpg');"
+          ></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Donde?</h2>
             <p class="lead mb-0">En algun lugar cerca de Barcelona!</p>
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 text-white showcase-img" style="background-image: url('images/bg-showcase-2.jpg');"></div>
+          <div
+            class="col-lg-6 text-white showcase-img"
+            style="background-image: url('images/bg-showcase-2.jpg');"
+          ></div>
           <div class="col-lg-6 my-auto showcase-text">
             <h2>Cuando?</h2>
             <p class="lead mb-0">La fecha aun no esta decidida pero parece que sera por otoño del 2020!</p>
           </div>
         </div>
         <div class="row no-gutters">
-          <div class="col-lg-6 order-lg-2 text-white showcase-img" style="background-image: url('images/bg-showcase-3.jpg');"></div>
+          <div
+            class="col-lg-6 order-lg-2 text-white showcase-img"
+            style="background-image: url('images/bg-showcase-3.jpg');"
+          ></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Por que?</h2>
-            <p class="lead mb-0">Porque nos gusta Python! Recuerda suscribirte para recibir las novedades!</p>
+            <p class="lead mb-0">
+              Porque nos gusta Python! Recuerda suscribirte para recibir las
+              novedades!
+            </p>
           </div>
         </div>
       </div>
