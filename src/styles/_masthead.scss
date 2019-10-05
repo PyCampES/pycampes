@@ -1,7 +1,10 @@
 header.masthead {
   position: relative;
   background-color: $gray-800;
-  background: url('../../public/images/masthead.jpg') no-repeat center center;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.5),
+    rgba(0, 0, 0, 0.5)
+  ),url('../../public/images/masthead.jpg') no-repeat center center;
   @include background-cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
