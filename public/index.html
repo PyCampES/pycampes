@@ -23,6 +23,12 @@
 
     <link rel="manifest" href="/manifest.json" />
     <link rel="shortcut icon" href="/images/camp.svg" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+      integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+      crossorigin=""
+    />
     <script
       src="https://kit.fontawesome.com/738e427f6d.js"
       crossorigin="anonymous"
@@ -43,7 +49,7 @@
             </a>
           </li>
           <li class="list-inline-item mr-3">
-            <a target="_blank" href="https://t.me/pycampes" >
+            <a target="_blank" href="https://t.me/pycampes">
               <i class="text-secondary fab fa-telegram"></i>
             </a>
           </li>
@@ -72,7 +78,7 @@
     </nav>
 
     <!-- Masthead -->
-    <header class="masthead text-white text-center">
+    <header class="masthead text-white text-center" id="head">
       <div class="overlay"></div>
       <div class="container">
         <div class="row">
@@ -186,8 +192,47 @@
         </div>
       </div>
     </header>
-    <div class="py-4 bg-light"></div>
+    <!-- <div class="py-4 bg-light"></div> -->
+    <div class="container-fluid bg-dark">
+      <!-- <div class="gmap_canvas">
+        <iframe
+          id="gmap_canvas"
+          src="https://maps.google.com/maps?q=Barri%20de%20Sant%20Roc%2C%2017180%20-%20Vilablareix%2C%20Girona%2C%20Spain&t=&z=15&ie=UTF8&iwloc=&output=embed"
+          frameborder="0"
+          scrolling="no"
+          marginheight="0"
+          marginwidth="0"
+          style="width:100%; height: 100%;"
+        ></iframe>
+      </div>
+      <style>
+        .mapouter {
+          position: relative;
+          text-align: right;
+          height: 600px;
+          width: 100%;
+        }
+        .gmap_canvas {
+          padding: 2rem;
+          overflow: hidden;
+          background: none !important;
+          height: 600px;
+          width: 100%;
+        }
+      </style> -->
 
+      <div class="map-wrapper">
+        <div id="mapid"></div>
+      </div>
+      <style>
+        #mapid {
+          height: 500px;
+        }
+        .map-wrapper {
+          padding: 2rem;
+        }
+      </style>
+    </div>
     <!-- Image Showcases -->
     <section class="showcase">
       <div class="container-fluid p-0">
@@ -198,7 +243,10 @@
           ></div>
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Donde?</h2>
-            <p class="lead mb-0">En algun lugar cerca de Barcelona!</p>
+            <p class="lead mb-0">El Bosc de la Massana</p>
+            <p class="mb-0 location-address">
+              Barri de Sant Roc, 17180 - Vilablareix, Girona, Spain
+            </p>
           </div>
         </div>
         <div class="row no-gutters bg-light">
@@ -209,8 +257,7 @@
           <div class="col-lg-6 my-auto showcase-text ">
             <h2>Cuando?</h2>
             <p class="lead mb-0">
-              La fecha aun no esta decidida pero parece que sera por la
-              primavera del hemisferio norte del 2020!
+              Del 1 al 4 de Mayo de 2020.
             </p>
           </div>
         </div>
@@ -222,8 +269,15 @@
           <div class="col-lg-6 order-lg-1 my-auto showcase-text">
             <h2>Por que?</h2>
             <p class="lead mb-0">
-              Porque nos gusta Python! Recuerda suscribirte para recibir las
-              novedades!
+              Porque nos gusta Python! El cupo máximo del evento es de
+              <strong>30 personas</strong>
+            </p>
+            <p>
+              Recuerda
+              <a href="#head">
+                suscribirte
+              </a>
+              para recibir las novedades!
             </p>
           </div>
         </div>
@@ -258,25 +312,27 @@
                   data-parent="#faq"
                 >
                   <div class="card-body">
-                    El PyCamp consiste en apoderarse de un lugar (como puede ser
-                    una Casa Rural) en el que un grupo de programadores (20 a 30
-                    personas) nos juntamos a programar y divertirnos durante 4
-                    días completos. Los asistentes proponen los proyectos Open
-                    Source en los que desean trabajar durante estos días (o
-                    alguna idea un poco loca que quieran implementar) y el resto
-                    se anota para colaborar y trabajar en esos proyectos. Así,
-                    se determinan diferentes slots de tiempo para cada proyecto
-                    durante todos los días y cada programador trabaja, dentro de
-                    los slots asignados, en los proyectos que más le han llamado
-                    la atención. Esta dinámica se mantiene durante los 4 días
-                    que dura el evento, trabajando mañana, tarde y hasta la
-                    noche (si lo desean). Durante los 4 días que dura el evento,
-                    todos los asistentes desayunan, almuerzan, cenan y duermen
-                    en el lugar que se haya alquilado para el evento. Esto hace
-                    que sea un evento sin ninguna distracción, que compartamos
-                    mucho tiempo en comunidad y colaboremos programando en lo
-                    que más nos gusta. ¡El PyCamp es un evento que genera un
-                    ambiente colaborativo y de comunidad hermoso!
+                    El PyCamp es un evento
+                    <strong>sin fines de lucro</strong> que consiste en
+                    apoderarse de un lugar (como puede ser una Casa Rural) en el
+                    que un grupo de programadores (20 a 30 personas) nos
+                    juntamos a programar y divertirnos durante 4 días completos.
+                    Los asistentes proponen los proyectos Open Source en los que
+                    desean trabajar durante estos días (o alguna idea un poco
+                    loca que quieran implementar) y el resto se anota para
+                    colaborar y trabajar en esos proyectos. Así, se determinan
+                    diferentes slots de tiempo para cada proyecto durante todos
+                    los días y cada programador trabaja, dentro de los slots
+                    asignados, en los proyectos que más le han llamado la
+                    atención. Esta dinámica se mantiene durante los 4 días que
+                    dura el evento, trabajando mañana, tarde y hasta la noche
+                    (si lo desean). Durante los 4 días que dura el evento, todos
+                    los asistentes desayunan, almuerzan, cenan y duermen en el
+                    lugar que se haya alquilado para el evento. Esto hace que
+                    sea un evento sin ninguna distracción, que compartamos mucho
+                    tiempo en comunidad y colaboremos programando en lo que más
+                    nos gusta. ¡El PyCamp es un evento que genera un ambiente
+                    colaborativo y de comunidad hermoso!
                   </div>
                 </div>
               </div>
@@ -368,7 +424,7 @@
                 </a>
               </li>
               <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://t.me/pycampes" >
+                <a target="_blank" href="https://t.me/pycampes">
                   <i class="fab fa-telegram fa-2x fa-fw"></i>
                 </a>
               </li>
@@ -397,6 +453,12 @@
         </div>
       </div>
     </footer>
+    <!-- Make sure you put this AFTER Leaflet's CSS -->
+    <script
+      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+      crossorigin=""
+    ></script>
     <script src="../src/index.js"></script>
   </body>
 </html>

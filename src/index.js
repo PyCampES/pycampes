@@ -16,4 +16,23 @@ const accordionBehavior = () => {
   });
 };
 
+const addMapWithMarker = () => {
+  const L = window.L;
+
+  let map = L.map("mapid");
+  L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
+    attribution:
+      '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+  }).addTo(map);
+
+  const target = L.latLng("41.958312", "2.775938");
+
+  // Set map's center to target with zoom 14.
+  map.setView(target, 16);
+
+  // Place a marker on the same location.
+  L.marker(target).addTo(map);
+};
+
 accordionBehavior();
+addMapWithMarker();
