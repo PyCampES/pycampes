@@ -18,7 +18,9 @@ const accordionBehavior = () => {
 
 const addMapWithMarker = () => {
   const L = window.L;
-
+  if (!L) {
+    return;
+  }
   let map = L.map("mapid");
   L.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png", {
     attribution:
