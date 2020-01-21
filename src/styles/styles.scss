@@ -3,3 +3,12 @@
 @import 'mixins.scss';
 @import 'masthead.scss';
 @import 'showcase.scss';
+
+.card-deck {
+    padding: 20px;
+}
+#what-to-bring .card{
+    box-shadow: 0 2px 4px 0 rgb(243, 214, 87);
+    background-color: rgb ;
+    opacity: 50%;
+  }
