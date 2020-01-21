@@ -1,14 +1,42 @@
-@import 'variables.scss';
-@import 'node_modules/bootstrap/scss/bootstrap';
-@import 'mixins.scss';
-@import 'masthead.scss';
-@import 'showcase.scss';
+@import "variables.scss";
+@import "node_modules/bootstrap/scss/bootstrap";
+@import "mixins.scss";
+@import "masthead.scss";
+@import "showcase.scss";
+
+@font-face {
+  font-family: LEIXO-DEMO;
+  src: url(../../public/LEIXO-DEMO.woff);
+}
+
+.jumbotron {
+  position: relative;
+  background-image: url("../../public/images/location/wide-front.jpg");
+  color: white;
+  //   background-size: cover;
+}
+
+.jumbotron > .overlay {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(206, 104, 0, 0.65);
+  z-index: 1;
+}
+
+.jumbotron > .container {
+  position: relative;
+  z-index: 2;
+}
 
 .card-deck {
-    padding: 20px;
+  padding: 20px;
 }
-#what-to-bring .card{
-    box-shadow: 0 2px 4px 0 rgb(243, 214, 87);
-    background-color: rgb ;
-    opacity: 50%;
-  }
+
+#what-to-bring .card {
+  box-shadow: 0 2px 4px 0 rgb(243, 214, 87);
+  background-color: rgb;
+  opacity: 50%;
+}
