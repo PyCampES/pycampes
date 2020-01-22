@@ -37,3 +37,13 @@
 #venue .small-text {
   text-align: center;
 }
+
+.card-deck {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-gap: .5rem;
+}
+
+.carousel-inner {
+  max-height: 35rem;
+}
