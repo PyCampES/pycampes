@@ -30,20 +30,9 @@
   position: relative;
   z-index: 2;
 }
-
-.card-title {
-  text-align: center;
+.section-title{
+  letter-spacing: 3px;
 }
-#venue .small-text {
-  text-align: center;
-}
-
-.card-deck {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  grid-gap: .5rem;
-}
-
 .carousel-inner {
   max-height: 35rem;
 }
