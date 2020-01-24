@@ -2,7 +2,5 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 
 },{"./../../public/images/masthead.jpg":[["masthead.6ca5f9fd.jpg","TP0W"],"TP0W"],"./../../public/LEIXO-DEMO.woff":[["LEIXO-DEMO.85588c18.woff","SuCA"],"SuCA"],"./../../public/images/location/wide-front.jpg":[["wide-front.3466ae10.jpg","AGWW"],"AGWW"]}],"2u/B":[function(require,module,exports) {
 "use strict";require("./styles/styles.scss");var t=function(){var t=document.getElementsByClassName("faq-link");Array.prototype.map.call(t,function(t){var a=t.getAttribute("data-target");t.onclick=function(){var t=document.getElementById(a);t.classList.contains("show")?t.classList.remove("show"):t.classList.add("show")}})},a=function(){var t=window.L;if(t){var a=t.map("mapid");t.tileLayer("http://{s}.tile.osm.org/{z}/{x}/{y}.png",{attribution:'&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'}).addTo(a);var e=t.latLng("41.958312","2.775938");a.setView(e,16),t.marker(e).addTo(a)}};t(),a();
-},{"./styles/styles.scss":"x3RG"}],"xwak":[function(require,module,exports) {
-"use strict";require("./index");
-},{"./index":"2u/B"}]},{},["xwak"], null)
-//# sourceMappingURL=diversity.a92d2571.js.map
+},{"./styles/styles.scss":"x3RG"}]},{},["2u/B"], null)
+//# sourceMappingURL=src.4647502f.js.map
