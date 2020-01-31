@@ -23,6 +23,7 @@
     "sass": "^1.22.12"
   },
   "dependencies": {
-    "bootstrap": "^4.3.1"
+    "bootstrap": "^4.3.1",
+    "g-sheets-api": "^1.0.3"
   }
 }
