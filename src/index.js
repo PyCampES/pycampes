@@ -53,7 +53,7 @@ GSheetReader(options, function(results) {
     document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    ${row["nombre del proyecto "]}
+    <a href="${row['url del proyecto']}" target="_blank">${row["nombre del proyecto "]}</a>
     </td>
     <td>
     ${row["descripción"]}
