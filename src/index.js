@@ -1,5 +1,7 @@
 import "./styles/styles.scss";
 
+import GSheetReader from "g-sheets-api";
+
 const accordionBehavior = () => {
   const accordionLinks = document.getElementsByClassName("faq-link");
 
@@ -36,21 +38,32 @@ const addMapWithMarker = () => {
   L.marker(target).addTo(map);
 };
 
-accordionBehavior();
-addMapWithMarker();
+const compactLinks = value => {
+  console.log(value);
 
-import GSheetReader from "g-sheets-api";
-const options = {
-  sheetId: "1H0dZ-NaYcgTyVwL3GK1cWE3pSH2R4hcsYdnSF9QIhmA",
-  returnAllResults: true
+  return value
+    .split(/\s+/)
+    .map(item => {
+      if (item.trim().startsWith("http")) {
+        return `<a href="${item}">link<a>`;
+      }
+      return item;
+    })
+    .join(" ");
 };
-GSheetReader(options, function(results) {
-  for (let row of results.filter(function(row) {
-    return row["autorizo que incluyan estos datos en la web de pycamp españa"]
-      .toLowerCase()
-      .includes("s");
-  })) {
-    document.getElementById("project-rows").innerHTML += `
+
+const addProjectTable = () => {
+  const options = {
+    sheetId: "1H0dZ-NaYcgTyVwL3GK1cWE3pSH2R4hcsYdnSF9QIhmA",
+    returnAllResults: true
+  };
+  GSheetReader(options, function(results) {
+    for (let row of results.filter(function(row) {
+      return row["autorizo que incluyan estos datos en la web de pycamp españa"]
+        .toLowerCase()
+        .includes("s");
+    })) {
+      document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
     ${row["nombre del proyecto "]}
@@ -59,12 +72,17 @@ GSheetReader(options, function(results) {
     ${row["descripción"]}
     </td>
        <td>
-    ${row["requerimientos "]}
+    ${compactLinks(row["requerimientos "])}
     </td>
     <td>
     ${row["nivel de conocimiento requerido con skill principal del proyecto"]}
     </td>
   </tr>
   `;
-  }
-});
+    }
+  });
+};
+
+accordionBehavior();
+addMapWithMarker();
+addProjectTable();
