@@ -45,7 +45,7 @@ const compactLinks = value => {
     .split(/\s+/)
     .map(item => {
       if (item.trim().startsWith("http")) {
-        return `<a href="${item}">link<a>`;
+        return `<a href="${item}">${item.split("/").pop()}<a>`;
       }
       return item;
     })
@@ -69,7 +69,7 @@ const addProjectTable = () => {
     ${row["nombre del proyecto "]}
     </td>
     <td>
-    ${row["descripción"]}
+    ${compactLinks(row["descripción"])}
     </td>
        <td>
     ${compactLinks(row["requerimientos "])}
