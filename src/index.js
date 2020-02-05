@@ -39,13 +39,14 @@ const addMapWithMarker = () => {
 };
 
 const compactLinks = value => {
-  console.log(value);
-
   return value
     .split(/\s+/)
     .map(item => {
       if (item.trim().startsWith("http")) {
-        return `<a href="${item}">${item.split("/").pop()}<a>`;
+        return `<a href="${item}">${item
+          .split("/")
+          .filter(v => !!v) // Remove empty values
+          .pop()}<a>`;
       }
       return item;
     })
