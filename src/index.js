@@ -50,10 +50,13 @@ GSheetReader(options, function(results) {
       .toLowerCase()
       .includes("s");
   })) {
+      if (!row['url del proyecto ']) {
+          row['url del proyecto '] = "#projects";
+      }
     document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    <a href="${row['url del proyecto']}" target="_blank">${row["nombre del proyecto "]}</a>
+    <a href="${row['url del proyecto ']}" target="_blank">${row["nombre del proyecto "]}</a>
     </td>
     <td>
     ${row["descripción"]}
