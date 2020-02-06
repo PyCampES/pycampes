@@ -64,10 +64,13 @@ const addProjectTable = () => {
         .toLowerCase()
         .includes("s");
     })) {
+      if (!row['url del proyecto ']) {
+          row['url del proyecto '] = "#projects";
+      }
       document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    ${row["nombre del proyecto "]}
+    <a href="${row['url del proyecto ']}" target="_blank">${row["nombre del proyecto "]}</a>
     </td>
     <td>
     ${compactLinks(row["descripción"])}
