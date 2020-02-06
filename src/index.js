@@ -1,5 +1,7 @@
 import "./styles/styles.scss";
 
+import GSheetReader from "g-sheets-api";
+
 const accordionBehavior = () => {
   const accordionLinks = document.getElementsByClassName("faq-link");
 
