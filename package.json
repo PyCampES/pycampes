@@ -8,8 +8,9 @@
     "clean": "rm dist/*",
     "start": "parcel public/index.html public/diversity.html",
     "build-prod": "parcel build public/index.html public/diversity.html --public-url ./",
+    "create-cname": "echo 'pycamp.es' > dist/CNAME",
     "gh-deploy": "gh-pages -d dist",
-    "deploy": "yarn clean && yarn build-prod && yarn gh-deploy"
+    "deploy": "yarn clean && yarn build-prod && yarn create-cname && yarn gh-deploy"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
