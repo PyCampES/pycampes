@@ -5,7 +5,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "clean": "rm dist/*",
+    "clean": "rm -rf dist/* .cache/",
     "start": "parcel serve --no-hmr public/index.njk",
     "build-prod": "parcel build public/index.njk --public-url ./",
     "create-cname": "echo 'pycamp.es' > dist/CNAME",
