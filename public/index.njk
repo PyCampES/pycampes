@@ -1,121 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="PyCamp España" />
-    <link rel="canonical" href="https://pycamp.es/" />
+{% extends 'layout.njk' %}
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="PyCamp.ES" />
-    <meta property="og:title" content="PyCamp.ES" />
-    <meta property="og:description" content="PyCamp España" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:price:amount" content="220" />
-    <meta property="og:price:currency" content="EUR" />
-    <meta name="twitter:card" content="summary_large_image" />
-
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/camp.svg" />
+{% block extra_head %}
     <link
       rel="stylesheet"
       href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
       integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
       crossorigin=""
     />
-    <script
-      src="https://kit.fontawesome.com/738e427f6d.js"
-      crossorigin="anonymous"
-    ></script>
+{% endblock %}
 
-    <title>PyCamp España</title>
-  </head>
-
-  <body>
-    <!-- Navigation -->
-    <nav
-      class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3"
-    >
-      <div class="container">
-        <a class="navbar-brand" href="#"
-          ><img src="images/pycamp-logo2.png" width="200"
-        /></a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#faq">¿Qué es un PyCamp?</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#projects">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#what-to-bring">¿Qué llevo?</a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href="./diversity.html"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Código de conducta
-              </a>
-            </li>
-            <li class="nav-item">
-              <ul class="nav-link list-inline mb-0 text-center">
-                <li class="list-inline-item mr-3">
-                  <a target="_blank" href="mailto:pycampes@gmail.com">
-                    <i class="text-secondary far fa-envelope"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item mr-3">
-                  <a target="_blank" href="https://t.me/pycampes">
-                    <i class="text-secondary fab fa-telegram"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item mr-3">
-                  <a target="_blank" href="https://www.facebook.com/pycampes">
-                    <i class="text-secondary fab fa-facebook"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item mr-3">
-                  <a target="_blank" href="https://twitter.com/PyCampES">
-                    <i class="text-secondary fab fa-twitter-square"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item mr-3">
-                  <a target="_blank" href="https://www.instagram.com/pycampes/">
-                    <i class="text-secondary fab fa-instagram"></i>
-                  </a>
-                </li>
-                <li class="list-inline-item">
-                  <a target="_blank" href="https://pycampes.slack.com">
-                    <i class=" text-secondary fab fa-slack"></i>
-                  </a>
-                </li>
-              </ul>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+{% block content %}
     <section id="buy-now">
       <div class="jumbotron jumbotron-fluid mb-0">
         <div class="overlay"></div>
@@ -449,7 +343,7 @@
                   (¡llevan 10 ediciones!) Puedes conocer más proyectos en la
                   sección de
                   <a
-                    href="previous_editions.html"
+                    href="previous_editions.njk"
                     target="_blank"
                     ><b>ediciones anteriores</b></a
                   >.
@@ -803,97 +697,9 @@
         </div>
       </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer bg-secondary">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-12 h-100 text-center my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="mailto:pycampes@gmail.com">
-                  <i class="far fa-envelope fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://t.me/pycampes">
-                  <i class="fab fa-telegram fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.facebook.com/pycampes">
-                  <i class="fab fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://twitter.com/PyCampES">
-                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.instagram.com/pycampes/">
-                  <i class="fab fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a target="_blank" href="https://pycampes.slack.com">
-                  <i class="fab fa-slack fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 h-100 text-center my-auto ">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link active" href="./index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="./diversity.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Código de conducta
-                </a>
-              </li>
-              <li class="nav-item">
-                <a
-                  class="nav-link"
-                  href="./previous_editions.html"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Ediciones anteriores
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- Make sure you put this AFTER Leaflet's CSS -->
-    <script
-      src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-      integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-      crossorigin=""
-    ></script>
-    <script src="../src/index.js"></script>
-    <script
-      src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
-      integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
-      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
-      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
-      crossorigin="anonymous"
-    ></script>
-  </body>
-</html>
+
+{% endblock %}
+
+{% block extra_footer %}
+<script src="../src/index.js"></script>
+{% endblock %}
