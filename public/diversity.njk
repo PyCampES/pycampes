@@ -1,43 +1,15 @@
-<!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <meta name="robots" content="index,follow" />
-    <meta name="description" content="Pycamp es. Campamento Python España" />
-    <link rel="canonical" href="https://pycamp.es/" />
+{% extends 'layout.njk' %}
 
-    <meta property="og:type" content="website" />
-    <meta property="og:site_name" content="Pycampes" />
-    <meta property="og:title" content="PyCamp.ES" />
-    <meta property="og:description" content="Campamento Python España" />
-    <meta property="og:image:width" content="500" />
-    <meta property="og:image:height" content="300" />
-    <meta property="og:price:amount" content="" />
-    <meta property="og:price:currency" content="EUR" />
-    <meta name="twitter:card" content="summary_large_image" />
+{% block title %}
+PyCamp España: Diversidad
+{% endblock %}
 
-    <link rel="manifest" href="/manifest.json" />
-    <link rel="shortcut icon" href="/images/camp.svg" />
-
-    <script
-      src="https://kit.fontawesome.com/738e427f6d.js"
-      crossorigin="anonymous"
-    ></script>
-
-    <title>PyCamp España: Diversidad</title>
-  </head>
-
-  <body>
+{% block content %}
     <section>
       <div class="container">
-        <div class="row">
-          <div class="col col-12">
-            <h1 class="display-3 text-center">
+        <div class="row justify-content-center">
+          <div class="col col-12 col-lg-7">
+            <h1 class="text-primary text-center section-title pb-4" style="padding-top: 50px;">
               Código de Conducta
             </h1>
             <p>
@@ -59,10 +31,10 @@
               normas durante el evento.
             </p>
           </div>
-          <div class="col col-12">
-            <h2 class="display-4">
+          <div class="col col-12 col-lg-7">
+            <h3 class="my-4">
               La versión corta
-            </h2>
+            </h3>
             <p>
               Uno de los objetivos de PyCamp es proveer una experiencia libre de
               acoso o discriminación para todos, sin distinciones de género,
@@ -92,10 +64,10 @@
               amistoso.
             </p>
           </div>
-          <div class="col col-12">
-            <h2 class="display-4">
+          <div class="col col-12 col-lg-7">
+            <h3 class="my-4">
               La versión larga
-            </h2>
+            </h3>
 
             <p>
               Acoso incluye comentarios ofensivos relativos a género,
@@ -124,9 +96,9 @@
             </p>
           </div>
 
-          <div class="col col-12">
-            <h2 class="display-4">
-              Información de Contacto
+          <div class="col col-12 col-lg-7">
+            <h2 class="text-primary mt-5 mb-5">
+              Información de contacto
             </h2>
             <p>
               Si eres objeto de acoso, notas que alguien más está siendo
@@ -140,77 +112,17 @@
               </h3>
             </div>
           </div>
-          <div class="col col-12 mb-3">
-            PyCampEs ha decidido utilizar el
+          <div class="text-center small col col-12 col-lg-7 mb-3">
+            PyCamp España ha decidido utilizar el
             <a href="http://diversidad.python.org.ar/">
               código de conducta de la comunidad de Python Argentina.
             </a>
-            Sigue el link para leer mas.
           </div>
         </div>
       </div>
     </section>
-    <!-- Footer -->
-    <footer class="footer bg-secondary">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-12 h-100 text-center my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="mailto:pycampes@gmail.com">
-                  <i class="far fa-envelope fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://t.me/pycampes">
-                  <i class="fab fa-telegram fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.facebook.com/pycampes">
-                  <i class="fab fa-facebook fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://twitter.com/PyCampES">
-                  <i class="fab fa-twitter-square fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://www.instagram.com/pycampes/">
-                  <i class="fab fa-instagram fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a target="_blank" href="https://pycampes.slack.com">
-                  <i class="fab fa-slack fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 h-100 text-center my-auto ">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link" href="./index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./diversity.html">
-                  Código de conducta
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./previous_editions.html">
-                  Ediciones Anteriores
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </footer>
+{% endblock %}
 
-    <script src="../src/diversity.js"></script>
-  </body>
-</html>
+{% block extra_footer %}
+<script src="../src/diversity.js"></script>
+{% endblock %}
