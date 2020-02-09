@@ -6,7 +6,7 @@
   "license": "MIT",
   "scripts": {
     "clean": "rm dist/*",
-    "start": "parcel public/index.njk",
+    "start": "parcel serve --no-hmr public/index.njk",
     "build-prod": "parcel build public/index.njk --public-url ./",
     "create-cname": "echo 'pycamp.es' > dist/CNAME",
     "gh-deploy": "gh-pages -d dist",
