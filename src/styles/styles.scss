@@ -12,6 +12,9 @@
 .jumbotron {
   position: relative;
   background-image: url("../../public/images/location/wide-front.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
   color: white;
   //   background-size: cover;
 }
