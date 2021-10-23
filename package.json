@@ -25,7 +25,7 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "g-sheets-api": "^1.0.3",
+    "g-sheets-api": "^2.1.2",
     "nunjucks": "^3.2.0",
     "parcel-plugin-nunjucks": "^2.2.0",
     "yarn": "^1.22.17"

@@ -35,31 +35,33 @@ const compactLinks = value => {
 
 const addProjectTable = () => {
   const options = {
+    apiKey: "AIzaSyDVhqZ0tVRSgTPUssxi4Sf52ScuxC0o7XI",
+    sheetName: "Form Responses 1",
     sheetId: "1ulVOooWZUH9juxTATjiypR4I36vs0X4AUCPIjWhbNoo",
     returnAllResults: true
   };
   GSheetReader(options, function(results) {
     for (let row of results.filter(function(row) {
-      return row["autorizo que incluyan estos datos en la web de pycamp españa"]
+      return row["Autorizo que incluyan estos datos en la web de PyCamp España"]
         .toLowerCase()
         .includes("s");
     })) {
-      if (!row['url del proyecto ']) {
-          row['url del proyecto '] = "#projects";
+      if (!row['URL del proyecto ']) {
+          row['URL del proyecto '] = "#projects";
       }
       document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    <a href="${row['url del proyecto ']}" target="_blank">${row["nombre del proyecto "]}</a>
+    <a href="${row['URL del proyecto ']}" target="_blank">${row["Nombre del proyecto "]}</a>
     </td>
     <td>
-    ${compactLinks(row["descripción"])}
+    ${compactLinks(row["Descripción"])}
     </td>
        <td>
-    ${compactLinks(row["requerimientos "])}
+    ${compactLinks(row["Requerimientos "])}
     </td>
     <td>
-    ${row["nivel de conocimiento requerido con skill principal del proyecto"]}
+    ${row["Nivel de conocimiento requerido con skill principal del proyecto"]}
     </td>
   </tr>
   `;
