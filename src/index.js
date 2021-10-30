@@ -5,7 +5,7 @@ import GSheetReader from "g-sheets-api";
 const accordionBehavior = () => {
   const accordionLinks = document.getElementsByClassName("faq-link");
 
-  Array.prototype.map.call(accordionLinks, accordionLink => {
+  Array.prototype.map.call(accordionLinks, (accordionLink) => {
     const target = accordionLink.getAttribute("data-target");
     accordionLink.onclick = () => {
       const accordionBlock = document.getElementById(target);
@@ -18,14 +18,14 @@ const accordionBehavior = () => {
   });
 };
 
-const compactLinks = value => {
+const compactLinks = (value) => {
   return value
     .split(/\s+/)
-    .map(item => {
+    .map((item) => {
       if (item.trim().startsWith("http")) {
         return `<a href="${item}">${item
           .split("/")
-          .filter(v => !!v) // Remove empty values
+          .filter((v) => !!v) // Remove empty values
           .pop()}<a>`;
       }
       return item;
@@ -38,7 +38,7 @@ const addProjectTable = () => {
     apiKey: "AIzaSyDVhqZ0tVRSgTPUssxi4Sf52ScuxC0o7XI",
     sheetName: "Form Responses 1",
     sheetId: "1ulVOooWZUH9juxTATjiypR4I36vs0X4AUCPIjWhbNoo",
-    returnAllResults: true
+    returnAllResults: true,
   };
   GSheetReader(options, function(results) {
     for (let row of results.filter(function(row) {
@@ -46,13 +46,15 @@ const addProjectTable = () => {
         .toLowerCase()
         .includes("s");
     })) {
-      if (!row['URL del proyecto ']) {
-          row['URL del proyecto '] = "#projects";
+      if (!row["URL del proyecto "]) {
+        row["URL del proyecto "] = "#projects";
       }
       document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    <a href="${row['URL del proyecto ']}" target="_blank">${row["Nombre del proyecto "]}</a>
+    <a href="${row["URL del proyecto "]}" target="_blank">${
+        row["Nombre del proyecto "]
+      }</a>
     </td>
     <td>
     ${compactLinks(row["Descripción"])}
