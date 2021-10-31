@@ -149,18 +149,6 @@
         </div>
       </div>
     </section>
-    <section id="covid">
-      <div class="container-fluid py-5">
-        <div class="row no-gutters justify-content-center">
-          <div class="col-md-6 text-center">
-            <div class="alert alert-warning h4" role="alert">
-              El bienestar y la salud de los participantes es importantes para nosotros,
-              por lo que seguiremos las regulaciones sobre el COVID de Catalunya y España a la fecha del evento
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <section id="inscription">
       <div class="container-fluid py-5 mb-3">
         <div class="row no-gutters">
@@ -284,7 +272,7 @@
             <p>
               PyCamp España, un fin de semana que incluye 4 días y 3 noches con
               pensión completa (desayuno, comida y cena) en
-              Girona, España. Fecha PENDIENTE. Podrás programar las horas que quieras en ese
+              Girona, España. Podrás programar las horas que quieras en ese
               proyecto o idea que querías codificar hace tanto tiempo y que no
               encontrabas el momento o lugar perfecto para hacerlo.
             </p>
@@ -311,7 +299,7 @@
 
             <ul>
               <li>
-                Alojamiento 4 días y 3 noches
+                Alojamiento libre de COVID-19(ver <a href="#faq">"Preguntas Frecuentes"</a>) durante 4 días y 3 noches
               </li>
               <li>
                 Pensión completa: desayuno, comida y cena
@@ -327,15 +315,19 @@
                 Diversión: karaoke de charlas, juegos de mesa, ping pong y todo
                 hobby que quieras compartir con nosotros
               </li>
+              <li>
+                Auto-tests de antígenos COVID-19 para todos los participantes(ver <a href="#faq">"Preguntas Frecuentes"</a>)
+              </li>
             </ul>
-            <small-text
-              >El lugar será de uso exclusivo para los asistentes al evento.
-            </small-text>
+            <em>
+              El lugar será de uso exclusivo para los asistentes al evento.
+            </em>
 
-            <p class="lead mt-4">English speakers welcome</p>
+            <p class="lead mt-4">English speakers are welcome</p>
             <p>
-            We apologize for the lack of translation, but we believe the google translation works quite well.
-            Our main focus at the moment is to make this first edition happen
+              We apologize for the lack of translation, but we believe Google translation works quite well
+              (<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">see translated version</a>).
+              If you have any question don't hesitate in contact us! We are happy to help you and have you enjoying this event with us!
             </p>
           </div>
         </div>
@@ -558,8 +550,41 @@
         </div>
       </div>
     </section>
+    <!-- Organizers -->
+    <section id="organizers" style="padding-top: 50px;">
+      <div class="container py-4">
+        <div class="row justify-content-center ">
+          <div class="col-12 col-lg-7 text-center">
+            <h1 class="text-primary py-4 section-title">
+              Organizadores
+            </h1>
+
+            <a href="https://es.python.org/" target="_blank">
+              <img class="organizer-logo" src="images/pythonespana-logo.png" alt="Python España">
+            </a>
+
+
+            <h2 class="text-primary py-4 section-title">
+              Colaboradores
+            </h2>
+            <a href="https://argentinaenpython.com/" target="_blank">
+              <img class="organizer-logo" src="images/argentinaenpython-logo.png" alt="Argentina en Python">
+            </a>
+            <a href="https://pythongirona.cat/" target="_blank">
+              <img class="organizer-logo" src="images/pythongirona-logo.png" alt="Python Girona">
+            </a>
+            <a href="https://www.python.org.ar/" target="_blank">
+              <img class="organizer-logo" src="images/pythonargentina-logo.png" alt="Python Argentina">
+            </a>
+            <a href="https://www.meetup.com/es/Amsterdam-Python-Meetup-Group/" target="_blank">
+              <img class="organizer-logo" src="images/pythonamsterdam-logo.png" alt="Python Amsterdam">
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
     <!-- Sponsors -->
-    <section id="sponsors" style="padding-top: 50px;">
+    <section id="sponsors" class="bg-light" style="padding-top: 50px;">
       <div class="container py-4">
         <div class="row justify-content-center ">
           <div class="col-12 col-lg-7 text-center">
@@ -593,7 +618,7 @@
       <div class="container py-5 ">
         <div class="row">
           <div class="col-xl-12 mx-auto text-center mb-3">
-            <h1 class="text-primary text-center py-4 section-title">FAQ</h1>
+            <h1 class="text-primary text-center py-4 section-title">Preguntas Frecuentes</h1>
           </div>
           <div class="col-xl-12 mx-auto">
             <div class="accordion">
@@ -710,36 +735,59 @@
                   </div>
                 </div>
               </div>
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button
+                      class="btn btn-link faq-link"
+                      type="button"
+                      data-target="collapseFour"
+                    >
+                      ¿Cómo será la política COVID-19 durante el evento?
+                    </button>
+                  </h2>
+                </div>
+                <div
+                  id="collapseFour"
+                  class="collapse"
+                  aria-labelledby="headingFour"
+                  data-parent="#faq"
+                >
+                  <div class="card-body">
+                    <p>
+                      Velando por la seguridad de los asistentes cumpliremos las
+                      medidas vigentes en España. Muy probablemente deberemos
+                      validar que todos los asistentes cumplan como mínimo una de
+                      las siguientes opciones:
+                    </p>
+
+                    <ul>
+                      <li>
+                        Pauta de vacunación completa (cómo máximo 6 meses antes
+                        del evento)
+                      </li>
+                      <li>
+                        Haber pasado la COVID-19 (cómo máximo 6 meses antes del
+                        evento)
+                      </li>
+                      <li>
+                        PCR negativa (cómo máximo 2 días antes del evento)
+                      </li>
+                    </ul>
+
+                    <p>
+                      Nos iremos adaptando a las restricciones conforme se vayan
+                      aplicando, esperamos que entendáis que el futuro es incierto
+                      y se complica poder vaticinar las restricciones finales. Además,
+                      pondremos auto-tests de antígenos a disposición de todos los
+                      asistentes, para que al llegar y al salir del PyCamp podamos
+                      validar que todos estamos bien.
+                    </p>
+                  </div>
+                </div>
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section id="organizers">
-      <div class="container py-5">
-        <div class="row no-gutters justify-content-center">
-          <div class="col-12 text-center mb-4">
-            <h2>Organizadores</h2>
-          </div>
-          <div class="col-md-12 text-center">
-            <img src="images/organizers/pyes.png" alt="Python España">
-            <h3>Python España</h3>
-          </div>
-          <div class="col-md-6 text-center mt-5">
-            <img height="130" src="images/organizers/pygi.jpeg" alt="Python Girona">
-            <h4>Python Girona</h4>
-          </div>
-          <div class="col-md-6 text-center mt-5">
-            <img height="100" src="images/organizers/pyar.png" alt="Python Argentina">
-            <h4>Python Argentina</h4>
-          </div>
-          <div class="col-md-6 text-center mt-5">
-            <img height="100" src="images/organizers/argpy.png" alt="Argentina en Python">
-            <h4>Argentina en Python</h4>
-          </div>
-          <div class="col-md-6 text-center mt-5">
-            <img height="50" src="images/organizers/py.amsterdam.svg" alt="Python Amsterdam">
-            <h4>Python Amsterdam</h4>
           </div>
         </div>
       </div>
