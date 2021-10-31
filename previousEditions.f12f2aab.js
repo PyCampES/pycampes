@@ -14,4 +14,4 @@ var t="undefined"!=typeof self?self:this,e=function(){function e(){this.fetch=!1
 },{"./styles/styles.scss":"x3RG","g-sheets-api":"E4Nk"}],"r4UV":[function(require,module,exports) {
 "use strict";require("./index");
 },{"./index":"uBxZ"}]},{},["r4UV"], null)
-//# sourceMappingURL=previousEditions.f19f94f3.js.map
+//# sourceMappingURL=previousEditions.f12f2aab.js.map
