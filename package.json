@@ -24,6 +24,7 @@
     "sass": "^1.22.12"
   },
   "dependencies": {
+    "@layflags/parcel-plugin-metaimage": "^1.2.5",
     "bootstrap": "^4.3.1",
     "g-sheets-api": "^2.1.2",
     "nunjucks": "^3.2.0",
