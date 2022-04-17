@@ -1,5 +1,5 @@
 <template>
-  <q-header elevated class="glossy">
+  <q-header elevated class="bg-primary">
     <q-toolbar>
       <q-avatar>
         <img src="../assets/logo.svg">
