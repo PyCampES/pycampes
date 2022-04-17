@@ -4,6 +4,7 @@
       <Header />
       <Evento />
       <Asistir />
+      <Footer />
     </q-page-container>
   </q-layout>
 </template>
@@ -13,20 +14,22 @@ import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Evento from './components/Evento.vue'
 import Asistir from './components/Asistir.vue'
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'LayoutDefault',
+  name: "LayoutDefault",
 
   components: {
     Header,
     Evento,
-    Asistir
+    Asistir,
+    Footer
   },
 
-  setup () {
+  setup() {
     return {
-      leftDrawerOpen: ref(false)
-    }
-  }
-}
+      leftDrawerOpen: ref(false),
+    };
+  },
+};
 </script>
