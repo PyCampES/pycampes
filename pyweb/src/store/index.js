@@ -4,7 +4,8 @@ export default createStore ({
 
   state: {
     tituloHeader: "Titulo Header",
-    //bannerHomeMessage: "Primavera 2023. Mantente informado suscribiéndose a nuestra newsletter"
+    bannerHomeMessage1: "PRIMAVERA 2023",
+    bannerHomeMessage2: "Mantente informado suscribiéndose a nuestra newsletter"
   }
 
 })
