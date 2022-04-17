@@ -1,24 +1,62 @@
 <template>
-  <q-header elevated class="bg-primary">
-    <q-toolbar>
-      <q-avatar>
-        <img src="../assets/logo.svg">
-      </q-avatar>
-
-      <!-- Este es un ejemplo de uso de una variable local declarada es store/index.js -->
-      <!-- <q-toolbar-title>
-        {{ $store.state.tituloHeader }}
-      </q-toolbar-title> -->
-
-    </q-toolbar>
-  </q-header>
+    <q-header elevated class="bg-primary">
+        <q-toolbar>
+            <img
+                alt="PycampEs-logo"
+                src="@/assets/pycamp-logo.png"
+                class="logo"
+            />
+            <q-btn
+                flat
+                dense
+                round
+                @click="menuOpen = !menuOpen"
+                aria-label="Menu"
+                icon="menu"
+                id="hamburger"
+            />
+            <Menu id="menu" />
+        </q-toolbar>
+        <Menu v-if="menuOpen" />
+    </q-header>
 </template>
 
-<style>
-</style>
-
 <script>
-  export default {
-    name: 'Header'
-  }
+import Menu from "./Menu.vue";
+export default {
+    name: "Header",
+    components: { Menu },
+    data() {
+        return {
+            menuOpen: false
+        }
+    }
+};
 </script>
+
+<style scoped>
+header {
+    box-shadow: 4px black;
+}
+.q-toolbar {
+    height: 85px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+}
+.logo {
+    height: 45px;
+    width: auto;
+}
+#menu {
+    display: none;
+}
+@media (min-width: 1080px) {
+    #hamburger {
+        display: none;
+    }
+    #menu {
+        display: flex;
+    }
+}
+</style>
