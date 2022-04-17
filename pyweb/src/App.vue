@@ -3,22 +3,23 @@
     <q-page-container>
       <Header />
 
-      <HelloWorld />
+      <BannerHome />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/Header.vue'
+import BannerHome from './components/BannerHome.vue'
 
 export default {
   name: 'LayoutDefault',
 
   components: {
     Header,
-    HelloWorld
+    BannerHome
   },
 
   setup () {
