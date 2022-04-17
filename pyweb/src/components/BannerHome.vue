@@ -13,7 +13,7 @@
             top: (scope.percentScrolled * 0.1) + '%',
           }"
         >
-          <img src="../assets/logo.svg" style="width: 520px; height: auto">
+          <img src="../assets/pycamp-logo.png" style="width: 520px; height: auto">
         <div style= "width:420px; margin:auto 0">
 
           <div class="text-h5 text-white text-bold" >
