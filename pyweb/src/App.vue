@@ -3,6 +3,7 @@
     <q-page-container>
       <Header />
       <Evento />
+      <Asistir />
     </q-page-container>
   </q-layout>
 </template>
@@ -11,13 +12,15 @@
 import { ref } from 'vue'
 import Header from './components/Header.vue'
 import Evento from './components/Evento.vue'
+import Asistir from './components/Asistir.vue'
 
 export default {
   name: 'LayoutDefault',
 
   components: {
     Header,
-    Evento
+    Evento,
+    Asistir
   },
 
   setup () {

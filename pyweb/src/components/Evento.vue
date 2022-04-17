@@ -22,13 +22,12 @@
                   height="100" 
                 />
 
-                <div class="text-h6 q-pt-sm">COMUNIDAD</div>
+                <div class="text-h6 text-weight-bold q-pt-sm">COMUNIDAD</div>
                 
                 <p class="q-pt-sm">
                   {{ $store.state.lorem }}
                 </p>
               </q-card-section>
-
             </q-card>
 
             <q-card class="col card-border">
@@ -40,8 +39,8 @@
                   height="100"
                 >
                 
-                <div class="text-h6 q-pt-sm">OPEN SOURCE</div>
-                
+                <div class="text-h6 text-weight-bold q-pt-sm">OPEN SOURCE</div>
+                 
                 <p class="q-pt-sm"> 
                   {{ $store.state.lorem }}
                 </p>
@@ -57,7 +56,7 @@
                   height="100"
                 >
                 
-                <div class="text-h6 q-pt-sm">NATURALEZA</div>
+                <div class="text-h6 text-weight-bold q-pt-sm">NATURALEZA</div>
               
                 <p class="q-pt-sm">
                   {{ $store.state.lorem }}
@@ -80,7 +79,7 @@
   </section>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
   .card-border {
     border-style: solid;
     border-color: var(--q-primary);
