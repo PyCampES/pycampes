@@ -6,8 +6,18 @@
                 src="@/assets/pycamp-logo.png"
                 class="logo"
             />
-            <Menu />
+            <q-btn
+                flat
+                dense
+                round
+                @click="menuOpen = !menuOpen"
+                aria-label="Menu"
+                icon="menu"
+                id="hamburger"
+            />
+            <Menu id="menu" />
         </q-toolbar>
+        <Menu v-if="menuOpen" />
     </q-header>
 </template>
 
@@ -16,6 +26,11 @@ import Menu from "./Menu.vue";
 export default {
     name: "Header",
     components: { Menu },
+    data() {
+        return {
+            menuOpen: false
+        }
+    }
 };
 </script>
 
@@ -27,10 +42,21 @@ header {
     height: 85px;
     justify-content: space-between;
     align-items: center;
-    padding: 2rem;
+    padding: 16px;
 }
 .logo {
     height: 45px;
     width: auto;
+}
+#menu {
+    display: none;
+}
+@media (min-width: 1080px) {
+    #hamburger {
+        display: none;
+    }
+    #menu {
+        display: flex;
+    }
 }
 </style>

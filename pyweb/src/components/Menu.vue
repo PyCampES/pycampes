@@ -16,11 +16,17 @@ export default {};
 <style scoped>
 .q-list {
     display: flex;
+    flex-direction: column;
 }
 .q-item a {
     color: inherit;
     text-decoration: none;
     font-weight: bold;
     font-size: 1.3rem;
+}
+@media (min-width: 1080px) {
+    .q-list {
+    flex-direction: row;
+}
 }
 </style>
