@@ -4,27 +4,31 @@
       <Header />
 
       <HelloWorld />
+
+      <Footer />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
-import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
-import Header from './components/Header.vue'
+import { ref } from "vue";
+import HelloWorld from "./components/HelloWorld.vue";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
 
 export default {
-  name: 'LayoutDefault',
+  name: "LayoutDefault",
 
   components: {
     Header,
-    HelloWorld
+    HelloWorld,
+    Footer,
   },
 
-  setup () {
+  setup() {
     return {
-      leftDrawerOpen: ref(false)
-    }
-  }
-}
+      leftDrawerOpen: ref(false),
+    };
+  },
+};
 </script>
