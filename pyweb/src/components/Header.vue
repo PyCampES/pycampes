@@ -1,11 +1,14 @@
 <template>
     <q-header elevated class="bg-primary">
         <q-toolbar>
+        <a href= "#banner-home">
             <img
                 alt="PycampEs-logo"
                 src="@/assets/pycamp-logo.png"
                 class="logo"
             />
+        </a>
+            
             <q-btn
                 flat
                 dense
