@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
 :root {
     --q-primary: #99D98C;
     --q-secondary: #26A69A;
@@ -8,4 +10,8 @@
     --q-warning: #F2C037;
     --q-dark: #1d1d1d;
     --q-dark-page: #121212;
+  }
+
+  * {
+    font-family: 'Barlow', sans-serif;
   }
