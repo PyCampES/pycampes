@@ -3,14 +3,14 @@
     <q-page-container>
       <Header />
 
-      <HelloWorld />
+      <Evento />
     </q-page-container>
   </q-layout>
 </template>
 
 <script>
 import { ref } from 'vue'
-import HelloWorld from './components/HelloWorld.vue'
+import Evento from './components/Evento.vue'
 import Header from './components/Header.vue'
 
 export default {
@@ -18,7 +18,7 @@ export default {
 
   components: {
     Header,
-    HelloWorld
+    Evento
   },
 
   setup () {
