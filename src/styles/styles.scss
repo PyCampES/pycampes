@@ -11,10 +11,10 @@
 
 .jumbotron {
   position: relative;
-  background-image: url("../../public/images/location/wide-front.jpg");
+  background-image: url("../../public/images/edition-2022/portada.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: top center;
+  background-position: center center;
   color: white;
   //   background-size: cover;
 }
@@ -25,7 +25,8 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(206, 104, 0, 0.65);
+  background-color: $primary;
+  opacity: 60%;
   z-index: 1;
 }
 
@@ -37,7 +38,7 @@
   letter-spacing: 3px;
 }
 .carousel-inner {
-  max-height: 35rem;
+  max-height: 40rem;
 }
 
 .project-table{
