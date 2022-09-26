@@ -4,7 +4,7 @@ section.masthead {
   background: linear-gradient(
     rgba(0, 0, 0, 0.5),
     rgba(0, 0, 0, 0.5)
-  ),url('../../public/images/masthead.jpg') no-repeat center center;
+  ),url('../../public/images/masthead.jpg') no-repeat top center;
   @include background-cover;
   padding-top: 8rem;
   padding-bottom: 8rem;
