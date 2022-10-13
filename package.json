@@ -29,6 +29,10 @@
     "g-sheets-api": "^2.1.2",
     "nunjucks": "^3.2.0",
     "parcel-plugin-nunjucks": "^2.2.0",
+    "parcel-plugin-static-files-copy": "^2.6.0",
     "yarn": "^1.22.17"
+  },
+  "staticFiles": {
+    "staticPath": ["public/pycampes-2023.ics"]
   }
 }
