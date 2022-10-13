@@ -1,12 +1,11 @@
-# PYCAMP SPAIN
+# PyCamp Spain
 
-> Website for the first pycamp in Spain
+> Website for the PyCamp in Spain: https://pycamp.es
 
 ## Set up
 
-Clone the repo
-
-Run `yarn install`
+1. Clone the repo: `git clone https://github.com/PyCampES/pycampes`
+2. Run `yarn install`
 
 ## Development
 
@@ -14,4 +13,6 @@ Run `yarn install`
 
 ## Deployment
 
-`yarn deploy`
+The deployment is managed by Read the Docs.
+Once a pull request is opened, there will be a preview.
+Finally, when the pull request is merged, it will be deployed automatically.
