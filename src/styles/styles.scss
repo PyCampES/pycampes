@@ -19,7 +19,7 @@
   //   background-size: cover;
 }
 
-.jumbotron > .overlay {
+.jumbotron>.overlay {
   position: absolute;
   top: 0;
   right: 0;
@@ -30,32 +30,38 @@
   z-index: 1;
 }
 
-.jumbotron > .container {
+.jumbotron>.container {
   position: relative;
   z-index: 2;
 }
-.section-title{
+
+.section-title {
   letter-spacing: 3px;
 }
+
 .carousel-inner {
   max-height: 40rem;
 }
 
-.project-table{
+.project-table {
   font-size: 15px;
 }
 
 
 .sponsor-logo {
-    max-width: 80%;
-    margin: 2em;
+  max-width: 80%;
+  margin: 2em;
 }
 
 .organizer-logo {
-    max-width: 80%;
-    margin: 2em;
+  max-width: 80%;
+  margin: 2em;
 }
 
 .alert {
+  border-radius: 0;
+}
+
+.table {
   border-radius: 0;
 }

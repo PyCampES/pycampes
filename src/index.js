@@ -37,11 +37,11 @@ const addProjectTable = () => {
   const options = {
     apiKey: "AIzaSyDVhqZ0tVRSgTPUssxi4Sf52ScuxC0o7XI",
     sheetName: "Form Responses 1",
-    sheetId: "1OVEPFwCZpes-re4rClEEnEvY0ak-sZ2jTkZh5GgmxMY",
+    sheetId: "16p8MQf7Iu1AnkaluHZGtzZr_XmtcQ7jBrVYNoTE_leA",
     returnAllResults: true,
   };
-  GSheetReader(options, function(results) {
-    for (let row of results.filter(function(row) {
+  GSheetReader(options, function (results) {
+    for (let row of results.filter(function (row) {
       return row["Autorizo que incluyan estos datos en la web de PyCamp España"]
         .toLowerCase()
         .includes("s");
@@ -52,9 +52,8 @@ const addProjectTable = () => {
       document.getElementById("project-rows").innerHTML += `
   <tr>
     <td>
-    <a href="${row["URL del proyecto "]}" target="_blank">${
-        row["Nombre del proyecto "]
-      }</a>
+    <a href="${row["URL del proyecto "]}" target="_blank">${row["Nombre del proyecto "]
+        }</a>
     </td>
     <td>
     ${compactLinks(row["Descripción"])}
