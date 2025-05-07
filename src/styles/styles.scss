@@ -65,3 +65,48 @@
 .table {
   border-radius: 0;
 }
+
+.justified-text {
+  text-align: justify;
+}
+
+.github-box {
+  display: block;
+  text-align: center;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.github-box:hover {
+  background-color: #f0f0f0;
+}
+
+.github-logo {
+  width: 70px; /* Adjust image size */
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.github-box p {
+  font-size: 1.2em; /* Adjust font size */
+}
+
+.carousel-inner .row {
+  margin: 0; /* Remove default margin for rows */
+}
+.carousel-inner {
+  background-color: #fff; /* Set a uniform background color */
+}
+
+.carousel-item {
+  background-color: #fff; /* Ensure each item has the same background color */
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: transparent; /* Remove background color from controls */
+  opacity: 0.2; /* Ensure controls are visible */
+}
+
