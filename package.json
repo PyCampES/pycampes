@@ -26,20 +26,13 @@
   "dependencies": {
     "@layflags/parcel-plugin-metaimage": "^1.2.5",
     "bootstrap": "^4.3.1",
-    "core-js": "^3.42.0",
     "g-sheets-api": "^2.1.2",
-    "jquery": "^3.7.1",
-    "node-gyp": "^11.2.0",
     "nunjucks": "^3.2.0",
     "parcel-plugin-nunjucks": "^2.2.0",
     "parcel-plugin-static-files-copy": "^2.6.0",
-    "popper.js": "^1.16.1",
     "yarn": "^1.22.17"
   },
   "staticFiles": {
-    "staticPath": [
-      "public/pycampes-2023.ics"
-    ]
-  },
-  "packageManager": "yarn@4.9.1"
+    "staticPath": ["public/pycampes-2023.ics"]
+  }
 }
