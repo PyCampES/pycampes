@@ -110,3 +110,20 @@
   opacity: 0.2; /* Ensure controls are visible */
 }
 
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* Ensures even spacing */
+  align-items: center;
+  flex-wrap: nowrap; /* Prevents wrapping */
+}
+
+.navbar a {
+  font-size: 16px; /* Adjust font size if necessary */
+  white-space: nowrap; /* Prevents text from wrapping */
+}
+
+.nav-links a {
+   flex: 1; /* Allows each link to grow and share space equally */
+}
+
