@@ -1,5 +1,31 @@
 {% extends 'layout.njk' %}
 
+{% set githubProjects = [
+  { name: 'coche-esp32', url: 'https://github.com/PyCampES/coche-esp32' },
+  { name: 'codigosecreto-api', url: 'https://github.com/PyCampES/codigosecreto-api' },
+  { name: 'dojos', url: 'https://github.com/PyCampES/dojos' },
+  { name: 'ficamp', url: 'https://github.com/PyCampES/ficamp' },
+  { name: 'geosong', url: 'https://github.com/PyCampES/geosong' },
+  { name: 'himno', url: 'https://github.com/PyCampES/himno' },
+  { name: 'homecito', url: 'https://github.com/PyCampES/homecito' },
+  { name: 'kaggle-rps', url: 'https://github.com/PyCampES/kaggle-rps' },
+  { name: 'liveart-2023', url: 'https://github.com/PyCampES/liveart-2023' },
+  { name: 'mangapy', url: 'https://github.com/PyCampES/mangapy' },
+  { name: 'moviescore', url: 'https://github.com/PyCampES/moviescore' },
+  { name: 'musicBeGone', url: 'https://github.com/PyCampES/musicBeGone' },
+  { name: 'ornitobeat', url: 'https://github.com/PyCampES/ornitobeat' },
+  { name: 'pgmem', url: 'https://github.com/PyCampES/pgmem' },
+  { name: 'PyLaser', url: 'https://github.com/PyCampES/PyLaser' },
+  { name: 'pytron', url: 'https://github.com/PyCampES/pytron' },
+  { name: 'qr-vcard', url: 'https://github.com/PyCampES/qr-vcard' },
+  { name: 'rgisd', url: 'https://github.com/PyCampES/rgisd' },
+  { name: 'salary-quiz', url: 'https://github.com/PyCampES/salary-quiz' },
+  { name: 'sorting-hat', url: 'https://github.com/PyCampES/sorting-hat' },
+  { name: 'taller-django-2023', url: 'https://github.com/PyCampES/taller-django-2023' },
+  { name: 'wavefunction-mapmaking', url: 'https://github.com/PyCampES/wavefunction-mapmaking' }
+] %}
+
+
 {% block title %}
 PyCamp España: Ediciones anteriores
 {% endblock %}
@@ -13,6 +39,11 @@ PyCamp España: Ediciones anteriores
               Ediciones anteriores
             </h1>
 
+            <p class="mt-5 justified-text" style="font-size: 1.5em;">
+              El PyCamp es un evento que se venía realizando en Argentina desde 2008.
+              En 2022 organizamos la primera edición del PyCamp en España y nos fue tan bien que decidimos repetir y en 2025 ya cumplimos 4 años de edicionen consecutivas!
+              Aquí te compartimos links a algunos de esos capítulos anteriores y al código de algunos proyectos para que puedas entender mejor de que va el PyCamp.
+            </p>
           </div>
 
           <div class="col col-12 col-sm-8 text-center">
@@ -141,11 +172,47 @@ PyCamp España: Ediciones anteriores
                 <span class="sr-only">Next</span>
               </a>
             </div>
-            <p class="mt-3">
-              El PyCamp es un evento que se venía realizando en Argentina desde 2008. En 2022 organizamos la primera edición del PyCamp en España y nos fue tan bien que decidimos repetir en 2023.
-              Aquí te compartimos link de esos capítulos anteriores para que puedas entender mejor de
-              que va el PyCamp.
-            </p>
+
+        <h3 class="text-primary text-center section-title pb-4" style="padding-top: 50px;">
+            Proyectos desarrollados en el PyCamp
+        </h3>
+
+            <div id="githubRepoCarousel" class="carousel slide mt-5" data-ride="carousel">
+              <div class="carousel-inner">
+                {% for chunk in githubProjects | batch(6) %} <!-- Batch size adjusted to 6 for two rows of 3 -->
+                <div class="carousel-item {% if loop.first %}active{% endif %}">
+                  <div class="row">
+                    {% for project in chunk %}
+                    <div class="col-4"> <!-- Adjust to col-4 for three boxes per row -->
+                      <a href="{{ project.url }}" target="_blank" class="github-box">
+                        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" alt="GitHub Logo" class="github-logo">
+                        <p>{{ project.name }}</p>
+                      </a>
+                    </div>
+                    {% if loop.index % 3 == 0 %}
+                  </div>
+                  <div class="row mt-3"> <!-- Start a new row after every three items -->
+                    {% endif %}
+                    {% endfor %}
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+
+              <a class="carousel-control-prev" href="#githubRepoCarousel" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#githubRepoCarousel" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+              </a>
+            </div>
+
+        <h3 class="text-primary text-center section-title pb-4" style="padding-top: 50px;">
+            Blogposts sobre el PyCamp
+        </h3>
+
              <h2>2022</h2>
 
             <ul class="list-group list-group-flush">
@@ -194,6 +261,9 @@ PyCamp España: Ediciones anteriores
                   PyCamp 2011 (Facundo Batista)
                 </a>
               </li>
+
+            </ul>
+            <ul class="list-group list-group-flush">
               <li class="list-group-item">
                 <a href="http://aplacetospillmybraininto.blogspot.com/2011/03/fui-al-pycamp-2011.html">
                   Fui al PyCamp 2011 (Mateo Bengualid)
@@ -207,6 +277,9 @@ PyCamp España: Ediciones anteriores
                 <a href="http://blog.taniquetil.com.ar/posts/0452/">
                   PyCamp 2011 (Facundo Batista)
                 </a>
+
+            </ul>
+            <ul class="list-group list-group-flush">
               </li>
               <li class="list-group-item">
                 <a href="http://godiard.blogspot.com/2010/03/en-el-pycamp.html">
