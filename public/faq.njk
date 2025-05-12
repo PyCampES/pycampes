@@ -1,11 +1,6 @@
 {% extends 'layout.njk' %}
 
-{% block title %}
-Preguntas Frecuentes
-{% endblock %}
-
 {% block content %}
-
 <!-- FAQ -->
   <section id="faq" class="bg-light"> <div class="container py-5 ">
     <div class="row">
@@ -48,6 +43,25 @@ Preguntas Frecuentes
                   data-target="collapseTwo"
                   aria-expanded="false"
                   aria-controls="collapseTwo">
+                  ¿Qué llevo?
+                </button>
+              </h2>
+            </div>
+            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faq">
+              <div class="card-body">
+              {% include "what_to_bring_content.njk" %}
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-header" id="headingTwo">
+              <h2 class="mb-0">
+                <button
+                  class="btn btn-link faq-link"
+                  type="button"
+                  data-target="collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="collapseTwo">
                   ¿Hay ayuda económica para pagar la entrada?
                 </button>
               </h2>
@@ -60,28 +74,6 @@ Preguntas Frecuentes
                   target="_blank"
                   href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform">
                   Aplica a través de este formulario</a>.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link faq-link"
-                  type="button"
-                  data-target="collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree">
-                  ¿Por qué es interesante hacerlo en España?
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faq">
-              <div class="card-body">
-                En las últimas 3 ediciones de PyCon España hemos notado en los asistentes el espíritu de trabajo en equipo. Esto ha
-                quedado demostrado en todos las hackatones que se han organizado en el marco de PyCon donde se han obtenido resultados
-                muy interesantes en pocos días, aun con retos complicados. Es por esto que creemos que este evento funcionaría muy bien
-                en la comunidad de Python España, brindando la posibilidad de potencializar los aportes a proyectos nuevos y existentes.
               </div>
             </div>
           </div>

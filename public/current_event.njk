@@ -1,25 +1,22 @@
 {% extends 'layout.njk' %}
-{% block title %}
-Inscripción
-{% endblock %}
 
 {% block content %}
-<section id="inscription">
+<section id="current_event">
   <div class="container-fluid py-5 mb-3">
     <h1 class="text-primary text-center section-title pb-4">
-      Inscripción
+      Edición actual
     </h1>
     <div class="row no-gutters">
-      <div class="col-lg-6 order-lg-2 text-white mb-4">
-        <!-- Carousel of images -->
-      </div>
-      <div class="col-lg-6 order-lg-1 px-5 ">
         <p>
           PyCamp España es un fin de semana que incluye 4 días y 3 noches con pensión completa (desayuno, comida y cena) en
           Sevilla, España. Podrás programar las horas que quieras en ese proyecto o idea que querías codificar hace tanto tiempo y
           que no encontrabas el momento o lugar perfecto para hacerlo.
         </p>
-        <p class="lead"> La entrada incluye:</p>
+    </div>
+    <div>
+        <p class="lead"> 
+        La entrada incluye:
+        </p>
         <ul>
           <li>Pensión completa: desayuno, comida y cena</li>
           <li>Transporte directo desde Sevilla hasta el venue</li>
@@ -28,16 +25,35 @@ Inscripción
           <li>Diversión: karaoke de charlas, juegos de mesa, ping pong y todo hobby que quieras compartir con nosotros</li>
         </ul>
         <em>El lugar será de uso únicamente exclusivo para los asistentes al evento.</em>
-        <p class="lead mt-4">Everyone is welcome</p>
-        <p>
-          We apologize for the lack of translation, but we believe Google translation works quite well
-          (<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">
-            see translated version</a>). If you have any question don't hesitate in contact us! We are happy to help you and have
-          you enjoying this event with us!
-        </p>
+    </div>
+
+    <div class="row justify-content-center">
+      <div class="col-auto text-center">
+        <a href="venue.njk" class="btn btn-primary btn-lg my-4" style="font-size: 1.5em;">
+          Venue
+        </a>
+      </div>
+      <div class="col-auto text-center">
+        <a href="projects.njk" class="btn btn-primary btn-lg my-4" style="font-size: 1.5em;">
+          Proyectos
+        </a>
       </div>
     </div>
+
+
+
+    <h2 class="text-primary text-center section-title pb-4">
+      Inscripción
+    </h2>
   </div>
+
+<p class="lead mt-4">Everyone is welcome</p>
+  We apologize for the lack of translation, but we believe Google translation works quite well
+  (<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">
+    see translated version</a>). If you have any question don't hesitate in contact us! We are happy to help you and have
+  you enjoying this event with us!
+</p>
+
 </section>
 
 {% endblock %}

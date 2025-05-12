@@ -1,11 +1,7 @@
 {% extends 'layout.njk' %}
 
-{% block title %}
-PyCamp España: Ediciones anteriores
-{% endblock %}
 
 {% block content %}
-
 <section id="what-to-bring">
   <div class="container py-4">
     <div class="row justify-content-center ">
@@ -14,64 +10,7 @@ PyCamp España: Ediciones anteriores
           ¿Qué llevo?
         </h1>
         <div>
-          <p>Como ya sabrás, el PyCamp es un evento desestructurado. Lo que buscamos es poder aprender muchas cosas que nos
-            gustan, en un ambiente relajado y rodeados por amigos de la comunidad.</p>
-          <p>Por eso, puedes llevar lo que quieras que consideres necesario para pasarla bien y divertirte. Desde tu ordenador
-            portátil para poder trabajar en los proyectos, hasta juegos de mesa para montar una partida por las noches, incluyendo
-            instrumentos musicales para ponerle un poco de buena onda con música. ¡O incluso una impresora 3D para tener una sesión
-            de makers! --tú sabes mejor que nosotros qué llevar, ¡vamos!</p>
-          <p>Aquí te comentamos lo que creemos mínimo y escencial para poder disfrutar del PyCamp España sin problemas.</p>
-          <p class="lead">Para programar</p>
-          <ul>
-            <li>
-              <b>Ordenador:</b>
-              intenta instalar y actualizar las dependencias y requisitos de los proyectos en los que quieras trabajar antes de venir
-              para no colapsar la wifi del evento
-            </li>
-            <li>
-              <b>Extensores de corriente</b>
-            </li>
-            <li>
-              <b>Adaptadores</b>
-            </li>
-          </ul>
-          <p class="lead">
-            <b>Para las actividades durante el evento</p>
-            <ul>
-              <li>
-                <b>Ropa cómoda</b>
-                para programar día y noche, en los espacios cerrados, como así también en los espacios al aire
-                                libre
-              </li>
-              <li>
-                <b>Calzado cómodo</b>
-              </li>
-              <li>
-                <b>Productos de higiene personal:</b>
-                toalla, cepillo de dientes, crema dental, shampoo y jabón; entre
-                                                                otros
-              </li>
-              <li>
-                <b>Protector solar</b>
-              </li>
-              <li>
-                <b>Repelente de mosquitos</b>
-              </li>
-            </ul>
-          </p>
-          <p class="lead">
-            <b>Al momento de dormir</p>
-            <ul>
-              <li>
-                <b>Tapones para oídos</b>
-              </li>
-              <li>
-                <b>Sábana (colchón) y sobre sábana</b>
-                (el venue provee almohada y manta/cobija pero si prefieres, puedes llevar tus propias
-                                cosas)
-              </li>
-            </ul>
-          </p>
+        {% include "what_to_bring_content.njk" %}
         </div>
       </div>
     </div>
