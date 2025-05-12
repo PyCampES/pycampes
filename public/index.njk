@@ -1,641 +1,69 @@
 {% extends 'layout.njk' %}
 {% block content %}
-  <section id="buy-now">
-    <div class="jumbotron jumbotron-fluid mb-0">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="row">
-          <div class="col-xl-9 mx-auto text-center">
-            <img src="images/pycamp-logo2.png" style="width: 100%; height: auto;" alt="PyCamp logo con dibujos"/>
-            <!-- <h2 style="margin-top: 2em;"> -->
-            <!--   Del 1 al 4 de Mayo, 2025 -->
-            <!-- </h2> -->
-            <!-- <h3>4 días, 3 noches (<em>pensión completa</em>)</h3> -->
-            <!-- <h3 style="font-weight: bold; font-size: 3rem; margin-bottom: 25px;">300€</h3> -->
-            <!-- <a -->
-            <!--   href="https://docs.google.com/forms/d/13b0c8Hvp3NOISb8fefyt-3J28zRuMhPnCXGPemNPJ70/" -->
-            <!--   target="_blank" -->
-            <!--   class="btn btn-primary btn-lg my-4"> -->
-            <!--   Comprar entrada -->
-            <!-- </a> -->
-            <br/> <br/>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-xl-9 mx-auto">
-            <div class="ml-embedded" data-form="Z03U8c"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="inscription">
-    <div class="container-fluid py-5 mb-3">
-      <h1 class="text-primary text-center section-title pb-4">
-        Inscripción
-      </h1>
-      <div class="row no-gutters">
-        <div
-          class="col-lg-6 order-lg-2 text-white mb-4">
-          <!-- Carousel of images -->
-          <div id="carouselInscription" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <img src="./images/edition-2022/working.jpg" class="d-block w-100" alt="Gente trabajando en un proyecto"/>
-              </div>
-              <div class="carousel-item">
-                <img src="./images/edition-2022/espacio-verde.jpg" class="d-block w-100" alt="Gente reunida al aire libre"/>
-              </div>
-              <div class="carousel-item">
-                <img src="./images/edition-2022/ping-pong.jpg" class="d-block w-100" alt="Gente jugando al ping-pong"/>
-              </div>
-              <div class="carousel-item">
-                <img src="./images/edition-2022/working2.jpg" class="d-block w-100" alt="Gente programando"/>
-              </div>
-              <div class="carousel-item">
-                <img src="./images/edition-2022/working3.jpg" class="d-block w-100" alt="Gente trabajando en un proyecto"/>
-              </div>
-              <div class="carousel-item">
-                <img src="./images/edition-2022/comedor.jpg" class="d-block w-100" alt="Comedor"/>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselInscription" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselInscription" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-1 px-5 ">
-          <p>
-            PyCamp España es un fin de semana que incluye 4 días y 3 noches con pensión completa (desayuno, comida y cena) en
-            Sevilla, España. Podrás programar las horas que quieras en ese proyecto o idea que querías codificar hace tanto tiempo y
-            que no encontrabas el momento o lugar perfecto para hacerlo.
-          </p>
-          <!-- <p class="lead"> -->
-          <!--   Puedes inscribirte para comprar tu entrada siguiendo estos pasos: -->
-          <!-- </p> -->
-          <!-- <ol> -->
-          <!--   <li> -->
-          <!--     Haz click en el botón "Comprar Entrada" -->
-          <!--   </li> -->
-          <!--   <li> -->
-          <!--     Completa el formulario -->
-          <!--   </li> -->
-          <!--   <li> -->
-          <!--     Espera un email de confirmación de tu reserva con los datos para -->
-          <!--     el pago -->
-          <!--   </li> -->
-          <!-- </ol> -->
-            <p class="lead"> La entrada incluye:
-          </p>
-          <ul>
-            <li>
-              Pensión completa: desayuno, comida y cena
-            </li>
-            <li>
-              Transporte directo desde Sevilla hasta el venue
-            </li>
-            <li>
-              Coffee break en intermedio de comidas: café, té, agua, snacks y frutas
-            </li>
-            <li>
-              Acceso a áreas verdes donde podrás relajarte o programar
-            </li>
-            <li>
-              Diversión: karaoke de charlas, juegos de mesa, ping pong y todo hobby que quieras compartir con
-                            nosotros
-            </li>
-          </ul>
-          <em>
-            El lugar será de uso únicamente exclusivo para los asistentes al evento.
-          </em>
-          <p class="lead mt-4">Everyone is welcome</p>
-          <p>
-            We apologize for the lack of translation, but we believe Google translation works quite well
-                        (<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">
-              see translated version</a>). If you have any question don't hesitate in contact us! We are happy to help you and have
-              you enjoying this event with us!
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="venue" class="bg-light">
-    <div class="container-fluid py-5 mb-3">
-      <h1 class="text-primary text-center pb-4 section-title">
-        Venue
-      </h1>
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-2 px-5 ">
-          <div>
-            <dl>
-              <dt>Nombre</dt>
-              <dd>
-                <a href="https://www.granjaescuelaencinardeescardiel.com/">Granja Escuela Encinar de Escardiel</a>
-              </dd>
-              <dt>Dirección</dt>
-              <dd>
-                Ctra. Castilblanco- Almadén de la Plata km 16,5, 41230 Castilblanco de los Arroyos, Sevilla, España
-              </dd>
-              <dt>Descripción</dt>
-              <dd>
-                <!-- La Casa Aiguaviva es más que una casa de colonias, es vuestra casa. La casa de colonias se encuentra ubicada entre
-                bosques, a 30 km de Solsona, dentro del término municipal de Guixes. Un espacio de naturaleza y quietud, una burbuja de
-                aire, idónea para disfrutar de múltiples actividades y encuentros al aire libre, y al mismo tiempo, contar con todas las
-                ventajas. -->
-                La Granja Escuela Encinar de Escardiel es un lugar ideal para disfrutar de la naturaleza y la tranquilidad. Está ubicada
-                en la Sierra Norte de Sevilla, en un entorno natural y rodeada de encinas y alcornoques. El aire que se respira y la
-                tranquilidad son perfectas para desconectar y disfrutar de un fin de semana de programación, comunidad y diversión.
-              </dd>
-              <dt>Capacidad máxima</dt>
-              <dd>30 personas (en dos casas)</dd>
-              <dt>Total de habitaciones</dt>
-              <dd>
-                <ul>
-                  <li>8 Habitaciones</li>
-                  <li>El la casa Abejaruco 2 habitaciones</li>
-                  <li>En la casa Dehesa 6 habitaciones</li>
-                </ul>
-              </dd>
-              <dt>Comidas</dt>
-              <dd>
-                El menú está a cargo del venue incluyendo desayuno, comida y cena (el primer día no incluye desayuno y el último día no
-                incluye cena)
-              </dd>
-            </dl>
-          </div>
-        </div>
-        <div class="col-lg-6 order-lg-1 text-white mb-4">
-          <\!-- carousel of images -\->
-            <div id="carouselLocation" class="carousel slide" data-ride="carousel">
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="./images/location/1.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/2.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/3.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/4.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/5.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/6.jpg" class="d-block w-100"/>
-                </div>
-                <div class="carousel-item">
-                  <img src="./images/location/7.jpg" class="d-block w-100"/>
-                </div>
-                <!-- div class="carousel-item"> <img src="./images/location/8.jpg" class="d-block w-100"/> </div> <div
-                class="carousel-item"> <img src="./images/location/9.jpg" class="d-block w-100"/> </div> <div class="carousel-item">
-                <img src="./images/location/10.jpg" class="d-block w-100"/> </div> <div class="carousel-item"> <img
-                src="./images/location/11.jpg" class="d-block w-100"/> </div> <div class="carousel-item"> <img
-                src="./images/location/12.jpg" class="d-block w-100"/> </div -->
-              </div>
-              <a class="carousel-control-prev" href="#carouselLocation" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-              </a>
-              <a class="carousel-control-next" href="#carouselLocation" role="button" data-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section id="como-llegar">
-    <div class="container-fluid py-5 mb-3">
-      <h1 class="text-primary text-center pb-4 section-title">
-        ¿Cómo llegar?
-      </h1>
-      <div class="row no-gutters">
-        <div class="col-lg-6 order-lg-1 px-5 ">
-          <div>
-            <p>La opción más sencilla es unirte al
-              <strong>PyBus</strong>, que saldrá en la mañana del
-              <strong>01 de mayo</strong>
-              desde un punto céntrico de Sevilla y nos llevará directamente al venue. La vuelta del
-              <strong>PyBus</strong>
-              será por la tarde del
-              <strong>04 de mayo</strong>
-              desde el venue y nos dejará en el mismo punto de partida.</p>
-            <p>Si no pudieras unirte al PyBus, te dejamos un poco de información para llegar desde Sevilla a la Granja Escuela
-              Encinar de Escardiel:</p>
-            <p>El tiempo de viaje en coche es de entre 1h aproximadamente. A la hora de salir de la carretera principal y coger el
-              camino que llega hasta la casa hay que estar atentos y coger la salida correcta, se encuentra frente a la entrada a una
-              urbanización privada llamada "La Zarzuela" (tiene un cartel que indica la entrada a la urbanización). Los otros caminos
-              son más largos y menos cómodos.</p>
+<section id="buy-now">
+  <div class="jumbotron jumbotron-fluid mb-0">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
 
-<p>También puedes tomarte un taxi/Cabify/Uber desde Sevilla al venue por un precio aproximado de €45.</p>
+        <div class="col-xl-9 mx-auto text-center">
+          <img src="images/pycamp-logo2.png" style="width: 100%; height: auto;" alt="PyCamp logo con dibujos"/>
 
-          <form class="text-center">
-            <input
-              type="button"
-              value="Ver Mapa"
-              onclick="window.open ('https://maps.app.goo.gl/Q7vNwH5dFmSREGmNA','_blank')"
-              class="btn btn-primary btn-lg my-4"/>
-          </form>
-          <p>
-            Además, aquí te dejamos información sobre cómo llegar a Sevilla y las opciones de transporte para que después llegues
-            hasta el
-            <b>PyBus:</b>
+          <p class="mt-4" style="font-size: 1.7em; line-height: 1.5;">
+           Un evento en un entorno inspirador para disfrutar de unos días llenos de programación y diversión, aprender mucho y conectar con buena gente
           </p>
+          <br/><br/>
         </div>
+
+
+      <!--TODO: Toggle when new event inscription is available
+      <div class="col-xl-9 mx-auto text-center">
+        <a href="current_event.njk" class="btn btn-primary btn-lg my-4" style="font-size: 1.5em;">Inscribirse</a>
       </div>
-      <div class="col-lg-6 order-lg-2 text-white mb-4">
-        <img src="./images/edition-2022/pybus.jpg" class="d-block w-100" alt="Casa"/>
+      -->
+
       </div>
-    </div>
-    <div class="row no-gutters" style="margin-top: 1em; text-align: center;">
-      <h3 style="text-align: center; width: 100%">Comparación de opciones de transporte a Santa Justa (PyBus)</h3>
-      <table style="width: 70%; margin: 0 auto; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif; border:
-          2px solid #444;">
-        <tr style="background-color: #343a40; color: white;">
-          <th style="padding: 8px; border: 1px solid #444;"></th>
-          <th style="padding: 8px; border: 1px solid #444;">Desde el Aeropuerto (Línea EA)</th>
-          <th style="padding: 8px; border: 1px solid #444;">Desde Plaza de Armas (Línea 21)</th>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Horario</th>
-          <td style="padding: 10px; border: 1px solid #444;">4:30 h - 00:05 h (desde aeropuerto)
-            <br> 5:20 h - 1:00 h (hacia aeropuerto)</td>
-          <td style="padding: 10px; border: 1px solid #444;">5:45 h - 23:30 h</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Frecuencia</th>
-          <td style="padding: 10px; border: 1px solid #444;">Cada 20 minutos</td>
-          <td style="padding: 10px; border: 1px solid #444;">Cada 10-15 minutos</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Duración</th>
-          <td style="padding: 10px; border: 1px solid #444;">22 minutos</td>
-          <td style="padding: 10px; border: 1px solid #444;">15-20 minutos</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Tarifa</th>
-          <td style="padding: 10px; border: 1px solid #444;">4 € (billete sencillo)</td>
-          <td style="padding: 10px; border: 1px solid #444;">1,40 € (billete sencillo)</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Extras</th>
-          <td style="padding: 10px; border: 1px solid #444;">Accesible para personas con movilidad reducida y permite equipaje</td>
-          <td style="padding: 10px; border: 1px solid #444;">Servicio urbano accesible</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Otras opciones</th>
-          <td colspan="2" style="padding: 10px; border: 1px solid #444;">También puedes tomar un taxi o VTC (trayecto de 10-15
-            minutos según el tráfico).</td>
-        </tr>
-      </table>
-      <p style="text-align: center; width:100%;">Para información actualizada, visita la web de
-        <a href="https://www.tussam.es" target="_blank" style="color: #0073e6; text-decoration: none; font-weight: bold;">TUSSAM</a>.</p>
-      <h3 style="text-align: center; width: 100%; margin-top: 1em;">Cómo llegar a Sevilla</h3>
-      <table style="width: 70%; margin: 0 auto; border-collapse: collapse; text-align: center; font-family: Arial, sans-serif; border:
-          2px solid #444;">
-        <tr style="background-color: #343a40; color: white;">
-          <th style="padding: 8px; border: 1px solid #444;">Origen</th>
-          <th style="padding: 8px; border: 1px solid #444;">Medio de Transporte</th>
-          <th style="padding: 8px; border: 1px solid #444;">Duración</th>
-          <th style="padding: 8px; border: 1px solid #444;">Precio Aproximado</th>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Desde Madrid</th>
-          <td style="padding: 10px; border: 1px solid #444;">🚄 Tren AVE, Avlo, Iryo, Ouigo <br> ✈️ Vuelo</td>
-          <td style="padding: 10px; border: 1px solid #444;">2h 30min (tren) <br> 1h 10min (vuelo)</td>
-          <td style="padding: 10px; border: 1px solid #444;">Desde 7€ (Avlo) <br> Desde 9€ (Ouigo)</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Desde Málaga</th>
-          <td style="padding: 10px; border: 1px solid #444;">🚄 Tren Renfe Avant</td>
-          <td style="padding: 10px; border: 1px solid #444;">1h 55min</td>
-          <td style="padding: 10px; border: 1px solid #444;">Consultar precios</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;">Desde Barcelona</th>
-          <td style="padding: 10px; border: 1px solid #444;">✈️ Vuelo</td>
-          <td style="padding: 10px; border: 1px solid #444;">1h 45min</td>
-          <td style="padding: 10px; border: 1px solid #444;">Consultar precios</td>
-        </tr>
-        <tr>
-          <th style="background-color: #f2f2f2; padding: 10px; border: 1px solid #444;" colspan="4">📌 Recomendamos consultar
-            horarios y precios en las webs oficiales de cada operador, ya que pueden variar según la fecha del viaje.</th>
-        </tr>
-      </table>
-    </div>
-  </div>
-</section>
-<section id="projects" class="text-center bg-light">
-  <div class="container py-4">
-    <h1 class="text-primary text-center py-4 section-title section-title">
-      Proyectos
-    </h1>
-    <div class="row justify-content-center ">
-      <div class="col-12 col-lg-8">
-        <div>
-          <div>
-            <p>
-              En cada PyCamp se proponen una serie de proyectos o ideas por parte de los participantes, y luego durante el primer día
-              del evento se realiza el cronograma de acuerdo al interés de los asistentes. Así, durante el fin de semana podemos
-              contribuir en los proyectos que nos interesen.
-            </p>
-          </div>
-          <div>
-            <form>
-              <input
-                type="button"
-                value="Proponer un proyecto o idea"
-                onclick="window.open ('https://docs.google.com/forms/d/16p8MQf7Iu1AnkaluHZGtzZr_XmtcQ7jBrVYNoTE_leA','_blank')"
-                class="btn btn-primary btn-lg my-4"/>
-            </form>
-          </div>
-          <h3 class="my-4">
-            ¿Aún no sabes qué proyecto o idea proponer?
-          </h3>
-          <div>
-            <p>
-              Te inspiramos con algunos proyectos que ya se han propuesto y te compartimos algunos de los que han surgido de la
-              edición
-              <a href="https://github.com/PyCampES" target="_blank">
-                <b>2022</b>
-              </a>
-              y en otras ediciones realizadas del PyCamp en
-              Argentina:
-              <a href="http://www.python.org.ar/wiki/PyCamp/2019/actividades" target="_blank">
-                <b>2019</b>
-              </a>
-              y
-              <a href="http://www.python.org.ar/wiki/PyCamp/2018/actividades" target="_blank">
-                <b>2018</b>
-              </a>
-              (¡llevan 10 ediciones!) Puedes conocer más proyectos en la sección
-                            de
-              <a href="previous_editions.njk">
-                <b>ediciones anteriores</b>
-              </a>.
-            </p>
-          </div>
-        </div>
-      </div>
-      <!-- Take a look at GSheetReader because Google turned off APIv3 -->
-      <!-- https://cloud.google.com/blog/products/g-suite/migrate-your-apps-use-latest-sheets-api -->
-      <div class="col-12">
-        <h2 class="mt-5 mb-5">
-          Proyectos/Ideas para trabajar en equipo
-        </h2>
-        <div class="table-responsive">
-          <table class="table table-striped project-table">
-            <thead class="thead-dark">
-              <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Descripción</th>
-                <th scope="col">Requerimientos</th>
-                <th scope="col">Nivel</th>
-              </tr>
-            </thead>
-            <tbody id="project-rows"></tbody>
-          </table>
+      <div class="row">
+        <div class="col-xl-9 mx-auto">
+          <div class="ml-embedded" data-form="Z03U8c"></div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<section id="what-to-bring">
-  <div class="container py-4">
-    <div class="row justify-content-center ">
-      <div class="col-12 col-lg-7">
-        <h1 class="text-primary text-center py-4 section-title">
-          ¿Qué llevo?
-        </h1>
-        <div>
-          <p>Como ya sabrás, el PyCamp es un evento desestructurado. Lo que buscamos es poder aprender muchas cosas que nos
-            gustan, en un ambiente relajado y rodeados por amigos de la comunidad.</p>
-          <p>Por eso, puedes llevar lo que quieras que consideres necesario para pasarla bien y divertirte. Desde tu ordenador
-            portátil para poder trabajar en los proyectos, hasta juegos de mesa para montar una partida por las noches, incluyendo
-            instrumentos musicales para ponerle un poco de buena onda con música. ¡O incluso una impresora 3D para tener una sesión
-            de makers! --tú sabes mejor que nosotros qué llevar, ¡vamos!</p>
-          <p>Aquí te comentamos lo que creemos mínimo y escencial para poder disfrutar del PyCamp España sin problemas.</p>
-          <p class="lead">Para programar</p>
-          <ul>
-            <li>
-              <b>Ordenador:</b>
-              intenta instalar y actualizar las dependencias y requisitos de los proyectos en los que quieras trabajar antes de venir
-              para no colapsar la wifi del evento
-            </li>
-            <li>
-              <b>Extensores de corriente</b>
-            </li>
-            <li>
-              <b>Adaptadores</b>
-            </li>
-          </ul>
-          <p class="lead">
-            <b>Para las actividades durante el evento</p>
-            <ul>
-              <li>
-                <b>Ropa cómoda</b>
-                para programar día y noche, en los espacios cerrados, como así también en los espacios al aire
-                                libre
-              </li>
-              <li>
-                <b>Calzado cómodo</b>
-              </li>
-              <li>
-                <b>Productos de higiene personal:</b>
-                toalla, cepillo de dientes, crema dental, shampoo y jabón; entre
-                                                                otros
-              </li>
-              <li>
-                <b>Protector solar</b>
-              </li>
-              <li>
-                <b>Repelente de mosquitos</b>
-              </li>
-            </ul>
-          </p>
-          <p class="lead">
-            <b>Al momento de dormir</p>
-            <ul>
-              <li>
-                <b>Tapones para oídos</b>
-              </li>
-              <li>
-                <b>Sábana (colchón) y sobre sábana</b>
-                (el venue provee almohada y manta/cobija pero si prefieres, puedes llevar tus propias
-                                cosas)
-              </li>
-            </ul>
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+
+
 <!-- Organizers -->
 <section id="organizers" class="bg-light">
-  <div class="container py-4">
-    <div class="row justify-content-center ">
-      <div class="col-12 col-lg-7 text-center">
-        <h1 class="text-primary py-4 section-title">
-          Organizadores
-        </h1>
-        <a href="https://es.python.org/" target="_blank">
-          <img class="organizer-logo" src="images/pythonespana-logo.png" alt="Python España">
-        </a>
-        <h2 class="text-primary py-4 section-title">
-          Colaboradores
-        </h2>
-        <a href="https://argentinaenpython.com/" target="_blank">
-          <img class="organizer-logo" src="images/argentinaenpython-logo.png" alt="Argentina en Python">
-        </a>
-      </div>
+<div class="container py-4">
+  <div class="row justify-content-center">
+    <div class="col-lg-4 text-center mb-4 mx-auto"> <!-- Changed to col-lg-4 -->
+      <h1 class="text-primary py-4 section-title">Organizadores</h1>
+      <a href="https://es.python.org/" target="_blank">
+        <img class="organizer-logo" src="images/pythonespana-logo.png" alt="Python España" style="max-width: 250px;">
+      </a>
+    </div>
+    <div class="col-lg-4 text-center mb-4 mx-auto"> <!-- Changed to col-lg-4 -->
+      <h1 class="text-primary py-4 section-title">Colaboradores</h1>
+      <a href="https://argentinaenpython.com/" target="_blank">
+        <img class="organizer-logo" src="images/argentinaenpython-logo.png" alt="Argentina en Python" style="max-width: 250px;">
+      </a>
+    </div>
+    <div class="col-lg-4 text-center mb-4 mx-auto"> <!-- Changed to col-lg-4 -->
+      <h1 class="text-primary py-4 section-title">Sponsors</h1>
+      <a href="https://www.europython-society.org/" target="_blank">
+        <img class="organizer-logo" src="images/europython-society-logo.png" alt="EuroPython Society" style="max-width: 250px;">
+      </a>
+      <p>
+        Si tu empresa quiere apoyar el PyCamp España, puede hacerlo ayudándonos con los coffee breaks, el transporte al
+        venue, las camisetas, el alquiler de un proyector o bien otorgando becas de diversidad. Contáctanos a <a
+        href="mailto:pycampes@gmail.com">pycampes@gmail.com</a>.
+      </p>
     </div>
   </div>
+</div>
 </section>
-<!-- Sponsors -->
-<section id="sponsors">
-  <div class="container py-4">
-    <div class="row justify-content-center ">
-      <div class="col-12 col-lg-7 text-center">
-        <h1 class="text-primary py-4 section-title">
-          Sponsors
-        </h1>
-        <a href="https://www.europython-society.org/" target="_blank">
-          <img class="organizer-logo" src="images/europython-society-logo.png" alt="EuroPython Society">
-        </a>
-        <p>
-Si tu empresa quiere apoyar el PyCamp España, puede hacerlo ayudándonos con los coffee breaks, el transporte al
-venue,
-las camisetas, el alquiler de un proyector o bien otorgando becas de diversidad. Contáctanos a <a
-href="mailto:pycampes@gmail.com">pycampes@gmail.com</a>.
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- FAQ -->
-  <section id="faq" class="bg-light"> <div class="container py-5 ">
-    <div class="row">
-      <div class="col-xl-12 mx-auto text-center mb-3">
-        <h1 class="text-primary text-center py-4 section-title">Preguntas Frecuentes</h1>
-      </div>
-      <div class="col-xl-12 mx-auto">
-        <div class="accordion">
-          <div class="card">
-            <div class="card-header">
-              <h2 class="mb-0">
-                <button class="btn btn-link faq-link" type="button" data-target="collapseOne">
-                  ¿Qué es un PyCamp?
-                </button>
-              </h2>
-            </div>
-            <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#faq">
-              <div class="card-body">
-                El PyCamp es un evento
-                <strong>sin fines de lucro</strong>
-                que consiste en apoderarse de un lugar (como puede ser una Casa Rural) en el que un grupo de programadores (20 a 30
-                personas) nos juntamos a programar y divertirnos durante 4 días completos. Los asistentes proponen los proyectos Open
-                Source en los que desean trabajar durante estos días (o alguna idea un poco loca que quieran implementar) y el resto se
-                anota para colaborar y trabajar en esos proyectos. Así, se determinan diferentes slots de tiempo para cada proyecto
-                durante todos los días y cada programador trabaja, dentro de los slots asignados, en los proyectos que más le han
-                llamado la atención. Esta dinámica se mantiene durante los 4 días que dura el evento, trabajando mañana, tarde y hasta
-                la noche, si lo desean. Durante los 4 días que dura el evento, todos los asistentes desayunan, almuerzan, cenan y
-                duermen en el lugar que se haya alquilado. Esto hace que sea un evento sin ninguna distracción, que compartamos mucho
-                tiempo en comunidad y colaboremos programando en lo que más nos gusta. ¡El PyCamp es un evento que genera un ambiente
-                colaborativo y de comunidad hermoso!
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link faq-link"
-                  type="button"
-                  data-target="collapseTwo"
-                  aria-expanded="false"
-                  aria-controls="collapseTwo">
-                  ¿Hay ayuda económica para pagar la entrada?
-                </button>
-              </h2>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#faq">
-              <div class="card-body">
-                Somos conscientes de la importancia de equidad y diversidad en tecnología. Gracias al apoyo de nuestros patrocinadores
-                podemos ayudarte con becas.
-                <a
-                  target="_blank"
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform">
-                  Aplica a través de este formulario</a>.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingThree">
-              <h2 class="mb-0">
-                <button
-                  class="btn btn-link faq-link"
-                  type="button"
-                  data-target="collapseThree"
-                  aria-expanded="false"
-                  aria-controls="collapseThree">
-                  ¿Por qué es interesante hacerlo en España?
-                </button>
-              </h2>
-            </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#faq">
-              <div class="card-body">
-                En las últimas 3 ediciones de PyCon España hemos notado en los asistentes el espíritu de trabajo en equipo. Esto ha
-                quedado demostrado en todos las hackatones que se han organizado en el marco de PyCon donde se han obtenido resultados
-                muy interesantes en pocos días, aun con retos complicados. Es por esto que creemos que este evento funcionaría muy bien
-                en la comunidad de Python España, brindando la posibilidad de potencializar los aportes a proyectos nuevos y existentes.
-              </div>
-            </div>
-          </div>
-          <div class="card">
-            <div class="card-header" id="headingFour">
-              <h2 class="mb-0">
-                <button class="btn btn-link faq-link" type="button" data-target="collapseFour">
-                  ¿A qué público está dirigido?
-                </button>
-              </h2>
-            </div>
-            <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#faq">
-              <div class="card-body">
-                El PyCamp es un evento inclusivo donde se potencian las habilidades de programación desde la experiencia y práctica real
-                apta para todos los niveles de conocimiento. Si bien, en principio, no hay talleres propuestos para aprender a
-                programar, con un conocimiento básico de programación y Python se puede aprovechar al máximo. ¿Por qué? Porque vas a
-                tener la oportunidad de trabajar codo a codo con gente que tiene años de experiencia en el tema y poder compartir la
-                resolución de un problema en grupo, entender cómo piensan otros programadores y cómo atacan el problema de diferentes
-                formas. ¿Crees que no tienes el conocimiento suficiente para asistir al evento? ¡No te preocupes, súmate que la vas a
-                pasar genial y vas a aprender un montón de cosas!
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Masthead -->
-<section class="masthead text-white text-center" id="head">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-xl-9 mx-auto">
-        <div class="ml-embedded" data-form="Z03U8c"></div>
-      </div>
-    </div>
-  </div>
-</section>{% endblock %}{% block extra_footer %}
-<script src="../src/index.js"></script>{% endblock %}
+{% endblock %}
+{% block extra_footer %}
+<script src="../src/index.js"></script>
+{% endblock %}
