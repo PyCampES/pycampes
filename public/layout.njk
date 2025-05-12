@@ -1,163 +1,164 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-    <meta name="theme-color" content="#000000"/>
-    <meta name="robots" content="index,follow"/>
-    <meta name="description" content="PyCamp España"/>
-    <link rel="canonical" href="https://pycamp.es/"/>
-    <meta property="og:type" content="website"/>
-    <meta property="og:title" content="PyCamp España"/>
-    <meta property="og:url" content="https://pycamp.es/"/>
-    <meta property="og:image" content="/images/logo-mini.png"/>
-    <meta property="og:description" content="¡Programar a tope en medio de la naturaleza rodeados de excelentes personas!"/> <!-- <meta property="og:price:amount" content="250" /> -->
-    <!-- <meta property="og:price:currency" content="EUR" /> --> <meta name="twitter:card" content="summary_large_image"/>
-    <meta name="twitter:site" content="@pycampes"/>
-    <meta name="twitter:creator" content="@pycampes"/>
-    <meta name="twitter:image" content="/images/logo-mini.png"/>
-    <link rel="manifest" href="/manifest.json"/>
-    <link rel="shortcut icon" href="/images/logo-mini.svg"/> {% block extra_head %}{% endblock %}
-    <script src="https://kit.fontawesome.com/738e427f6d.js" crossorigin="anonymous"></script>
-    <title>
-      {% block title %}PyCamp España{% endblock %}
-    </title>
-    {% include "mailerlite.njk" %}
-  </head>
-  <body>
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3">
-      <div class="container">
-        <a class="navbar-brand" href="/"><img src="images/pycamp-logo2.png" width="200"/>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-toggle="collapse"
-          data-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="/current_event.njk">
-                Edición actual
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/previous_editions.njk">
-                Ediciones anteriores
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/projects.njk">Proyectos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="/venue.njk">Venue</a>
-            </li>
-            <!-- <li class="nav-item"> -->
-            <!--   <a class="nav-link" href="/what_to_bring.njk">¿Qué llevo?</a> -->
-            <!-- </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="/faq.njk">Preguntas frecuentes</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">
-                Código de conducta
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="mailto:pycampes@gmail.com" target="_blank">
-                <i class="far fa-envelope"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://t.me/pycampes" target="_blank">
-                <i class="fab fa-telegram"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://twitter.com/PyCampES" target="_blank">
-                <i class="fab fa-twitter"></i>
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="https://github.com/PyCampES" target="_blank">
-                <i class="fab fa-github"></i>
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-    {% block content %}{% endblock %}
-    <!-- Footer -->
-    <footer class="footer bg-secondary">
-      <div class="container py-5">
-        <div class="row">
-          <div class="col-12 h-100 text-center my-auto">
-            <ul class="list-inline mb-0">
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="mailto:pycampes@gmail.com">
-                  <i class="far fa-envelope fa-2x fa-fw"></i>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport"
+              content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="theme-color" content="#000000" />
+        <meta name="robots" content="index,follow" />
+        <meta name="description" content="PyCamp España" />
+        <link rel="canonical" href="https://pycamp.es/" />
+        <meta property="og:type" content="website" />
+        <meta property="og:title" content="PyCamp España" />
+        <meta property="og:url" content="https://pycamp.es/" />
+        <meta property="og:image" content="/images/logo-mini.png" />
+        <meta property="og:description"
+              content="¡Programar a tope en medio de la naturaleza rodeados de excelentes personas!" />
+        <!-- <meta property="og:price:amount" content="250" /> -->
+        <!-- <meta property="og:price:currency" content="EUR" /> -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@pycampes" />
+        <meta name="twitter:creator" content="@pycampes" />
+        <meta name="twitter:image" content="/images/logo-mini.png" />
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="shortcut icon" href="/images/logo-mini.svg" />
+        {% block extra_head %}{% endblock %}
+        <script src="https://kit.fontawesome.com/738e427f6d.js"
+                crossorigin="anonymous"></script>
+        <title>
+            {% block title %}PyCamp España{% endblock %}
+        </title>
+        {% include "mailerlite.njk" %}
+    </head>
+    <body>
+        <!-- Navigation -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <img src="images/pycamp-logo2.png" width="200" />
                 </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://t.me/pycampes">
-                  <i class="fab fa-telegram fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://twitter.com/PyCampES">
-                  <i class="fab fa-twitter fa-2x fa-fw"></i>
-                </a>
-              </li>
-              <li class="list-inline-item mr-3">
-                <a target="_blank" href="https://github.com/PyCampES">
-                  <i class="fab fa-github fa-2x fa-fw"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-        <div class="row mt-3">
-          <div class="col-12 h-100 text-center my-auto ">
-            <ul class="nav justify-content-center">
-              <li class="nav-item">
-                <a class="nav-link active" href="#">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">
-                  Código de conducta
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./previous_editions.njk" rel="noopener noreferrer">
-                  Ediciones anteriores
-                </a>
-              </li>
-            </ul>
-            <div class="text-white text-center">
-              <small>Icon made by
-                <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
-                from
-                <a href="https://www.flaticon.com/">www.flaticon.com</a>
-              </small><br/>
-              <small>Icon made by
-                <a href="https://www.flaticon.com/authors/eucalyp">Eucalyp</a>
-                from
-                <a href="https://www.flaticon.com/">www.flaticon.com</a>
-              </small>
+                <button class="navbar-toggler"
+                        type="button"
+                        data-toggle="collapse"
+                        data-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ml-auto">
+                        <!-- <li class="nav-item"> -->
+                        <!--   <a class="nav-link" href="/current_event.njk"> -->
+                        <!--     Edición actual -->
+                        <!--   </a> -->
+                        <!-- </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/previous_editions.njk">Ediciones anteriores</a>
+                        </li>
+                        <!-- <li class="nav-item"> -->
+                        <!--   <a class="nav-link" href="/projects.njk">Proyectos</a> -->
+                        <!-- </li> -->
+                        <!-- <li class="nav-item"> -->
+                        <!--   <a class="nav-link" href="/venue.njk">Venue</a> -->
+                        <!-- </li> -->
+                        <!-- <li class="nav-item"> -->
+                        <!--   <a class="nav-link" href="/what_to_bring.njk">¿Qué llevo?</a> -->
+                        <!-- </li> -->
+                        <li class="nav-item">
+                            <a class="nav-link" href="/faq.njk">Preguntas frecuentes</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">Código de conducta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="mailto:pycampes@gmail.com" target="_blank">
+                                <i class="far fa-envelope"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://t.me/pycampes" target="_blank">
+                                <i class="fab fa-telegram"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://twitter.com/PyCampES" target="_blank">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://github.com/PyCampES" target="_blank">
+                                <i class="fab fa-github"></i>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-    {% block extra_footer %}{% endblock %}
-    {# Bug in Parcel forces us to include the extra footer this way #}
-    {% include "extra_footer.html" %}
-  </body>
+        </nav>
+        {% block content %}{% endblock %}
+        <!-- Footer -->
+        <footer class="footer bg-secondary">
+            <div class="container py-5">
+                <div class="row">
+                    <div class="col-12 h-100 text-center my-auto">
+                        <ul class="list-inline mb-0">
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="mailto:pycampes@gmail.com">
+                                    <i class="far fa-envelope fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="https://t.me/pycampes">
+                                    <i class="fab fa-telegram fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="https://twitter.com/PyCampES">
+                                    <i class="fab fa-twitter fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                            <li class="list-inline-item mr-3">
+                                <a target="_blank" href="https://github.com/PyCampES">
+                                    <i class="fab fa-github fa-2x fa-fw"></i>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="row mt-3">
+                    <div class="col-12 h-100 text-center my-auto ">
+                        <ul class="nav justify-content-center">
+                            <li class="nav-item">
+                                <a class="nav-link active" href="#">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">Código de conducta</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link"
+                                   href="./previous_editions.njk"
+                                   rel="noopener noreferrer">Ediciones anteriores</a>
+                            </li>
+                        </ul>
+                        <div class="text-white text-center">
+                            <small>Icon made by
+                                <a href="https://www.flaticon.com/authors/freepik">Freepik</a>
+                                from
+                                <a href="https://www.flaticon.com/">www.flaticon.com</a>
+                            </small>
+                            <br />
+                            <small>Icon made by
+                                <a href="https://www.flaticon.com/authors/eucalyp">Eucalyp</a>
+                                from
+                                <a href="https://www.flaticon.com/">www.flaticon.com</a>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        {% block extra_footer %}{% endblock %}
+        {# Bug in Parcel forces us to include the extra footer this way #}
+        {% include "extra_footer.html" %}
+    </body>
 </html>
