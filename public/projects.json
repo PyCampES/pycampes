@@ -1,0 +1,142 @@
+[
+  {
+    "description": "scripts for building documentation on docs.python.org",
+    "name": "docsbuild-scripts",
+    "url": "https://github.com/PyCampES/docsbuild-scripts"
+  },
+  {
+    "description": "What music is people listen to?",
+    "name": "geosong",
+    "url": "https://github.com/PyCampES/geosong"
+  },
+  {
+    "description": "Un server que habla con el bot de Telegram",
+    "name": "moviescore",
+    "url": "https://github.com/PyCampES/moviescore"
+  },
+  {
+    "description": "The Python programming language",
+    "name": "cpython",
+    "url": "https://github.com/PyCampES/cpython"
+  },
+  {
+    "description": "PyCamp challenge game ",
+    "name": "pytron",
+    "url": "https://github.com/PyCampES/pytron"
+  },
+  {
+    "description": "PyCamp España",
+    "name": "pycampes",
+    "url": "https://github.com/PyCampES/pycampes"
+  },
+  {
+    "description": "PyCamp 2024 Coding Dojos",
+    "name": "dojos",
+    "url": "https://github.com/PyCampES/dojos"
+  },
+  {
+    "description": "Primeros pasos con ESP32Home",
+    "name": "homecito",
+    "url": "https://github.com/PyCampES/homecito"
+  },
+  {
+    "description": "Parse bank data to analyze expenses ",
+    "name": "ficamp",
+    "url": "https://github.com/PyCampES/ficamp"
+  },
+  {
+    "description": "Map making with wavefunction collapse",
+    "name": "wavefunction-mapmaking",
+    "url": "https://github.com/PyCampES/wavefunction-mapmaking"
+  },
+  {
+    "description": "Manga translation tool",
+    "name": "mangapy",
+    "url": "https://github.com/PyCampES/mangapy"
+  },
+  {
+    "description": "Event manager for local community events",
+    "name": "GetTogether",
+    "url": "https://github.com/PyCampES/GetTogether"
+  },
+  {
+    "description": "El himno del PyCampES",
+    "name": "himno",
+    "url": "https://github.com/PyCampES/himno"
+  },
+  {
+    "description": "API para devolver palabras para el juego del Código Secreto",
+    "name": "codigosecreto-api",
+    "url": "https://github.com/PyCampES/codigosecreto-api"
+  },
+  {
+    "description": "",
+    "name": "template",
+    "url": "https://github.com/PyCampES/template"
+  },
+  {
+    "description": "",
+    "name": "PyLaser",
+    "url": "https://github.com/PyCampES/PyLaser"
+  },
+  {
+    "description": "",
+    "name": "kaggle-rps",
+    "url": "https://github.com/PyCampES/kaggle-rps"
+  },
+  {
+    "description": "",
+    "name": "rgisd",
+    "url": "https://github.com/PyCampES/rgisd"
+  },
+  {
+    "description": "",
+    "name": "liveart-2023",
+    "url": "https://github.com/PyCampES/liveart-2023"
+  },
+  {
+    "description": "",
+    "name": "taller-django-2023",
+    "url": "https://github.com/PyCampES/taller-django-2023"
+  },
+  {
+    "description": "",
+    "name": "telegram-python-es",
+    "url": "https://github.com/PyCampES/telegram-python-es"
+  },
+  {
+    "description": "",
+    "name": "musicBeGone",
+    "url": "https://github.com/PyCampES/musicBeGone"
+  },
+  {
+    "description": "",
+    "name": "sorting-hat",
+    "url": "https://github.com/PyCampES/sorting-hat"
+  },
+  {
+    "description": "",
+    "name": "pgmem",
+    "url": "https://github.com/PyCampES/pgmem"
+  },
+  {
+    "description": "",
+    "name": "ornitobeat",
+    "url": "https://github.com/PyCampES/ornitobeat"
+  },
+  {
+    "description": "",
+    "name": "qr-vcard",
+    "url": "https://github.com/PyCampES/qr-vcard"
+  },
+  {
+    "description": "",
+    "name": "salary-quiz",
+    "url": "https://github.com/PyCampES/salary-quiz"
+  },
+  {
+    "description": "",
+    "name": "coche-esp32",
+    "url": "https://github.com/PyCampES/coche-esp32"
+  }
+]
