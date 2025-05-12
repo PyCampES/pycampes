@@ -126,15 +126,17 @@
     "./images/edition-2023/portada.jpg",
     "./images/edition-2024/portada.jpg",
     "./images/edition-2025/portada.jpg",
-    "./images/previous/2012_3.jpg",
-    "./images/previous/2013.jpg",
-    "./images/previous/2013_2.jpg",
-    "./images/previous/2013_3.jpg",
-    "./images/previous/2014.jpg",
-    "./images/previous/2016.jpg",
-    "./images/previous/2016_2.jpg",
-    "./images/previous/2019_mendoza_san_rafael.jpeg",
-    "./images/previous/2022.jpg"
+    "./images/edition-2022/espacio-verde.jpg",
+    "./images/edition-2022/discussion1.jpg",
+    "./images/edition-2022/working2.jpg",
+    "./images/edition-2022/ping-pong.jpg",
+    "./images/edition-2023/naturaleza1.jpg",
+    "./images/edition-2023/discussion1.jpg",
+    "./images/edition-2023/laser2.jpg",
+    "./images/edition-2024/gaming1.jpg",
+    "./images/edition-2024/naturaleza2.jpg",
+    "./images/edition-2024/naturaleza5.jpg",
+    "./images/edition-2025/working1.jpg"
 ] %}
 {% block content %}
     <section>
@@ -146,11 +148,18 @@
                 </div>
                 <div class="col col-12 col-sm-8 text-center">
                     <!-- Carousel of images -->
-                    <div id="carouselLocation" class="carousel slide" data-ride="carousel">
-                        <div class="carousel-inner">
+                    <div id="carouselLocation"
+                         class="carousel slide"
+                         data-ride="carousel"
+                         style="height: 400px">
+                        <div class="carousel-inner" style="height: 100%;">
                             {% for image in carouselImages %}
-                                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}">
-                                    <img src="{{ image }}" class="d-block w-100" />
+                                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}"
+                                     style="height: 100%">
+                                    <img src="{{ image }}"
+                                         class="d-block w-100"
+                                         style="height: 100%;
+                                                object-fit: cover" />
                                 </div>
                             {% endfor %}
                         </div>
@@ -178,6 +187,28 @@
                                     vertical-align: middle" />
                         Proyectos desarrollados en el PyCamp
                     </h3>
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-4">
+                                <img src="./images/edition-2023/laser2.jpg"
+                                     class="img-fluid"
+                                     style="width: 100%;
+                                            height: auto">
+                            </div>
+                            <div class="col-4">
+                                <img src="./images/edition-2023/projects3.jpg"
+                                     class="img-fluid"
+                                     style="width: 100%;
+                                            height: auto">
+                            </div>
+                            <div class="col-4">
+                                <img src="./images/edition-2024/working2.jpg"
+                                     class="img-fluid"
+                                     style="width: 100%;
+                                            height: auto">
+                            </div>
+                        </div>
+                    </div>
                     <div class="container mt-5">
                         <div style="max-height: 320px; overflow-y: auto;">
                             <table class="table table-striped">
