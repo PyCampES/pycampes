@@ -176,134 +176,163 @@
 {% block content %}
     <section>
         <style>
-      /* Existing styles */
-      body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .tabs {
-        display: flex;
-        justify-content: center;
-        margin-bottom: 20px;
-        margin-top: 20px;
-      }
-      .tab {
-        background-color: #f9f9f9;
-        border-radius: 10px;
-        border: 1px solid #ddd;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        cursor: pointer;
-        font-size: 18px;
-        margin: 0 10px;
-        padding: 15px 30px;
-      }
-      .tab.active {
-        background-color: #ccc;
-      }
-      .container {
-        display: none;
-        flex-direction: column;
-        align-items: center;
-      }
-      .container.active {
-        display: flex;
-      }
-      .main-content {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        margin-bottom: 20px;
-        flex-wrap: wrap;
-        margin-bottom: 20px;
-        gap: 20px;
-      }
-      .main-photo {
-        flex: 1; /* Allow photo to grow and shrink */
-        min-width: 300px;
-        height: auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-      }
-      .main-photo img {
-        width: 100%;
-        height: 400px ;
-        width: auto;
-        object-fit: cover;
-        cursor: pointer; /* Change cursor to pointer for clickable effect */
-      }
-      .info {
-        flex: 0 0 30%;
-        min-width: 200px;
-        height: 200px;
-        background-color: #f9f9f9;
-        border: 1px solid #ddd;
-        border-radius: 10px;
-        padding: 15px;
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        align-self:center;
-      }
-      .info a {
-        margin: 10px 0;
-        color: seagreen;
-        font-size: 25px;
-        text-decoration: none;
-        transition: color 0.3s ease;
-      }
-      .info a:hover {
-        color: darkgreen;
-      }
-      .thumbnails {
-        display: flex;
-        justify-content: space-between;
-        width: 100%;
-        padding-bottom: 10px;
-        flex-wrap: wrap; /* Allow wrapping for responsiveness */
-      }
-      .thumbnail {
-        width: 24%;
-        height: 200px;
-        background-color: #ccc;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        overflow: hidden;
-      }
-      .thumbnail img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-      img {
-        max-width: 100%;
-        max-height: 100%;
-      }
-      .table-striped tbody tr:nth-of-type(odd) {
-        background-color: #f9f9f9;
-      }
-      .table-striped tbody tr:hover {
-        background-color: #e0e0e0;
-      }
-      .table-striped td, .table-striped th {
-        padding: 10px;
-        text-align: left;
-      }
-      .tables-container {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 20px;
-        flex-wrap: wrap; /* Allow wrapping for responsiveness */
-      }
-      .table-wrapper {
-        width: 48%;
-        padding: 0 20px;
-      }
+          /* Base styles for mobile */
+          body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: auto; /* Allow height to adjust based on content */
+          }
+
+          .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            flex-wrap: wrap; /* Allow wrapping for small screens */
+          }
+
+          .tab {
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
+            font-size: 16px; /* Smaller font for mobile */
+            margin: 5px; /* Reduced margin for mobile */
+            padding: 10px 20px; /* Reduced padding for mobile */
+          }
+
+          .tab.active {
+            background-color: #ccc;
+          }
+
+          .container {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .container.active {
+            display: flex;
+          }
+
+          .main-content {
+            display: flex;
+            flex-direction: column; /* Stack main content vertically on mobile */
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+          }
+
+          .main-photo {
+            width: 100%; /* Full width on mobile */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 10px; /* Space below the main photo */
+          }
+
+          .main-photo img {
+            width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            object-fit: cover;
+            cursor: pointer;
+          }
+
+          .info {
+            width: 100%; /* Full width on mobile */
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* Space below info section */
+          }
+
+          .info a {
+            margin: 5px 0;
+            color: seagreen;
+            font-size: 18px; /* Smaller font for mobile */
+            text-decoration: none;
+            transition: color 0.3s ease;
+          }
+
+          .info a:hover {
+            color: darkgreen;
+          }
+
+          .thumbnails {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            flex-wrap: wrap; /* Allow thumbnails to wrap */
+            margin-bottom: 20px; /* Space below thumbnails */
+          }
+
+          .thumbnail {
+            width: 48%; /* Two thumbnails per row on mobile */
+            height: 150px; /* Fixed height for thumbnails */
+            background-color: #ccc;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            margin-bottom: 10px; /* Space below each thumbnail */
+          }
+
+          .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+          .tables-container {
+            display: flex;
+            flex-direction: column; /* Stack tables vertically on mobile */
+            margin-top: 20px;
+          }
+
+          .table-wrapper {
+            width: 100%; /* Full width on mobile */
+            margin-bottom: 20px; /* Space below each table */
+            padding: 20px; /* Space below each table */
+          }
+
+          /* Media queries for larger screens */
+          @media (min-width: 768px) {
+            .main-content {
+              flex-direction: row; /* Align items horizontally on larger screens */
+              justify-content: space-between;
+            }
+
+            .main-photo {
+              flex: 1; /* Allow photo to grow */
+              min-width: 300px; /* Minimum width for the photo */
+            }
+
+            .info {
+              flex: 0 0 30%; /* Fixed width for info section */
+              min-width: 200px; /* Minimum width for info */
+            }
+
+            .thumbnail {
+              width: 24%; /* Four thumbnails per row on larger screens */
+            }
+
+            .tables-container {
+              flex-direction: row; /* Align tables side by side */
+              justify-content: space-between;
+            }
+
+            .table-wrapper {
+              width: 48%; /* Two tables side by side */
+              margin-bottom: 30px;
+             padding: 20px; /* Space below each table */
+            }
+          }
         </style>
         <!-- Tabs Section -->
         <div class="tabs">

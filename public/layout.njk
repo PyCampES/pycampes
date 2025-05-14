@@ -30,15 +30,47 @@
         </title>
         {% include "mailerlite.njk" %}
         <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-      }
-      .navbar, .footer {
-        width: 100%;
-      }
+          body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .navbar, .footer {
+            width: 100%;
+          }
+
+          /* Mobile styles */
+          .navbar {
+            flex-direction: column; /* Stack items vertically on mobile */
+          }
+
+          .nav-link {
+            padding: 10px; /* Add padding for touch targets */
+          }
+
+          /* Styles for larger screens */
+          @media (min-width: 768px) {
+            .navbar {
+              flex-direction: row; /* Align items horizontally on larger screens */
+            }
+            
+            .nav-link {
+              padding: 15px 20px; /* Increase padding for larger screens */
+            }
+          }
+
+          /* Footer styles */
+          .footer {
+            padding: 20px; /* Add padding for better spacing */
+          }
+
+          @media (min-width: 768px) {
+            .footer {
+              padding: 40px; /* Increase padding for larger screens */
+            }
+          }
         </style>
     </head>
     <body>
