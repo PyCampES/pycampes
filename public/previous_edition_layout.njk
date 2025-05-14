@@ -176,104 +176,129 @@
 {% block content %}
     <section>
         <style>
-    body, html {
-      margin: 0;
-      padding: 0;
-      width: 100%;
-      height: 100%;
-    }
-    .tabs {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 20px;
-      margin-top: 20px;
-    }
-    .tab {
-      margin: 0 10px;
-      padding: 15px 30px;
-      cursor: pointer;
-      background-color: #f0f0f0;
-      border-radius: 10px;
-      font-size: 18px;
-    }
-    .tab.active {
-      background-color: #ccc;
-    }
-    .container {
-      display: none;
-      flex-direction: column;
-      align-items: center;
-    }
-    .container.active {
-      display: flex;
-    }
-    .main-content {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      margin-bottom: 20px;
-    }
-    .main-photo {
-      width: 100%;
-      height: 500px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .info {
-      width: 90%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-    }
-    .info a {
-      margin: 20px 0;
-      color: seagreen;
-      font-size: 30px;
-    }
-    .thumbnails {
-      display: flex;
-      justify-content: space-between;
-      width: 100%;
-      padding-bottom: 10px;
-    }
-    .thumbnail {
-      width: 24%;
-      height: 200px;
-      background-color: #ccc;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .thumbnail img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-    img {
-      max-width: 100%;
-      max-height: 100%;
-    }
-    .table-striped tbody tr:nth-of-type(odd) {
-      background-color: #f9f9f9;
-    }
-    .table-striped tbody tr:hover {
-      background-color: #e0e0e0;
-    }
-    .table-striped td, .table-striped th {
-      padding: 10px;
-      text-align: left;
-    }
-    .tables-container {
-      display: flex;
-      justify-content: space-between;
-      margin-top: 20px;
-    }
-    .table-wrapper {
-      width: 48%;
-      padding: 0 20px;
-    }
+      /* Existing styles */
+      body, html {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        height: 100%;
+      }
+      .tabs {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 20px;
+        margin-top: 20px;
+      }
+      .tab {
+        margin: 0 10px;
+        padding: 15px 30px;
+        cursor: pointer;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        font-size: 18px;
+      }
+      .tab.active {
+        background-color: #ccc;
+      }
+      .container {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+      }
+      .container.active {
+        display: flex;
+      }
+      .main-content {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+        flex-wrap: wrap;
+        margin-bottom: 20px;
+        gap: 20px;
+      }
+      .main-photo {
+        flex: 1; /* Allow photo to grow and shrink */
+        min-width: 300px;
+        height: auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .main-photo img {
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        cursor: pointer; /* Change cursor to pointer for clickable effect */
+      }
+      .info {
+        flex: 0 0 30%;
+        min-width: 200px;
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 15px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+      .info a {
+        margin: 10px 0;
+        color: seagreen;
+        font-size: 25px;
+        text-decoration: none;
+        transition: color 0.3s ease;
+      }
+      .info a:hover {
+        color: darkgreen;
+      }
+      .thumbnails {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding-bottom: 10px;
+        flex-wrap: wrap; /* Allow wrapping for responsiveness */
+      }
+      .thumbnail {
+        width: 24%;
+        height: 200px;
+        background-color: #ccc;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+      }
+      .thumbnail img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      img {
+        max-width: 100%;
+        max-height: 100%;
+      }
+      .table-striped tbody tr:nth-of-type(odd) {
+        background-color: #f9f9f9;
+      }
+      .table-striped tbody tr:hover {
+        background-color: #e0e0e0;
+      }
+      .table-striped td, .table-striped th {
+        padding: 10px;
+        text-align: left;
+      }
+      .tables-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+        flex-wrap: wrap; /* Allow wrapping for responsiveness */
+      }
+      .table-wrapper {
+        width: 48%;
+        padding: 0 20px;
+      }
         </style>
         <!-- Tabs Section -->
         <div class="tabs">
@@ -288,12 +313,14 @@
                  id="year-{{ edition.year }}">
                 <div class="main-content">
                     <div class="main-photo">
-                        <img src="{{ edition.main_photo_url }}" alt="Foto Principal">
+                        <a href="{{ edition.main_photo_url }}" target="_blank">
+                            <img src="{{ edition.main_photo_path }}" alt="Foto Principal">
+                        </a>
                     </div>
                     <div class="info">
-                        <a href="{{ edition.venue_link }}">Fechas: {{ edition.dates }}</a>
-                        <a href="{{ edition.google_photos_link }}">Album</a>
-                        <a href="{{ edition.projects_link }}">Proyectos</a>
+                        <a>Fechas: {{ edition.dates }}</a>
+                        <a href="{{ edition.google_photos_link }}">Ver álbum de fotos</a>
+                        <a href="{{ edition.venue_link }}">Ver venue</a>
                     </div>
                 </div>
                 <div class="thumbnails">
@@ -343,8 +370,7 @@
                            padding-bottom: 10px;
                            margin: 0">Sobre el origen del PyCamp</h3>
                 <p class="mt-2 justified-text" style="font-size: 1.1em;">
-                    El PyCamp realiza en Argentina desde 2008.
-                    Desde el 2022 organizamos el PyCamp en España y ya vamos varios años de ediciones consecutivas.
+                    Desde el 2022 organizamos el PyCamp en España, pero evento se realiza en Argentina desde 2008.
                     Aquí te compartimos algunas historias de capítulos anteriores para entender mejor de que va el PyCamp.
                 </p>
                 <div style="max-height: 260px; overflow-y: auto; margin-bottom: 50px;">
