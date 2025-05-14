@@ -1,0 +1,377 @@
+{% extends 'layout.njk' %}
+{% set githubProjects = [
+    {
+        "description": "What music is people listen to?",
+        "name": "geosong",
+        "url": "https://github.com/PyCampES/geosong"
+    },
+    {
+        "description": "Manga translation tool",
+        "name": "mangapy",
+        "url": "https://github.com/PyCampES/mangapy"
+    },
+    {
+        "description": "API para devolver palabras para el juego del Código Secreto",
+        "name": "codigosecreto-api",
+        "url": "https://github.com/PyCampES/codigosecreto-api"
+    },
+    {
+        "description": "PyCamp challenge game ",
+        "name": "pytron",
+        "url": "https://github.com/PyCampES/pytron"
+    },
+    {
+        "description": "Un server que habla con el bot de Telegram",
+        "name": "moviescore",
+        "url": "https://github.com/PyCampES/moviescore"
+    },
+    {
+        "description": "Event manager for local community events",
+        "name": "GetTogether",
+        "url": "https://github.com/PyCampES/GetTogether"
+    },
+    {
+        "description": "El himno del PyCampES",
+        "name": "himno",
+        "url": "https://github.com/PyCampES/himno"
+    },
+    {
+        "description": "Primeros pasos con ESP32Home",
+        "name": "homecito",
+        "url": "https://github.com/PyCampES/homecito"
+    },
+    {
+        "description": "Parse bank data to analyze expenses ",
+        "name": "ficamp",
+        "url": "https://github.com/PyCampES/ficamp"
+    },
+    {
+        "description": "Map making with wavefunction collapse",
+        "name": "wavefunction-mapmaking",
+        "url": "https://github.com/PyCampES/wavefunction-mapmaking"
+    },
+    {
+        "description": "PyCamp 2024 Coding Dojos",
+        "name": "dojos",
+        "url": "https://github.com/PyCampES/dojos"
+    },
+    {
+        "description": "",
+        "name": "coche-esp32",
+        "url": "https://github.com/PyCampES/coche-esp32"
+    },
+    {
+        "description": "",
+        "name": "salary-quiz",
+        "url": "https://github.com/PyCampES/salary-quiz"
+    },
+    {
+        "description": "",
+        "name": "qr-vcard",
+        "url": "https://github.com/PyCampES/qr-vcard"
+    },
+    {
+        "description": "",
+        "name": "ornitobeat",
+        "url": "https://github.com/PyCampES/ornitobeat"
+    },
+    {
+        "description": "",
+        "name": "pgmem",
+        "url": "https://github.com/PyCampES/pgmem"
+    },
+    {
+        "description": "",
+        "name": "sorting-hat",
+        "url": "https://github.com/PyCampES/sorting-hat"
+    },
+    {
+        "description": "",
+        "name": "musicBeGone",
+        "url": "https://github.com/PyCampES/musicBeGone"
+    },
+    {
+        "description": "",
+        "name": "telegram-python-es",
+        "url": "https://github.com/PyCampES/telegram-python-es"
+    },
+    {
+        "description": "",
+        "name": "taller-django-2023",
+        "url": "https://github.com/PyCampES/taller-django-2023"
+    },
+    {
+        "description": "",
+        "name": "liveart-2023",
+        "url": "https://github.com/PyCampES/liveart-2023"
+    },
+    {
+        "description": "",
+        "name": "rgisd",
+        "url": "https://github.com/PyCampES/rgisd"
+    },
+    {
+        "description": "",
+        "name": "kaggle-rps",
+        "url": "https://github.com/PyCampES/kaggle-rps"
+    },
+    {
+        "description": "",
+        "name": "PyLaser",
+        "url": "https://github.com/PyCampES/PyLaser"
+    }
+] %}
+{% block content %}
+    <section>
+        <style>
+    body, html {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      height: 100%;
+    }
+    .tabs {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 20px;
+      margin-top: 20px;
+    }
+    .tab {
+      margin: 0 10px;
+      padding: 15px 30px;
+      cursor: pointer;
+      background-color: #f0f0f0;
+      border-radius: 10px;
+      font-size: 18px;
+    }
+    .tab.active {
+      background-color: #ccc;
+    }
+    .container {
+      display: none;
+      flex-direction: column;
+      align-items: center;
+    }
+    .container.active {
+      display: flex;
+    }
+    .main-content {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      margin-bottom: 20px;
+    }
+    .main-photo {
+      width: 100%;
+      height: 500px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .info {
+      width: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .info a {
+      margin: 20px 0;
+      color: seagreen;
+      font-size: 30px;
+    }
+    .thumbnails {
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      padding-bottom: 10px;
+    }
+    .thumbnail {
+      width: 24%;
+      height: 200px;
+      background-color: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+    .thumbnail img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    .table-striped tbody tr:nth-of-type(odd) {
+      background-color: #f9f9f9;
+    }
+    .table-striped tbody tr:hover {
+      background-color: #e0e0e0;
+    }
+    .table-striped td, .table-striped th {
+      padding: 10px;
+      text-align: left;
+    }
+    .tables-container {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    .table-wrapper {
+      width: 48%;
+    }
+        </style>
+        <!-- Tabs Section -->
+        <div class="tabs">
+            {% for edition in editions %}
+                <div class="tab {% if loop.first %}active{% endif %}"
+                     data-year="{{ edition.year }}">{{ edition.year }}</div>
+            {% endfor %}
+        </div>
+        <!-- Dynamic Content Section -->
+        {% for edition in editions %}
+            <div class="container {% if loop.first %}active{% endif %}"
+                 id="year-{{ edition.year }}">
+                <div class="main-content">
+                    <div class="main-photo">
+                        <img src="{{ edition.main_photo_url }}" alt="Foto Principal">
+                    </div>
+                    <div class="info">
+                        <a href="{{ edition.venue_link }}">Fechas: {{ edition.dates }}</a>
+                        <a href="{{ edition.google_photos_link }}">Album</a>
+                        <a href="{{ edition.projects_link }}">Proyectos</a>
+                    </div>
+                </div>
+                <div class="thumbnails">
+                    {% for thumbnail in edition.thumbnails %}
+                        <div class="thumbnail">
+                            <img src="{{ thumbnail }}" alt="Foto {{ loop.index }}">
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        {% endfor %}
+        <!-- Static Bottom Content Section -->
+        <div class="tables-container">
+            <div class="table-wrapper">
+                <h3 class="text-primary text-center section-title"
+                    style="padding-top: 20px;
+                           padding-bottom: 10px">Proyectos desarrollados en el PyCamp</h3>
+                <div style="max-height: 350px; overflow-y: auto;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Proyecto</th>
+                                <th>Descripción</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for project in githubProjects %}
+                                <tr>
+                                    <td>
+                                        <a href="{{ project.url }}" target="_blank" style="color: seagreen;">{{ project.name }}</a>
+                                    </td>
+                                    <td>{{ project.description }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="table-wrapper">
+                <h3 class="text-primary text-center section-title"
+                    style="padding-top: 20px;
+                           padding-bottom: 5px">Sobre el origen del PyCamp</h3>
+                <p class="mt-2 justified-text" style="font-size: 1.1em;">
+                    El PyCamp realiza en Argentina desde 2008.
+                    Desde el 2022 organizamos el PyCamp en España y ya vamos varios años de ediciones consecutivas.
+                    Aquí te compartimos algunas historias de capítulos anteriores para entender mejor de que va el PyCamp.
+                </p>
+                <div style="max-height: 260px; overflow-y: auto; margin-bottom: 50px;">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>Año</th>
+                                <th>Título</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2022</td>
+                                <td>
+                                    <a href="https://dev.to/laysauchoa/pycamp-2022-going-camping-without-bugs-1ih1"
+                                       style="color: seagreen">PyCamp 2022 (Laysa Uchoa)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2019</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0779/"
+                                       style="color: seagreen">PyCamp 2019 (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2018</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0759/"
+                                       style="color: seagreen">PyCamp 2018 (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2016</td>
+                                <td>
+                                    <a href="http://pyfound.blogspot.com/2016/04/pycamp-argentina.html"
+                                       style="color: seagreen">PyCamp Argentina (Python Software Foundation)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2011</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0506/"
+                                       style="color: seagreen">PyCamp 2011 (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2011</td>
+                                <td>
+                                    <a href="http://aplacetospillmybraininto.blogspot.com/2011/03/fui-al-pycamp-2011.html"
+                                       style="color: seagreen">Fui al PyCamp 2011 (Mateo Bengualid)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2010</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0452/"
+                                       style="color: seagreen">PyCamp 2010 (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2010</td>
+                                <td>
+                                    <a href="http://godiard.blogspot.com/2010/03/en-el-pycamp.html"
+                                       style="color: seagreen">En el PyCamp (Gonzalo Odiard)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2009</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0404/"
+                                       style="color: seagreen">PyCamp 2009 (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>2008</td>
+                                <td>
+                                    <a href="http://blog.taniquetil.com.ar/posts/0329/"
+                                       style="color: seagreen">PyCamp 2008, Los Cocos, Córdoba (Facundo Batista)</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
+{% block extra_footer %}<script src="../src/previousEditionsLayout.js"></script>{% endblock %}
