@@ -1,25 +1,14 @@
 {% extends 'layout.njk' %}
-
-
 {% block content %}
-<section id="what-to-bring">
-  <div class="container py-4">
-    <div class="row justify-content-center ">
-      <div class="col-12 col-lg-7">
-        <h1 class="text-primary text-center py-4 section-title">
-          ¿Qué llevo?
-        </h1>
-        <div>
-        {% include "what_to_bring_content.njk" %}
+    <section id="what-to-bring">
+        <div class="container py-4">
+            <div class="row justify-content-center ">
+                <div class="col-12 col-lg-7">
+                    <h1 class="text-primary text-center py-4 section-title">¿Qué llevo?</h1>
+                    <div>{% include "what_to_bring_content.html" %}</div>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
+    </section>
 {% endblock %}
-
-{% block extra_footer %}
-<script src="../src/whatToBring.js"></script>
-{% endblock %}
+{% block extra_footer %}<script src="../src/whatToBring.js"></script>{% endblock %}
