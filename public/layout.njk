@@ -29,76 +29,117 @@
             {% block title %}PyCamp España{% endblock %}
         </title>
         {% include "mailerlite.njk" %}
+        <style>
+          body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+          }
+
+          .navbar, .footer {
+            width: 100%;
+          }
+
+          /* Mobile styles */
+          .navbar {
+            flex-direction: column; /* Stack items vertically on mobile */
+          }
+
+          .nav-link {
+            padding: 10px; /* Add padding for touch targets */
+          }
+
+          /* Styles for larger screens */
+          @media (min-width: 768px) {
+            .navbar {
+              flex-direction: row; /* Align items horizontally on larger screens */
+            }
+            
+            .nav-link {
+              padding: 15px 20px; /* Increase padding for larger screens */
+            }
+          }
+
+          /* Footer styles */
+          .footer {
+            padding: 20px; /* Add padding for better spacing */
+          }
+
+          @media (min-width: 768px) {
+            .footer {
+              padding: 40px; /* Increase padding for larger screens */
+            }
+          }
+        </style>
     </head>
     <body>
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light bg-primary sticky-top py-3">
-            <div class="container">
-                <a class="navbar-brand" href="/">
-                    <img src="images/pycamp-logo2.png" width="200" />
-                </a>
-                <button class="navbar-toggler"
-                        type="button"
-                        data-toggle="collapse"
-                        data-target="#navbarSupportedContent"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false"
-                        aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ml-auto">
-                        <!-- <li class="nav-item"> -->
-                        <!--   <a class="nav-link" href="/current_event.njk"> -->
-                        <!--     Edición actual -->
-                        <!--   </a> -->
-                        <!-- </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/previous_editions.njk">Ediciones anteriores</a>
-                        </li>
-                        <!-- <li class="nav-item"> -->
-                        <!--   <a class="nav-link" href="/projects.njk">Proyectos</a> -->
-                        <!-- </li> -->
-                        <!-- <li class="nav-item"> -->
-                        <!--   <a class="nav-link" href="/venue.njk">Venue</a> -->
-                        <!-- </li> -->
-                        <!-- <li class="nav-item"> -->
-                        <!--   <a class="nav-link" href="/what_to_bring.njk">¿Qué llevo?</a> -->
-                        <!-- </li> -->
-                        <li class="nav-item">
-                            <a class="nav-link" href="/faq.njk">Preguntas frecuentes</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">Código de conducta</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="mailto:pycampes@gmail.com" target="_blank">
-                                <i class="far fa-envelope"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://t.me/pycampes" target="_blank">
-                                <i class="fab fa-telegram"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://twitter.com/PyCampES" target="_blank">
-                                <i class="fab fa-twitter"></i>
-                            </a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="https://github.com/PyCampES" target="_blank">
-                                <i class="fab fa-github"></i>
-                            </a>
-                        </li>
-                    </ul>
-                </div>
+            <a class="navbar-brand" href="/">
+                <img src="images/pycamp-logo2.png" width="200" />
+            </a>
+            <button class="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav ml-auto">
+                    <!-- <li class="nav-item"> -->
+                    <!--  <a class="nav-link" href="/current_event.njk"> -->
+                    <!--   Edición actual -->
+                    <!--  </a> -->
+                    <!-- </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/previous_editions.njk">Ediciones anteriores</a>
+                    </li>
+                    <!-- <li class="nav-item"> -->
+                    <!--  <a class="nav-link" href="/projects.njk">Proyectos</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                    <!--  <a class="nav-link" href="/venue.njk">Venue</a> -->
+                    <!-- </li> -->
+                    <!-- <li class="nav-item"> -->
+                    <!--  <a class="nav-link" href="/what_to_bring.njk">¿Qué llevo?</a> -->
+                    <!-- </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="/faq.njk">Preguntas frecuentes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">Código de conducta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="mailto:pycampes@gmail.com" target="_blank">
+                            <i class="far fa-envelope"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://t.me/pycampes" target="_blank">
+                            <i class="fab fa-telegram"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://twitter.com/PyCampES" target="_blank">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://github.com/PyCampES" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                </ul>
             </div>
         </nav>
         {% block content %}{% endblock %}
         <!-- Footer -->
         <footer class="footer bg-secondary">
-            <div class="container py-5">
+            <div class="py-5">
                 <div class="row">
                     <div class="col-12 h-100 text-center my-auto">
                         <ul class="list-inline mb-0">

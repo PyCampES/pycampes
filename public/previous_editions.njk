@@ -1,319 +1,60 @@
-{% extends 'layout.njk' %}
-{% set githubProjects = [
+{% set editions = [
     {
-        "description": "What music is people listen to?",
-        "name": "geosong",
-        "url": "https://github.com/PyCampES/geosong"
+        "year": "2025",
+        "main_photo_path": "./images/edition-2025/portada.jpg",
+        "main_photo_url": "https://photos.google.com/share/AF1QipPhcmnAJ_UDa4Bkjh1s3y92b5gSgVNQUdbFTDyZZhM8dWXJDYQezxEFpeuTghKBJw/photo/AF1QipP08cT2cA5A7LLFCh3rozEa4jo4SFDHI7O-srmY?key=cU1RQXlobVJlaVZtNDQ2dFJySjZEV0N4VUdXUTJR",
+        "venue_link": "https://www.granjaescuelaencinardeescardiel.com",
+        "dates": "Del 1 al 4 de Mayo",
+        "google_photos_link": "https://photos.app.goo.gl/Lw2M76V2bzYMZoFt6",
+        "thumbnails": [
+            "./images/edition-2025/working1.jpg",
+            "./images/edition-2025/working3.jpg",
+            "./images/edition-2025/projects1.jpg",
+            "./images/edition-2025/working2.jpg"
+        ]
     },
     {
-        "description": "Manga translation tool",
-        "name": "mangapy",
-        "url": "https://github.com/PyCampES/mangapy"
+        "year": "2024",
+        "main_photo_path": "./images/edition-2024/portada.jpg",
+        "main_photo_url": "https://photos.google.com/share/AF1QipPEc9G3QSmvQbt2k_CYDKLgJM16KVScEwtQZ9wWiyNqvOQ23dPpjwV0PzMaZTQwtQ/photo/AF1QipOG5xI_nLg_WIMtvmZ6LD4UecYQExDjuLRJSmft?key=T1BwUjZQb0lhbmczVFAyODE1OHUtdHBWZzJ4SHlR",
+        "venue_link": "https://www.casadecoloniesaiguaviva.net",
+        "dates": "Del 29 de Marzo al 1 de Abril",
+        "google_photos_link": "https://photos.app.goo.gl/gPYLUEzDAokZ4PrQA",
+        "thumbnails": [
+            "./images/edition-2024/discussion.jpg",
+            "./images/edition-2024/gaming1.jpg",
+            "./images/edition-2024/project1.jpg",
+            "./images/edition-2024/working2.jpg"
+        ]
     },
     {
-        "description": "API para devolver palabras para el juego del Código Secreto",
-        "name": "codigosecreto-api",
-        "url": "https://github.com/PyCampES/codigosecreto-api"
+        "year": "2023",
+        "main_photo_path": "./images/edition-2023/portada.jpg",
+        "main_photo_url": "https://photos.google.com/share/AF1QipP_2_EFAmAIVV5_aYR4hD9XWBzsIMxg2jFtchqVSrJBihWpULzQakyk9Np-ixRtWQ/photo/AF1QipOBQEFsihnQLXR33Ef4CCFkVN5ApYRy7t78kfzq?key=RHF2QW1mR1FkcThtU1JNTGpUYVBuNldFWXhObXlR",
+        "venue_link": "https://reservalleure.cat/casa-colonies/el-bosc-de-la-massana",
+        "dates": "Del 7 al 10 de Abril",
+        "google_photos_link": "https://photos.app.goo.gl/zmtyihL3B3KaBtpF9",
+        "thumbnails": [
+            "./images/edition-2023/laser1.jpg",
+            "./images/edition-2023/projects1.jpg",
+            "./images/edition-2023/projects2.jpg",
+            "./images/edition-2023/discussion2.jpg"
+        ]
     },
     {
-        "description": "PyCamp challenge game ",
-        "name": "pytron",
-        "url": "https://github.com/PyCampES/pytron"
-    },
-    {
-        "description": "Un server que habla con el bot de Telegram",
-        "name": "moviescore",
-        "url": "https://github.com/PyCampES/moviescore"
-    },
-    {
-        "description": "Event manager for local community events",
-        "name": "GetTogether",
-        "url": "https://github.com/PyCampES/GetTogether"
-    },
-    {
-        "description": "El himno del PyCampES",
-        "name": "himno",
-        "url": "https://github.com/PyCampES/himno"
-    },
-    {
-        "description": "Primeros pasos con ESP32Home",
-        "name": "homecito",
-        "url": "https://github.com/PyCampES/homecito"
-    },
-    {
-        "description": "Parse bank data to analyze expenses ",
-        "name": "ficamp",
-        "url": "https://github.com/PyCampES/ficamp"
-    },
-    {
-        "description": "Map making with wavefunction collapse",
-        "name": "wavefunction-mapmaking",
-        "url": "https://github.com/PyCampES/wavefunction-mapmaking"
-    },
-    {
-        "description": "PyCamp 2024 Coding Dojos",
-        "name": "dojos",
-        "url": "https://github.com/PyCampES/dojos"
-    },
-    {
-        "description": "",
-        "name": "coche-esp32",
-        "url": "https://github.com/PyCampES/coche-esp32"
-    },
-    {
-        "description": "",
-        "name": "salary-quiz",
-        "url": "https://github.com/PyCampES/salary-quiz"
-    },
-    {
-        "description": "",
-        "name": "qr-vcard",
-        "url": "https://github.com/PyCampES/qr-vcard"
-    },
-    {
-        "description": "",
-        "name": "ornitobeat",
-        "url": "https://github.com/PyCampES/ornitobeat"
-    },
-    {
-        "description": "",
-        "name": "pgmem",
-        "url": "https://github.com/PyCampES/pgmem"
-    },
-    {
-        "description": "",
-        "name": "sorting-hat",
-        "url": "https://github.com/PyCampES/sorting-hat"
-    },
-    {
-        "description": "",
-        "name": "musicBeGone",
-        "url": "https://github.com/PyCampES/musicBeGone"
-    },
-    {
-        "description": "",
-        "name": "telegram-python-es",
-        "url": "https://github.com/PyCampES/telegram-python-es"
-    },
-    {
-        "description": "",
-        "name": "taller-django-2023",
-        "url": "https://github.com/PyCampES/taller-django-2023"
-    },
-    {
-        "description": "",
-        "name": "liveart-2023",
-        "url": "https://github.com/PyCampES/liveart-2023"
-    },
-    {
-        "description": "",
-        "name": "rgisd",
-        "url": "https://github.com/PyCampES/rgisd"
-    },
-    {
-        "description": "",
-        "name": "kaggle-rps",
-        "url": "https://github.com/PyCampES/kaggle-rps"
-    },
-    {
-        "description": "",
-        "name": "PyLaser",
-        "url": "https://github.com/PyCampES/PyLaser"
+        "year": "2022",
+        "main_photo_path": "./images/edition-2022/portada.jpg",
+        "main_photo_url": "https://photos.google.com/share/AF1QipNFZhnj6NNHm4geMyBHi4-FP_f3w8tKPAQU73qeXjnNvHF56baQEa08WIClPtDcsA/photo/AF1QipN-s6Pc67ovQCggv3edQsWaCPbF98-Gfca6U0j_?key=ZUNLdDVQU2VxdFQ1RF84SExadGQ1cHhaMHc1QUhB",
+        "venue_link": "https://reservalleure.cat/casa-colonies/el-bosc-de-la-massana",
+        "dates": "Del 15 al 18 de Abril",
+        "google_photos_link": "https://photos.app.goo.gl/GSeufqbsjHvXLJxZA",
+        "thumbnails": [
+            "./images/edition-2022/working2.jpg",
+            "./images/edition-2022/working7.jpg",
+            "./images/edition-2022/discussion1.jpg",
+            "./images/edition-2022/working5.jpg"
+        ]
     }
 ] %}
-{% set carouselImages = [
-    "./images/edition-2022/portada.jpg",
-    "./images/edition-2023/portada.jpg",
-    "./images/edition-2024/portada.jpg",
-    "./images/edition-2025/portada.jpg",
-    "./images/edition-2022/discussion1.jpg",
-    "./images/edition-2022/espacio-verde.jpg",
-    "./images/edition-2022/ping-pong.jpg",
-    "./images/edition-2022/working2.jpg",
-    "./images/edition-2023/discussion1.jpg",
-    "./images/edition-2023/laser2.jpg",
-    "./images/edition-2023/naturaleza1.jpg",
-    "./images/edition-2024/gaming1.jpg",
-    "./images/edition-2024/naturaleza2.jpg",
-    "./images/edition-2025/working1.jpg"
-] %}
-{% block content %}
-    <section>
-        <div class="container">
-            <div class="row justify-content-center">
-                <div class="col col-12">
-                    <h1 class="text-primary text-center section-title pb-4"
-                        style="padding-top: 50px">Ediciones anteriores</h1>
-                </div>
-                <div class="col col-12 col-sm-8 text-center">
-                    <!-- Carousel of images -->
-                    <div id="carouselLocation"
-                         class="carousel slide"
-                         data-ride="carousel"
-                         style="height: 400px">
-                        <div class="carousel-inner" style="height: 100%;">
-                            {% for image in carouselImages %}
-                                <div class="carousel-item {% if loop.index0 == 0 %}active{% endif %}"
-                                     style="height: 100%">
-                                    <img src="{{ image }}"
-                                         class="d-block w-100"
-                                         style="height: 100%;
-                                                object-fit: cover" />
-                                </div>
-                            {% endfor %}
-                        </div>
-                        <a class="carousel-control-prev"
-                           href="#carouselLocation"
-                           role="button"
-                           data-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Previous</span>
-                        </a>
-                        <a class="carousel-control-next"
-                           href="#carouselLocation"
-                           role="button"
-                           data-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="sr-only">Next</span>
-                        </a>
-                    </div>
-                    <p class="text-center mt-4" style="font-size: 1.25em; font-weight: bold">
-                        Puedes visitar los álbumes de ediciones anteriores aquí:
-                        <a href="https://photos.app.goo.gl/GSeufqbsjHvXLJxZA" target="_blank">2022</a>
-                        <a href="https://photos.app.goo.gl/zmtyihL3B3KaBtpF9" target="_blank">2023</a>
-                        <a href="https://photos.app.goo.gl/gPYLUEzDAokZ4PrQA" target="_blank">2024</a>
-                        <a href="https://photos.app.goo.gl/Lw2M76V2bzYMZoFt6" target="_blank">2025</a>
-                    </p>
-                    <h3 class="text-primary text-center section-title"
-                        style="padding-top: 20px;
-                               padding-bottom: 10px">Proyectos desarrollados en el PyCamp</h3>
-                    <div class="container mt-3">
-                        <div style="max-height: 320px; overflow-y: auto;">
-                            <table class="table table-striped">
-                                <thead>
-                                    <tr>
-                                        <th>Proyecto</th>
-                                        <th>Descripción</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    {% for project in githubProjects %}
-                                        <tr>
-                                            <td>
-                                                <a href="{{ project.url }}" target="_blank">{{ project.name }}</a>
-                                            </td>
-                                            <td>{{ project.description }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-4">
-                                <img src="./images/edition-2023/laser2.jpg"
-                                     class="img-fluid"
-                                     style="width: 100%;
-                                            height: auto">
-                            </div>
-                            <div class="col-4">
-                                <img src="./images/edition-2023/projects3.jpg"
-                                     class="img-fluid"
-                                     style="width: 100%;
-                                            height: auto">
-                            </div>
-                            <div class="col-4">
-                                <img src="./images/edition-2024/working2.jpg"
-                                     class="img-fluid"
-                                     style="width: 100%;
-                                            height: auto">
-                            </div>
-                        </div>
-                    </div>
-                    <h3 class="text-primary text-center section-title"
-                        style="padding-top: 20px;
-                               padding-bottom: 5px">Sobre el origen del PyCamp</h3>
-                    <p class="mt-2 justified-text" style="font-size: 1.3em;">
-                        El PyCamp es un evento que se venía realizando en Argentina desde 2008.
-                        En 2022 organizamos la primera edición del PyCamp en España y nos fue tan bien que decidimos repetir y en ya vamos varios años de ediciones consecutivas.
-                        Aquí te compartimos links a algunos historias de capítulos anteriores entender mejor de que va el PyCamp.
-                    </p>
-                    <div style="max-height: 250px; overflow-y: auto; margin-bottom: 50px;">
-                        <table class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>Año</th>
-                                    <th>Título</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>2022</td>
-                                    <td>
-                                        <a href="https://dev.to/laysauchoa/pycamp-2022-going-camping-without-bugs-1ih1">PyCamp 2022 (Laysa Uchoa)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2019</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0779/">PyCamp 2019 (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2018</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0759/">PyCamp 2018 (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2016</td>
-                                    <td>
-                                        <a href="http://pyfound.blogspot.com/2016/04/pycamp-argentina.html">PyCamp Argentina (Python Software Foundation)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2011</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0506/">PyCamp 2011 (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2011</td>
-                                    <td>
-                                        <a href="http://aplacetospillmybraininto.blogspot.com/2011/03/fui-al-pycamp-2011.html">Fui al PyCamp 2011 (Mateo Bengualid)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2010</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0452/">PyCamp 2010 (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2010</td>
-                                    <td>
-                                        <a href="http://godiard.blogspot.com/2010/03/en-el-pycamp.html">En el PyCamp (Gonzalo Odiard)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2009</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0404/">PyCamp 2009 (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>2008</td>
-                                    <td>
-                                        <a href="http://blog.taniquetil.com.ar/posts/0329/">PyCamp 2008, Los Cocos, Córdoba (Facundo Batista)</a>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-{% endblock %}
-{% block extra_footer %}<script src="../src/previousEditions.js"></script>{% endblock %}
+{% extends 'previous_editions_layout.njk' %}
+{% block content %}{{ super() }}{% endblock %}
