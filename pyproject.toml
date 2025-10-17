@@ -8,5 +8,5 @@ dependencies = []
 
 [dependency-groups]
 docs = [
-    "quarto>=0.1.0",
+    "quarto-cli>=1.8.25",
 ]
