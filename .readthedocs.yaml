@@ -14,5 +14,6 @@ build:
     install:
        - UV_PROJECT_ENVIRONMENT="${READTHEDOCS_VIRTUALENV_PATH}" uv sync --frozen --group docs
     build:
-      - mkdir --parents _readthedocs/html
-      - cd quarto-site; uv run quarto render --output-dir ../_readthedocs/html/
+      html:
+        - mkdir --parents _readthedocs/html
+        - cd quarto-site; uv run quarto render --output-dir ../_readthedocs/html/
