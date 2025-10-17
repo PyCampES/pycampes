@@ -5,7 +5,7 @@ build:
   tools:
     python: "3.12"
   commands:
-    - curl -o- https://quarto.org/docs/download/install.sh | bash
+    - pip install quarto 
     - mkdir --parents _readthedocs/html
     - cd quarto-site
     - quarto render --output-dir ../_readthedocs/html/
