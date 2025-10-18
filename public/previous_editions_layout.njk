@@ -175,37 +175,8 @@
 ] %}
 {% block content %}
     <section>
+        <h1 class="section-title">Ediciones anteriores</h1>
         <style>
-          /* Base styles for mobile */
-          body, html {
-            margin: 0;
-            padding: 0;
-            width: 100%;
-            height: auto; /* Allow height to adjust based on content */
-          }
-
-          .tabs {
-            display: flex;
-            justify-content: center;
-            margin: 20px 0;
-            flex-wrap: wrap; /* Allow wrapping for small screens */
-          }
-
-          .tab {
-            background-color: #f9f9f9;
-            border-radius: 10px;
-            border: 1px solid #ddd;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            cursor: pointer;
-            font-size: 16px; /* Smaller font for mobile */
-            margin: 5px; /* Reduced margin for mobile */
-            padding: 10px 20px; /* Reduced padding for mobile */
-          }
-
-          .tab.active {
-            background-color: #ccc;
-          }
-
           .container {
             display: none;
             flex-direction: column;
@@ -222,46 +193,64 @@
             align-items: center;
             width: 100%;
             margin-bottom: 20px;
+            gap: 20px;
           }
 
           .main-photo {
-            width: 100%; /* Full width on mobile */
+            align-items: center;
             display: flex;
             justify-content: center;
-            align-items: center;
-            margin-bottom: 10px; /* Space below the main photo */
+            width: 100%;
           }
 
           .main-photo img {
-            width: 100%;
-            height: auto; /* Maintain aspect ratio */
-            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            height: 600px; /* Fixed height for the main photo */
+            margin-bottom: 10px;
+            object-fit: cover; /* Maintain aspect ratio and cover the area */
+            width: 100%;
           }
 
           .info {
-            width: 100%; /* Full width on mobile */
-            background-color: #f9f9f9;
-            border: 1px solid #ddd;
+            width: 100%;
+            background-color: #9fd49f; /* Match the green palette */
+            border: 1px solid #8cc98c; /* Slightly darker border */
             border-radius: 10px;
             padding: 15px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             display: flex;
             flex-direction: column;
             align-items: center;
-            margin-bottom: 20px; /* Space below info section */
+            margin-bottom: 20px;
+            color: #4A4A4A;
+          }
+
+          .info h2 {
+            margin: 0;
+            font-size: 28px;
+            color: #4A4A4A;
           }
 
           .info a {
             margin: 5px 0;
-            color: seagreen;
-            font-size: 18px; /* Smaller font for mobile */
+            color: #4A4A4A;
+            font-size: 20px;
             text-decoration: none;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
           }
 
           .info a:hover {
-            color: darkgreen;
+            color: #e0e0e0; /* Lighter shade on hover */
+          }
+
+          .info a i {
+            margin-right: 8px; /* Space between icon and text */
+            color: #4A4A4A;
           }
 
           .thumbnails {
@@ -273,20 +262,48 @@
           }
 
           .thumbnail {
-            width: 48%; /* Two thumbnails per row on mobile */
-            height: 150px; /* Fixed height for thumbnails */
-            background-color: #ccc;
-            display: flex;
-            justify-content: center;
             align-items: center;
-            overflow: hidden;
+            background-color: #ccc;
+            border-radius: 8px;
+            display: flex;
+            height: 150px; /* Fixed height for thumbnails */
+            justify-content: center;
             margin-bottom: 10px; /* Space below each thumbnail */
+            overflow: hidden;
+            width: 48%; /* Two thumbnails per row on mobile */
           }
 
           .thumbnail img {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            cursor: pointer;
+          }
+
+          .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+          }
+
+          .popup {
+            max-width: 90%;
+            max-height: 90%;
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+          }
+
+          .popup img {
+            width: 100%;
+            height: auto;
           }
 
           .tables-container {
@@ -323,23 +340,59 @@
             }
 
             .tables-container {
-              flex-direction: row; /* Align tables side by side */
-              justify-content: space-between;
+              display: flex;
+              flex-direction: column; /* Stack tables vertically on mobile */
+              margin-top: 10px;
+              justify-content: center; /* Center tables horizontally */
+              align-items: center; /* Center tables vertically */
+              gap: 10px; /* Reduce the space between tables */
             }
 
             .table-wrapper {
-              width: 48%; /* Two tables side by side */
-              margin-bottom: 30px;
-             padding: 20px; /* Space below each table */
+              width: 80%; /* Reduce the width to make tables narrower */
+              max-width: 800px; /* Set a maximum width for larger screens */
+              margin-bottom: 10px; /* Reduce space below each table */
+              padding: 20px; /* Space below each table */
+              box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow for better visual separation */
+              background-color: #f9f9f9; /* Light background for contrast */
+              border-radius: 8px; /* Rounded corners */
             }
+
+            /* Media queries for larger screens */
+            @media (min-width: 768px) {
+              .tables-container {
+                flex-direction: row; /* Align tables side by side */
+                justify-content: center; /* Center tables horizontally */
+                gap: 20px; /* Reduce the space between tables */
+              }
+
+              .table-wrapper {
+                width: 45%; /* Two tables side by side, narrower width */
+                margin-bottom: 10px; /* Reduce space below each table */
+                padding: 20px; /* Space below each table */
+              }
+            }
+
+
+
           }
         </style>
+        <!-- Overlay for popup -->
+        <div class="overlay" id="overlay">
+            <div class="popup">
+                <img id="popup-img" src="" alt="Amplified Thumbnail">
+            </div>
+        </div>
         <!-- Tabs Section -->
-        <div class="tabs">
-            {% for edition in editions %}
-                <div class="tab {% if loop.first %}active{% endif %}"
-                     data-year="{{ edition.year }}">{{ edition.year }}</div>
-            {% endfor %}
+        <div class="tabs-wrapper">
+            <div class="tabs">
+                {% for edition in editions %}
+                    <div class="tab {% if loop.first %}active{% endif %}"
+                         data-year="{{ edition.year }}"
+                         style="font-size: 1em;
+                                color: #333">{{ edition.year }}</div>
+                {% endfor %}
+            </div>
         </div>
         <!-- Dynamic Content Section -->
         {% for edition in editions %}
@@ -352,9 +405,14 @@
                         </a>
                     </div>
                     <div class="info">
-                        <a>Fechas: {{ edition.dates }}</a>
-                        <a href="{{ edition.google_photos_link }}">Ver álbum de fotos</a>
-                        <a href="{{ edition.venue_link }}">Ver venue</a>
+                        <h2>PyCamp España {{ edition.year }}</h2>
+                        <p>{{ edition.dates }}</p>
+                        <a href="{{ edition.google_photos_link }}">
+                            <i class="fas fa-camera"></i> Ver álbum de fotos
+                        </a>
+                        <a href="{{ edition.venue_link }}">
+                            <i class="fas fa-map-marker-alt"></i> Ver venue
+                        </a>
                     </div>
                 </div>
                 <div class="thumbnails">
@@ -367,17 +425,13 @@
             </div>
         {% endfor %}
         <!-- Static Bottom Content Section -->
-        <div class="tables-container"
-             style="display: flex;
-                    justify-content: space-between;
-                    align-items: flex-start;
-                    flex-wrap: wrap">
+        <div class="tables-container">
             <div class="table-wrapper" style="flex: 1;">
                 <h3 class="text-primary text-center section-title"
                     style="padding-top: 10px;
                            padding-bottom: 10px;
                            margin: 0">Proyectos desarrollados en el PyCamp</h3>
-                <div style="max-height: 350px; overflow-y: auto; margin-top: 12px">
+                <div style="max-height: 480px; overflow-y: auto; margin-top: 12px">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -407,7 +461,7 @@
                     Desde el 2022 organizamos el PyCamp en España, pero evento se realiza en Argentina desde 2008.
                     Aquí te compartimos algunas historias de capítulos anteriores para entender mejor de que va el PyCamp.
                 </p>
-                <div style="max-height: 260px; overflow-y: auto; margin-bottom: 50px;">
+                <div style="max-height: 365px; overflow-y: auto; margin-top: 11px">
                     <table class="table table-striped">
                         <thead>
                             <tr>
@@ -431,4 +485,20 @@
         </div>
     </section>
 {% endblock %}
-{% block extra_footer %}<script src="../src/previousEditionsLayout.js"></script>{% endblock %}
+{% block extra_footer %}
+    <script src="../src/previousEditionsLayout.js"></script>
+    <script>
+  document.querySelectorAll(".thumbnail img").forEach(img => {
+    img.addEventListener("click", function() {
+      const overlay = document.getElementById("overlay");
+      const popupImg = document.getElementById("popup-img");
+      popupImg.src = this.src; // Use the current image's src for the popup
+      overlay.style.display = "flex";
+    });
+  });
+
+  document.getElementById("overlay").addEventListener("click", function() {
+    this.style.display = "none";
+  });
+    </script>
+{% endblock %}
