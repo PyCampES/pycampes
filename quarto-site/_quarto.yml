@@ -3,7 +3,6 @@ project:
 
 website:
   title: "pycamp"
-  theme: cosmo
   navbar:
     left:
       - href: index.qmd
@@ -13,11 +12,6 @@ website:
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
     css: styles.css
+    theme: cosmo
     toc: true
-
-
-
