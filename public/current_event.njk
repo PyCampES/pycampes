@@ -1,91 +1,68 @@
 {% extends 'layout.njk' %}
-
 {% block content %}
-<section id="current_event">
-  <div class="container-fluid py-5 mb-3">
-    <h1 class="text-primary text-center section-title pb-4">
-      Edición actual
-    </h1>
-    <div class="row no-gutters">
-        <p>
-          PyCamp España es un fin de semana que incluye 4 días y 3 noches con pensión completa (desayuno, comida y cena) en
-          Sevilla, España. Podrás programar las horas que quieras en ese proyecto o idea que querías codificar hace tanto tiempo y
-          que no encontrabas el momento o lugar perfecto para hacerlo.
-        </p>
-    </div>
-    <div>
-        <p class="lead"> 
-        La entrada incluye:
-        </p>
-        <ul>
-          <li>Pensión completa: desayuno, comida y cena</li>
-          <li>Transporte directo desde Sevilla hasta el venue</li>
-          <li>Coffee break en intermedio de comidas: café, té, agua, snacks y frutas</li>
-          <li>Acceso a áreas verdes donde podrás relajarte o programar</li>
-          <li>Diversión: karaoke de charlas, juegos de mesa, ping pong y todo hobby que quieras compartir con nosotros</li>
-        </ul>
-        <em>El lugar será de uso únicamente exclusivo para los asistentes al evento.</em>
-    </div>
-
-    <div class="row justify-content-center">
-      <div class="col-auto text-center">
-        <a href="venue.njk" class="btn btn-primary btn-lg my-4" style="font-size: 1.5em;">
-          Venue
-        </a>
-      </div>
-      <div class="col-auto text-center">
-        <a href="projects.njk" class="btn btn-primary btn-lg my-4" style="font-size: 1.5em;">
-          Proyectos
-        </a>
-      </div>
-    </div>
-
-
-   <!-- Toggle this section to announce new event -->
-    <h2 class="text-primary text-center section-title pb-4">
-      Inscripción
-    </h2>
-    <h5>
-    Por ahora no hay inscripción abierta.
-    <br>
-    Subscríbete al Newsletter para recibir novedades aquí:
-    </h5>
-    </div>
-      <div class="row">
-        <div class="col-xl-9 mx-auto">
-          <div class="ml-embedded" data-form="Z03U8c"></div>
+    <section id="current_event">
+        <div class="container-fluid py-5 mb-3">
+            <h1 class="text-primary text-center section-title pb-4">Edición actual</h1>
+            <div class="row no-gutters">
+                <p>
+                    PyCamp España es un fin de semana que incluye 4 días y 3 noches con pensión completa (desayuno, comida y cena) en
+                    Sevilla, España. Podrás programar las horas que quieras en ese proyecto o idea que querías codificar hace tanto tiempo y
+                    que no encontrabas el momento o lugar perfecto para hacerlo.
+                </p>
+            </div>
+            <div>
+                <p class="lead">La entrada incluye:</p>
+                <ul>
+                    <li>Pensión completa: desayuno, comida y cena</li>
+                    <li>Transporte directo desde Sevilla hasta el venue</li>
+                    <li>Coffee break en intermedio de comidas: café, té, agua, snacks y frutas</li>
+                    <li>Acceso a áreas verdes donde podrás relajarte o programar</li>
+                    <li>Diversión: karaoke de charlas, juegos de mesa, ping pong y todo hobby que quieras compartir con nosotros</li>
+                </ul>
+                <em>El lugar será de uso únicamente exclusivo para los asistentes al evento.</em>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-auto text-center">
+                    <a href="venue.njk"
+                       class="btn btn-primary btn-lg my-4"
+                       style="font-size: 1.5em">Venue</a>
+                </div>
+                <div class="col-auto text-center">
+                    <a href="projects.njk"
+                       class="btn btn-primary btn-lg my-4"
+                       style="font-size: 1.5em">Proyectos</a>
+                </div>
+            </div>
+            <!-- Toggle this section to announce new event -->
+            <h2 class="text-primary text-center section-title pb-4">Inscripción</h2>
+            <h5>
+                Por ahora no hay inscripción abierta.
+                <br>
+                Subscríbete al Newsletter para recibir novedades aquí:
+            </h5>
         </div>
-   </div>
-
-
-   <!--
-    Del 1 al 4 de Mayo, 2025.
-    <br>
-    4 días, 3 noches (<em>pensión completa</em>)
-    </h3>
-    <h3 style="font-weight: bold; font-size: 3rem; margin-bottom: 25px;">300€</h3>
-    <a
-      href="https://docs.google.com/forms/d/13b0c8Hvp3NOISb8fefyt-3J28zRuMhPnCXGPemNPJ70/"
-      target="_blank"
-      class="btn btn-primary btn-lg my-4">
-      Comprar entrada
-    </a>
-   -->
-
-  </div>
-
-<p class="lead">
-Everyone is welcome</p>
-  We apologize for the lack of translation, but we believe Google translation works quite well
-  (<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">
-    see translated version</a>). If you have any question don't hesitate in contact us! We are happy to help you and have
-  you enjoying this event with us!
+        <div class="row">
+            <div class="col-xl-9 mx-auto">
+                <div class="ml-embedded" data-form="Z03U8c"></div>
+            </div>
+        </div>
+        Del 30 de Abril al 3 de Mayo, 2026.
+        <br>
+        4 días, 3 noches (<em>pensión completa</em>)
+    </section>
+    <!-- <h3 style="font-weight: bold; font-size: 3rem; margin-bottom: 25px;">300€</h3> -->
+    <!-- TODO: toggle when inscription is available -->
+    <!-- <a href="https://docs.google.com/forms/d/13b0c8Hvp3NOISb8fefyt-3J28zRuMhPnCXGPemNPJ70/"
+    -->
+    <!--    target="_blank" -->
+    <!--    class="btn btn-primary btn-lg my-4">Comprar entrada</a> -->
+</div>
+<p class="lead">Everyone is welcome</p>
+We apologize for the lack of translation, but we believe Google translation works quite well
+(<a href="https://pycamp-es.translate.goog/?_x_tr_sl=auto&_x_tr_tl=en&_x_tr_hl=es&_x_tr_pto=nui">
+see translated version</a>). If you have any question don't hesitate in contact us! We are happy to help you and have
+you enjoying this event with us!
 </p>
-
 </section>
-
 {% endblock %}
-
-{% block extra_footer %}
-<script src="../src/currentEvent.js"></script>
-{% endblock %}
+{% block extra_footer %}<script src="../src/currentEvent.js"></script>{% endblock %}
