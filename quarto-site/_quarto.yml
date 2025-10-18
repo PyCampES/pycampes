@@ -3,6 +3,7 @@ project:
 
 website:
   title: "pycamp"
+  theme: cosmo
   navbar:
     left:
       - href: index.qmd
