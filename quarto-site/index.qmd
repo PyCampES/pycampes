@@ -2,6 +2,17 @@
 title: "pycamp"
 ---
 
-This is a Quarto website.
 
-To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+Un evento en un entorno inspirador para disfrutar de unos días llenos de programación y diversión, aprender mucho y conectar con buena gente
+
+
+Organizadores
+
+
+Colaboradores
+
+
+Sponsors
+
+
+Si tu empresa quiere apoyar el PyCamp España, puede hacerlo ayudándonos con los coffee breaks, el transporte alvenue, las camisetas, el alquiler de un proyector o bien otorgando becas de diversidad. Contáctanos a pycampes@gmail.com.
