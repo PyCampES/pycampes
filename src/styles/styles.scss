@@ -21,6 +21,7 @@ body, html {
   font-size: 1.2em;
   color: #4A4A4A;
   background-color: #f5f7fa;
+  overflow-x: hidden;
 }
 
 .card {
@@ -175,7 +176,8 @@ body, html {
   display: flex;
   justify-content: space-between; /* Ensures even spacing */
   align-items: center;
-  flex-wrap: nowrap; /* Prevents wrapping */
+  /* flex-wrap: nowrap; */
+  flex-wrap: wrap;
   width: 100%;
   flex-direction: column; /* Stack items vertically on mobile */
 }
