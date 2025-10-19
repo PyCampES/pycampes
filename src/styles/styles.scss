@@ -176,8 +176,7 @@ body, html {
   display: flex;
   justify-content: space-between; /* Ensures even spacing */
   align-items: center;
-  /* flex-wrap: nowrap; */
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   width: 100%;
   flex-direction: column; /* Stack items vertically on mobile */
 }
