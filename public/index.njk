@@ -1,120 +1,117 @@
 {% extends 'layout.njk' %}
 {% block content %}
-    <section id="frontpage" class="page">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-md-6">
-                    <img src="images/logo-pycampes-gris.png"
-                         style="width: 100%;
-                                height: auto"
-                         alt="PyCamp logo con dibujos" />
-                    <h1 style="font-size: 3em; font-weight: bold; color: #4A4A4A;">Edición España</h1>
-                    <p style="font-size: 1.2em; color: #4A4A4A;">
-                        Un evento en un entorno inspirador para disfrutar de unos días llenos de programación y diversión, aprender mucho y conectar con buena gente
-                    </p>
-                    <br>
-                    <h4 style="text-align: center">del <span style="font-weight: bold;">30 de Abril al 3 de Mayo</span> de 2026</h4>
-                    <h4 style="text-align: center">Sevilla, España</h4>
-                    <br>
-                    <!--TODO: Toggle when new event inscription is available-->
-                    <div class="mt-4">
-                        <!-- <a href="current_event.njk" -->
-                        <!--    class="btn btn-success btn-lg" -->
-                        <!--    style="margin-right: 10px">Inscríbete ahora</a> -->
-                        <a href="https://forms.gle/TocRERGQQePZnTE26"
-                           class="btn btn-success btn-lg"
-                           style="margin-right: 10px">¡Compra ya tu entrada!</a>
-                    </div>
+<section id="frontpage" class="page">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="images/logo-pycampes-gris.png" style="width: 100%;
+                                height: auto" alt="PyCamp logo con dibujos" />
+                <h1 style="font-size: 3em; font-weight: bold; color: #4A4A4A;">Edición España</h1>
+                <p style="font-size: 1.2em; color: #4A4A4A;">
+                    Un evento en un entorno inspirador para disfrutar de unos días llenos de programación y diversión,
+                    aprender mucho y conectar con buena gente
+                </p>
+                <br>
+                <h4 style="text-align: center">del <span style="font-weight: bold;">30 de Abril al 3 de Mayo</span> de
+                    2026</h4>
+                <h4 style="text-align: center">Sevilla, España</h4>
+                <br>
+                <!--TODO: Toggle when new event inscription is available-->
+                <div class="mt-4">
+                    <!-- <a href="current_event.njk" -->
+                    <!--    class="btn btn-success btn-lg" -->
+                    <!--    style="margin-right: 10px">Inscríbete ahora</a> -->
+                    <a href="https://forms.gle/TocRERGQQePZnTE26" class="btn btn-success btn-lg"
+                        style="margin-right: 10px">¡Compra ya tu entrada!</a>
                 </div>
-                <div class="col-md-6 text-center">
-                    <img src="./images/edition-2022/portada.jpg"
-                         alt="Portada"
-                         style="width: 100%;
+            </div>
+            <div class="col-md-6 text-center">
+                <img src="./images/edition-2022/portada.jpg" alt="Portada" style="width: 100%;
                                 max-width: 1000px;
                                 border-radius: 8px;
                                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1)">
-                </div>
             </div>
         </div>
-        <div class="container">
-            <div class="row mt-5">
-                <!-- Use col-12 for mobile and col-md-3 for larger screens -->
-                <div class="col-12 col-md-3 text-center mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Proyectos reales</h5>
-                            <p class="card-text">Trabaja en proyectos de código abierto con impacto real en la comunidad Python</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 text-center mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Entorno único</h5>
-                            <p class="card-text">Alojamiento en un espacio diseñado para fomentar la creatividad y colaboración</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 text-center mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Comunidad</h5>
-                            <p class="card-text">Conecta con gente experta y apasionada de España, Europa y el mundo</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-12 col-md-3 text-center mb-4">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Tópicos diversos</h5>
-                            <p class="card-text">Participa en debates sobre temas de ética, sociedad y el futuro de la industria</p>
-                        </div>
+    </div>
+    <div class="container">
+        <div class="row mt-5">
+            <!-- Use col-12 for mobile and col-md-3 for larger screens -->
+            <div class="col-12 col-md-3 text-center mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyectos reales</h5>
+                        <p class="card-text">Trabaja en proyectos de código abierto con impacto real en la comunidad
+                            Python</p>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="row">
-            <div class="col-xl-9 mx-auto">
-                <div class="ml-embedded" data-form="Z03U8c"></div>
+            <div class="col-12 col-md-3 text-center mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Entorno único</h5>
+                        <p class="card-text">Alojamiento en un espacio diseñado para fomentar la creatividad y
+                            colaboración</p>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
-    <!-- Organizers -->
-    <section id="organizers">
-        <div class="container py-4">
-            <div class="row justify-content-center">
-                <div class="col-lg-4 text-center mb-4 mx-auto">
-                    <h1 class="text-primary py-4 section-title">Organizadores</h1>
-                    <a href="https://es.python.org/" target="_blank">
-                        <img class="organizer-logo"
-                             src="images/pythonespana-logo.png"
-                             alt="Python España"
-                             style="max-width: 250px">
-                    </a>
+            <div class="col-12 col-md-3 text-center mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Comunidad</h5>
+                        <p class="card-text">Conecta con gente experta y apasionada de España, Europa y el mundo</p>
+                    </div>
                 </div>
-                <div class="col-lg-4 text-center mb-4 mx-auto">
-                    <h1 class="text-primary py-4 section-title">Colaboradores</h1>
-                    <a href="https://argentinaenpython.com/" target="_blank">
-                        <img class="organizer-logo"
-                             src="images/argentinaenpython-logo.png"
-                             alt="Argentina en Python"
-                             style="max-width: 250px">
-                    </a>
-                </div>
-                <div class="col-lg-4 text-center mb-4 mx-auto">
-                    <h1 class="text-primary py-4 section-title">Sponsors</h1>
-                    <a href="https://www.europython-society.org/" target="_blank">
-                        <img class="organizer-logo"
-                             src="images/europython-society-logo.png"
-                             alt="EuroPython Society"
-                             style="max-width: 250px">
-                    </a>
-                    <p style="font-size: 14px;">
-                        Si tu empresa quiere apoyar el PyCamp España, puede hacerlo ayudándonos con los coffee breaks, el transporte al venue, las camisetas, el alquiler de un proyector o bien otorgando becas de diversidad. Contáctanos a <a href="mailto:pycampes@gmail.com">pycampes@gmail.com</a>.
-                    </p>
+            </div>
+            <div class="col-12 col-md-3 text-center mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Tópicos diversos</h5>
+                        <p class="card-text">Participa en debates sobre temas de ética, sociedad y el futuro de la
+                            industria</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    <div class="row">
+        <div class="col-xl-9 mx-auto">
+            <div class="ml-embedded" data-form="Z03U8c"></div>
+        </div>
+    </div>
+</section>
+<!-- Organizers -->
+<section id="organizers">
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-4 text-center mb-4 mx-auto">
+                <h1 class="text-primary py-4 section-title">Organizadores</h1>
+                <a href="https://es.python.org/" target="_blank">
+                    <img class="organizer-logo" src="images/pythonespana-logo.png" alt="Python España"
+                        style="max-width: 250px">
+                </a>
+            </div>
+            <div class="col-lg-4 text-center mb-4 mx-auto">
+                <h1 class="text-primary py-4 section-title">Colaboradores</h1>
+                <a href="https://argentinaenpython.com/" target="_blank">
+                    <img class="organizer-logo" src="images/argentinaenpython-logo.png" alt="Argentina en Python"
+                        style="max-width: 250px">
+                </a>
+            </div>
+            <div class="col-lg-4 text-center mb-4 mx-auto">
+                <h1 class="text-primary py-4 section-title">Sponsors</h1>
+                <a href="https://www.europython-society.org/" target="_blank">
+                    <img class="organizer-logo" src="images/europython-society-logo.png" alt="EuroPython Society"
+                        style="max-width: 250px">
+                </a>
+                <p style="font-size: 14px;">
+                    Si tu empresa quiere apoyar el PyCamp España, puede hacerlo ayudándonos con los coffee breaks, el
+                    transporte al venue, las camisetas, el alquiler de un proyector o bien otorgando becas de
+                    diversidad. Contáctanos a <a href="mailto:pycampes@gmail.com">pycampes@gmail.com</a>.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
 {% endblock %}
-{% block extra_footer %}<script src="../src/index.js"></script>{% endblock %}
+{% block extra_footer %}
+<script src="../src/index.js"></script>{% endblock %}
