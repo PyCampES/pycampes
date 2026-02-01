@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "mixins" as *;
+
 section.masthead {
   position: relative;
   background-color: $gray-800;

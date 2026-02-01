@@ -1,8 +1,31 @@
+@use "sass:meta";
+@use "mixins.scss";
+@use "masthead.scss";
+
+@include meta.load-css("showcase.scss");
+
+// Import Bootstrap functions first
+@import "../../node_modules/bootstrap/scss/functions";
+
+// Import custom variables to override Bootstrap defaults
 @import "variables.scss";
-@import "node_modules/bootstrap/scss/bootstrap";
-@import "mixins.scss";
-@import "masthead.scss";
-@import "showcase.scss";
+
+// Import other Bootstrap SCSS files we need
+// Me parece fea esta ruta pero no encontré otra forma para que funcione
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/type";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/card";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/tables";
+@import "../../node_modules/bootstrap/scss/transitions";
+
 
 @font-face {
   font-family: LEIXO;
