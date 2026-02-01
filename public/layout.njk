@@ -10,7 +10,7 @@
         <meta property="og:type" content="website" />
         <meta property="og:title" content="PyCamp España" />
         <meta property="og:url" content="https://pycamp.es/" />
-        <meta property="og:image" content="/images/logo-mini.png" />
+        <meta property="og:image" content="./images/logo-mini.png" />
         <meta property="og:description"
               content="¡Programar a tope en medio de la naturaleza rodeados de excelentes personas!" />
         <!-- <meta property="og:price:amount" content="250" /> -->
@@ -18,16 +18,16 @@
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:site" content="@pycampes" />
         <meta name="twitter:creator" content="@pycampes" />
-        <meta name="twitter:image" content="/images/logo-mini.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <link rel="shortcut icon" href="/images/logo-mini.svg" />
+        <meta name="twitter:image" content="./images/logo-mini.png" />
+        <link rel="manifest" href="./manifest.json" />
+        <link rel="shortcut icon" href="./images/logo-mini.svg" />
         {% block extra_head %}{% endblock %}
         <script src="https://kit.fontawesome.com/738e427f6d.js"
                 crossorigin="anonymous"></script>
         <title>
             {% block title %}PyCamp España{% endblock %}
         </title>
-        {% include "mailerlite.njk" %}
+        {% include "public/mailerlite.njk" %}
     </head>
     <body>
         <!-- Navigation -->
@@ -61,10 +61,10 @@
                     <!--  <a class="nav-link" href="/what_to_bring.njk">¿Qué llevo?</a> -->
                     <!-- </li> -->
                     <li class="nav-item">
-                        <a class="nav-link" href="/previous_editions.njk">Ediciones anteriores</a>
+                        <a class="nav-link" href="./previous_editions.njk">Ediciones anteriores</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/faq.njk">Preguntas frecuentes</a>
+                        <a class="nav-link" href="./faq.njk">Preguntas frecuentes</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="./diversity.njk" rel="noopener noreferrer">Código de conducta</a>
@@ -156,6 +156,6 @@
         </footer>
         {% block extra_footer %}{% endblock %}
         {# Bug in Parcel forces us to include the extra footer this way #}
-        {% include "extra_footer.html" %}
+        {% include "public/extra_footer.html" %}
     </body>
 </html>

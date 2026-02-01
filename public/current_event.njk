@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends 'public/layout.njk' %}
 {% block content %}
     <section id="current_event">
         <h1 class="section-title">Edición actual</h1>
@@ -66,4 +66,4 @@
     </p>
 </section>
 {% endblock %}
-{% block extra_footer %}<script src="../src/currentEvent.js"></script>{% endblock %}
+{% block extra_footer %}<script type="module" src="../src/currentEvent.js"></script>{% endblock %}

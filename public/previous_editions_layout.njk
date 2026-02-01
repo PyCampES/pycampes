@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends 'public/layout.njk' %}
 {% set githubProjects = [
     {
         "description": "What music is people listen to?",
@@ -308,6 +308,7 @@
 
           .tables-container {
             display: flex;
+
             flex-direction: column; /* Stack tables vertically on mobile */
             margin-top: 20px;
           }
@@ -380,7 +381,7 @@
         <!-- Overlay for popup -->
         <div class="overlay" id="overlay">
             <div class="popup">
-                <img id="popup-img" src="" alt="Amplified Thumbnail">
+                <img id="popup-img"  alt="Amplified Thumbnail">
             </div>
         </div>
         <!-- Tabs Section -->
@@ -486,7 +487,7 @@
     </section>
 {% endblock %}
 {% block extra_footer %}
-    <script src="../src/previousEditionsLayout.js"></script>
+    <script type="module" src="../src/previousEditionsLayout.js"></script>
     <script>
   document.querySelectorAll(".thumbnail img").forEach(img => {
     img.addEventListener("click", function() {

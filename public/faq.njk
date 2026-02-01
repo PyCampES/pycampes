@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends 'public/layout.njk' %}
 {% block content %}
     <!-- FAQ -->
     <section id="faq">
@@ -46,24 +46,24 @@
                              class="collapse"
                              aria-labelledby="headingTwo"
                              data-parent="#faq">
-                            <div class="card-body">{% include "what_to_bring_content.html" %}</div>
+                            <div class="card-body">{% include "public/what_to_bring_content.html" %}</div>
                         </div>
                     </div>
                     <div class="card">
-                        <div class="card-header" id="headingTwo">
+                        <div class="card-header" id="headingThree">
                             <h2 class="mb-0">
                                 <button class="btn btn-link faq-link"
                                         type="button"
-                                        data-target="collapseTwo"
+                                        data-target="collapseThree"
                                         aria-expanded="false"
-                                        aria-controls="collapseTwo">
+                                        aria-controls="collapseThree">
                                     ¿Hay ayuda económica para pagar la entrada?
                                 </button>
                             </h2>
                         </div>
-                        <div id="collapseTwo"
+                        <div id="collapseThree"
                              class="collapse"
-                             aria-labelledby="headingTwo"
+                             aria-labelledby="headingThree"
                              data-parent="#faq">
                             <div class="card-body">
                                 Somos conscientes de la importancia de equidad y diversidad en tecnología. Gracias al apoyo de nuestros patrocinadores
@@ -102,4 +102,4 @@
             </div>
         </section>
     {% endblock %}
-    {% block extra_footer %}<script src="../src/faq.js"></script>{% endblock %}
+    {% block extra_footer %}<script type="module" src="../src/faq.js"></script>{% endblock %}

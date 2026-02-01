@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends 'public/layout.njk' %}
 {% block content %}
     <section id="projects">
         <h1 class="section-title">Proyectos</h1>
@@ -64,4 +64,4 @@
     </div>
 </section>
 {% endblock %}
-{% block extra_footer %}<script src="../src/projects.js"></script>{% endblock %}
+{% block extra_footer %}<script type="module" src="../src/projects.js"></script>{% endblock %}

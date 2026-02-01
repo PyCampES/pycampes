@@ -1,4 +1,4 @@
-{% extends 'layout.njk' %}
+{% extends 'public/layout.njk' %}
 {% block content %}
     <section id="frontpage" class="page">
         <div class="container">
@@ -117,4 +117,4 @@
         </div>
     </section>
 {% endblock %}
-{% block extra_footer %}<script src="../src/index.js"></script>{% endblock %}
+{% block extra_footer %}<script type="module" src="../src/index.js"></script>{% endblock %}
