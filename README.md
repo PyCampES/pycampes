@@ -2,14 +2,13 @@
 
 > Sitio web del PyCamp España: https://pycamp.es
 
-## Set up
+## Configuración
 
-1. Clone the repo: `git clone https://github.com/PyCampES/pycampes`
-2. Run `yarn install`
+TODO
 
 ## Desarrollo
 
-`yarn start`
+TODO
 
 ## Deploy
 
