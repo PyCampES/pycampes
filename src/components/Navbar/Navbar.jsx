@@ -6,7 +6,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="../../src/assets/logos/pycamp-logo.webp" alt="PyCamp España" />
+          <img src="../../src/assets/logos/pycamp-logo-white.webp" alt="PyCamp España" />
         </Link>
 
         <ul className="navbar-links">
