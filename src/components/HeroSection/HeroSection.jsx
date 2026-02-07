@@ -1,3 +1,4 @@
+import Button from "../Button/Button";
 import "./HeroSection.css";
 
 function HeroSection() {
@@ -16,20 +17,21 @@ function HeroSection() {
             buena gente
           </p>
 
-          <div className="hero-buttons">
-            <button className="btn btn-primary">
+           <div className="hero-buttons">
+            <Button 
+              variant="primary" 
+              to="/event"
+              icon={
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                  <path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" strokeWidth="2"/>
+                </svg>
+              }
+            >
               Descubre el próximo PyCamp
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M5 12h14M12 5l7 7-7 7"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-              </svg>
-            </button>
-            <button className="btn btn-secondary">
+            </Button>
+            <Button variant="secondary" to="/previous-editions">
               Ver proyectos anteriores
-            </button>
+            </Button>
           </div>
         </div>
 
