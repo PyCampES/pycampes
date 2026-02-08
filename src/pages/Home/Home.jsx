@@ -6,8 +6,14 @@ import "./Home.css";
 
 function Home() {
   const [submitted, setSubmitted] = useState(false);
+  const [consent, setConsent] = useState(false);
 
-  const handleSubmit = () => {
+  const handleSubmit = (e) => {
+    if (!consent) {
+      e.preventDefault();
+      return;
+    }
+
     setSubmitted(true);
   };
 
@@ -173,6 +179,20 @@ function Home() {
                   className="newsletter-input"
                   required
                 />
+
+                {/* GDPR CONSENT */}
+                <label className="newsletter-consent">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                  />
+                  <span>
+                    Acepto recibir emails informativos sobre el PyCamp.
+                    Utilizamos MailerLite como plataforma de email marketing.
+                  </span>
+                </label>
 
                 <input type="hidden" name="ml-submit" value="1" />
                 <input type="hidden" name="anticsrf" value="true" />
