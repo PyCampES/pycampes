@@ -39,11 +39,11 @@
 }
 
 .footer-links li {
-  margin-bottom: 8px;
+  margin-bottom: 18px;
 }
 
 .footer-links a {
-  font-size: 12px;
+  font-size: 14px;
   transition: opacity 0.2s;
 }
 
