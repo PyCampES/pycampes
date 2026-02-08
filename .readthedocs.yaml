@@ -6,4 +6,4 @@ build:
     nodejs: "24"
   commands:
     - npm install
-    - vite build --outDir $READTHEDOCS_OUTPUT/html
+    - ./node_modules/.bin/vite build --outDir $READTHEDOCS_OUTPUT/html
