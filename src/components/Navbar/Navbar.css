@@ -13,6 +13,7 @@
   justify-content: space-between;
   align-items: center;
   height: 61px;
+  position: relative;
 }
 
 .navbar-logo img {
@@ -42,4 +43,112 @@
 
 .navbar-link:hover {
   background: rgba(232, 243, 226, 0.2);
+}
+
+/* Burger menu - hidden by default in desktiop */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  z-index: 101;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: var(--text-inverse);
+  border-radius: 3px;
+  transition: all 0.3s ease;
+}
+
+/* Burger icon animation when active */
+.hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(7px, 7px);
+}
+
+.hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Overlay */
+.navbar-overlay {
+  display: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .hamburger {
+    display: flex;
+  }
+
+  .navbar-links {
+    position: fixed;
+    top: 61px;
+    right: -100%;
+    width: 70%;
+    max-width: 300px;
+    height: calc(100vh - 61px);
+    background: var(--brand-green-dark);
+    flex-direction: column;
+    gap: 0;
+    padding: var(--spacing-lg) 0;
+    transition: right 0.3s ease;
+    box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links.active {
+    right: 0;
+  }
+
+  .navbar-links li {
+    width: 100%;
+  }
+
+  .navbar-link {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: 0;
+    text-align: left;
+  }
+
+  .navbar-link.active {
+    background: rgba(232, 243, 226, 0.1);
+    color: var(--text-inverse);
+    border-left: 4px solid var(--accent-forest);
+  }
+
+  .navbar-link:hover {
+    background: rgba(232, 243, 226, 0.1);
+  }
+
+  /* Overlay when menu open */
+  .navbar-overlay {
+    display: block;
+    position: fixed;
+    top: 61px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 61px);
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
 }

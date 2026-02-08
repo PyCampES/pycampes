@@ -74,7 +74,7 @@ function Home() {
               <p className="hero-description">
                 Un evento en un entorno inspirador para disfrutar de unos días
                 llenos de programación y diversión al aire libre, conectando con
-                buena gente
+                buena gente.
               </p>
 
               <div className="hero-buttons">
