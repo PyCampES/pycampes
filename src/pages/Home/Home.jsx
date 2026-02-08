@@ -2,6 +2,15 @@ import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
+import groupPhoto from "../../assets/images/pycamp-group-photo.jpg";
+import iconCode from "../../assets/icons/code.svg";
+import iconTrees from "../../assets/icons/trees.svg";
+import iconUsers from "../../assets/icons/users.svg";
+import iconBinoculars from "../../assets/icons/binoculars.svg";
+import logoPythonEspana from "../../assets/logos/pythonespana-logo.webp";
+import logoArgentinaEnPython from "../../assets/logos/argentinaenpython-logo.webp";
+import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
 import "./Home.css";
 
 function Home() {
@@ -15,25 +24,25 @@ function Home() {
 
   const features = [
     {
-      icon: "../../src/assets/icons/code.svg",
+      icon: iconCode,
       title: "Proyectos Reales",
       description:
         "Trabaja en proyectos de código abierto con impacto real en la comunidad Python.",
     },
     {
-      icon: "../../src/assets/icons/trees.svg",
+      icon: iconTrees,
       title: "Entorno Único",
       description:
         "Alojamiento en un espacio diseñado para fomentar la creatividad y colaboración.",
     },
     {
-      icon: "../../src/assets/icons/users.svg",
+      icon: iconUsers,
       title: "Comunidad",
       description:
         "Conecta con gente experta y apasionada de España, Europa y el mundo.",
     },
     {
-      icon: "../../src/assets/icons/binoculars.svg",
+      icon: iconBinoculars,
       title: "Temas Diversos",
       description:
         "Participa en debates sobre temas de ética, sociedad y el futuro de la industria.",
@@ -44,17 +53,17 @@ function Home() {
     {
       category: "Organiza",
       name: "Python España",
-      logo: "../../src/assets/logos/pythonespana-logo.webp",
+      logo: logoPythonEspana,
     },
     {
       category: "Colabora",
       name: "Argentina en Python",
-      logo: "../../src/assets/logos/argentinaenpython-logo.webp",
+      logo: logoArgentinaEnPython,
     },
     {
       category: "Sponsor",
       name: "EuroPython Society",
-      logo: "../../src/assets/logos/europython-society-logo.webp",
+      logo: logoEuroPython,
     },
   ];
 
@@ -68,7 +77,7 @@ function Home() {
           <div className="hero-container">
             <div className="hero-content">
               <img
-                src="../../src/assets/logos/pycamp-logo-grey.png"
+                src={logoGrey}
                 alt="PyCamp España"
                 className="hero-logo"
               />
@@ -101,7 +110,7 @@ function Home() {
             </div>
 
             <div className="hero-image">
-              <img src="../../src/assets/images/pycamp-group-photo.jpg" alt="PyCamp en acción" />
+              <img src={groupPhoto} alt="PyCamp en acción" />
             </div>
           </div>
         </section>

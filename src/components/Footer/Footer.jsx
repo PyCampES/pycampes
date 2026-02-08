@@ -1,3 +1,4 @@
+import logoWhite from '../../assets/logos/pycamp-logo-white.webp';
 import "./Footer.css";
 
 function Footer() {
@@ -6,7 +7,7 @@ function Footer() {
       <div className="footer-container">
         <div className="footer-brand">
           <img
-            src="../../src/assets/logos/pycamp-logo-white.webp"
+            src={logoWhite}
             alt="PyCamp España"
             className="footer-logo"
           />
