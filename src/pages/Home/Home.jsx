@@ -11,6 +11,7 @@ function Home() {
     e.preventDefault();
     console.log("Email enviado:", email);
   };
+//TODO: revisar cómo se manda ese email del user que se quiere suscribir. Añadir alerta de enviado.
 
   const features = [
     {

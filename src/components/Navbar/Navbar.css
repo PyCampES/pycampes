@@ -91,6 +91,7 @@
 
   .navbar-links {
     position: fixed;
+    z-index: 100;
     top: 61px;
     right: -100%;
     width: 70%;
