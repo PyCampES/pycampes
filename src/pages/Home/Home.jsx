@@ -11,6 +11,7 @@ function Home() {
         <h1>PyCamp España</h1>
         <p>Página de inicio</p>
       </main>
+      <Footer />
     </div>
   );
 }
