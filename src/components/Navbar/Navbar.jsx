@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import logoWhite from "../../assets/logos/pycamp-logo-white.webp";
 import "./Navbar.css";
 
 function Navbar() {
@@ -6,7 +7,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/" className="navbar-logo">
-          <img src="../../src/assets/logos/pycamp-logo-white.webp" alt="PyCamp España" />
+          <img src={logoWhite} alt="PyCamp España" />
         </Link>
 
         <ul className="navbar-links">

@@ -1,4 +1,6 @@
 import Button from "../Button/Button";
+import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
+import groupPhoto from "../../assets/images/pycamp-group-photo.jpg";
 import "./HeroSection.css";
 
 function HeroSection() {
@@ -6,11 +8,7 @@ function HeroSection() {
     <section className="hero">
       <div className="hero-container">
         <div className="hero-content">
-          <img
-            src="../../src/assets/logos/pycamp-logo-grey.png"
-            alt="PyCamp España"
-            className="hero-logo"
-          />
+          <img src={logoGrey} alt="PyCamp España" className="hero-logo" />
           <p className="hero-description">
             Un evento en un entorno inspirador para disfrutar de unos días
             llenos de programación y diversión al aire libre, conectando con
@@ -36,7 +34,7 @@ function HeroSection() {
         </div>
 
         <div className="hero-image">
-          <img src="../../src/assets/images/pycamp-group-photo.jpg" alt="PyCamp en acción" />
+          <img src={groupPhoto} alt="PyCamp en acción" />
         </div>
       </div>
     </section>
