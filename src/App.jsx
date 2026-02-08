@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HashRouter, Routes, Route } from 'react-router-dom'
 import Home from './pages/Home/Home'
 import Event from './pages/Event/Event'
 import Diversity from './pages/Diversity/Diversity'
@@ -7,7 +7,7 @@ import PreviousEditions from './pages/PreviousEditions/PreviousEditions'
 
 function App() {
   return (
-    <BrowserRouter>
+    <HashRouter>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/event" element={<Event />} />
@@ -15,7 +15,7 @@ function App() {
         <Route path="/faqs" element={<Faqs />} />
         <Route path="/previous-editions" element={<PreviousEditions />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   )
 }
 
