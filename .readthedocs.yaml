@@ -5,5 +5,5 @@ build:
   tools:
     nodejs: "24"
   commands:
-    # Skip all builds for now
-    - exit 183
+    - npm install
+    - vite build --outDir $READTHEDOCS_OUTPUT/html
