@@ -7,4 +7,5 @@ build:
   commands:
     - npm install
     - echo $READTHEDOCS_VERSION
-    - ./node_modules/.bin/vite build --base $READTHEDOCS_VERSION --outDir $READTHEDOCS_OUTPUT/html
+    - echo $READTHEDOCS_CANONICAL_URL
+    - ./node_modules/.bin/vite build --base $READTHEDOCS_CANONICAL_URL --outDir $READTHEDOCS_OUTPUT/html
