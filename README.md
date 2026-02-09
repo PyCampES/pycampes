@@ -2,13 +2,17 @@
 
 > Sitio web del PyCamp España: https://pycamp.es
 
-## Configuración
-
-TODO
-
 ## Desarrollo
 
-TODO
+1. Instalar nodejs `24.11.1`
+1. Instalar las dependencias
+   ```
+   npm install
+   ```
+1. Levantar el proyecto
+   ```
+   npm run dev
+   ```
 
 ## Deploy
 
