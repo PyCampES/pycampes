@@ -172,15 +172,20 @@ function Home() {
                 target="ml-hidden-iframe"
                 onSubmit={handleSubmit}
               >
-                <input
-                  type="email"
-                  name="fields[email]"
-                  placeholder="tu@email.com"
-                  className="newsletter-input"
-                  required
-                />
+                <div className="newsletter-form-row">
+                  <input
+                    type="email"
+                    name="fields[email]"
+                    placeholder="tu@email.com"
+                    className="newsletter-input"
+                    required
+                  />
+                  <Button type="submit" variant="primary">
+                    Suscribirme
+                  </Button>
+                </div>
 
-                {/* GDPR CONSENT */}
+                {/*GDPR checkbox */}
                 <label className="newsletter-consent">
                   <input
                     type="checkbox"
@@ -196,20 +201,16 @@ function Home() {
 
                 <input type="hidden" name="ml-submit" value="1" />
                 <input type="hidden" name="anticsrf" value="true" />
-
-                <Button type="submit" variant="primary">
-                  Suscribirme
-                </Button>
               </form>
             ) : (
               <div className="newsletter-success">
                 <h3>¡Gracias!</h3>
                 <p>
-                  Ya estás suscrito a nuestra newsletter. ¡Te mantendremos al
+                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te mantendremos al
                   tanto de cualquier novedad sobre el PyCamp!
                 </p>
                 <p className="newsletter-legal">
-                  Si lo deseas, puedes darte de baja en cualquier momento
+                  Si lo deseas, puedes <strong>darte de baja</strong> en cualquier momento
                   haciendo click en el footer de nuestros emails.
                 </p>
               </div>
