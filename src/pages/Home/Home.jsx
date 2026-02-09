@@ -17,13 +17,32 @@ function Home() {
   const [submitted, setSubmitted] = useState(false);
   const [consent, setConsent] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
     if (!consent) {
-      e.preventDefault();
       return;
     }
 
-    setSubmitted(true);
+    const formData = new FormData(e.target);
+    const response = await fetch(e.target.action, {
+      method: e.target.method,
+      body: new URLSearchParams(formData),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+    });
+
+    if (!response.ok) {
+      return;
+    }
+
+    const result = await response.json();
+
+    if (result?.success) {
+      setSubmitted(true);
+    }
   };
 
   const features = [
@@ -169,11 +188,12 @@ function Home() {
               <br />
               ¡te avisaremos cuando salgan las próximas entradas!
             </p>
-
+  
             {!submitted ? (
               <form
                 className="newsletter-form"
-                action="https://assets.mailerlite.com/jsonp/189141/forms/68861306304726502/subscribe"
+                action="https://assets.mailerlite.com/jsonp/189141/forms/178924638060939050/subscribe"
+                data-code=""
                 method="post"
                 target="ml-hidden-iframe"
                 onSubmit={handleSubmit}
@@ -183,6 +203,7 @@ function Home() {
                     type="email"
                     name="fields[email]"
                     placeholder="tu@email.com"
+                    data-inputmask=""
                     className="newsletter-input"
                     required
                   />
@@ -195,11 +216,14 @@ function Home() {
                 <label className="newsletter-consent">
                   <input
                     type="checkbox"
+                    name="gdpr[]"
+                    value="Email"
+                    xp-if="gdpr.title"
                     required
                     checked={consent}
                     onChange={(e) => setConsent(e.target.checked)}
                   />
-                  <span>
+                  <span xp-if="gdpr.description">
                     Acepto recibir emails informativos sobre el PyCamp.
                     Utilizamos MailerLite como plataforma de email marketing.
                   </span>
