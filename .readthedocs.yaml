@@ -5,5 +5,7 @@ build:
   tools:
     nodejs: "24"
   commands:
-    # Skip all builds for now
-    - exit 183
+    - npm install
+    - echo $READTHEDOCS_VERSION
+    - echo $READTHEDOCS_CANONICAL_URL
+    - ./node_modules/.bin/vite build --base $READTHEDOCS_CANONICAL_URL --outDir $READTHEDOCS_OUTPUT/html
