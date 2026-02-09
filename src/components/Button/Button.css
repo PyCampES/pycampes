@@ -1,0 +1,46 @@
+.btn {
+  padding: 13px 32px;
+  border-radius: var(--radius-md);
+  font-size: 20px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-family: "Nunito", sans-serif;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn-primary {
+  background: var(--accent-mustard);
+  color: var(--brand-green-dark);
+  border: 2px solid var(--brand-green-dark);
+}
+
+.btn-primary:hover {
+  box-shadow: 0 4px 12px rgba(237, 191, 89, 0.4);
+}
+
+.btn-secondary {
+  background: var(--surface-background);
+  color: var(--brand-green-medium);
+  border: 2px solid var(--brand-green-dark);
+}
+
+.btn-secondary:hover {
+  background: var(--accent-forest);
+}
+
+.btn-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
