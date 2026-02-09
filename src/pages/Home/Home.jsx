@@ -14,13 +14,17 @@ import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
 import "./Home.css";
 
 function Home() {
-  const [email, setEmail] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [consent, setConsent] = useState(false);
 
   const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("Email enviado:", email);
+    if (!consent) {
+      e.preventDefault();
+      return;
+    }
+
+    setSubmitted(true);
   };
-//TODO: revisar cómo se manda ese email del user que se quiere suscribir. Añadir alerta de enviado.
 
   const features = [
     {
@@ -143,6 +147,11 @@ function Home() {
         {/* Newsletter Section */}
         <section className="newsletter">
           <div className="newsletter-container">
+            <iframe
+              name="ml-hidden-iframe"
+              title="newsletter-subscription"
+              style={{ display: "none" }}
+            />
             <div className="newsletter-icon">
               <svg width="43" height="43" viewBox="0 0 24 24" fill="none">
                 <path
@@ -161,19 +170,57 @@ function Home() {
               ¡te avisaremos cuando salgan las próximas entradas!
             </p>
 
-            <form className="newsletter-form" onSubmit={handleSubmit}>
-              <input
-                type="email"
-                placeholder="tu@email.com"
-                className="newsletter-input"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-              <Button type="submit" variant="primary">
-                Suscribirme
-              </Button>
-            </form>
+            {!submitted ? (
+              <form
+                className="newsletter-form"
+                action="https://assets.mailerlite.com/jsonp/189141/forms/68861306304726502/subscribe"
+                method="post"
+                target="ml-hidden-iframe"
+                onSubmit={handleSubmit}
+              >
+                <div className="newsletter-form-row">
+                  <input
+                    type="email"
+                    name="fields[email]"
+                    placeholder="tu@email.com"
+                    className="newsletter-input"
+                    required
+                  />
+                  <Button type="submit" variant="primary">
+                    Suscribirme
+                  </Button>
+                </div>
+
+                {/*GDPR checkbox */}
+                <label className="newsletter-consent">
+                  <input
+                    type="checkbox"
+                    required
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                  />
+                  <span>
+                    Acepto recibir emails informativos sobre el PyCamp.
+                    Utilizamos MailerLite como plataforma de email marketing.
+                  </span>
+                </label>
+
+                <input type="hidden" name="ml-submit" value="1" />
+                <input type="hidden" name="anticsrf" value="true" />
+              </form>
+            ) : (
+              <div className="newsletter-success">
+                <h3>¡Gracias!</h3>
+                <p>
+                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te mantendremos al
+                  tanto de cualquier novedad sobre el PyCamp!
+                </p>
+                <p className="newsletter-legal">
+                  Si lo deseas, puedes <strong>darte de baja</strong> en cualquier momento
+                  haciendo click en el footer de nuestros emails.
+                </p>
+              </div>
+            )}
           </div>
         </section>
 
