@@ -204,16 +204,14 @@ function Event() {
               la comunidad. Propón tu proyecto para la próxima edición y
               encuentra colaboradores.
             </p>
+            {/* !!!! IMPORTANTE PENDIENTE URL FORM */}
+            <Button variant="secondary" href="PENDIENTE URL FORM">
+              Proponer un proyecto
+            </Button>
             <p className="section-note">
               No necesitas tener todo definido. Las mejores ideas evolucionan
               durante el evento.
             </p>
-            <Button
-              variant="secondary"
-              href="https://forms.google.com/tu-formulario"
-            >
-              Proponer un proyecto
-            </Button>
           </div>
         </section>
 
@@ -229,7 +227,7 @@ function Event() {
             <div className="cta-buttons">
               <Button
                 variant="primary"
-                to="/registro"
+                href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform"
                 icon={
                   <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
                     <path

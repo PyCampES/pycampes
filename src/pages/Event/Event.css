@@ -318,7 +318,6 @@
   color: var(--brand-green-dark);
 }
 
-
 .inline-link {
   text-decoration: underline;
   font-weight: 900;
@@ -370,7 +369,8 @@
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.6;
-  margin-bottom: var(--spacing-lg);
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
 }
 
 /* CTA Section */
