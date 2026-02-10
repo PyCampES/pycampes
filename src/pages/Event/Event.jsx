@@ -1,6 +1,8 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import { Link } from "react-router-dom";
+
 import iconCalendar from "../../assets/icons/calendar.svg";
 import iconMapPin from "../../assets/icons/map-pin.svg";
 import iconHome from "../../assets/icons/home.svg";
@@ -111,7 +113,10 @@ function Event() {
               </div>
             </div>
 
-            <Button variant="primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform">
+            <Button
+              variant="primary"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform"
+            >
               ¡Reservar ya mi entrada!
             </Button>
           </div>
@@ -178,10 +183,10 @@ function Event() {
             </div>
 
             <p className="roadmap-footer">
-              ¿Tienes más preguntas?
-              <Button variant="secondary" to="/faqs" className="inline-link">
-                Haz click aquí
-              </Button>
+              ¿Tienes más preguntas?{" "}
+              <Link to="/faqs" className="roadmap-link">
+                haz click aquí
+              </Link>{" "}
               para saber más.
             </p>
           </div>

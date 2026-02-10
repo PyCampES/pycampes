@@ -306,6 +306,19 @@
   flex-wrap: wrap;
 }
 
+.roadmap-link {
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+  font-weight: 600;
+  color: var(--brand-green-medium);
+}
+
+.roadmap-link:hover {
+  color: var(--brand-green-dark);
+}
+
+
 .inline-link {
   text-decoration: underline;
   font-weight: 900;
