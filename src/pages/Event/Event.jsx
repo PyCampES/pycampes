@@ -111,8 +111,8 @@ function Event() {
               </div>
             </div>
 
-            <Button variant="primary" to="/registro">
-              ¡Comprar ya mi entrada!
+            <Button variant="primary" href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform">
+              ¡Reservar ya mi entrada!
             </Button>
           </div>
         </section>
