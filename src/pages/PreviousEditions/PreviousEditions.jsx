@@ -1,13 +1,18 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
+import cameraIcon from "../../assets/icons/camera.svg";
 import "./PreviousEditions.css";
+import photo2025 from "../../assets/images/pycamp-cover-2025.webp";
+import photo2024 from "../../assets/images/pycamp-cover-2024.webp";
+import photo2023 from "../../assets/images/pycamp-cover-2023.webp";
+import photo2022 from "../../assets/images/pycamp-cover-2022.webp";
 
 function PreviousEditions() {
   const editions = [
-    { year: "2025", photos: null },
-    { year: "2024", photos: null },
-    { year: "2023", photos: null },
-    { year: "2022", photos: null },
+    { year: "2025", photos: photo2025 },
+    { year: "2024", photos: photo2024 },
+    { year: "2023", photos: photo2023 },
+    { year: "2022", photos: photo2022 },
   ];
 
   const projects = [
@@ -77,30 +82,11 @@ function PreviousEditions() {
             {editions.map((edition, index) => (
               <article key={index} className="photo-card">
                 <div className="photo-placeholder">
-                  <svg
-                    width="66"
-                    height="66"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                    <circle
-                      cx="12"
-                      cy="13"
-                      r="4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  {edition.photos ? (
+                    <img src={edition.photos} alt={`PyCamp ${edition.year}`} />
+                  ) : (
+                    <img src={cameraIcon} alt="camera" className="placeholder-icon" />
+                  )}
                 </div>
                 <p className="photo-label">Fotos {edition.year}</p>
               </article>

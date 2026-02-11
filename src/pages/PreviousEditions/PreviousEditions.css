@@ -97,10 +97,18 @@
   margin-bottom: var(--spacing-sm);
 }
 
-.photo-placeholder svg {
+.photo-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+.photo-placeholder .placeholder-icon {
   width: 66px;
   height: 66px;
   opacity: 0.5;
+  object-fit: contain;
 }
 
 .photo-label {
