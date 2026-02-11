@@ -205,7 +205,7 @@ function Event() {
               encuentra colaboradores.
             </p>
             {/* !!!! IMPORTANTE PENDIENTE URL FORM */}
-            <Button variant="secondary" href="PENDIENTE URL FORM">
+            <Button variant="secondary" href="#">
               Proponer un proyecto
             </Button>
             <p className="section-note">
