@@ -113,10 +113,48 @@
 
 .photo-label {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: 18px;
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.photo-label:hover {
+  color: var(--brand-green-dark);
+}
+
+.external-icon {
+  width: 14px;
+  height: 14px;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+
+.photo-label:hover .external-icon {
+  opacity: 1;
+}
+
+.photo-location {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.5;
+  margin-top: 4px;
+}
+
+.map-icon {
+  width: 16px;
+  height: 16px;
+  opacity: 0.6;
 }
 
 /* Projects Section */

@@ -1,18 +1,40 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import cameraIcon from "../../assets/icons/camera.svg";
-import "./PreviousEditions.css";
+import externalLinkIcon from "../../assets/icons/external-link.svg";
+import mapPinIcon from "../../assets/icons/map-pin.svg";
 import photo2025 from "../../assets/images/pycamp-cover-2025.webp";
 import photo2024 from "../../assets/images/pycamp-cover-2024.webp";
 import photo2023 from "../../assets/images/pycamp-cover-2023.webp";
 import photo2022 from "../../assets/images/pycamp-cover-2022.webp";
+import "./PreviousEditions.css";
 
 function PreviousEditions() {
   const editions = [
-    { year: "2025", photos: photo2025 },
-    { year: "2024", photos: photo2024 },
-    { year: "2023", photos: photo2023 },
-    { year: "2022", photos: photo2022 },
+    {
+      year: "2025",
+      photos: photo2025,
+      link: "https://photos.app.goo.gl/Lw2M76V2bzYMZoFt6",
+      location: "Encinares de Escardiel - Castilblanco de los Arroyos, Sevilla",
+    },
+    {
+      year: "2024",
+      photos: photo2024,
+      link: "https://photos.app.goo.gl/gPYLUEzDAokZ4PrQA",
+      location: "Casa de Colonias Aiguaviva - Guixers, Lleida",
+    },
+    {
+      year: "2023",
+      photos: photo2023,
+      link: "https://photos.app.goo.gl/zmtyihL3B3KaBtpF9",
+      location: "El Bosc de la Massana - Vilablareix, Girona",
+    },
+    {
+      year: "2022",
+      photos: photo2022,
+      link: "https://photos.app.goo.gl/GSeufqbsjHvXLJxZA",
+      location: "El Bosc de la Massana - Vilablareix, Girona",
+    },
   ];
 
   const projects = [
@@ -85,10 +107,28 @@ function PreviousEditions() {
                   {edition.photos ? (
                     <img src={edition.photos} alt={`PyCamp ${edition.year}`} />
                   ) : (
-                    <img src={cameraIcon} alt="camera" className="placeholder-icon" />
+                    <img src={cameraIcon} alt="" className="placeholder-icon" />
                   )}
                 </div>
-                <p className="photo-label">Fotos {edition.year}</p>
+
+                <a
+                  href={edition.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="photo-label"
+                >
+                  <span>Fotos {edition.year}</span>
+                  <img
+                    src={externalLinkIcon}
+                    alt=""
+                    className="external-icon"
+                  />
+                </a>
+
+                <div className="photo-location">
+                  <img src={mapPinIcon} alt="" className="map-icon" />
+                  <span>{edition.location}</span>
+                </div>
               </article>
             ))}
           </div>
