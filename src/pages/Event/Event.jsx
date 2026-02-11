@@ -224,7 +224,7 @@ function Event() {
             <p>
               Las plazas son limitadas y se agotan rápidamente.
               <br />
-              Reserva tu lugar en el próximo PyCamp.
+              Reserva tu lugar en el próximo PyCamp hoy.
             </p>
             <div className="cta-buttons">
               <Button
