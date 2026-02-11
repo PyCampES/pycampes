@@ -9,6 +9,7 @@ import iconCode from "../../assets/icons/code.svg";
 import iconTrees from "../../assets/icons/trees.svg";
 import iconUsers from "../../assets/icons/users.svg";
 import iconBinoculars from "../../assets/icons/binoculars.svg";
+import iconMail from "../../assets/icons/mail.svg";
 import logoPythonEspana from "../../assets/logos/pythonespana-logo.webp";
 import logoArgentinaEnPython from "../../assets/logos/argentinaenpython-logo.webp";
 import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
@@ -161,13 +162,7 @@ function Home() {
               style={{ display: "none" }}
             />
             <div className="newsletter-icon">
-              <svg width="43" height="43" viewBox="0 0 24 24" fill="none">
-                <path
-                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                />
-              </svg>
+              <img src={iconMail} alt="mail" />
             </div>
 
             <h2 className="newsletter-title">Únete a nuestra comunidad</h2>

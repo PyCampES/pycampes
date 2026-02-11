@@ -170,6 +170,13 @@
   color: var(--accent-campfire);
 }
 
+.newsletter-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+
+
 .newsletter-title {
   font-size: 32px;
   margin-bottom: var(--spacing-sm);
