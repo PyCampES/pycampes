@@ -98,9 +98,7 @@ function PreviousEditions() {
 
         {/* Photo Gallery Section */}
         <section className="photo-gallery">
-          <h2 className="editions-subtitle">
-            Momentos de PyCamps anteriores
-          </h2>
+          <h2 className="editions-subtitle">Momentos de PyCamps anteriores</h2>
           <div className="photo-gallery-container">
             {editions.map((edition, index) => (
               <article key={index} className="photo-card">
