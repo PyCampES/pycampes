@@ -50,7 +50,8 @@
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
-  margin-top: var(--spacing-xl);
+  margin: 0 auto var(--spacing-lg);
+  text-align: center;
 }
 
 /* Photo Gallery Section */

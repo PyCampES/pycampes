@@ -89,17 +89,16 @@ function PreviousEditions() {
               <span className="title-highlight">Anteriores</span>
             </h1>
             <p className="editions-description">
-              Descubre los proyectos que han nacido en PyCamp en ediciones
-              pasadas
+              Descubre todo lo que vivimos en ediciones pasadas
             </p>
-            <h2 className="editions-subtitle">
-              Momentos de ediciones anteriores
-            </h2>
           </div>
         </section>
 
         {/* Photo Gallery Section */}
         <section className="photo-gallery">
+          <h2 className="editions-subtitle">
+            Momentos de ediciones anteriores
+          </h2>
           <div className="photo-gallery-container">
             {editions.map((edition, index) => (
               <article key={index} className="photo-card">
