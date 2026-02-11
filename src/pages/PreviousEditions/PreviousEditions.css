@@ -10,7 +10,8 @@
     rgba(250, 248, 245, 1) 46%,
     rgba(250, 248, 245, 1) 100%
   );
-  padding: var(--spacing-xl) 0;
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xs);
 }
 
 .editions-hero-container {
@@ -78,7 +79,9 @@
   flex-direction: column;
   align-items: center;
   gap: var(--spacing-sm);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .photo-card:hover {
@@ -134,7 +137,6 @@
   width: 16px;
   height: 16px;
   opacity: 0.7;
-
 }
 
 .photo-label:hover .external-icon {
@@ -210,7 +212,9 @@
   grid-template-rows: auto auto auto;
   gap: var(--spacing-xs) var(--spacing-sm);
   box-shadow: 0 1px 20px rgba(238, 231, 221, 0.6);
-  transition: transform 0.2s, box-shadow 0.2s;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
 }
 
 .project-card:hover {
