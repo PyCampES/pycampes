@@ -3,6 +3,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
+import arrowRight from "../../assets/icons/arrow-right.svg";
 import groupPhoto from "../../assets/images/pycamp-group-photo.jpg";
 import iconCode from "../../assets/icons/code.svg";
 import iconTrees from "../../assets/icons/trees.svg";
@@ -99,11 +100,7 @@ function Home() {
         <section className="hero">
           <div className="hero-container">
             <div className="hero-content">
-              <img
-                src={logoGrey}
-                alt="PyCamp España"
-                className="hero-logo"
-              />
+              <img src={logoGrey} alt="PyCamp España" className="hero-logo" />
               <p className="hero-description">
                 Un evento en un entorno inspirador para disfrutar de unos días
                 llenos de programación y diversión al aire libre, conectando con
@@ -114,15 +111,7 @@ function Home() {
                 <Button
                   variant="primary"
                   to="/event"
-                  icon={
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                      <path
-                        d="M5 12h14M12 5l7 7-7 7"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                      />
-                    </svg>
-                  }
+                  icon={<img src={arrowRight} alt="" width="24" height="24" />}
                 >
                   Descubre el próximo PyCamp
                 </Button>
@@ -188,7 +177,7 @@ function Home() {
               <br />
               ¡te avisaremos cuando salgan las próximas entradas!
             </p>
-  
+
             {!submitted ? (
               <form
                 className="newsletter-form"
@@ -236,12 +225,13 @@ function Home() {
               <div className="newsletter-success">
                 <h3>¡Gracias!</h3>
                 <p>
-                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te mantendremos al
-                  tanto de cualquier novedad sobre el PyCamp!
+                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te
+                  mantendremos al tanto de cualquier novedad sobre el PyCamp!
                 </p>
                 <p className="newsletter-legal">
-                  Si lo deseas, puedes <strong>darte de baja</strong> en cualquier momento
-                  haciendo click en el footer de nuestros emails.
+                  Si lo deseas, puedes <strong>darte de baja</strong> en
+                  cualquier momento haciendo click en el footer de nuestros
+                  emails.
                 </p>
               </div>
             )}

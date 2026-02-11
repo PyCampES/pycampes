@@ -13,6 +13,8 @@ import iconTrees from "../../assets/icons/trees.svg";
 import iconPuzzle from "../../assets/icons/puzzle.svg";
 import iconClock from "../../assets/icons/clock.svg";
 import iconBulb from "../../assets/icons/bulb.svg";
+import arrowRight from "../../assets/icons/arrow-right.svg";
+
 import "./Event.css";
 
 function Event() {
@@ -228,15 +230,7 @@ function Event() {
               <Button
                 variant="primary"
                 href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform"
-                icon={
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path
-                      d="M5 12h14M12 5l7 7-7 7"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                }
+                icon={<img src={arrowRight} alt="" width="24" height="24" />}
               >
                 Reservar mi plaza
               </Button>
