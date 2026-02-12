@@ -10,7 +10,8 @@
     rgba(250, 248, 245, 1) 46%,
     rgba(246, 244, 238, 1) 100%
   );
-  padding: var(--spacing-xl) 0;
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xs);
 }
 
 .faqs-hero-container {
@@ -46,7 +47,7 @@
 
 /* FAQ List Section */
 .faqs-list-section {
-  background: var(--surface-background);
+  background: var(--surface-back2);
   padding: var(--spacing-xl) 0;
 }
 
