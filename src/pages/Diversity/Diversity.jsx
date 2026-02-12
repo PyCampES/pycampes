@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
+import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
 import heartIcon from "../../assets/icons/heart.svg";
 import usersIcon from "../../assets/icons/users-group.svg";
@@ -218,26 +219,20 @@ function Diversity() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="diversity-cta">
-          <div className="diversity-cta-container">
-            <h2 className="cta-title">¿Tienes más preguntas?</h2>
-            <p className="cta-description">
-              Te animamos a que revises toda la información sobre el próximo
+        <CTA
+          title="¿Tienes más preguntas?"
+          description="Te animamos a que revises toda la información sobre el próximo
               PyCamp y nuestro apartado de FAQs. También puedes contactar con
-              nosotros por email y seguirnos en nuestras redes.
-            </p>
-
-            <div className="cta-buttons">
-              <Button variant="primary" to="/event">
-                Ver próximo PyCamp
-              </Button>
-              <Button variant="secondary" to="/faqs">
-                Preguntas Frecuentes
-              </Button>
-            </div>
-          </div>
-        </section>
+              nosotros por email y seguirnos en nuestras redes."
+          primaryButton={{
+            text: "Ver próximo PyCamp",
+            to: "/event",
+          }}
+          secondaryButton={{
+            text: "Preguntas Frecuentes",
+            to: "/faqs",
+          }}
+        />
       </main>
 
       <Footer />

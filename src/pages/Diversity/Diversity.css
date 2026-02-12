@@ -433,50 +433,11 @@
   height: 12px;
 }
 
-/* CTA Section */
-.diversity-cta {
-  background: var(--brand-green-medium);
-  padding: var(--spacing-xl) 0;
-}
-
-.diversity-cta-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
-  text-align: center;
-}
-
-.cta-title {
-  font-family: "Yeseva One", serif;
-  font-size: 36px;
-  line-height: 1.2;
-  letter-spacing: -0.45px;
-  color: var(--text-inverse);
-  margin-bottom: var(--spacing-md);
-}
-
-.cta-description {
-  color: var(--brand-green-light);
-  font-size: 18px;
-  line-height: 1.67;
-  letter-spacing: -0.45px;
-  max-width: 733px;
-  margin: 0 auto var(--spacing-lg);
-}
-
-.cta-buttons {
-  display: flex;
-  gap: var(--spacing-sm);
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
 /* Responsive Design */
 @media (max-width: 1024px) {
   .diversity-hero-container,
   .short-version-container,
-  .long-version-container,
-  .diversity-cta-container {
+  .long-version-container {
     padding: 0 var(--spacing-lg);
   }
 
@@ -492,8 +453,7 @@
 @media (max-width: 768px) {
   .diversity-hero-container,
   .short-version-container,
-  .long-version-container,
-  .diversity-cta-container {
+  .long-version-container {
     padding: 0 var(--spacing-sm);
   }
 
@@ -501,14 +461,12 @@
     font-size: 36px;
   }
 
-  .diversity-description,
-  .cta-description {
+  .diversity-description {
     font-size: 18px;
   }
 
   .values-title,
-  .section-title,
-  .cta-title {
+  .section-title {
     font-size: 28px;
   }
 
@@ -522,11 +480,6 @@
 
   .faq-answer p {
     padding-left: 0;
-  }
-
-  .cta-buttons {
-    flex-direction: column;
-    align-items: stretch;
   }
 
   .report-container {
