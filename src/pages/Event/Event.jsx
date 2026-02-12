@@ -1,5 +1,6 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
+import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
@@ -13,7 +14,6 @@ import iconTrees from "../../assets/icons/trees.svg";
 import iconPuzzle from "../../assets/icons/puzzle.svg";
 import iconClock from "../../assets/icons/clock.svg";
 import iconBulb from "../../assets/icons/bulb.svg";
-import arrowRight from "../../assets/icons/arrow-right.svg";
 
 import "./Event.css";
 
@@ -217,29 +217,24 @@ function Event() {
           </div>
         </section>
 
-        {/* CTA Section */}
-        <section className="cta-section">
-          <div className="cta-container">
-            <h2>¿Listo para vivir la experiencia?</h2>
-            <p>
+        <CTA
+          title="¿Listo para vivir la experiencia?"
+          description={
+            <>
               Las plazas son limitadas y se agotan rápidamente.
               <br />
               Reserva tu lugar en el próximo PyCamp hoy.
-            </p>
-            <div className="cta-buttons">
-              <Button
-                variant="primary"
-                href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform"
-                icon={<img src={arrowRight} alt="" width="24" height="24" />}
-              >
-                Reservar mi plaza
-              </Button>
-              <Button variant="secondary" to="/faqs">
-                Preguntas Frecuentes
-              </Button>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+          primaryButton={{
+            text: "Reservar mi plaza",
+            href: "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform",
+          }}
+          secondaryButton={{
+            text: "Preguntas Frecuentes",
+            to: "/faqs",
+          }}
+        />
       </main>
 
       <Footer />
