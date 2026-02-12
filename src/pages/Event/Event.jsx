@@ -109,7 +109,9 @@ function Event() {
                   <img src={iconMapPin} alt="" />
                 </div>
                 <h3>¿Dónde?</h3>
-                <p className="info-highlight">Encinar de Escardiel, Sevilla</p>
+                <p className="info-highlight">
+                  <a href="https://maps.app.goo.gl/JWkPbEjNnvaJK2DG9" target="_blank" rel="noopener noreferrer">Encinar de Escardiel, Sevilla</a>
+                </p>
                 <p className="info-description">
                   Alojamiento rural a 1 hora de Sevilla. Un entorno natural
                   privilegiado con todas las comodidades para trabajar y
