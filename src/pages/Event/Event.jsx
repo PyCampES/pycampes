@@ -200,7 +200,7 @@ function Event() {
         </section>
 
         {/* Project Idea Section */}
-        <section className="project-idea-section">
+        <section id="project-idea" className="project-idea-section">
           <div className="project-idea-container">
             <div className="idea-icon">
               <img src={iconBulb} alt="" />
