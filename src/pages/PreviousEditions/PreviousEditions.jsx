@@ -41,40 +41,22 @@ function PreviousEditions() {
 
   const projects = [
     {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
+      name: "geosong",
+      title: "geosong",
+      description: "What music is people listen to?",
+      github: "https://github.com/PyCampES/geosong",
     },
     {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
+      name: "pytron",
+      title: "pytron",
+      description: "PyCamp challenge game",
+      github: "https://github.com/PyCampES/pytron",
     },
     {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
-    },
-    {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
-    },
-    {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
-    },
-    {
-      name: "nombre-proyecto",
-      title: "Título del proyecto",
-      description: "Proyecto de ejemplo que sirve para estas cosas",
-      github: "https://github.com/EJEMPLO",
+      name: "ficamp",
+      title: "ficamp",
+      description: "Parse bank data to analyze expenses",
+      github: "https://github.com/PyCampEs/ficamp",
     },
   ];
 
