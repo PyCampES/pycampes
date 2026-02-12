@@ -206,7 +206,7 @@ function Faqs() {
         </section>
 
         <CTA
-          title="¿Tienes más preguntas?"
+          title="¿Aún tienes dudas?"
           description={
             <>
               Te animamos a que revises toda la información sobre el próximo
@@ -219,6 +219,10 @@ function Faqs() {
           primaryButton={{
             text: "Ver próximo PyCamp",
             to: "/event",
+          }}
+          secondaryButton={{
+            text: "Ver eventos pasados",
+            to: "/previous-editions",
           }}
         />
       </main>
