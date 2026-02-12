@@ -162,7 +162,7 @@ function Home() {
               style={{ display: "none" }}
             />
             <div className="newsletter-icon">
-              <img src={iconMail} alt="mail" />
+              <img src={iconMail} alt="" />
             </div>
 
             <h2 className="newsletter-title">Únete a nuestra comunidad</h2>

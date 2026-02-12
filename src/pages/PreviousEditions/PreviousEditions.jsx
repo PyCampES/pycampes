@@ -147,7 +147,7 @@ function PreviousEditions() {
               {projects.map((project, index) => (
                 <article key={index} className="project-card">
                   <div className="project-icon">
-                    <img src={githubIcon} alt="github icon" />
+                    <img src={githubIcon} alt="" />
                   </div>
 
                   <h3 className="project-name">{project.name}</h3>
@@ -160,7 +160,7 @@ function PreviousEditions() {
                     className="project-link"
                   >
                     <span>Ver en Github</span>
-                    <img src={arrowBrown} alt="arrow" />
+                    <img src={arrowBrown} alt="" />
                   </a>
 
                   <a
@@ -170,7 +170,7 @@ function PreviousEditions() {
                     className="external-link"
                     aria-label={`Abrir ${project.name} en nueva pestaña`}
                   >
-                    <img src={externalLinkIcon} alt="External link" />
+                    <img src={externalLinkIcon} alt="" />
                   </a>
                 </article>
               ))}
