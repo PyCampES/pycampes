@@ -18,6 +18,9 @@ import iconBulb from "../../assets/icons/bulb.svg";
 import "./Event.css";
 
 function Event() {
+  const ticketForm = "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";
+  const projectsForm = "https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/viewform";
+
   const ticketIncludes = [
     {
       icon: iconHome,
@@ -117,7 +120,7 @@ function Event() {
 
             <Button
               variant="primary"
-              href="https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform"
+              href={ticketForm}
             >
               ¡Reservar ya mi entrada!
             </Button>
@@ -206,7 +209,7 @@ function Event() {
               la comunidad. Propón tu proyecto para la próxima edición y
               encuentra colaboradores.
             </p>
-            <Button variant="secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/viewform">
+            <Button variant="secondary" href={projectsForm}>
               Proponer un proyecto
             </Button>
             <p className="section-note">
@@ -227,7 +230,7 @@ function Event() {
           }
           primaryButton={{
             text: "Reservar mi plaza",
-            href: "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform",
+            href: ticketForm,
           }}
           secondaryButton={{
             text: "Preguntas Frecuentes",
