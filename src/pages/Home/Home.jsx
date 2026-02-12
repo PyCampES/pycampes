@@ -1,0 +1,254 @@
+import { useState } from "react";
+import Navbar from "../../components/Navbar/Navbar";
+import Button from "../../components/Button/Button";
+import Footer from "../../components/Footer/Footer";
+import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
+import arrowRight from "../../assets/icons/arrow-right.svg";
+import groupPhoto from "../../assets/images/pycamp-group-photo.jpg";
+import iconCode from "../../assets/icons/code.svg";
+import iconTrees from "../../assets/icons/trees.svg";
+import iconUsers from "../../assets/icons/users.svg";
+import iconBinoculars from "../../assets/icons/binoculars.svg";
+import iconMail from "../../assets/icons/mail.svg";
+import logoPythonEspana from "../../assets/logos/pythonespana-logo.webp";
+import logoArgentinaEnPython from "../../assets/logos/argentinaenpython-logo.webp";
+import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
+import "./Home.css";
+
+function Home() {
+  const [submitted, setSubmitted] = useState(false);
+  const [consent, setConsent] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    if (!consent) {
+      return;
+    }
+
+    const formData = new FormData(e.target);
+    const response = await fetch(e.target.action, {
+      method: e.target.method,
+      body: new URLSearchParams(formData),
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
+      },
+    });
+
+    if (!response.ok) {
+      return;
+    }
+
+    const result = await response.json();
+
+    if (result?.success) {
+      setSubmitted(true);
+    }
+  };
+
+  const features = [
+    {
+      icon: iconCode,
+      title: "Proyectos Reales",
+      description:
+        "Trabaja en proyectos de código abierto con impacto real en la comunidad Python.",
+    },
+    {
+      icon: iconTrees,
+      title: "Entorno Único",
+      description:
+        "Alojamiento en un espacio diseñado para fomentar la creatividad y colaboración.",
+    },
+    {
+      icon: iconUsers,
+      title: "Comunidad",
+      description:
+        "Conecta con gente experta y apasionada de España, Europa y el mundo.",
+    },
+    {
+      icon: iconBinoculars,
+      title: "Temas Diversos",
+      description:
+        "Participa en debates sobre temas de ética, sociedad y el futuro de la industria.",
+    },
+  ];
+
+  const sponsors = [
+    {
+      category: "Organiza",
+      name: "Python España",
+      logo: logoPythonEspana,
+    },
+    {
+      category: "Colabora",
+      name: "Argentina en Python",
+      logo: logoArgentinaEnPython,
+    },
+    {
+      category: "Sponsor",
+      name: "EuroPython Society",
+      logo: logoEuroPython,
+    },
+  ];
+
+  return (
+    <div className="home">
+      <Navbar />
+
+      <main>
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="hero-container">
+            <div className="hero-content">
+              <img src={logoGrey} alt="PyCamp España" className="hero-logo" />
+              <p className="hero-description">
+                Un evento en un entorno inspirador para disfrutar de unos días
+                llenos de programación y diversión al aire libre, conectando con
+                buena gente.
+              </p>
+
+              <div className="hero-buttons">
+                <Button
+                  variant="primary"
+                  to="/event"
+                  icon={<img src={arrowRight} alt="" width="24" height="24" />}
+                >
+                  Descubre el próximo PyCamp
+                </Button>
+                <Button variant="secondary" to="/previous-editions">
+                  Ver ediciones anteriores
+                </Button>
+              </div>
+            </div>
+
+            <div className="hero-image">
+              <img src={groupPhoto} alt="PyCamp en acción" />
+            </div>
+          </div>
+        </section>
+
+        {/* About Section */}
+        <section className="about">
+          <div className="about-container">
+            <h2 className="about-title">
+              ¿Qué es el <span className="highlight">PyCamp</span>?
+            </h2>
+            <p className="about-subtitle">
+              Más que un evento de programación, es una experiencia que combina
+              desarrollo de software, naturaleza y comunidad.
+            </p>
+
+            <div className="features-grid">
+              {features.map((feature, index) => (
+                <article key={index} className="feature-card">
+                  <div className="feature-icon">
+                    <img src={feature.icon} alt="" />
+                  </div>
+                  <h3 className="feature-title">{feature.title}</h3>
+                  <p className="feature-description">{feature.description}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Newsletter Section */}
+        <section className="newsletter">
+          <div className="newsletter-container">
+            <iframe
+              name="ml-hidden-iframe"
+              title="newsletter-subscription"
+              style={{ display: "none" }}
+            />
+            <div className="newsletter-icon">
+              <img src={iconMail} alt="" />
+            </div>
+
+            <h2 className="newsletter-title">Únete a nuestra comunidad</h2>
+            <p className="newsletter-description">
+              Suscríbete a nuestra newsletter para recibir noticias sobre el
+              próximo PyCamp,
+              <br />
+              ¡te avisaremos cuando salgan las próximas entradas!
+            </p>
+
+            {!submitted ? (
+              <form
+                className="newsletter-form"
+                action="https://assets.mailerlite.com/jsonp/189141/forms/178924638060939050/subscribe"
+                data-code=""
+                method="post"
+                target="ml-hidden-iframe"
+                onSubmit={handleSubmit}
+              >
+                <div className="newsletter-form-row">
+                  <input
+                    type="email"
+                    name="fields[email]"
+                    placeholder="tu@email.com"
+                    data-inputmask=""
+                    className="newsletter-input"
+                    required
+                  />
+                  <Button type="submit" variant="primary">
+                    Suscribirme
+                  </Button>
+                </div>
+
+                {/*GDPR checkbox */}
+                <label className="newsletter-consent">
+                  <input
+                    type="checkbox"
+                    name="gdpr[]"
+                    value="Email"
+                    xp-if="gdpr.title"
+                    required
+                    checked={consent}
+                    onChange={(e) => setConsent(e.target.checked)}
+                  />
+                  <span xp-if="gdpr.description">
+                    Acepto recibir emails informativos sobre el PyCamp.
+                    Utilizamos MailerLite como plataforma de email marketing.
+                  </span>
+                </label>
+
+                <input type="hidden" name="ml-submit" value="1" />
+                <input type="hidden" name="anticsrf" value="true" />
+              </form>
+            ) : (
+              <div className="newsletter-success">
+                <h3>¡Gracias!</h3>
+                <p>
+                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te
+                  mantendremos al tanto de cualquier novedad sobre el PyCamp!
+                </p>
+                <p className="newsletter-legal">
+                  Si lo deseas, puedes <strong>darte de baja</strong> en
+                  cualquier momento haciendo click en el footer de nuestros
+                  emails.
+                </p>
+              </div>
+            )}
+          </div>
+        </section>
+
+        {/* Sponsors Section */}
+        <section className="sponsors">
+          <div className="sponsors-container">
+            {sponsors.map((sponsor, index) => (
+              <div key={index} className="sponsor-group">
+                <h3 className="sponsor-label">{sponsor.category}:</h3>
+                <img src={sponsor.logo} alt={sponsor.name} />
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+
+      <Footer />
+    </div>
+  );
+}
+
+export default Home;

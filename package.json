@@ -1,38 +1,28 @@
 {
-  "name": "pycamp.es",
-  "version": "0.1.0",
-  "description": "Official website of pycamp spain",
-  "main": "index.js",
-  "license": "MIT",
+  "name": "pycampes",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
   "scripts": {
-    "clean": "rm -rf dist/* .cache/",
-    "start": "parcel serve --no-hmr public/index.njk",
-    "build-prod": "parcel build public/index.njk --public-url ./",
-    "create-cname": "echo 'pycamp.es' > dist/CNAME",
-    "gh-deploy": "gh-pages -d dist",
-    "deploy": "yarn clean && yarn build-prod && yarn create-cname && yarn gh-deploy"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.6.2",
-    "@babel/preset-env": "^7.6.2",
-    "eslint": "^6.4.0",
-    "eslint-config-prettier": "^6.3.0",
-    "eslint-plugin-prettier": "^3.1.1",
-    "gh-pages": "^2.1.1",
-    "parcel-bundler": "^1.12.4",
-    "prettier": "^1.18.2",
-    "sass": "^1.22.12"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
   },
   "dependencies": {
-    "@layflags/parcel-plugin-metaimage": "^1.2.5",
-    "bootstrap": "^4.3.1",
-    "g-sheets-api": "^2.1.2",
-    "nunjucks": "^3.2.0",
-    "parcel-plugin-nunjucks": "^2.2.0",
-    "parcel-plugin-static-files-copy": "^2.6.0",
-    "yarn": "^1.22.17"
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-router-dom": "^7.13.0"
   },
-  "staticFiles": {
-    "staticPath": ["public/pycampes-2023.ics"]
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@types/react": "^19.2.5",
+    "@types/react-dom": "^19.2.3",
+    "@vitejs/plugin-react-swc": "^4.2.2",
+    "eslint": "^9.39.1",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "vite": "^7.2.4"
   }
 }

@@ -1,0 +1,12 @@
+<svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Lightbulb outline -->
+  <path d="M32 8C23.1634 8 16 15.1634 16 24C16 29.0909 18.3273 33.6364 21.9636 36.7273C22.9091 37.5273 23.5636 38.6182 23.8545 39.8545L24.5091 42.9091H39.4909L40.1455 39.8545C40.4364 38.6182 41.0909 37.5273 42.0364 36.7273C45.6727 33.6364 48 29.0909 48 24C48 15.1634 40.8366 8 32 8Z" stroke="#F7931E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Base horizontal line -->
+  <path d="M24.5091 42.9091H39.4909" stroke="#F7931E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Screw base -->
+  <path d="M26.5455 46.5455H37.4545" stroke="#F7931E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M26.5455 50.1818H37.4545" stroke="#F7931E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M28.5818 53.8182H35.4182" stroke="#F7931E" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
