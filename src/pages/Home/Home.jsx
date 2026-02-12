@@ -117,7 +117,7 @@ function Home() {
                   Descubre el próximo PyCamp
                 </Button>
                 <Button variant="secondary" to="/previous-editions">
-                  Ver proyectos anteriores
+                  Ver ediciones anteriores
                 </Button>
               </div>
             </div>
