@@ -27,7 +27,6 @@
 
 .footer-links h3,
 .footer-social h3 {
-  color: #99d98c;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: var(--spacing-sm);
@@ -65,13 +64,24 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--brand-green-light);
   transition: background 0.2s;
 }
 
 .social-icon:hover {
   background: var(--accent-forest);
-  color: var(--brand-green-dark);
+}
+
+.social-icon img {
+  width: 24px;
+  height: 24px;
+  filter: invert(84%) sepia(15%) saturate(845%) hue-rotate(62deg)
+    brightness(94%) contrast(88%);
+  transition: filter 0.2s;
+}
+
+.social-icon:hover img {
+  filter: invert(23%) sepia(28%) saturate(1344%) hue-rotate(78deg)
+    brightness(96%) contrast(89%);
 }
 
 .footer-bottom {

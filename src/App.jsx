@@ -1,13 +1,16 @@
-import { HashRouter, Routes, Route } from 'react-router-dom'
-import Home from './pages/Home/Home'
-import Event from './pages/Event/Event'
-import Diversity from './pages/Diversity/Diversity'
-import Faqs from './pages/Faqs/Faqs'
-import PreviousEditions from './pages/PreviousEditions/PreviousEditions'
+import { HashRouter, Routes, Route } from "react-router-dom";
+import ScrollToTop from "./components/ScrollToTop/ScrollToTop";
+
+import Home from "./pages/Home/Home";
+import Event from "./pages/Event/Event";
+import Diversity from "./pages/Diversity/Diversity";
+import Faqs from "./pages/Faqs/Faqs";
+import PreviousEditions from "./pages/PreviousEditions/PreviousEditions";
 
 function App() {
   return (
     <HashRouter>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/event" element={<Event />} />
@@ -16,7 +19,7 @@ function App() {
         <Route path="/previous-editions" element={<PreviousEditions />} />
       </Routes>
     </HashRouter>
-  )
+  );
 }
 
-export default App
+export default App;
