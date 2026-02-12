@@ -206,8 +206,7 @@ function Event() {
               la comunidad. Propón tu proyecto para la próxima edición y
               encuentra colaboradores.
             </p>
-            {/* !!!! IMPORTANTE PENDIENTE URL FORM */}
-            <Button variant="secondary" href="#">
+            <Button variant="secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/">
               Proponer un proyecto
             </Button>
             <p className="section-note">
