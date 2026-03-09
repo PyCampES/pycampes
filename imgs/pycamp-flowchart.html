@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Pycamp Decision Flow</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;800&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet" />
+  <style>
+    :root {
+      --paper: #f4efe6;
+      --paper-deep: #efe2cf;
+      --ink: #241a16;
+      --rust: #c26c3c;
+      --sage: #7b8f7a;
+      --gold: #d2b166;
+      --shadow: rgba(26, 18, 14, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: "Space Mono", monospace;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 600px at 80% -10%, rgba(210, 177, 102, 0.25), transparent 60%),
+        radial-gradient(800px 400px at 10% 0%, rgba(123, 143, 122, 0.2), transparent 60%),
+        linear-gradient(120deg, var(--paper), var(--paper-deep));
+      position: relative;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(45deg,
+          rgba(36, 26, 22, 0.05),
+          rgba(36, 26, 22, 0.05) 1px,
+          transparent 1px,
+          transparent 7px);
+      opacity: 0.45;
+      pointer-events: none;
+      mix-blend-mode: multiply;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 72px 20px 96px;
+    }
+
+    header {
+      display: grid;
+      gap: 16px;
+      margin-bottom: 36px;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-size: 12px;
+      color: rgba(36, 26, 22, 0.72);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(32px, 4vw, 52px);
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .subhead {
+      font-size: 15px;
+      max-width: 640px;
+      color: rgba(36, 26, 22, 0.78);
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 8px;
+    }
+
+    .badge {
+      border: 1px solid var(--ink);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      background: rgba(244, 239, 230, 0.8);
+    }
+
+    .diagram-card {
+      background: rgba(244, 239, 230, 0.92);
+      border: 2px solid var(--ink);
+      border-radius: 24px;
+      padding: 28px;
+      box-shadow: 0 24px 60px -40px rgba(26, 18, 14, 0.7), 0 8px 24px -16px var(--shadow);
+      position: relative;
+    }
+
+    .diagram-card::after {
+      content: "";
+      position: absolute;
+      inset: 12px;
+      border: 1px dashed rgba(36, 26, 22, 0.25);
+      border-radius: 18px;
+      pointer-events: none;
+    }
+
+    .flowchart {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+      position: relative;
+    }
+
+    /* overlay SVG for cross-column merge lines */
+    #overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: visible;
+    }
+
+    /* ── nodes ─────────────────────────────────────────── */
+    .node {
+      background: #f7e6c8;
+      border: 2px solid var(--ink);
+      border-radius: 16px;
+      padding: 16px 18px;
+      text-align: center;
+      box-shadow: 0 10px 22px -16px var(--shadow);
+      position: relative;
+      z-index: 1;
+    }
+
+    .node.start,
+    .node.end {
+      border-radius: 999px;
+      font-weight: 700;
+      width: fit-content;
+      min-width: 260px;
+    }
+
+    .node.decision {
+      background: #f1d9b8;
+      border-style: dashed;
+      font-weight: 600;
+      width: 100%;
+    }
+
+    .node.action {
+      background: #f7e6c8;
+      width: 100%;
+    }
+
+    /* ── SVG connector lines ───────────────────────────── */
+    .connector {
+      display: block;
+      overflow: visible;
+      width: 100%;
+    }
+
+    /* ── two-column branches ───────────────────────────── */
+    .branches {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 32px;
+      width: 100%;
+      align-items: start;
+    }
+
+    .branch {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── yes/no label ──────────────────────────────────── */
+    .label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(36, 26, 22, 0.7);
+      background: rgba(244, 239, 230, 0.9);
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid rgba(36, 26, 22, 0.2);
+      position: relative;
+      z-index: 1;
+    }
+
+    .diagram-card .node {
+      animation: floatIn 0.7s ease-out both;
+    }
+
+    @keyframes reveal {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes floatIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      margin-top: 28px;
+      font-size: 13px;
+      color: rgba(36, 26, 22, 0.7);
+    }
+
+    @media (max-width: 600px) {
+      .branches {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .diagram-card .node {
+        animation: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <main>
+    <header>
+      <h1>All roads lead to PyCamp</h1>
+    </header>
+
+    <section class="diagram-card" aria-label="Pycamp flowchart">
+      <div class="flowchart">
+
+        <!-- shared arrow marker definition -->
+        <svg style="position:absolute;width:0;height:0" aria-hidden="true">
+          <defs>
+            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#241a16" />
+            </marker>
+          </defs>
+        </svg>
+
+        <!-- START -->
+        <div class="node start" id="node-start">Should I attend Pycamp?</div>
+
+        <!-- space for the overlay split lines -->
+        <div style="height:48px"></div>
+
+        <!-- TWO BRANCHES -->
+        <div class="branches">
+
+          <!-- PYTHON BRANCH -->
+          <div class="branch">
+            <div class="node decision">Know Python?</div>
+            <!-- stem → horizontal bar → two drops with arrows -->
+            <svg class="connector" height="48" aria-hidden="true">
+              <line x1="50%" y1="0" x2="50%" y2="14" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="14" x2="75%" y2="14" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="14" x2="25%" y2="40" stroke="#241a16" stroke-width="1" marker-end="url(#arr)" />
+              <line x1="75%" y1="14" x2="75%" y2="40" stroke="#241a16" stroke-width="1" marker-end="url(#arr)" />
+            </svg>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+                <div class="label">Yes</div>
+                <div class="node action">Come build something cool!</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+                <div class="label">No</div>
+                <div class="node action">Come learn by building!</div>
+              </div>
+            </div>
+            <!-- two lines up from action boxes, horizontal join, then centre drop -->
+            <svg class="connector" height="28" aria-hidden="true">
+              <line x1="25%" y1="0" x2="25%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="75%" y1="0" x2="75%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="20" x2="75%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="50%" y1="20" x2="50%" y2="28" stroke="#241a16" stroke-width="1" />
+            </svg>
+          </div>
+
+          <!-- SPANISH BRANCH -->
+          <div class="branch">
+            <div class="node decision">Speak Spanish?</div>
+            <svg class="connector" height="48" aria-hidden="true">
+              <line x1="50%" y1="0" x2="50%" y2="14" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="14" x2="75%" y2="14" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="14" x2="25%" y2="40" stroke="#241a16" stroke-width="1" marker-end="url(#arr)" />
+              <line x1="75%" y1="14" x2="75%" y2="40" stroke="#241a16" stroke-width="1" marker-end="url(#arr)" />
+            </svg>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;width:100%">
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+                <div class="label">Yes</div>
+                <div class="node action">We too, come play with us!</div>
+              </div>
+              <div style="display:flex;flex-direction:column;align-items:center;gap:6px">
+                <div class="label">No</div>
+                <div class="node action">No hay problema. Come learn while coding and playing!</div>
+              </div>
+            </div>
+            <svg class="connector" height="28" aria-hidden="true">
+              <line x1="25%" y1="0" x2="25%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="75%" y1="0" x2="75%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="25%" y1="20" x2="75%" y2="20" stroke="#241a16" stroke-width="1" />
+              <line x1="50%" y1="20" x2="50%" y2="28" stroke="#241a16" stroke-width="1" />
+            </svg>
+          </div>
+
+          <!-- merge SVG: drawn by JS so centres align pixel-perfectly -->
+
+        </div><!-- /.branches -->
+
+        <!-- space for the overlay merge lines -->
+        <div style="height:48px"></div>
+
+        <!-- END -->
+        <div class="node end" id="node-end">Yes! Attend Pycamp!</div>
+
+        <!-- overlay: cross-column merge lines drawn by JS -->
+        <svg id="overlay" aria-hidden="true"></svg>
+
+      </div><!-- /.flowchart -->
+    </section>
+
+    <footer></footer>
+  </main>
+
+  <script>
+    function drawOverlay() {
+      const ns = 'http://www.w3.org/2000/svg';
+      const svg = document.getElementById('overlay');
+      const fc = svg.closest('.flowchart');
+      const fcRect = fc.getBoundingClientRect();
+
+      const rel = r => ({
+        top: r.top - fcRect.top,
+        bottom: r.bottom - fcRect.top,
+        left: r.left - fcRect.left,
+        cx: r.left - fcRect.left + r.width / 2,
+      });
+
+      // Nodes
+      const startNode = rel(document.getElementById('node-start').getBoundingClientRect());
+      const endNode = rel(document.getElementById('node-end').getBoundingClientRect());
+
+      // Decision boxes (first .node.decision in each branch)
+      const branches = fc.querySelectorAll('.branch');
+      const leftDec = rel(branches[0].querySelector('.node.decision').getBoundingClientRect());
+      const rightDec = rel(branches[1].querySelector('.node.decision').getBoundingClientRect());
+
+      // Branch exit points (last SVG in each branch, exits at x=50%, y=bottom)
+      const getExit = branch => {
+        const lastSvg = branch.querySelector('svg:last-of-type');
+        const r = lastSvg.getBoundingClientRect();
+        return {x: r.left - fcRect.left + r.width / 2, y: r.bottom - fcRect.top};
+      };
+      const leftExit = getExit(branches[0]);
+      const rightExit = getExit(branches[1]);
+
+      // Midpoints
+      const startCx = startNode.cx;
+      const topSplitY = startNode.bottom + (leftDec.top - startNode.bottom) * 0.5;
+      const endCx = endNode.cx;
+
+      svg.innerHTML = '';
+
+      const makeLine = (x1, y1, x2, y2, arr) => {
+        const l = document.createElementNS(ns, 'line');
+        l.setAttribute('x1', x1); l.setAttribute('y1', y1);
+        l.setAttribute('x2', x2); l.setAttribute('y2', y2);
+        l.setAttribute('stroke', '#241a16');
+        l.setAttribute('stroke-width', '1');
+        if (arr) l.setAttribute('marker-end', 'url(#arr)');
+        svg.appendChild(l);
+      };
+
+      // TOP: start → split → two decision boxes
+      // Stop arrow lines short by marker size (6px) so arrowheads don't overlap boxes
+      const arrGap = 6;
+      makeLine(startCx, startNode.bottom, startCx, topSplitY);       // stem down
+      makeLine(leftDec.cx, topSplitY, rightDec.cx, topSplitY);       // horizontal bar
+      makeLine(leftDec.cx, topSplitY, leftDec.cx, leftDec.top - arrGap, true);   // left drop with arrow
+      makeLine(rightDec.cx, topSplitY, rightDec.cx, rightDec.top - arrGap, true); // right drop with arrow
+
+      // BOTTOM: two branch exits → merge → END
+      const botJoinY = Math.max(leftExit.y, rightExit.y) + (endNode.top - Math.max(leftExit.y, rightExit.y)) * 0.5;
+      makeLine(leftExit.x, leftExit.y, leftExit.x, botJoinY);     // left drop from its own exit
+      makeLine(rightExit.x, rightExit.y, rightExit.x, botJoinY);     // right drop from its own exit
+      makeLine(leftExit.x, botJoinY, rightExit.x, botJoinY);        // horizontal join
+      makeLine(endCx, botJoinY, endCx, endNode.top);                  // centre drop into END
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', drawOverlay);
+    } else {
+      drawOverlay();
+    }
+    window.addEventListener('resize', drawOverlay);
+  </script>
+
+</body>
+
+</html>
