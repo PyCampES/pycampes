@@ -3,6 +3,7 @@ import Footer from "../../components/Footer/Footer";
 import cameraIcon from "../../assets/icons/camera.svg";
 import externalLinkIcon from "../../assets/icons/external-link.svg";
 import mapPinIcon from "../../assets/icons/map-pin.svg";
+import calendarIcon from "../../assets/icons/calendar.svg";
 import githubIcon from "../../assets/icons/project-github.svg";
 import arrowBrown from "../../assets/icons/arrow-right-brown.svg";
 import photo2025 from "../../assets/images/pycamp-cover-2025.webp";
@@ -18,24 +19,28 @@ function PreviousEditions() {
       photos: photo2025,
       link: "https://photos.app.goo.gl/Lw2M76V2bzYMZoFt6",
       location: "Encinares de Escardiel - Castilblanco de los Arroyos, Sevilla",
+      date: "1 al 4 de mayo",
     },
     {
       year: "2024",
       photos: photo2024,
       link: "https://photos.app.goo.gl/gPYLUEzDAokZ4PrQA",
       location: "Casa de Colonias Aiguaviva - Guixers, Lleida",
+      date: "29 de marzo al 1 de abril",
     },
     {
       year: "2023",
       photos: photo2023,
       link: "https://photos.app.goo.gl/zmtyihL3B3KaBtpF9",
       location: "El Bosc de la Massana - Vilablareix, Girona",
+      date: "7 al 10 de abril",
     },
     {
       year: "2022",
       photos: photo2022,
       link: "https://photos.app.goo.gl/GSeufqbsjHvXLJxZA",
       location: "El Bosc de la Massana - Vilablareix, Girona",
+      date: "15 al 18 de abril",
     },
   ];
 
@@ -109,6 +114,10 @@ function PreviousEditions() {
                 <div className="photo-location">
                   <img src={mapPinIcon} alt="" className="map-icon" />
                   <span>{edition.location}</span>
+                </div>
+                <div className="photo-date">
+                  <img src={calendarIcon} alt="" className="calendar-icon" />
+                  <span>{edition.date}</span>
                 </div>
               </article>
             ))}
