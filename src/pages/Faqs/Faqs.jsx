@@ -100,10 +100,10 @@ function Faqs() {
           </p>
           <ul>
             <li>Tapones para oídos</li>
-            <li>
+            {/* <li>
               Sábana (colchón) y sobre sábana: el venue provee almohada y
               manta/cobija pero si prefieres, puedes llevar tus propias cosas
-            </li>
+            </li> */}
           </ul>
         </>
       ),
