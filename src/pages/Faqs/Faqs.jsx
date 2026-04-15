@@ -108,24 +108,24 @@ function Faqs() {
         </>
       ),
     },
-    {
-      question: "¿Hay ayuda económica para pagar la entrada?",
-      answer: (
-        <p>
-          Somos conscientes de la importancia de equidad y diversidad en
-          tecnología. Gracias al apoyo de nuestros patrocinadores podemos
-          ayudarte con becas.{" "}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform"
-            className="scholarship-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Aplica a través de este formulario.
-          </a>
-        </p>
-      ),
-    },
+    // {
+    //   question: "¿Hay ayuda económica para pagar la entrada?",
+    //   answer: (
+    //     <p>
+    //       Somos conscientes de la importancia de equidad y diversidad en
+    //       tecnología. Gracias al apoyo de nuestros patrocinadores podemos
+    //       ayudarte con becas.{" "}
+    //       <a
+    //         href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform"
+    //         className="scholarship-link"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+    //         Aplica a través de este formulario.
+    //       </a>
+    //     </p>
+    //   ),
+    // },
     {
       question: "¿A qué público va dirigido?",
       answer: (
