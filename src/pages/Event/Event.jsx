@@ -33,7 +33,7 @@ function Event() {
     },
     {
       icon: iconTrain,
-      title: "Transporte ida/vuelta desde punto de encuentro (Sevilla)",
+      title: "Transporte ida/vuelta desde la estación Santa Justa (Sevilla)",
     },
     {
       icon: iconWifi,
