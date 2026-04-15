@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { use, useState } from "react";
+import { useLocation } from 'react-router-dom';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CTA from "../../components/CTA/CTA";
@@ -7,7 +8,13 @@ import questionIcon from "../../assets/icons/question-circle.svg";
 import "./Faqs.css";
 
 function Faqs() {
-  const [openAccordion, setOpenAccordion] = useState(0);
+  let selectedFaq = 0;
+  const location = useLocation();
+  if (location.hash) {
+    selectedFaq = parseInt(location.hash.slice(1));
+  }
+
+  const [openAccordion, setOpenAccordion] = useState(selectedFaq);
 
   const toggleAccordion = (index) => {
     setOpenAccordion(openAccordion === index ? null : index);
@@ -163,6 +170,7 @@ function Faqs() {
             <div className="faqs-accordion">
               {faqs.map((faq, index) => (
                 <article
+                  id={index}
                   key={index}
                   className={`faq-item ${openAccordion === index ? "active" : ""}`}
                 >
