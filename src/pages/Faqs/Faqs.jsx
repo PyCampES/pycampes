@@ -100,29 +100,42 @@ function Faqs() {
           </p>
           <ul>
             <li>Tapones para oídos</li>
-            <li>
+            {/* <li>
               Sábana (colchón) y sobre sábana: el venue provee almohada y
               manta/cobija pero si prefieres, puedes llevar tus propias cosas
-            </li>
+            </li> */}
           </ul>
         </>
       ),
     },
+    // {
+    //   question: "¿Hay ayuda económica para pagar la entrada?",
+    //   answer: (
+    //     <p>
+    //       Somos conscientes de la importancia de equidad y diversidad en
+    //       tecnología. Gracias al apoyo de nuestros patrocinadores podemos
+    //       ayudarte con becas.{" "}
+    //       <a
+    //         href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform"
+    //         className="scholarship-link"
+    //         target="_blank"
+    //         rel="noopener noreferrer"
+    //       >
+    //         Aplica a través de este formulario.
+    //       </a>
+    //     </p>
+    //   ),
+    // },
     {
-      question: "¿Hay ayuda económica para pagar la entrada?",
+      question: "¿A qué hora y dónde tomo el PyBus?",
       answer: (
         <p>
-          Somos conscientes de la importancia de equidad y diversidad en
-          tecnología. Gracias al apoyo de nuestros patrocinadores podemos
-          ayudarte con becas.{" "}
-          <a
-            href="https://docs.google.com/forms/d/e/1FAIpQLSd9exVI0POXRq2WW3Wc8gzcrGy8F106MNzXLgQc9vVphb7YiA/viewform"
-            className="scholarship-link"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Aplica a través de este formulario.
-          </a>
+          El PyBus es un servicio de transporte que ofrecemos para facilitar el
+          traslado de los asistentes al evento. El PyBus sale a las
+          <strong> 10:30hs en la estación Santa Justa, Sevilla</strong>.
+          Por favor, asegúrate de llegar con tiempo suficiente para abordar el bus a la hora indicada ya que
+          no podemos esperar a los asistentes porque el bus tiene un horario de salida asignado en la estación.
+          <strong> La vuelta es a las 17:00hs</strong> desde el venue hacia la estación Santa Justa, Sevilla.
         </p>
       ),
     },
