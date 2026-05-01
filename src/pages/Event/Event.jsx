@@ -110,7 +110,7 @@ function Event() {
                 </div>
                 <h3>¿Dónde?</h3>
                 <p className="info-highlight">
-                  <a href="https://maps.app.goo.gl/JWkPbEjNnvaJK2DG9" target="_blank" rel="noopener noreferrer">Encinar de Escardiel, Sevilla</a>
+                  <a href="https://maps.app.goo.gl/QDkbyW9bDmZmSKYD6" target="_blank" rel="noopener noreferrer">Encinar de Escardiel, Sevilla</a>
                 </p>
                 <p className="info-description">
                   Alojamiento rural a 1 hora de Sevilla. Un entorno natural
