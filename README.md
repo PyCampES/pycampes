@@ -2,6 +2,10 @@
 
 > Sitio web del PyCamp España: https://pycamp.es
 
+## Look and feel
+
+![Homepage](docs/homepage.png)
+
 ## Desarrollo
 
 1. Instalar nodejs `24.11.1`
