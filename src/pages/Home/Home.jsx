@@ -4,7 +4,7 @@ import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
 import arrowRight from "../../assets/icons/arrow-right.svg";
-import groupPhoto from "../../assets/images/pycamp-group-photo.jpg";
+const groupPhoto = `${import.meta.env.BASE_URL}images/pycamp-group-photo.jpg`;
 import iconCode from "../../assets/icons/code.svg";
 import iconTrees from "../../assets/icons/trees.svg";
 import iconUsers from "../../assets/icons/users.svg";
