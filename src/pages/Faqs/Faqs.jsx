@@ -32,24 +32,145 @@ function Faqs() {
     {
       question: "¿Qué es un PyCamp?",
       answer: (
+        <>
+          <p>
+            El PyCamp consiste en tomar un lugar esilo casa rural y juntarnos
+            durante 4 días un grupo de aproximadamente 30 personas a programar y a
+            divertirnos.
+          </p>
+          <p>
+            Los asistentes proponen los proyectos open source en los que quieren
+            trabajar (o ideas un poco locas que les apetece implementar), y el
+            resto se apunta para colaborar. Se acuerdan slots de tiempo para
+            cada proyecto a lo largo de los días, y cada persona elige en qué
+            slots participa — durante mañana, tarde y, si se anima, también la
+            noche.
+          </p>
+          <p>
+            Durante esos 4 días todos desayunamos, comemos, cenamos y dormimos
+            en el mismo lugar. Eso elimina las distracciones de la rutina diaria
+            y hace que se generen muchísimas conversaciones, colaboraciones y
+            amistades en torno al código y a los juegos de mesa, y caminatas.
+          </p>
+          <p>
+            El espíritu es comunitario:{" "}
+            <em>
+              nadie llega como alumno o como ponente, todos llegamos a programar
+              juntos.
+            </em>
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Cuándo se celebra el PyCamp?",
+      answer: (
+        <>
+          <p>
+            Solo hay dos fechas posibles en el calendario en las que celebramos
+            el PyCamp:
+          </p>
+          <ul>
+            <li>
+              El fin de semana del puente del{" "}
+              <strong>1 de mayo (Día del Trabajador)</strong>.
+            </li>
+            <li>
+              El fin de semana de <strong>Semana Santa</strong>.
+            </li>
+          </ul>
+          <p>
+            La razón es la misma que motiva la estructura de 4 días: queremos
+            un puente con un día festivo entre semana, de forma que los
+            asistentes solo tengan que pedir un día libre en su trabajo para
+            venir. Las fechas concretas de cada edición se publican en la
+            newsletter y aquí en la web una vez confirmado el venue.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Cuántas personas asistimos?",
+      answer: (
         <p>
-          El PyCamp es un evento sin fines de lucro que consiste en apoderarse
-          de un lugar (como puede ser una Casa Rural) en el que un grupo de
-          programadores (20 a 30 personas) nos juntamos a programar y
-          divertirnos durante 4 días completos. Los asistentes proponen los
-          proyectos Open Source en los que desean trabajar durante estos días (o
-          alguna idea un poco loca que quieran implementar) y el resto se anota
-          para colaborar y trabajar en esos proyectos. Así, se determinan
-          diferentes slots de tiempo para cada proyecto durante todos los días y
-          cada programador trabaja, dentro de los slots asignados, en los
-          proyectos que más le han llamado la atención. Esta dinámica se
-          mantiene durante los 4 días que dura el evento, trabajando mañana,
-          tarde y hasta la noche, si lo desean. Durante los 4 días que dura el
-          evento, todos los asistentes desayunan, almuerzan, cenan y duermen en
-          el lugar que se haya alquilado. Esto hace que sea un evento sin
-          ninguna distracción, que compartamos mucho tiempo en comunidad y
-          colaboremos programando en lo que más nos gusta. ¡El PyCamp es un
-          evento que genera un ambiente colaborativo y de comunidad hermoso!
+          Somos un grupo de aproximadamente 30 personas. Esa cifra no es
+          casualidad: es lo suficientemente grande para tener variedad de
+          proyectos y perspectivas, y lo suficientemente pequeña para que
+          durante los 4 días puedas hablar con todo el mundo. Las plazas son
+          limitadas y suelen agotarse rápido.
+        </p>
+      ),
+    },
+    {
+      question: "¿A qué público va dirigido?",
+      answer: (
+        <p>
+          El PyCamp es un evento inclusivo donde se potencian las habilidades de
+          programación desde la experiencia y práctica real apta para todos los
+          niveles de conocimiento. Si bien, en principio, no hay talleres
+          propuestos para aprender a programar, con un conocimiento básico de
+          programación y Python se puede aprovechar al máximo. ¿Por qué? Porque
+          vas a tener la oportunidad de trabajar codo a codo con gente que tiene
+          años de experiencia en el tema y poder compartir la resolución de un
+          problema en grupo, entender cómo piensan otros programadores y cómo
+          atacan el problema de diferentes formas. ¿Crees que no tienes el
+          conocimiento suficiente para asistir al evento? ¡No te preocupes,
+          súmate que la vas a pasar genial y vas a aprender un montón de cosas!
+        </p>
+      ),
+    },
+    {
+      question: "¿En qué consisten los proyectos?",
+      answer: (
+        <>
+          <p>
+            Los proyectos los proponen los propios asistentes en la charla de
+            apertura del primer día. Pueden ser issues de un proyecto open
+            source, prototipos nuevos, talleres de hardware o electrónica, e
+            incluso actividades fuera del ordenador como caminatas o talleres no
+            técnicos.
+          </p>
+          <p>
+            Cada propuesta abre un slot que se vota brevemente y se distribuye
+            en la pizarra para los días siguientes. Varios proyectos suelen
+            ocurrir en paralelo y cada persona se mueve libremente entre los que
+            más le interesen.
+          </p>
+          <p>
+            La organización <em>no</em> propone proyectos: la idea es
+            que las actividades las traigan los propios asistentes. Vale como
+            regla informal que{" "}
+            <em>
+              "quien propone un proyecto se hace cargo de coordinarlo"
+            </em>{" "}
+            durante los días del evento.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Hay Wifi en el venue?",
+      answer: (
+        <p>
+          Sí. La conexión a internet es uno de los requisitos no negociables
+          que pedimos al venue, y siempre la testeamos al visitarlo. Si la
+          conexión propia del venue es débil, llevamos también nuestra propia
+          solución (antena Starlink + router) para garantizar que haya
+          cobertura suficiente en los espacios de hack durante todo el evento.
+        </p>
+      ),
+    },
+    {
+      question: "¿Cómo se gestionan las restricciones alimentarias?",
+      answer: (
+        <p>
+          Pedimos las restricciones alimentarias en el formulario de
+          inscripción y se las comunicamos al venue con antelación. Solo
+          trabajamos con venues capaces de gestionar vegetarianos, veganos,
+          intolerancias y alergias como parte normal del menú. Si
+          tienes una alergia seria o un caso especial, contactamos
+          directamente con el venue por email para confirmar que pueden
+          gestionarla.
         </p>
       ),
     },
@@ -134,35 +255,30 @@ function Faqs() {
     //     </p>
     //   ),
     // },
-    // Hidden until 2027 venue/transport details are confirmed.
-    // {
-    //   question: "¿A qué hora y dónde tomo el PyBus?",
-    //   answer: (
-    //     <p>
-    //       El PyBus es un servicio de transporte que ofrecemos para facilitar el
-    //       traslado de los asistentes al evento. El PyBus sale a las
-    //       <strong> 10:30hs en la estación Santa Justa, Sevilla</strong>.
-    //       Por favor, asegúrate de llegar con tiempo suficiente para abordar el bus a la hora indicada ya que
-    //       no podemos esperar a los asistentes porque el bus tiene un horario de salida asignado en la estación.
-    //       <strong> La vuelta es a las 17:00hs</strong> desde el venue hacia la estación Santa Justa, Sevilla.
-    //     </p>
-    //   ),
-    // },
     {
-      question: "¿A qué público va dirigido?",
+      question:
+        "¿Hay traslado al venue desde la ciudad principal más cercana? (PyBus)",
       answer: (
         <p>
-          El PyCamp es un evento inclusivo donde se potencian las habilidades de
-          programación desde la experiencia y práctica real apta para todos los
-          niveles de conocimiento. Si bien, en principio, no hay talleres
-          propuestos para aprender a programar, con un conocimiento básico de
-          programación y Python se puede aprovechar al máximo. ¿Por qué? Porque
-          vas a tener la oportunidad de trabajar codo a codo con gente que tiene
-          años de experiencia en el tema y poder compartir la resolución de un
-          problema en grupo, entender cómo piensan otros programadores y cómo
-          atacan el problema de diferentes formas. ¿Crees que no tienes el
-          conocimiento suficiente para asistir al evento? ¡No te preocupes,
-          súmate que la vas a pasar genial y vas a aprender un montón de cosas!
+          Sí. Como los venues están alejados de la ciudad, ofrecemos un servicio
+          de autocar privado (PyBus) que traslada a los asistentes desde un
+          punto accesible (aeropuerto o estación de tren) cercano al venue, y
+          los lleva de vuelta al final del evento. Los detalles concretos del
+          horario y punto de salida se publican una vez confirmado el venue de
+          cada edición.
+        </p>
+      ),
+    },
+    {
+      question: "¿Cómo me apunto? ¿Cuándo abren las entradas?",
+      answer: (
+        <p>
+          Cuando se abre la venta lo anunciamos primero al grupo de Telegram de
+          asistentes anteriores, después por la newsletter, y finalmente en
+          redes sociales (LinkedIn, Twitter/X, Instagram). Si quieres
+          asegurarte de no perderte la apertura, suscríbete a nuestra
+          newsletter desde la página principal: te avisamos en cuanto salgan
+          las entradas.
         </p>
       ),
     },
