@@ -50,22 +50,20 @@ function PreviousEditions() {
 
   const projects = [
     {
-      name: "geosong",
-      title: "geosong",
-      description: "What music is people listen to?",
-      github: "https://github.com/PyCampES/geosong",
+      name: "MedNERDS",
+      description: "Medical Named Entity Recognition for Data Structuring",
+      github: "https://github.com/PyCampES/MedNERDS",
     },
     {
-      name: "pytron",
-      title: "pytron",
-      description: "PyCamp challenge game",
-      github: "https://github.com/PyCampES/pytron",
+      name: "pycampes",
+      description: "Sitio web oficial de PyCamp España",
+      github: "https://github.com/PyCampES/pycampes",
     },
     {
-      name: "ficamp",
-      title: "ficamp",
-      description: "Parse bank data to analyze expenses",
-      github: "https://github.com/PyCampEs/ficamp",
+      name: "dj-tui",
+      description:
+        "DJ mixer en la terminal, controlado con un controlador MIDI DDJ-200",
+      github: "https://github.com/PyCampES/dj-tui",
     },
   ];
 
