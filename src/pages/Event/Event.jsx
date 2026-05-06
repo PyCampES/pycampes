@@ -18,8 +18,10 @@ import iconBulb from "../../assets/icons/bulb.svg";
 import "./Event.css";
 
 function Event() {
-  const ticketForm = "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";
-  const projectsForm = "https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/viewform";
+  const ticketForm =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";
+  const projectsForm =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/viewform";
 
   const ticketIncludes = [
     {
@@ -110,7 +112,13 @@ function Event() {
                 </div>
                 <h3>¿Dónde?</h3>
                 <p className="info-highlight">
-                  <a href="https://maps.app.goo.gl/QDkbyW9bDmZmSKYD6" target="_blank" rel="noopener noreferrer">Encinar de Escardiel, Sevilla</a>
+                  <a
+                    href="https://maps.app.goo.gl/QDkbyW9bDmZmSKYD6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Encinar de Escardiel, Sevilla
+                  </a>
                 </p>
                 <p className="info-description">
                   Alojamiento rural a 1 hora de Sevilla. Un entorno natural
@@ -120,10 +128,7 @@ function Event() {
               </div>
             </div>
 
-            <Button
-              variant="primary"
-              href={ticketForm}
-            >
+            <Button variant="primary" href={ticketForm}>
               ¡Reservar ya mi entrada!
             </Button>
           </div>
