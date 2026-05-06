@@ -99,7 +99,7 @@ function Home() {
       <main>
         {/* Hero Section */}
         <section className="hero">
-          <div className="hero-container">
+          <div className="container hero-container">
             <div className="hero-content">
               <img src={logoGrey} alt="PyCamp España" className="hero-logo" />
               <p className="hero-description">
@@ -130,7 +130,7 @@ function Home() {
 
         {/* About Section */}
         <section className="about">
-          <div className="about-container">
+          <div className="container about-container">
             <h2 className="about-title">
               ¿Qué es el <span className="highlight">PyCamp</span>?
             </h2>
@@ -235,7 +235,7 @@ function Home() {
 
         {/* Sponsors Section */}
         <section className="sponsors">
-          <div className="sponsors-container">
+          <div className="container sponsors-container">
             {sponsors.map((sponsor, index) => (
               <div key={index} className="sponsor-group">
                 <h3 className="sponsor-label">{sponsor.category}:</h3>

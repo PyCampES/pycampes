@@ -38,7 +38,7 @@ function Footer() {
 
   return (
     <footer className="footer">
-      <div className="footer-container">
+      <div className="container footer-container">
         <div className="footer-brand">
           <img src={logoWhite} alt="PyCamp España" className="footer-logo" />
           <p className="footer-description">

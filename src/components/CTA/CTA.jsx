@@ -10,7 +10,7 @@ function CTA({
 }) {
   return (
     <section className={`cta-section cta-${background}`}>
-      <div className="cta-container">
+      <div className="container cta-container">
         <h2 className="cta-title">{title}</h2>
 
         {description && <p className="cta-description">{description}</p>}

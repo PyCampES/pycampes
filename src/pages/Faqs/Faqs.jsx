@@ -174,7 +174,7 @@ function Faqs() {
       <main>
         {/* Hero Section */}
         <section className="faqs-hero">
-          <div className="faqs-hero-container">
+          <div className="container faqs-hero-container">
             <h1 className="faqs-title">
               <span className="title-primary">Preguntas</span>{" "}
               <span className="title-highlight">Frecuentes</span>
@@ -187,7 +187,7 @@ function Faqs() {
 
         {/* FAQ Accordion Section */}
         <section className="faqs-list-section">
-          <div className="faqs-list-container">
+          <div className="container faqs-list-container">
             <div className="faqs-accordion">
               {faqs.map((faq, index) => (
                 <article

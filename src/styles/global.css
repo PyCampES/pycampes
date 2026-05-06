@@ -38,3 +38,11 @@ button {
   border: none;
   background: none;
 }
+
+/* Shared page container. New code should use this instead of redefining
+   max-width / centering / horizontal padding per section. */
+.container {
+  max-width: 1380px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
