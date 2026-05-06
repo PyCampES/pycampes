@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from 'react-router-dom';
+import { useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CTA from "../../components/CTA/CTA";
@@ -13,7 +13,10 @@ function Faqs() {
   const location = useLocation();
   let selectedFaq = 0;
   if (location.hash.startsWith(`#${FAQ_HASH_PREFIX}`)) {
-    const parsed = parseInt(location.hash.slice(FAQ_HASH_PREFIX.length + 1), 10);
+    const parsed = parseInt(
+      location.hash.slice(FAQ_HASH_PREFIX.length + 1),
+      10
+    );
     if (!Number.isNaN(parsed)) {
       selectedFaq = parsed;
     }

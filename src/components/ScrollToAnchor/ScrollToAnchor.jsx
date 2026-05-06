@@ -1,10 +1,10 @@
 // Borrowed from https://dev.to/mindactuate/scroll-to-anchor-element-with-react-router-v6-38op
-import { useEffect, useRef } from 'react';
-import { useLocation } from 'react-router-dom';
+import { useEffect, useRef } from "react";
+import { useLocation } from "react-router-dom";
 
 function ScrollToAnchor() {
   const location = useLocation();
-  const lastHash = useRef('');
+  const lastHash = useRef("");
 
   useEffect(() => {
     if (location.hash) {
@@ -15,8 +15,8 @@ function ScrollToAnchor() {
       setTimeout(() => {
         document
           .getElementById(lastHash.current)
-          ?.scrollIntoView({ behavior: "smooth", block: 'center' });
-        lastHash.current = '';
+          ?.scrollIntoView({ behavior: "smooth", block: "center" });
+        lastHash.current = "";
       }, 100);
     }
   }, [location]);

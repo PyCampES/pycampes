@@ -9,7 +9,7 @@ import "./styles/global.css";
 // so we extract the pathname for the router's basename.
 const basename = new URL(
   import.meta.env.BASE_URL,
-  typeof window !== "undefined" ? window.location.origin : "http://localhost",
+  typeof window !== "undefined" ? window.location.origin : "http://localhost"
 ).pathname;
 
 export const createRoot = ViteReactSSG({ routes, basename });
