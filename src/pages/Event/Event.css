@@ -2,6 +2,13 @@
   min-height: 100vh;
 }
 
+/* Newsletter sits between event-intro (ends #f6f4ee) and ticket-section
+   (solid #f6f4ee). Override its default Home-tuned gradient so the section
+   blends seamlessly with both neighbours. */
+.event-page .newsletter {
+  background: var(--surface-back2);
+}
+
 /* Intro Section */
 .event-intro {
   background: linear-gradient(
