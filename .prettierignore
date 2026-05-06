@@ -1,0 +1,6 @@
+dist
+build
+node_modules
+.vite
+.vite-react-ssg-temp
+package-lock.json
