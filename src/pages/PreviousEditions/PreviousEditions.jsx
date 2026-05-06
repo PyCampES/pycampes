@@ -5,6 +5,7 @@ import externalLinkIcon from "../../assets/icons/external-link.svg";
 import mapPinIcon from "../../assets/icons/map-pin.svg";
 import githubIcon from "../../assets/icons/project-github.svg";
 import arrowBrown from "../../assets/icons/arrow-right-brown.svg";
+import photo2026 from "../../assets/images/pycamp-cover-2026.webp";
 import photo2025 from "../../assets/images/pycamp-cover-2025.webp";
 import photo2024 from "../../assets/images/pycamp-cover-2024.webp";
 import photo2023 from "../../assets/images/pycamp-cover-2023.webp";
@@ -13,6 +14,12 @@ import "./PreviousEditions.css";
 
 function PreviousEditions() {
   const editions = [
+    {
+      year: "2026",
+      photos: photo2026,
+      link: "https://photos.app.goo.gl/k8NAepAScdPj4q2h9",
+      location: "Encinar de Escardiel - Castilblanco de los Arroyos, Sevilla",
+    },
     {
       year: "2025",
       photos: photo2025,

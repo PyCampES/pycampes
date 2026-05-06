@@ -1,52 +1,21 @@
-import { useState } from "react";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
+import NewsletterForm from "../../components/NewsletterForm/NewsletterForm";
 import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
 import arrowRight from "../../assets/icons/arrow-right.svg";
-const groupPhoto = `${import.meta.env.BASE_URL}images/pycamp-group-photo.jpg`;
 import iconCode from "../../assets/icons/code.svg";
 import iconTrees from "../../assets/icons/trees.svg";
 import iconUsers from "../../assets/icons/users.svg";
 import iconBinoculars from "../../assets/icons/binoculars.svg";
-import iconMail from "../../assets/icons/mail.svg";
 import logoPythonEspana from "../../assets/logos/pythonespana-logo.webp";
 import logoArgentinaEnPython from "../../assets/logos/argentinaenpython-logo.webp";
 import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
 import "./Home.css";
 
+const groupPhoto = `${import.meta.env.BASE_URL}images/pycamp-group-photo.jpg`;
+
 function Home() {
-  const [submitted, setSubmitted] = useState(false);
-  const [consent, setConsent] = useState(false);
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!consent) {
-      return;
-    }
-
-    const formData = new FormData(e.target);
-    const response = await fetch(e.target.action, {
-      method: e.target.method,
-      body: new URLSearchParams(formData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      },
-    });
-
-    if (!response.ok) {
-      return;
-    }
-
-    const result = await response.json();
-
-    if (result?.success) {
-      setSubmitted(true);
-    }
-  };
-
   const features = [
     {
       icon: iconCode,
@@ -153,85 +122,7 @@ function Home() {
           </div>
         </section>
 
-        {/* Newsletter Section */}
-        <section className="newsletter">
-          <div className="newsletter-container">
-            <iframe
-              name="ml-hidden-iframe"
-              title="newsletter-subscription"
-              style={{ display: "none" }}
-            />
-            <div className="newsletter-icon">
-              <img src={iconMail} alt="" />
-            </div>
-
-            <h2 className="newsletter-title">Únete a nuestra comunidad</h2>
-            <p className="newsletter-description">
-              Suscríbete a nuestra newsletter para recibir noticias sobre el
-              próximo PyCamp,
-              <br />
-              ¡te avisaremos cuando salgan las próximas entradas!
-            </p>
-
-            {!submitted ? (
-              <form
-                className="newsletter-form"
-                action="https://assets.mailerlite.com/jsonp/189141/forms/178924638060939050/subscribe"
-                data-code=""
-                method="post"
-                target="ml-hidden-iframe"
-                onSubmit={handleSubmit}
-              >
-                <div className="newsletter-form-row">
-                  <input
-                    type="email"
-                    name="fields[email]"
-                    placeholder="tu@email.com"
-                    data-inputmask=""
-                    className="newsletter-input"
-                    required
-                  />
-                  <Button type="submit" variant="primary">
-                    Suscribirme
-                  </Button>
-                </div>
-
-                {/*GDPR checkbox */}
-                <label className="newsletter-consent">
-                  <input
-                    type="checkbox"
-                    name="gdpr[]"
-                    value="Email"
-                    xp-if="gdpr.title"
-                    required
-                    checked={consent}
-                    onChange={(e) => setConsent(e.target.checked)}
-                  />
-                  <span xp-if="gdpr.description">
-                    Acepto recibir emails informativos sobre el PyCamp.
-                    Utilizamos MailerLite como plataforma de email marketing.
-                  </span>
-                </label>
-
-                <input type="hidden" name="ml-submit" value="1" />
-                <input type="hidden" name="anticsrf" value="true" />
-              </form>
-            ) : (
-              <div className="newsletter-success">
-                <h3>¡Gracias!</h3>
-                <p>
-                  <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te
-                  mantendremos al tanto de cualquier novedad sobre el PyCamp!
-                </p>
-                <p className="newsletter-legal">
-                  Si lo deseas, puedes <strong>darte de baja</strong> en
-                  cualquier momento haciendo click en el footer de nuestros
-                  emails.
-                </p>
-              </div>
-            )}
-          </div>
-        </section>
+        <NewsletterForm />
 
         {/* Sponsors Section */}
         <section className="sponsors">

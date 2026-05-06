@@ -2,13 +2,6 @@
   min-height: 100vh;
 }
 
-/* Newsletter sits between event-intro (ends #f6f4ee) and ticket-section
-   (solid #f6f4ee). Override its default Home-tuned gradient so the section
-   blends seamlessly with both neighbours. */
-.event-page .newsletter {
-  background: var(--surface-back2);
-}
-
 /* Intro Section */
 .event-intro {
   background: linear-gradient(
@@ -17,7 +10,7 @@
     rgba(250, 248, 245, 1) 46%,
     rgba(246, 244, 238, 1) 100%
   );
-  padding: var(--spacing-xl) var(--spacing-md) 0;
+  padding: var(--spacing-xl) var(--spacing-md);
 }
 
 .event-intro-container {
@@ -42,10 +35,69 @@
   font-size: 20px;
   line-height: 1.5;
   max-width: 772px;
-  margin: 0 auto;
+  margin: 0 auto var(--spacing-xl);
 }
 
-/* Shared section headings */
+.event-info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--spacing-lg);
+  margin-bottom: var(--spacing-xl);
+}
+
+.info-card {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-muted);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 1px 20px rgba(238, 231, 221, 1);
+  text-align: left;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--accent-forest);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.info-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-family: "Nunito", sans-serif;
+}
+
+.info-highlight {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-green-medium);
+  margin-bottom: var(--spacing-sm);
+  font-family: "Nunito", sans-serif;
+}
+
+.info-description {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
+}
+
+/* Ticket Section */
+.ticket-section {
+  background: var(--surface-back2);
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
 .section-title {
   font-size: 36px;
   text-align: center;
@@ -62,18 +114,14 @@
   margin: 0 auto var(--spacing-xl);
 }
 
-/* Ticket Section */
-.ticket-section {
-  background: var(--surface-back2);
-  padding: var(--spacing-xl) var(--spacing-md);
-}
-
 .ticket-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: var(--spacing-md);
+  margin-bottom: var(--spacing-xl);
   max-width: 1000px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .ticket-card {
@@ -117,6 +165,36 @@
   color: var(--text-secondary);
   line-height: 1.4;
   font-weight: 400;
+}
+
+.price-card {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-muted);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-md);
+  text-align: center;
+  max-width: 300px;
+  margin: 0 auto;
+  box-shadow: 0 1px 20px rgba(238, 231, 221, 1);
+}
+
+.price-label {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.price-amount {
+  font-size: 34px;
+  font-weight: 700;
+  color: var(--brand-green-medium);
+  margin-bottom: var(--spacing-xs);
+  font-family: "Nunito", sans-serif;
+}
+
+.price-note {
+  color: var(--text-muted);
+  font-size: 14px;
 }
 
 /* Roadmap Section */
@@ -228,12 +306,71 @@
   color: var(--brand-green-dark);
 }
 
+.inline-link {
+  text-decoration: underline;
+  font-weight: 900;
+  display: inline-flex;
+}
+
+/* Project Idea Section */
+.project-idea-section {
+  background: var(--surface-background);
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.project-idea-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: var(--spacing-xl) var(--spacing-lg);
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-muted);
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-shadow: 0 1px 20px rgba(238, 231, 221, 1);
+}
+
+.idea-icon {
+  width: 58px;
+  height: 58px;
+  background: rgba(244, 123, 37, 0.18);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--spacing-md);
+}
+
+.idea-icon img {
+  width: 46px;
+  height: 46px;
+}
+
+.section-description {
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.6;
+  max-width: 553px;
+  margin: 0 auto var(--spacing-md);
+}
+
+.section-note {
+  color: var(--text-muted);
+  font-size: 14px;
+  line-height: 1.6;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-xs);
+}
+
 /* Responsive */
 @media (max-width: 1024px) {
   .event-intro-container,
   .ticket-container,
   .roadmap-container {
     padding: 0 var(--spacing-lg);
+  }
+
+  .event-info-cards {
+    grid-template-columns: 1fr;
   }
 }
 

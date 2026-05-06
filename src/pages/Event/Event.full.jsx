@@ -1,8 +1,11 @@
-import { Link } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
+import Button from "../../components/Button/Button";
+import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
-import NewsletterForm from "../../components/NewsletterForm/NewsletterForm";
+import { Link } from "react-router-dom";
 
+import iconCalendar from "../../assets/icons/calendar.svg";
+import iconMapPin from "../../assets/icons/map-pin.svg";
 import iconHome from "../../assets/icons/home.svg";
 import iconCroissant from "../../assets/icons/croissant.svg";
 import iconTrain from "../../assets/icons/train.svg";
@@ -10,10 +13,16 @@ import iconWifi from "../../assets/icons/wifi.svg";
 import iconTrees from "../../assets/icons/trees.svg";
 import iconPuzzle from "../../assets/icons/puzzle.svg";
 import iconClock from "../../assets/icons/clock.svg";
+import iconBulb from "../../assets/icons/bulb.svg";
 
 import "./Event.css";
 
 function Event() {
+  const ticketForm =
+    "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";
+  const projectsForm =
+    "https://docs.google.com/forms/d/e/1FAIpQLSeLQSNjgXHhYzOzAcdqyun2_7Pfu_ezRKxvr0hD6Uc8lqP0Bg/viewform";
+
   const ticketIncludes = [
     {
       icon: iconHome,
@@ -26,7 +35,7 @@ function Event() {
     },
     {
       icon: iconTrain,
-      title: "Transporte ida/vuelta desde la estación más cercana",
+      title: "Transporte ida/vuelta desde la estación Santa Justa (Sevilla)",
     },
     {
       icon: iconWifi,
@@ -72,24 +81,60 @@ function Event() {
       <Navbar />
 
       <main>
-        {/* Coming Soon Intro */}
+        {/* Intro Section */}
         <section className="event-intro">
           <div className="container event-intro-container">
             <h1 className="event-main-title">
               <span className="primary-text">PyCamp</span>
-              <span className="highlight-text"> 2027</span>
+              <span className="highlight-text"> 2026</span>
             </h1>
             <p className="event-subtitle">
-              Estamos planeando la próxima edición. Las fechas, el venue y la
-              apertura de entradas se anunciarán próximamente. Suscríbete a
-              nuestra newsletter para no perderte ninguna novedad.
+              Prepárate para una experiencia inmersiva de programación en la
+              naturaleza. 4 días de código, colaboración y comunidad.
             </p>
+
+            <div className="event-info-cards">
+              <div className="info-card">
+                <div className="info-icon">
+                  <img src={iconCalendar} alt="" />
+                </div>
+                <h3>¿Cuándo?</h3>
+                <p className="info-highlight">30 Abril - 3 Mayo 2026</p>
+                <p className="info-description">
+                  Jueves por la mañana a domingo por la tarde. 4 días intensivos
+                  de código y comunidad en un entorno natural.
+                </p>
+              </div>
+
+              <div className="info-card">
+                <div className="info-icon">
+                  <img src={iconMapPin} alt="" />
+                </div>
+                <h3>¿Dónde?</h3>
+                <p className="info-highlight">
+                  <a
+                    href="https://maps.app.goo.gl/QDkbyW9bDmZmSKYD6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Encinar de Escardiel, Sevilla
+                  </a>
+                </p>
+                <p className="info-description">
+                  Alojamiento rural a 1 hora de Sevilla. Un entorno natural
+                  privilegiado con todas las comodidades para trabajar y
+                  descansar.
+                </p>
+              </div>
+            </div>
+
+            <Button variant="primary" href={ticketForm}>
+              ¡Reservar ya mi entrada!
+            </Button>
           </div>
         </section>
 
-        <NewsletterForm />
-
-        {/* Ticket Section (no price card) */}
+        {/* Ticket Section */}
         <section className="ticket-section">
           <div className="container ticket-container">
             <h2 className="section-title">¿Qué incluye la entrada?</h2>
@@ -110,6 +155,12 @@ function Event() {
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="price-card">
+              <p className="price-label">Precio por persona</p>
+              <p className="price-amount">300 €</p>
+              <p className="price-note">Plazas limitadas a 30 personas</p>
             </div>
           </div>
         </section>
@@ -152,6 +203,47 @@ function Event() {
             </p>
           </div>
         </section>
+
+        {/* Project Idea Section */}
+        <section id="project-idea" className="project-idea-section">
+          <div className="project-idea-container">
+            <div className="idea-icon">
+              <img src={iconBulb} alt="" />
+            </div>
+            <h2 className="section-title">¿Tienes una idea de proyecto?</h2>
+            <p className="section-description">
+              PyCamp es el lugar perfecto para desarrollar tu idea con ayuda de
+              la comunidad. Propón tu proyecto para la próxima edición y
+              encuentra colaboradores.
+            </p>
+            <Button variant="secondary" href={projectsForm}>
+              Proponer un proyecto
+            </Button>
+            <p className="section-note">
+              No necesitas tener todo definido. Las mejores ideas evolucionan
+              durante el evento.
+            </p>
+          </div>
+        </section>
+
+        <CTA
+          title="¿Listo para vivir la experiencia?"
+          description={
+            <>
+              Las plazas son limitadas y se agotan rápidamente.
+              <br />
+              Reserva tu lugar en el próximo PyCamp hoy.
+            </>
+          }
+          primaryButton={{
+            text: "Reservar mi plaza",
+            href: ticketForm,
+          }}
+          secondaryButton={{
+            text: "Preguntas Frecuentes",
+            to: "/faqs",
+          }}
+        />
       </main>
 
       <Footer />

@@ -134,19 +134,20 @@ function Faqs() {
     //     </p>
     //   ),
     // },
-    {
-      question: "¿A qué hora y dónde tomo el PyBus?",
-      answer: (
-        <p>
-          El PyBus es un servicio de transporte que ofrecemos para facilitar el
-          traslado de los asistentes al evento. El PyBus sale a las
-          <strong> 10:30hs en la estación Santa Justa, Sevilla</strong>.
-          Por favor, asegúrate de llegar con tiempo suficiente para abordar el bus a la hora indicada ya que
-          no podemos esperar a los asistentes porque el bus tiene un horario de salida asignado en la estación.
-          <strong> La vuelta es a las 17:00hs</strong> desde el venue hacia la estación Santa Justa, Sevilla.
-        </p>
-      ),
-    },
+    // Hidden until 2027 venue/transport details are confirmed.
+    // {
+    //   question: "¿A qué hora y dónde tomo el PyBus?",
+    //   answer: (
+    //     <p>
+    //       El PyBus es un servicio de transporte que ofrecemos para facilitar el
+    //       traslado de los asistentes al evento. El PyBus sale a las
+    //       <strong> 10:30hs en la estación Santa Justa, Sevilla</strong>.
+    //       Por favor, asegúrate de llegar con tiempo suficiente para abordar el bus a la hora indicada ya que
+    //       no podemos esperar a los asistentes porque el bus tiene un horario de salida asignado en la estación.
+    //       <strong> La vuelta es a las 17:00hs</strong> desde el venue hacia la estación Santa Justa, Sevilla.
+    //     </p>
+    //   ),
+    // },
     {
       question: "¿A qué público va dirigido?",
       answer: (
