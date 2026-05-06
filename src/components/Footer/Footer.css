@@ -8,6 +8,10 @@
   display: grid;
   grid-template-columns: 2fr 1fr 1fr;
   gap: var(--spacing-xl);
+}
+
+/* Use higher specificity to override global .container styles */
+div.footer-container {
   margin-bottom: var(--spacing-lg);
 }
 
