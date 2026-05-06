@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logoWhite from "../../assets/logos/pycamp-logo-white.webp";
+import { logoPycampWhite } from "../../assets";
 import "./Navbar.css";
 
 function Navbar() {
@@ -23,7 +23,7 @@ function Navbar() {
     <nav className="navbar">
       <div className="container navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
-          <img src={logoWhite} alt="PyCamp España" />
+          <img src={logoPycampWhite} alt="PyCamp España" />
         </Link>
 
         {/* Button Burger */}

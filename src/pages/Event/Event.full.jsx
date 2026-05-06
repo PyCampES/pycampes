@@ -4,16 +4,18 @@ import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
 import { Link } from "react-router-dom";
 
-import iconCalendar from "../../assets/icons/calendar.svg";
-import iconMapPin from "../../assets/icons/map-pin.svg";
-import iconHome from "../../assets/icons/home.svg";
-import iconCroissant from "../../assets/icons/croissant.svg";
-import iconTrain from "../../assets/icons/train.svg";
-import iconWifi from "../../assets/icons/wifi.svg";
-import iconTrees from "../../assets/icons/trees.svg";
-import iconPuzzle from "../../assets/icons/puzzle.svg";
-import iconClock from "../../assets/icons/clock.svg";
-import iconBulb from "../../assets/icons/bulb.svg";
+import {
+  iconCalendar,
+  iconMapPin,
+  iconHome,
+  iconCroissant,
+  iconTrain,
+  iconWifi,
+  iconTrees,
+  iconPuzzle,
+  iconClock,
+  iconBulb,
+} from "../../assets";
 
 import "./Event.css";
 

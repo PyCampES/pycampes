@@ -1,15 +1,17 @@
 import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
-import cameraIcon from "../../assets/icons/camera.svg";
-import externalLinkIcon from "../../assets/icons/external-link.svg";
-import mapPinIcon from "../../assets/icons/map-pin.svg";
-import githubIcon from "../../assets/icons/project-github.svg";
-import arrowBrown from "../../assets/icons/arrow-right-brown.svg";
-import photo2026 from "../../assets/images/pycamp-cover-2026.webp";
-import photo2025 from "../../assets/images/pycamp-cover-2025.webp";
-import photo2024 from "../../assets/images/pycamp-cover-2024.webp";
-import photo2023 from "../../assets/images/pycamp-cover-2023.webp";
-import photo2022 from "../../assets/images/pycamp-cover-2022.webp";
+import {
+  iconCamera,
+  iconExternalLink,
+  iconMapPin,
+  iconProjectGithub,
+  iconArrowRightBrown,
+  photo2022,
+  photo2023,
+  photo2024,
+  photo2025,
+  photo2026,
+} from "../../assets";
 import "./PreviousEditions.css";
 
 function PreviousEditions() {
@@ -95,7 +97,7 @@ function PreviousEditions() {
                   {edition.photos ? (
                     <img src={edition.photos} alt={`PyCamp ${edition.year}`} />
                   ) : (
-                    <img src={cameraIcon} alt="" className="placeholder-icon" />
+                    <img src={iconCamera} alt="" className="placeholder-icon" />
                   )}
                 </div>
 
@@ -107,14 +109,14 @@ function PreviousEditions() {
                 >
                   <span>Fotos {edition.year}</span>
                   <img
-                    src={externalLinkIcon}
+                    src={iconExternalLink}
                     alt=""
                     className="external-icon"
                   />
                 </a>
 
                 <div className="photo-location">
-                  <img src={mapPinIcon} alt="" className="map-icon" />
+                  <img src={iconMapPin} alt="" className="map-icon" />
                   <span>{edition.location}</span>
                 </div>
               </article>
@@ -136,7 +138,7 @@ function PreviousEditions() {
               {projects.map((project, index) => (
                 <article key={index} className="project-card">
                   <div className="project-icon">
-                    <img src={githubIcon} alt="" />
+                    <img src={iconProjectGithub} alt="" />
                   </div>
 
                   <h3 className="project-name">{project.name}</h3>
@@ -149,7 +151,7 @@ function PreviousEditions() {
                     className="project-link"
                   >
                     <span>Ver en Github</span>
-                    <img src={arrowBrown} alt="" />
+                    <img src={iconArrowRightBrown} alt="" />
                   </a>
 
                   <a
@@ -159,7 +161,7 @@ function PreviousEditions() {
                     className="external-link"
                     aria-label={`Abrir ${project.name} en nueva pestaña`}
                   >
-                    <img src={externalLinkIcon} alt="" />
+                    <img src={iconExternalLink} alt="" />
                   </a>
                 </article>
               ))}

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../Button/Button";
-import iconMail from "../../assets/icons/mail.svg";
+import { iconMail } from "../../assets";
 import "./NewsletterForm.css";
 
 function NewsletterForm() {
