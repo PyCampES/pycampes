@@ -21,7 +21,7 @@ function Navbar() {
 
   return (
     <nav className="navbar">
-      <div className="navbar-container">
+      <div className="container navbar-container">
         <Link to="/" className="navbar-logo" onClick={closeMenu}>
           <img src={logoWhite} alt="PyCamp España" />
         </Link>

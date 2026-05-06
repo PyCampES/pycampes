@@ -14,9 +14,6 @@
 }
 
 .event-intro-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   text-align: center;
 }
 
@@ -99,12 +96,6 @@
 .ticket-section {
   background: var(--surface-back2);
   padding: var(--spacing-xl) var(--spacing-md);
-}
-
-.ticket-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .section-title {
@@ -214,12 +205,6 @@
     rgba(250, 248, 245, 1) 24%
   );
   padding: var(--spacing-xl) var(--spacing-md);
-}
-
-.roadmap-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .roadmap-timeline {

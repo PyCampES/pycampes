@@ -67,7 +67,7 @@ function PreviousEditions() {
       <main>
         {/* Hero Section */}
         <section className="editions-hero">
-          <div className="editions-hero-container">
+          <div className="container editions-hero-container">
             <h1 className="editions-title">
               <span className="title-primary">Ediciones</span>{" "}
               <span className="title-highlight">Anteriores</span>
@@ -81,7 +81,7 @@ function PreviousEditions() {
         {/* Photo Gallery Section */}
         <section className="photo-gallery">
           <h2 className="editions-subtitle">Momentos de PyCamps anteriores</h2>
-          <div className="photo-gallery-container">
+          <div className="container photo-gallery-container">
             {editions.map((edition, index) => (
               <article key={index} className="photo-card">
                 <div className="photo-placeholder">
@@ -117,7 +117,7 @@ function PreviousEditions() {
 
         {/* Projects Section */}
         <section className="projects">
-          <div className="projects-container">
+          <div className="container projects-container">
             <h2 className="projects-title">Proyectos de la comunidad</h2>
             <p className="projects-description">
               Proyectos propuestos por los participantes y desarrollados en

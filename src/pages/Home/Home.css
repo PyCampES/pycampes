@@ -14,9 +14,6 @@
 }
 
 .hero-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--spacing-xl);
@@ -54,12 +51,6 @@
 .about {
   background: var(--surface-back2);
   padding: var(--spacing-xl) var(--spacing-md);
-}
-
-.about-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .about-title {
@@ -317,9 +308,6 @@
 }
 
 .sponsors-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   display: flex;
   justify-content: center;
   gap: var(--spacing-xl);

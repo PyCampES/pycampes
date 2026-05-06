@@ -83,7 +83,7 @@ function Event() {
       <main>
         {/* Intro Section */}
         <section className="event-intro">
-          <div className="event-intro-container">
+          <div className="container event-intro-container">
             <h1 className="event-main-title">
               <span className="primary-text">PyCamp</span>
               <span className="highlight-text"> 2026</span>
@@ -136,7 +136,7 @@ function Event() {
 
         {/* Ticket Section */}
         <section className="ticket-section">
-          <div className="ticket-container">
+          <div className="container ticket-container">
             <h2 className="section-title">¿Qué incluye la entrada?</h2>
             <p className="section-subtitle">
               Todo lo que necesitas para centrarte en lo importante: programar,
@@ -167,7 +167,7 @@ function Event() {
 
         {/* Roadmap Section */}
         <section className="roadmap-section">
-          <div className="roadmap-container">
+          <div className="container roadmap-container">
             <h2 className="section-title">¿Cómo funciona?</h2>
             <p className="section-subtitle">
               Un formato exitoso que hemos ido perfeccionando durante las

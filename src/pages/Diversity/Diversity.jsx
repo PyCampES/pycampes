@@ -85,7 +85,7 @@ function Diversity() {
       <main>
         {/* Hero / Intro Section */}
         <section className="diversity-hero">
-          <div className="diversity-hero-container">
+          <div className="container diversity-hero-container">
             <h1 className="diversity-title">
               <span className="title-primary">Código de</span>{" "}
               <span className="title-highlight">Conducta</span>
@@ -119,7 +119,7 @@ function Diversity() {
 
         {/* Short Version Section */}
         <section className="short-version">
-          <div className="short-version-container">
+          <div className="container short-version-container">
             <h2 className="section-title">La versión corta</h2>
 
             <div className="short-version-list">
@@ -142,7 +142,7 @@ function Diversity() {
 
         {/* Long Version / FAQ Section */}
         <section className="long-version">
-          <div className="long-version-container">
+          <div className="container long-version-container">
             <h2 className="section-title">La versión larga</h2>
             <p className="section-description">
               Haz clic en cada pregunta para expandir los detalles.

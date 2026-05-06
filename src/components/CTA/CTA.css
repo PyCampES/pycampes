@@ -8,9 +8,6 @@
 }
 
 .cta-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   text-align: center;
 }
 

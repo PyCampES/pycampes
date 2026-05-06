@@ -15,9 +15,6 @@
 }
 
 .editions-hero-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   text-align: center;
 }
 
@@ -62,9 +59,6 @@
 }
 
 .photo-gallery-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: var(--spacing-md);
@@ -168,12 +162,6 @@
     rgba(246, 244, 238, 1) 37.5%
   );
   padding: var(--spacing-xl) 0;
-}
-
-.projects-container {
-  max-width: 1380px;
-  margin: 0 auto;
-  padding: 0 var(--spacing-md);
 }
 
 .projects-title {
