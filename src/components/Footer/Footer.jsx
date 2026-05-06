@@ -83,7 +83,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 PyCamp España</p>
+        <p>© {new Date().getFullYear()} PyCamp España</p>
       </div>
     </footer>
   );

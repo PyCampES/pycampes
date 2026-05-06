@@ -1,4 +1,4 @@
-import { use, useState } from "react";
+import { useState } from "react";
 import { useLocation } from 'react-router-dom';
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
@@ -7,11 +7,16 @@ import Footer from "../../components/Footer/Footer";
 import questionIcon from "../../assets/icons/question-circle.svg";
 import "./Faqs.css";
 
+const FAQ_HASH_PREFIX = "faq-";
+
 function Faqs() {
-  let selectedFaq = 0;
   const location = useLocation();
-  if (location.hash) {
-    selectedFaq = parseInt(location.hash.slice(1));
+  let selectedFaq = 0;
+  if (location.hash.startsWith(`#${FAQ_HASH_PREFIX}`)) {
+    const parsed = parseInt(location.hash.slice(FAQ_HASH_PREFIX.length + 1), 10);
+    if (!Number.isNaN(parsed)) {
+      selectedFaq = parsed;
+    }
   }
 
   const [openAccordion, setOpenAccordion] = useState(selectedFaq);
@@ -183,7 +188,7 @@ function Faqs() {
             <div className="faqs-accordion">
               {faqs.map((faq, index) => (
                 <article
-                  id={index}
+                  id={`${FAQ_HASH_PREFIX}${index}`}
                   key={index}
                   className={`faq-item ${openAccordion === index ? "active" : ""}`}
                 >
