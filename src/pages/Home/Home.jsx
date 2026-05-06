@@ -48,16 +48,19 @@ function Home() {
       category: "Organiza",
       name: "Python España",
       logo: logoPythonEspana,
+      url: "https://es.python.org/",
     },
     {
       category: "Colabora",
       name: "Argentina en Python",
       logo: logoArgentinaEnPython,
+      url: "https://argentinaenpython.com/",
     },
     {
       category: "Sponsor",
       name: "EuroPython Society",
       logo: logoEuroPython,
+      url: "https://www.europython-society.org/",
     },
   ];
 
@@ -130,7 +133,14 @@ function Home() {
             {sponsors.map((sponsor, index) => (
               <div key={index} className="sponsor-group">
                 <h3 className="sponsor-label">{sponsor.category}:</h3>
-                <img src={sponsor.logo} alt={sponsor.name} />
+                <a
+                  href={sponsor.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={sponsor.name}
+                >
+                  <img src={sponsor.logo} alt={sponsor.name} />
+                </a>
               </div>
             ))}
           </div>
