@@ -6,6 +6,4 @@ build:
     nodejs: "24"
   commands:
     - npm install
-    - echo $READTHEDOCS_VERSION
-    - echo $READTHEDOCS_CANONICAL_URL
-    - ./node_modules/.bin/vite build --base $READTHEDOCS_CANONICAL_URL --outDir $READTHEDOCS_OUTPUT/html
+    - npm run build
