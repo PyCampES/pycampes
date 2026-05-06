@@ -3,15 +3,17 @@ import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
-import heartIcon from "../../assets/icons/heart.svg";
-import usersIcon from "../../assets/icons/users-group.svg";
-import shieldIcon from "../../assets/icons/shield.svg";
-import messageIcon from "../../assets/icons/message.svg";
-import checkCircleIcon from "../../assets/icons/check-circle.svg";
-import dangerTriangleIcon from "../../assets/icons/danger-triangle.svg";
-import chevronUpIcon from "../../assets/icons/chevron-up.svg";
-import mailIcon from "../../assets/icons/mail.svg";
-import externalLinkIcon from "../../assets/icons/external-link-g.svg";
+import {
+  iconHeart,
+  iconUsersGroup,
+  iconShield,
+  iconMessage,
+  iconCheckCircle,
+  iconDangerTriangle,
+  iconChevronUp,
+  iconMail,
+  iconExternalLinkGreen,
+} from "../../assets";
 import "./Diversity.css";
 
 function Diversity() {
@@ -26,25 +28,25 @@ function Diversity() {
       title: "Respeto Mutuo",
       description:
         "Trata a todos con dignidad y consideración, independientemente de su origen o experiencia.",
-      icon: heartIcon,
+      icon: iconHeart,
     },
     {
       title: "Inclusión",
       description:
         "Creamos un espacio seguro para personas de todos los géneros, orientaciones, etnias y habilidades.",
-      icon: usersIcon,
+      icon: iconUsersGroup,
     },
     {
       title: "Profesionalismo",
       description:
         "Mantén un ambiente apropiado para una audiencia diversa y profesional.",
-      icon: shieldIcon,
+      icon: iconShield,
     },
     {
       title: "Comunicación amable",
       description:
         "Evita insultos, desprecio o cualquier forma de acoso hacia otros participantes.",
-      icon: messageIcon,
+      icon: iconMessage,
     },
   ];
 
@@ -126,7 +128,7 @@ function Diversity() {
               {shortVersion.map((item, index) => (
                 <article key={index} className="short-version-item">
                   <div className="check-icon">
-                    <img src={checkCircleIcon} alt="" />
+                    <img src={iconCheckCircle} alt="" />
                   </div>
                   <p>{item}</p>
                 </article>
@@ -161,13 +163,13 @@ function Diversity() {
                   >
                     <div className="faq-question-content">
                       <img
-                        src={dangerTriangleIcon}
+                        src={iconDangerTriangle}
                         alt=""
                         className="warning-icon"
                       />
                       <span>{faq.question}</span>
                     </div>
-                    <img src={chevronUpIcon} alt="" className="chevron-icon" />
+                    <img src={iconChevronUp} alt="" className="chevron-icon" />
                   </button>
 
                   {openAccordion === index && (
@@ -185,7 +187,7 @@ function Diversity() {
         <section className="report-section">
           <div className="report-container">
             <div className="report-icon">
-              <img src={mailIcon} alt="" />
+              <img src={iconMail} alt="" />
             </div>
 
             <h2 className="report-title">¿Necesitas reportar algo?</h2>
@@ -200,7 +202,7 @@ function Diversity() {
               className="report-email"
               aria-label="Enviar email a pycampes@gmail.com"
             >
-              <img src={mailIcon} alt="" />
+              <img src={iconMail} alt="" />
               <span>pycampes@gmail.com</span>
             </a>
 
@@ -213,7 +215,7 @@ function Diversity() {
                 className="code-link"
               >
                 código de conducta de Python Argentina
-                <img src={externalLinkIcon} alt="" />
+                <img src={iconExternalLinkGreen} alt="" />
               </a>
             </p>
           </div>

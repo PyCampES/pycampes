@@ -2,15 +2,17 @@ import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import Footer from "../../components/Footer/Footer";
 import NewsletterForm from "../../components/NewsletterForm/NewsletterForm";
-import logoGrey from "../../assets/logos/pycamp-logo-grey.png";
-import arrowRight from "../../assets/icons/arrow-right.svg";
-import iconCode from "../../assets/icons/code.svg";
-import iconTrees from "../../assets/icons/trees.svg";
-import iconUsers from "../../assets/icons/users.svg";
-import iconBinoculars from "../../assets/icons/binoculars.svg";
-import logoPythonEspana from "../../assets/logos/pythonespana-logo.webp";
-import logoArgentinaEnPython from "../../assets/logos/argentinaenpython-logo.webp";
-import logoEuroPython from "../../assets/logos/europython-society-logo.webp";
+import {
+  logoPycampGrey,
+  iconArrowRight,
+  iconCode,
+  iconTrees,
+  iconUsers,
+  iconBinoculars,
+  logoPythonEspana,
+  logoArgentinaEnPython,
+  logoEuroPython,
+} from "../../assets";
 import "./Home.css";
 
 const groupPhoto = `${import.meta.env.BASE_URL}images/pycamp-group-photo.jpg`;
@@ -73,7 +75,11 @@ function Home() {
         <section className="hero">
           <div className="container hero-container">
             <div className="hero-content">
-              <img src={logoGrey} alt="PyCamp España" className="hero-logo" />
+              <img
+                src={logoPycampGrey}
+                alt="PyCamp España"
+                className="hero-logo"
+              />
               <p className="hero-description">
                 Un evento en un entorno inspirador para disfrutar de unos días
                 llenos de programación y diversión al aire libre, conectando con
@@ -84,7 +90,9 @@ function Home() {
                 <Button
                   variant="primary"
                   to="/event"
-                  icon={<img src={arrowRight} alt="" width="24" height="24" />}
+                  icon={
+                    <img src={iconArrowRight} alt="" width="24" height="24" />
+                  }
                 >
                   Descubre el próximo PyCamp
                 </Button>

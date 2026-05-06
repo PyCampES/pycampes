@@ -3,13 +3,15 @@ import Navbar from "../../components/Navbar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import NewsletterForm from "../../components/NewsletterForm/NewsletterForm";
 
-import iconHome from "../../assets/icons/home.svg";
-import iconCroissant from "../../assets/icons/croissant.svg";
-import iconTrain from "../../assets/icons/train.svg";
-import iconWifi from "../../assets/icons/wifi.svg";
-import iconTrees from "../../assets/icons/trees.svg";
-import iconPuzzle from "../../assets/icons/puzzle.svg";
-import iconClock from "../../assets/icons/clock.svg";
+import {
+  iconHome,
+  iconCroissant,
+  iconTrain,
+  iconWifi,
+  iconTrees,
+  iconPuzzle,
+  iconClock,
+} from "../../assets";
 
 import "./Event.css";
 

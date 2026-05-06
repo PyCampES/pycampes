@@ -1,37 +1,39 @@
 import { Link } from "react-router-dom";
-import logoWhite from "../../assets/logos/pycamp-logo-white.webp";
-import mailIcon from "../../assets/icons/social-mail.svg";
-import telegramIcon from "../../assets/icons/social-telegram.svg";
-import twitterIcon from "../../assets/icons/social-twitter.svg";
-import githubIcon from "../../assets/icons/social-github.svg";
-import linkedinIcon from "../../assets/icons/social-linkedin.svg";
+import {
+  logoPycampWhite,
+  iconSocialMail,
+  iconSocialTelegram,
+  iconSocialTwitter,
+  iconSocialGithub,
+  iconSocialLinkedin,
+} from "../../assets";
 import "./Footer.css";
 
 function Footer() {
   const socialLinks = [
     {
       href: "mailto:pycampes@gmail.com",
-      icon: mailIcon,
+      icon: iconSocialMail,
       label: "Email",
     },
     {
       href: "https://t.me/pycampes",
-      icon: telegramIcon,
+      icon: iconSocialTelegram,
       label: "Telegram",
     },
     {
       href: "https://twitter.com/PyCampES",
-      icon: twitterIcon,
+      icon: iconSocialTwitter,
       label: "Twitter",
     },
     {
       href: "https://github.com/PyCampES",
-      icon: githubIcon,
+      icon: iconSocialGithub,
       label: "GitHub",
     },
     {
       href: "https://www.linkedin.com/in/pycampes/",
-      icon: linkedinIcon,
+      icon: iconSocialLinkedin,
       label: "LinkedIn",
     },
   ];
@@ -40,7 +42,11 @@ function Footer() {
     <footer className="footer">
       <div className="container footer-container">
         <div className="footer-brand">
-          <img src={logoWhite} alt="PyCamp España" className="footer-logo" />
+          <img
+            src={logoPycampWhite}
+            alt="PyCamp España"
+            className="footer-logo"
+          />
           <p className="footer-description">
             Un evento anual de programación Python en un entorno natural único.
             Comunidad, proyectos reales y aprendizaje colaborativo.

@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CTA from "../../components/CTA/CTA";
 import Footer from "../../components/Footer/Footer";
-import questionIcon from "../../assets/icons/question-circle.svg";
+import { iconQuestionCircle } from "../../assets";
 import "./Faqs.css";
 
 const FAQ_HASH_PREFIX = "faq-";
@@ -203,7 +203,7 @@ function Faqs() {
                   >
                     <div className="faq-question-content">
                       <img
-                        src={questionIcon}
+                        src={iconQuestionCircle}
                         alt=""
                         className="question-icon"
                       />
