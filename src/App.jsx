@@ -11,6 +11,10 @@ export const routes = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      // Allow the literal /index.html URL to render the same Home page.
+      // React Router strips the basename (e.g. /2027/) and is left with
+      // "/index.html", which otherwise wouldn't match any route.
+      { path: "index.html", element: <Home /> },
       { path: "event", element: <Event /> },
       { path: "diversity", element: <Diversity /> },
       { path: "faqs", element: <Faqs /> },

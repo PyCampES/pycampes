@@ -15,5 +15,10 @@ export default defineConfig({
   },
   ssgOptions: {
     dirStyle: "nested",
+    // The "index.html" route only exists so React Router can match the
+    // literal /index.html URL at runtime; the physical file already comes
+    // from the index route, so skip pre-rendering it (it would collide with
+    // dist/index.html and fail with EISDIR).
+    includedRoutes: (paths) => paths.filter((path) => path !== "index.html"),
   },
 });
