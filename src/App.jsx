@@ -1,3 +1,4 @@
+import { Navigate } from "react-router-dom";
 import Layout from "./Layout.jsx";
 import Home from "./pages/Home/Home";
 import Event from "./pages/Event/Event";
@@ -12,6 +13,10 @@ export const routes = [
     element: <Layout />,
     children: [
       { index: true, element: <Home /> },
+      // Redirect the literal /index.html URL to the home page. React Router
+      // strips the basename (e.g. /2027/) and is left with "/index.html",
+      // which otherwise wouldn't match any route.
+      { path: "index.html", element: <Navigate to="/" replace /> },
       { path: "event", element: <Event /> },
       { path: "diversity", element: <Diversity /> },
       { path: "faqs", element: <Faqs /> },
