@@ -1,3 +1,5 @@
+import { copyFileSync, existsSync } from "node:fs";
+import { isAbsolute, join, resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
@@ -15,16 +17,23 @@ export default defineConfig({
   },
   ssgOptions: {
     dirStyle: "nested",
-    // The "index.html" route only exists so React Router can match the
-    // literal /index.html URL at runtime; the physical file already comes
-    // from the index route, so skip pre-rendering it (it would collide with
-    // dist/index.html and fail with EISDIR).
-    includedRoutes: (paths) => paths.filter((path) => path !== "index.html"),
+    // Control which routes get pre-rendered to static files. This replaces
+    // vite-react-ssg's default filter, so we must reproduce it:
+    //   - drop "*" / ":" routes (the catch-all and any dynamic params), which
+    //     have no single concrete URL to render;
+    //   - drop "index.html", whose physical file already comes from the index
+    //     route — rendering it would collide with dist/index.html (EISDIR).
+    includedRoutes: (paths) =>
+      paths.filter(
+        (path) =>
+          !path.includes("*") &&
+          !path.includes(":") &&
+          path !== "index.html"
+      ),
 
     // With dirStyle "nested" the "404" route is pre-rendered to 404/index.html,
     // but Read the Docs serves the file named 404.html for unknown URLs, so we
-    // copy it there once the build is done. The "*" catch-all route is skipped
-    // by vite-react-ssg's default includedRoutes (it ignores wildcard paths).
+    // copy it there once the build is done.
     onFinished: (outDir) => {
       const out = isAbsolute(outDir) ? outDir : resolve(process.cwd(), outDir);
       const source = join(out, "404", "index.html");
