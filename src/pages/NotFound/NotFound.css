@@ -1,0 +1,78 @@
+.not-found {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.not-found main {
+  flex: 1;
+  display: flex;
+}
+
+.not-found-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: linear-gradient(
+    180deg,
+    rgba(232, 243, 226, 1) 0%,
+    rgba(250, 248, 245, 1) 46%,
+    rgba(246, 244, 238, 1) 100%
+  );
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
+}
+
+.not-found-container {
+  text-align: center;
+}
+
+.not-found-code {
+  font-family: "Yeseva One", serif;
+  font-size: 120px;
+  line-height: 1;
+  color: var(--brand-green-light);
+  margin-bottom: var(--spacing-sm);
+}
+
+.not-found-title {
+  font-family: "Yeseva One", serif;
+  font-size: 60px;
+  line-height: 1.2;
+  letter-spacing: -0.45px;
+  margin-bottom: var(--spacing-md);
+}
+
+.not-found-title .title-primary {
+  color: var(--text-primary);
+}
+
+.not-found-title .title-highlight {
+  color: var(--brand-green-medium);
+}
+
+.not-found-description {
+  max-width: 540px;
+  margin: 0 auto var(--spacing-lg);
+  color: var(--text-muted);
+  font-size: 18px;
+  line-height: 1.67;
+  letter-spacing: -0.45px;
+}
+
+.not-found-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--spacing-sm);
+  justify-content: center;
+}
+
+@media (max-width: 600px) {
+  .not-found-code {
+    font-size: 88px;
+  }
+
+  .not-found-title {
+    font-size: 40px;
+  }
+}
