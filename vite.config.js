@@ -20,5 +20,17 @@ export default defineConfig({
     // from the index route, so skip pre-rendering it (it would collide with
     // dist/index.html and fail with EISDIR).
     includedRoutes: (paths) => paths.filter((path) => path !== "index.html"),
+
+    // With dirStyle "nested" the "404" route is pre-rendered to 404/index.html,
+    // but Read the Docs serves the file named 404.html for unknown URLs, so we
+    // copy it there once the build is done. The "*" catch-all route is skipped
+    // by vite-react-ssg's default includedRoutes (it ignores wildcard paths).
+    onFinished: (outDir) => {
+      const out = isAbsolute(outDir) ? outDir : resolve(process.cwd(), outDir);
+      const source = join(out, "404", "index.html");
+      if (existsSync(source)) {
+        copyFileSync(source, join(out, "404.html"));
+      }
+    },
   },
 });
