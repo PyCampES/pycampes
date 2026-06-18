@@ -1,3 +1,5 @@
+import { copyFileSync, existsSync } from "node:fs";
+import { isAbsolute, join, resolve } from "node:path";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 
@@ -15,5 +17,16 @@ export default defineConfig({
   },
   ssgOptions: {
     dirStyle: "nested",
+    // With dirStyle "nested" the "404" route is pre-rendered to 404/index.html,
+    // but Read the Docs serves the file named 404.html for unknown URLs, so we
+    // copy it there once the build is done. The "*" catch-all route is skipped
+    // by vite-react-ssg's default includedRoutes (it ignores wildcard paths).
+    onFinished: (outDir) => {
+      const out = isAbsolute(outDir) ? outDir : resolve(process.cwd(), outDir);
+      const source = join(out, "404", "index.html");
+      if (existsSync(source)) {
+        copyFileSync(source, join(out, "404.html"));
+      }
+    },
   },
 });
