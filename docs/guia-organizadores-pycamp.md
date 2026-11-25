@@ -47,8 +47,8 @@ Toda la organización vive en unos pocos sitios bien identificados. Cuando entre
 - **Trello**: tablero por edición (ej. *PyCamp 2026*). Cada tablero se duplica del año anterior y se va adaptando.
 - **Google Drive del equipo organizador**: contiene la checklist del venue, presupuestos, formularios, plantillas de email y diseños de carteles.
 - **Email de gestión del PyCamp**: se usa para todas las comunicaciones con venue, transporte, sponsors, asistentes y la PSF/EPS.
-- **Web pública**: [pycamp.es](https://pycamp.es). El código está en [github.com/PyCampES/pycampes](https://github.com/PyCampES/pycampes). En 2026 se está rehaciendo desde cero con Olga, con diseño en Figma.
-- **Newsletter en Mailchimp**: para anuncios masivos de fecha, venue y apertura de entradas.
+- **Web pública**: [pycamp.es](https://pycamp.es). El código está en [github.com/PyCampES/pycampes](https://github.com/PyCampES/pycampes). En 2026 se rehízo desde cero con Olga, con diseño en Figma. Se publica con Read the Docs y cada edición queda en su propia URL: `pycamp.es/2025/`, `pycamp.es/2026/`, etc.
+- **Newsletter en [Sender.net](https://www.sender.net/)**: para anuncios masivos de fecha, venue y apertura de entradas. La cuenta es `info@pycamp.es`.
 - **Grupo de Telegram de organizadores** y, por separado, **grupo de Telegram de asistentes** (se crea cada edición).
 
 ### Cómo está estructurado el tablero de Trello
@@ -74,7 +74,7 @@ No usamos títulos formales, pero en la práctica las tareas suelen agruparse en
 
 - **Venue**: búsqueda, visita, contrato, comunicación durante el año, restricciones alimentarias, distribución de habitaciones.
 - **Transporte (PyBus)**: solicitud de presupuestos, reserva, comunicación de horarios y paradas a los asistentes.
-- **Web, comunicación y newsletter**: actualización de la web pycamp.es, newsletter de Mailchimp, anuncios en redes sociales y en la web de Python España.
+- **Web, comunicación y newsletter**: actualización de la web pycamp.es, newsletter en Sender.net, anuncios en redes sociales y en la web de Python España.
 - **Presupuesto y sponsors**: hoja de cálculo del presupuesto, contacto con empresas patrocinadoras, gestión del grant de la EPS o PSF, coordinación con la Tesorería de Python España.
 - **Contenido del evento**: charlas de bienvenida y cierre, juegos colaborativos, encuestas, voluntarios durante el evento.
 
@@ -254,7 +254,13 @@ El email tipo de solicitud de presupuesto está en las tarjetas de *Transporte* 
 
 - **Web pública**: pycamp.es, código en GitHub. Cada edición se actualiza con fechas, venue, precio, código de conducta, FAQ y proyectos pasados.
 - **Formularios** en Google Forms para inscripción y becas. Hay formularios plantilla que solo cambian fechas y datos del venue de un año a otro; **no se cambia la redacción de los textos**.
-- **Newsletter** en Mailchimp para anuncios masivos de fecha, venue y apertura de entradas. Para emails individuales (responder dudas concretas), usamos directamente Gmail; Mailchimp es más cómodo para comunicaciones a muchas personas.
+- **Newsletter** en [Sender.net](https://www.sender.net/) (plan gratuito, hasta 2.500 suscriptores y 15.000 emails al mes) para anuncios masivos de fecha, venue y apertura de entradas. Para emails individuales (responder dudas concretas), usamos directamente Gmail; Sender es más cómodo para comunicaciones a muchas personas.
+  - **Cuenta**: `info@pycamp.es`. Los emails salen desde `newsletter@pycamp.es`. Las dos direcciones (y cualquier otra `@pycamp.es`) se reenvían al Gmail del PyCamp mediante el reenvío de email de Namecheap, donde está el DNS del dominio.
+  - **Grupos**: *Newsletter* tiene a todas las personas suscritas; *Asistentes AAAA* a quienes vinieron a cada edición (se usan para la apertura anticipada de entradas). Al terminar cada edición hay que crear el grupo del año y añadir a los asistentes.
+  - **Altas**: el formulario de la web (sección "Únete a nuestra comunidad") es un formulario incrustado de Sender que añade a las personas al grupo *Newsletter*. Su texto, colores y botón se cambian desde *Forms* en Sender, no en el código de la web.
+  - **Email de bienvenida**: un workflow de Sender lo envía automáticamente a cada persona que entra en *Newsletter*. El HTML está en el repositorio, en [`docs/emails/sender/`](emails/sender/); si se cambia el texto, se regenera y se pega en el paso del workflow.
+  - **Emails de ediciones anteriores**: en [`docs/emails/`](emails/) están todas las campañas tipo (apertura de entradas, «¿Qué llevo?», PyBus, proponer un proyecto, etc.) numeradas en el orden en que se envían, listas para reutilizar.
+  - **Flujo de pagos**: el diseño de los emails automáticos según el estado de cada inscripción (inscrito, pagado, terminado) está en [`docs/emails/flujo-inscripcion.md`](emails/flujo-inscripcion.md). Todavía falta escribir el texto de esos emails.
 - **Anuncio de venta de entradas** se hace en este orden: grupo de Telegram de asistentes anteriores, newsletter, redes sociales públicas (LinkedIn, Twitter/X, Instagram).
 - **Web de Python España**: cada año hay que actualizarla para que aparezca el evento en curso. Se hace mediante un PR a [github.com/python-spain/web-ng](https://github.com/python-spain/web-ng).
 - **Eventos en python.org**: se envía un email a Events PSF para que el evento aparezca en el listado oficial de eventos de la Python Software Foundation.
@@ -328,7 +334,7 @@ Cuando termina el evento todavía quedan tareas durante un par de semanas. Estas
 - **Post sobre el PyCamp** en el blog de Python España y/o pycamp.es.
 - **Email a las personas becadas** invitándolas a escribir un artículo sobre su experiencia.
 - **Post mortem del equipo**: cantidad de asistentes, presupuesto utilizado, proyectos involucrados, problemas clave en la organización.
-- **Freezar la web del año** en una URL del estilo `2026.pycamp.es` y actualizar la principal con la edición siguiente.
+- **Freezar la web del año**: en GitHub se crea una rama con el año (ej. `2026`) a partir de `main`, y en Read the Docs se activa como versión, que queda publicada en `pycamp.es/2026/`. `main` pasa a ser la web de la edición siguiente, y en Read the Docs se cambia la versión por defecto para que `pycamp.es` redirija a ella.
 - **Página acumulativa de proyectos pasados** en pycamp.es: se añade el proyecto ganador de la votación.
 - **Dar de baja la subscripción de Starlink** hasta el siguiente evento.
 
@@ -368,3 +374,11 @@ Si has llegado hasta aquí y te apetece sumarte, lo más útil es:
 5. Si tienes dudas concretas, abrir una conversación en Telegram. La organización es informal y lo más eficiente es preguntar pronto.
 
 Bienvenida o bienvenido al equipo. 🐍🏕️
+
+---
+
+*Sobre este documento:* la fuente es este archivo Markdown ([`docs/guia-organizadores-pycamp.md`](guia-organizadores-pycamp.md)); el PDF se genera a partir de él. Después de editarlo, regenera el PDF desde la raíz del repositorio con [uv](https://docs.astral.sh/uv/):
+
+```
+uv run --with markdown --with weasyprint python docs/build_pdf.py
+```
