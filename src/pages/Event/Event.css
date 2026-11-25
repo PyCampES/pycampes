@@ -42,7 +42,60 @@
   font-size: 20px;
   line-height: 1.5;
   max-width: 772px;
-  margin: 0 auto;
+  margin: 0 auto var(--spacing-xl);
+}
+
+.event-info-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  gap: var(--spacing-lg);
+}
+
+.info-card {
+  background: var(--surface-subtle);
+  border: 1px solid var(--surface-muted);
+  border-radius: var(--radius-md);
+  padding: var(--spacing-lg);
+  box-shadow: 0 1px 20px rgba(238, 231, 221, 1);
+  text-align: left;
+}
+
+.info-icon {
+  width: 45px;
+  height: 45px;
+  background: var(--accent-forest);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: var(--spacing-sm);
+}
+
+.info-icon img {
+  width: 32px;
+  height: 32px;
+}
+
+.info-card h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-secondary);
+  margin-bottom: var(--spacing-xs);
+  font-family: "Nunito", sans-serif;
+}
+
+.info-highlight {
+  font-size: 30px;
+  font-weight: 700;
+  color: var(--brand-green-medium);
+  margin-bottom: var(--spacing-sm);
+  font-family: "Nunito", sans-serif;
+}
+
+.info-description {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.8;
 }
 
 /* Shared section headings */
@@ -252,7 +305,8 @@
     font-size: 28px;
   }
 
-  .ticket-grid {
+  .ticket-grid,
+  .event-info-cards {
     grid-template-columns: 1fr;
   }
 
