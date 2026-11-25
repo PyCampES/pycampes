@@ -9,7 +9,16 @@
 // Output:
 //   html/*.html    ready to paste in Sender as "Custom HTML"
 //
-// In the body, a line with only [[Text]](url) becomes a button.
+// In the body, a line with only [[Text]](url) becomes a button, and
+//
+//   <!-- if dates venue -->
+//   text shown when every listed value in edition.toml is defined
+//   <!-- else -->
+//   text shown otherwise (optional)
+//   <!-- endif -->
+//
+// keeps one of the two texts, depending on edition.toml. A value is defined
+// when it exists and does not start with "POR DEFINIR".
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join, basename } from "node:path";
@@ -32,6 +41,24 @@ const globals = {
 };
 
 const BUTTON = /^\[\[(.+?)\]\]\((.+?)\)\s*$/;
+const CONDITIONAL =
+  /<!--\s*if\s+([\w\s]+?)\s*-->([\s\S]*?)(?:<!--\s*else\s*-->([\s\S]*?))?<!--\s*endif\s*-->/g;
+
+function isDefined(name) {
+  const value = globals[name];
+  return value !== undefined && !String(value).startsWith("POR DEFINIR");
+}
+
+function resolveConditionals(text, source) {
+  return text.replace(CONDITIONAL, (_, names, whenDefined, otherwise = "") => {
+    for (const name of names.split(/\s+/)) {
+      if (!(name in globals)) {
+        throw new Error(`${source}: unknown variable "${name}" in <!-- if -->`);
+      }
+    }
+    return names.split(/\s+/).every(isDefined) ? whenDefined : otherwise;
+  });
+}
 
 function interpolate(text, values, source) {
   return text.replace(/\$\{(\w+)\}/g, (_, name) => {
@@ -114,7 +141,7 @@ export async function buildEmails() {
       ),
     };
     const content = bodyToMjml(
-      interpolate(body, values, name),
+      interpolate(resolveConditionals(body, name), values, name),
       frontMatter.image
     );
     const mjml = interpolate(

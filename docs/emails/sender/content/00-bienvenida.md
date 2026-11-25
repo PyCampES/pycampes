@@ -25,10 +25,22 @@ PyCamp es un evento de programación en plena naturaleza donde Pythonistas de to
 
 **¿Cuándo es el próximo PyCamp?**
 
+<!-- if dates venue -->
+
+La próxima edición del PyCamp España será **${dates}** en **${venue}**. Toda la información está en la web:
+
+[[Ver el PyCamp ${year}]](https://pycamp.es/event)
+
+<!-- else -->
+
 Solo hay dos fechas posibles en el calendario en las que celebramos el PyCamp:
 
 - El fin de semana del puente del **1 de mayo (Día del Trabajador)**.
 - El fin de semana de **Semana Santa**.
+
+Te avisaremos en cuanto confirmemos las fechas de la próxima edición.
+
+<!-- endif -->
 
 **¿Tienes preguntas?**
 
