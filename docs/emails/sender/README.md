@@ -28,8 +28,18 @@ Convenciones del texto:
 - Una línea con solo `[[Texto del botón]](https://...)` se convierte en un botón.
 - Una cita (`> ...`) se muestra como un recuadro destacado. Se usa para el cupón.
 - Las etiquetas de Sender se escriben tal cual: `{{cupon}}` (el cupón de cada persona), `{{firstname}}`, etc.
+- Un texto que solo debe aparecer cuando ciertos datos de `edition.toml` ya están definidos va entre `<!-- if dates venue -->` y `<!-- endif -->`, con una alternativa opcional tras `<!-- else -->`. Por ejemplo, la bienvenida muestra las fechas y el lugar de la próxima edición cuando están definidos, y si no, el texto genérico.
 
 Las imágenes están en [`public/emails/`](../../../public/emails/) y la web las publica en `https://pycamp.es/<año>/emails/`.
+
+Los emails de los **workflows** (00 a 06) hay que pegarlos a mano en Sender: su API permite cambiar el asunto, pero no el contenido de un email ya creado (lo probamos en noviembre de 2026). Las **campañas** (07 a 12) sí se suben solas, con `npm run emails:schedule` (ver más abajo).
+
+## Cuando se confirmen las fechas de la edición
+
+1. Completa los datos `POR DEFINIR` de `edition.toml`.
+2. `npm run emails` para regenerar el HTML.
+3. En Sender, pega el HTML nuevo en cada email de los workflows: `00-bienvenida` (pasa a mostrar las fechas y el lugar) y los de _Inscritos sin pagar_ y _Pagados_.
+4. `npm run emails:schedule -- --apply` para programar las campañas antes y después del evento.
 
 ## Datos de cada persona en Sender
 
