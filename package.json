@@ -10,7 +10,9 @@
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "emails": "node docs/emails/sender/build.mjs",
+    "emails:schedule": "node docs/emails/sender/schedule.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -26,7 +28,10 @@
     "eslint-plugin-react-hooks": "^7.0.1",
     "eslint-plugin-react-refresh": "^0.4.24",
     "globals": "^16.5.0",
+    "marked": "^18.3.0",
+    "mjml": "^5.4.1",
     "prettier": "^3.8.3",
+    "smol-toml": "^1.9.1",
     "vite": "^7.2.4",
     "vite-react-ssg": "^0.9.1-beta.1"
   }

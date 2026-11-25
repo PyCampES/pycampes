@@ -2,6 +2,8 @@
 
 Este documento describe las automatizaciones de email que diseñamos en MailerLite para el PyCamp 2026 (mayo de 2026, Manuel y Olga). El objetivo es conservar el diseño y poder reconstruirlo en cualquier otra plataforma de newsletter.
 
+> **2027:** este diseño está implementado en Sender.net, con el plazo de pago en 3 + 3 + 4 días, un cupón personal de pretix.eu en cada email de pago y el texto de todos los emails escrito. Ver [sender/README.md](../sender/README.md). Este documento queda como referencia del diseño original en MailerLite.
+
 **Estado en MailerLite (noviembre 2026)**: solo la bienvenida está activa. Los flujos de inscripción y pago están construidos pero **nunca se activaron** (0 envíos).
 
 ## Resumen
