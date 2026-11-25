@@ -7,6 +7,8 @@ Cada email está en dos formatos:
 - **`.html`**: el email final tal cual se renderiza, con las imágenes descargadas en [`images/`](images/) (ya no dependen del CDN de MailerLite).
 - **`.md`**: el contenido en texto, con los metadatos (asunto, remitente, fecha, estadísticas) en el encabezado. Es el formato pensado para leer, editar y reutilizar el copy.
 
+Las versiones listas para pegar en Sender.net (HTML personalizado) están en [`sender/`](sender/). Se generan con [`sender/build.py`](sender/build.py) a partir de los emails exportados: cambia el enlace de baja por el de Sender, quita lo específico de MailerLite y usa imágenes publicadas por la web en `https://pycamp.es/<año>/emails/` (archivos en [`public/emails/`](../../public/emails/)).
+
 El flujo automático de inscripción y pago (bienvenida → inscrito → pagado) está documentado en [flujo-inscripcion.md](flujo-inscripcion.md).
 
 ## Pendiente
