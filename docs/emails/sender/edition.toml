@@ -4,8 +4,8 @@
 
 year = "2027"
 edition = "6ª"
-dates = "POR DEFINIR (ej. del 29 de abril al 2 de mayo de 2027)"
-venue = "POR DEFINIR (nombre del venue, ciudad)"
+dates = "del 25 al 28 de marzo de 2027"
+venue = "Encinar de Escardiel, Sevilla"
 price = "POR DEFINIR (300 o 350 €)"
 
 # Formulario de Google para inscribirse en esta edición. Obligatorio para las
@@ -41,17 +41,17 @@ faqs_url = "https://pycamp.es/faqs"
 
 # Fechas del evento en formato AAAA-MM-DD. schedule.mjs las usa para calcular
 # cuándo se envía cada email previo y posterior al evento.
-event_start = "POR DEFINIR (AAAA-MM-DD)"
-event_end = "POR DEFINIR (AAAA-MM-DD)"
+event_start = "2027-03-25"
+event_end = "2027-03-28"
 
 # Formulario de Google para proponer proyectos de esta edición.
 projects_form_url = "POR DEFINIR"
 
 # PyBus: transporte desde la ciudad hasta el venue.
-pybus_city = "POR DEFINIR (ej. Sevilla)"
-pybus_departure_date = "POR DEFINIR (ej. jueves 29 de abril)"
+pybus_city = "Sevilla"
+pybus_departure_date = "jueves 25 de marzo"
 pybus_departure_time = "POR DEFINIR (ej. 10:30)"
-pybus_meeting_point = "POR DEFINIR (ej. Estación Santa Justa)"
+pybus_meeting_point = "Estación Santa Justa"
 pybus_maps_url = "POR DEFINIR"
 venue_arrival_time = "POR DEFINIR (ej. 11:30)"
 

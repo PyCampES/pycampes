@@ -7,7 +7,8 @@
 //   edition.toml   edition data, used in the content as ${name}
 //   template.mjml  shared layout (header, footer, styles)
 // Output:
-//   html/*.html    ready to paste in Sender as "Custom HTML"
+//   html/*.html    ready to paste in Sender as "Custom HTML" (not committed:
+//                  generate it whenever it is needed)
 //
 // In the body, a line with only [[Text]](url) becomes a button, and
 //

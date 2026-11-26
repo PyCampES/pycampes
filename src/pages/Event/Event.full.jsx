@@ -20,6 +20,9 @@ import {
 import "./Event.css";
 
 function Event() {
+  // TODO 2027: these are the 2026 forms. Replace them with the 2027
+  // registration form (registration_form_url in docs/emails/sender/edition.toml)
+  // and projects form (projects_form_url) before using this page.
   const ticketForm =
     "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";
   const projectsForm =
@@ -88,7 +91,7 @@ function Event() {
           <div className="container event-intro-container">
             <h1 className="event-main-title">
               <span className="primary-text">PyCamp</span>
-              <span className="highlight-text"> 2026</span>
+              <span className="highlight-text"> 2027</span>
             </h1>
             <p className="event-subtitle">
               Prepárate para una experiencia inmersiva de programación en la
@@ -101,10 +104,10 @@ function Event() {
                   <img src={iconCalendar} alt="" />
                 </div>
                 <h3>¿Cuándo?</h3>
-                <p className="info-highlight">30 Abril - 3 Mayo 2026</p>
+                <p className="info-highlight">25 - 28 Marzo 2027</p>
                 <p className="info-description">
-                  Jueves por la mañana a domingo por la tarde. 4 días intensivos
-                  de código y comunidad en un entorno natural.
+                  Semana Santa, de jueves por la mañana a domingo por la tarde.
+                  4 días intensivos de código y comunidad en un entorno natural.
                 </p>
               </div>
 
@@ -161,6 +164,7 @@ function Event() {
 
             <div className="price-card">
               <p className="price-label">Precio por persona</p>
+              {/* TODO 2027: price not decided yet (300 or 350 €) */}
               <p className="price-amount">300 €</p>
               <p className="price-note">Plazas limitadas a 30 personas</p>
             </div>
