@@ -8,6 +8,10 @@ dates = "POR DEFINIR (ej. del 29 de abril al 2 de mayo de 2027)"
 venue = "POR DEFINIR (nombre del venue, ciudad)"
 price = "POR DEFINIR (300 o 350 €)"
 
+# Formulario de Google para inscribirse en esta edición. Mientras esté
+# "POR DEFINIR", el anuncio de fecha y lugar dice que avisaremos al abrirlo.
+registration_form_url = "POR DEFINIR"
+
 # Enlace a la tienda de pretix.eu donde se compra la entrada con el cupón.
 pretix_url = "POR DEFINIR"
 

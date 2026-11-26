@@ -1,12 +1,15 @@
-// Creates and schedules in Sender.net the campaigns sent before and after the
-// event (the content/*.md files with days_before_event or days_after_event).
+// Creates in Sender.net the campaigns: the content/*.md files with an
+// `audience`. Those with days_before_event or days_after_event are scheduled
+// relative to the event dates; the others (such as the date and venue
+// announcement) are left as drafts, to be reviewed and sent by hand.
 //
 //   npm run emails:schedule            # shows the plan, changes nothing
 //   npm run emails:schedule -- --apply # creates and schedules the campaigns
 //
-// Needs SENDER_NET_API_TOKEN in the environment and the event dates
-// (event_start, event_end) in edition.toml. Campaigns that already exist in
-// Sender (same title) are skipped, so it is safe to run it again.
+// Needs SENDER_NET_API_TOKEN in the environment. Campaigns that already exist
+// in Sender (same title), that still have POR DEFINIR values or, if scheduled,
+// lack the event dates are skipped, so it is safe to run it again as the
+// edition data gets completed.
 
 import { buildEmails, edition } from "./build.mjs";
 
@@ -60,34 +63,43 @@ async function main() {
   const end = parseDate(edition.event_end);
 
   const campaigns = (await buildEmails())
-    .filter(({ values }) => values.days_before_event || values.days_after_event)
+    .filter(({ values }) => values.audience)
     .map((email) => {
       const { values } = email;
       const time = `${values.send_time || "10:00"}:00`;
-      let sendAt;
+      let sendAt = null;
+      let when = "draft, sent by hand";
       if (values.days_before_event) {
-        sendAt = start
-          ? `${addDays(start, -Number(values.days_before_event))} ${time}`
-          : `${values.days_before_event} días antes de event_start`;
-      } else {
-        sendAt = end
-          ? `${addDays(end, Number(values.days_after_event))} ${time}`
-          : `${values.days_after_event} días después de event_end`;
+        sendAt =
+          start &&
+          `${addDays(start, -Number(values.days_before_event))} ${time}`;
+        when = sendAt || `${values.days_before_event} days before event_start`;
+      } else if (values.days_after_event) {
+        sendAt =
+          end && `${addDays(end, Number(values.days_after_event))} ${time}`;
+        when = sendAt || `${values.days_after_event} days after event_end`;
       }
+      const dated = Boolean(
+        values.days_before_event || values.days_after_event
+      );
       return {
         ...email,
         title: `PyCamp ${edition.year} · ${email.name}`,
+        dated,
         sendAt,
+        when,
       };
     });
 
   console.log(
     apply
-      ? "Creating and scheduling:\n"
+      ? "Creating in Sender:\n"
       : "Plan (nothing is changed; use --apply):\n"
   );
-  for (const { title, sendAt, values, pending } of campaigns) {
-    console.log(`  ${sendAt}  ${values.audience.padEnd(16)}  ${title}`);
+  for (const { title, when, values, pending } of campaigns) {
+    console.log(
+      `  ${when.padEnd(30)}  ${values.audience.padEnd(16)}  ${title}`
+    );
     if (pending.length) {
       console.log(`      POR DEFINIR: ${pending.join(" | ")}`);
     }
@@ -95,14 +107,6 @@ async function main() {
 
   if (!apply) {
     return;
-  }
-  if (!start || !end) {
-    throw new Error(
-      "\nSet event_start and event_end (AAAA-MM-DD) in edition.toml."
-    );
-  }
-  if (campaigns.some(({ pending }) => pending.length)) {
-    throw new Error("\nComplete the POR DEFINIR values in edition.toml first.");
   }
   if (!process.env.SENDER_NET_API_TOKEN) {
     throw new Error("Missing SENDER_NET_API_TOKEN in the environment.");
@@ -114,12 +118,20 @@ async function main() {
   const existing = new Set((await getAll("campaigns")).map((c) => c.title));
   const now = new Date().toISOString().replace("T", " ").slice(0, 19);
 
-  for (const { title, sendAt, values, html } of campaigns) {
+  for (const { title, dated, sendAt, values, html, pending } of campaigns) {
     if (existing.has(title)) {
       console.log(`  skip (already in Sender): ${title}`);
       continue;
     }
-    if (sendAt <= now) {
+    if (pending.length) {
+      console.log(`  skip (POR DEFINIR values in edition.toml): ${title}`);
+      continue;
+    }
+    if (dated && !sendAt) {
+      console.log(`  skip (set event_start and event_end): ${title}`);
+      continue;
+    }
+    if (dated && sendAt <= now) {
       console.log(`  skip (date already passed): ${title}`);
       continue;
     }
@@ -137,10 +149,16 @@ async function main() {
       content: html,
       groups: [groupId],
     });
-    await api("POST", `campaigns/${data.id}/schedule`, {
-      schedule_time: sendAt,
-    });
-    console.log(`  scheduled ${sendAt}: ${title} (${data.id})`);
+    if (dated) {
+      await api("POST", `campaigns/${data.id}/schedule`, {
+        schedule_time: sendAt,
+      });
+      console.log(`  scheduled ${sendAt}: ${title} (${data.id})`);
+    } else {
+      console.log(
+        `  draft created, send it from Sender: ${title} (${data.id})`
+      );
+    }
   }
 }
 
