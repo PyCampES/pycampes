@@ -25,6 +25,12 @@ En unos días haremos el anuncio público y hay **${max_attendees} plazas**, as�
 
 [[Inscribirme]](${registration_form_url})
 
+<!-- if preregistration_form_url -->
+
+Si te pre-inscribiste y todavía no rellenaste el formulario de inscripción, hazlo ahora con este mismo botón: la pre-inscripción sola no confirma tu plaza.
+
+<!-- endif -->
+
 **¿Cómo funciona?**
 
 1. Te inscribes en el formulario.

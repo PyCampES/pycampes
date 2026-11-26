@@ -75,7 +75,7 @@ Los workflows se crean a mano en Sender (_Automation_): su API no permite crearl
 
 ### Inscritos sin pagar
 
-Plazo total para comprar la entrada: 10 días (3 + 3 + 4). Si cambia, actualiza también los días en `edition.toml`.
+Plazo total para comprar la entrada: 7 días (3 + 3 + 1). Si cambia, actualiza también los días en `edition.toml`.
 
 1. **Disparador:** _Subscriber field updated_ → **Estado** es igual a `Inscrito`.
 2. **Email:** `04-haz-el-pago`.
@@ -85,7 +85,7 @@ Plazo total para comprar la entrada: 10 días (3 + 3 + 4). Si cambia, actualiza 
 6. **Espera:** 3 días.
 7. **Condición:** ¿Estado es igual a `Pagado`? **Sí** → fin. **No** → sigue.
 8. **Email:** `06-ultimo-aviso`.
-9. **Espera:** 4 días.
+9. **Espera:** 1 día.
 10. **Condición:** ¿Estado es igual a `Pagado`? **Sí** → fin. **No** → sigue.
 11. **Acción:** actualizar el campo **Estado** a `Vencido`. Así se ve en la lista quién perdió la plaza y hay que anular su cupón en pretix.
 12. **Email:** `07-reserva-vencida`.

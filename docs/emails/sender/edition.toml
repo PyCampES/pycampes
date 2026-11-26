@@ -8,10 +8,29 @@ dates = "POR DEFINIR (puente de mayo o Semana Santa)"
 venue = "POR DEFINIR"
 price = "POR DEFINIR (300 o 350 €)"
 
-# Encuesta de fechas 2027 (campaña 01a): formulario de Google y fecha límite
-# para responderla.
-dates_survey_url = "https://forms.gle/pr6gGaNjXotsgPDt8"
-dates_survey_deadline = "jueves 10 de diciembre"
+# Pre-inscripción 2027 (campañas 01a y 01b): formulario de Google, fecha en la
+# que se cierra y fecha límite para escribir con los siguientes pasos.
+preregistration_form_url = "https://forms.gle/pr6gGaNjXotsgPDt8"
+preregistration_deadline = "jueves 10 de diciembre"
+preregistration_next_steps_date = "viernes 18 de diciembre"
+# Grupo de Sender con quienes se pre-inscribieron (se importa a mano desde el
+# formulario). Lo usan 01c y 01d.
+preregistered_group = "Pre-inscritos 2027"
+# Los pre-inscritos también rellenan el formulario de inscripción (tiene más
+# campos) y solo después reciben su cupón. Día en que se les abre la
+# inscripción (01c y 01g) y hasta cuándo dura su prioridad, antes de la
+# preventa (02). Plan A: "lunes 11 de enero" y "martes 12 de enero" (02 sale
+# el miércoles 13 y 03 el lunes 18). Plan B: "lunes 1 de febrero" y "martes 2
+# de febrero" (02 el miércoles 3 y 03 el lunes 8).
+preregistration_registration_date = "lunes 11 de enero"
+preregistration_priority_until = "martes 12 de enero"
+
+# Plan B (campañas 01d, 01e y 01f): pre-inscripción para Semana Santa en un
+# venue cerca de Barcelona, si no se llega a unas 20 pre-inscripciones para mayo.
+preregistration_b_form_url = "POR DEFINIR"
+preregistration_b_price = "entre 300 y 350 €"
+preregistration_b_deadline = "lunes 11 de enero"
+preregistration_b_next_steps_date = "viernes 29 de enero"
 
 # Formulario de Google para inscribirse en esta edición. Obligatorio para las
 # campañas de apertura de inscripción (02 y 03).
@@ -33,10 +52,11 @@ previous_attendees_groups = "Asistentes 2022, Asistentes 2023, Asistentes 2024, 
 pretix_url = "POR DEFINIR"
 
 # Plazos del flujo de pago (en días). Deben coincidir con las esperas del
-# workflow "Inscritos sin pagar" en Sender: 3 + 3 + 4 = 10 días.
-payment_days = "10"
-days_left_first_reminder = "7"
-days_left_last_reminder = "4"
+# workflow "Inscritos sin pagar" en Sender: 3 + 3 + 1 = 7 días. El último
+# aviso (06) sale el día antes de que venza la reserva y dice «mañana»: si
+# cambia la última espera, cambia también ese texto.
+payment_days = "7"
+days_left_first_reminder = "4"
 
 # Enlace de invitación al grupo de Telegram de asistentes de esta edición.
 attendees_telegram_url = "POR DEFINIR"

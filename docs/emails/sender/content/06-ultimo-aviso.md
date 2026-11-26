@@ -1,6 +1,6 @@
 ---
 # Lo que ve quien recibe el email
-subject: "⚠️ Último aviso: tu reserva para el PyCamp ${year} vence en ${days_left_last_reminder} días"
+subject: "⚠️ Último aviso: tu reserva para el PyCamp ${year} vence mañana"
 preheader: "Después de ese plazo, la plaza pasa a la lista de espera."
 reason: "Recibes este email porque te inscribiste en el PyCamp España."
 
@@ -13,7 +13,7 @@ trigger: "6 días después de «Haz el pago», si el Estado no es «Pagado»"
 
 ¡Hola! 👋
 
-Tu reserva para el **PyCamp España ${year}** vence en **${days_left_last_reminder} días**. Si para entonces no has comprado tu entrada, la plaza pasará a la siguiente persona de la lista de espera.
+Tu reserva para el **PyCamp España ${year}** vence **mañana**. Si para entonces no has comprado tu entrada, la plaza pasará a la siguiente persona de la lista de espera.
 
 Todavía estás a tiempo. Este es tu código:
 

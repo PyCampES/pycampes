@@ -6,7 +6,7 @@ reason: "Recibes este email porque te inscribiste en el PyCamp España."
 
 # Documentación interna (no aparece en el email)
 workflow: "Inscritos sin pagar"
-trigger: "10 días después de «Haz el pago», si el Estado no es «Pagado»"
+trigger: "7 días después de «Haz el pago», si el Estado no es «Pagado»"
 ---
 
 # Tu reserva ha vencido

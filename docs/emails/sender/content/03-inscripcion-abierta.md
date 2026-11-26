@@ -25,6 +25,12 @@ Hay **${max_attendees} plazas** y suelen volar, así que no te lo pienses demasi
 
 [[Inscribirme]](${registration_form_url})
 
+<!-- if preregistration_form_url -->
+
+Si te pre-inscribiste y todavía no rellenaste el formulario de inscripción, hazlo ahora con este mismo botón: la pre-inscripción sola no confirma tu plaza.
+
+<!-- endif -->
+
 **¿Cómo funciona?**
 
 1. Te inscribes en el formulario.
