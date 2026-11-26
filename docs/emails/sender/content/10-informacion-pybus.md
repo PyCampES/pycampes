@@ -1,10 +1,13 @@
 ---
+# Lo que ve quien recibe el email
 subject: "🚌 PyBus: información importante para llegar al PyCamp ${year}"
 preheader: "Dónde y a qué hora sale el bus hacia el venue."
+reason: "Recibes este email porque tienes entrada para el PyCamp España ${year}."
+
+# Cuándo y a quién se envía (lo usa npm run emails:schedule)
 audience: "Asistentes ${year}"
 days_before_event: "4"
 send_time: "10:00"
-reason: "Recibes este email porque tienes entrada para el PyCamp España ${year}."
 ---
 
 # Súmate al PyBus 🚌

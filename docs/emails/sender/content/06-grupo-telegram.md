@@ -1,9 +1,12 @@
 ---
+# Lo que ve quien recibe el email
 subject: "💬 Únete al grupo de Telegram del PyCamp ${year}"
 preheader: "Ahí nos organizamos, compartimos novedades y resolvemos dudas."
+reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
+
+# Documentación interna (no aparece en el email)
 workflow: "Pagados"
 trigger: "1 día después de «Plaza confirmada»"
-reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
 ---
 
 # Únete al grupo de asistentes 💬

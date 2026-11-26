@@ -1,10 +1,13 @@
 ---
+# Lo que ve quien recibe el email
 subject: "💡 ¿Ya propusiste tu proyecto para el PyCamp ${year}?"
 preheader: "Todavía estás a tiempo de sumar tu idea."
+reason: "Recibes este email porque tienes entrada para el PyCamp España ${year}."
+
+# Cuándo y a quién se envía (lo usa npm run emails:schedule)
 audience: "Asistentes ${year}"
 days_before_event: "5"
 send_time: "18:00"
-reason: "Recibes este email porque tienes entrada para el PyCamp España ${year}."
 ---
 
 # ¿Ya tienes tu proyecto? 💡

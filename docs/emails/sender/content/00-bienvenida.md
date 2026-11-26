@@ -1,10 +1,13 @@
 ---
+# Lo que ve quien recibe el email
 subject: "Bienvenido a la comunidad PyCamp España 👋"
 preheader: "Gracias por suscribirte. Te contamos qué es el PyCamp y cuándo se celebra."
-workflow: "Newsletter"
-trigger: "Al entrar en el grupo Newsletter (alta desde el formulario de la web)"
 reason: "Recibes este email porque te suscribiste a la newsletter de PyCamp España en nuestra web."
 image: "bienvenida-foto-grupal.jpg"
+
+# Documentación interna (no aparece en el email)
+workflow: "Newsletter"
+trigger: "Al entrar en el grupo Newsletter (alta desde el formulario de la web)"
 ---
 
 # ¡Bienvenido/a!

@@ -1,9 +1,12 @@
 ---
+# Lo que ve quien recibe el email
 subject: "🎉 ¡Plaza confirmada! Nos vemos en el PyCamp ${year}"
 preheader: "Ya tienes tu entrada. Te contamos qué viene ahora."
+reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
+
+# Documentación interna (no aparece en el email)
 workflow: "Pagados"
 trigger: "Al pasar el campo Estado a «Pagado»"
-reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
 ---
 
 # ¡Tu plaza está confirmada! 🎉

@@ -2,13 +2,25 @@
 
 Los emails que envían los workflows de Sender se escriben aquí, en Markdown, y se convierten a HTML con un diseño común.
 
-| Archivo                          | Qué es                                                                                                                                                                                                      |
-| -------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [`content/`](content/)           | Un email por archivo. Arriba, entre líneas `---`: asunto (`subject`), texto de vista previa (`preheader`), workflow, cuándo se envía (`trigger`) y motivo del pie (`reason`). Debajo, el texto en Markdown. |
-| [`edition.toml`](edition.toml)   | Datos de la edición (año, fechas, lugar, precio, enlaces). En los textos se usan como `${price}`, `${dates}`, etc.                                                                                          |
-| [`template.mjml`](template.mjml) | Diseño común en [MJML](https://documentation.mjml.io/): cabecera con el logo, estilos y pie.                                                                                                                |
-| [`build.mjs`](build.mjs)         | Genera el HTML.                                                                                                                                                                                             |
-| [`html/`](html/)                 | Resultado: el HTML que se pega en Sender. **No se edita a mano.**                                                                                                                                           |
+| Archivo                          | Qué es                                                                                                                                                   |
+| -------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| [`content/`](content/)           | Un email por archivo: un encabezado entre líneas `---` y, debajo, el texto en Markdown. Ver [El encabezado de cada email](#el-encabezado-de-cada-email). |
+| [`edition.toml`](edition.toml)   | Datos de la edición (año, fechas, lugar, precio, enlaces). En los textos se usan como `${price}`, `${dates}`, etc.                                       |
+| [`template.mjml`](template.mjml) | Diseño común en [MJML](https://documentation.mjml.io/): cabecera con el logo, estilos y pie.                                                             |
+| [`build.mjs`](build.mjs)         | Genera el HTML.                                                                                                                                          |
+| [`html/`](html/)                 | Resultado: el HTML que se pega en Sender. **No se edita a mano.**                                                                                        |
+
+## El encabezado de cada email
+
+Está agrupado en tres bloques, separados por una línea en blanco y un comentario `#`:
+
+| Bloque                              | Campos                                                                                                                                                                                                   | Dónde se usa                                                                                                         |
+| ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
+| **Lo que ve quien recibe el email** | `subject` (asunto), `preheader` (texto de vista previa en la bandeja de entrada), `reason` (motivo del pie, encima de «Darme de baja»), `image` (opcional: imagen antes del título, de `public/emails/`) | En el email. En los workflows, Sender usa el asunto que se escribe en el paso del workflow: hay que copiarlo a mano. |
+| **Cuándo y a quién se envía**       | `audience` (grupo de Sender), `days_before_event` o `days_after_event`, `send_time`                                                                                                                      | Solo en las campañas 07 a 12; lo usa `npm run emails:schedule`. No aparece en el email.                              |
+| **Documentación interna**           | `workflow`, `trigger`                                                                                                                                                                                    | Solo para el equipo: en qué workflow se pega el email y cuándo se envía. No aparece en el email.                     |
+
+Los valores van entre comillas y pueden usar datos de `edition.toml`, como `${year}`.
 
 ## Editar un email
 
