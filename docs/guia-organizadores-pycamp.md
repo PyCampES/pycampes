@@ -4,7 +4,7 @@
 
 ## 1. Introducción
 
-Este documento está dirigido a personas que se están planteando sumarse al equipo organizador del PyCamp España. El objetivo es doble: por un lado, transmitir la filosofía y la dinámica del evento; por otro, dar una idea concreta y honesta del trabajo que implica organizarlo, qué tareas existen, qué decisiones hay que tomar y dónde están guardados los recursos que han ido acumulándose durante las cuatro ediciones anteriores.
+Este documento está dirigido a personas que se están planteando sumarse al equipo organizador del PyCamp España. El objetivo es doble: por un lado, transmitir la filosofía y la dinámica del evento; por otro, dar una idea concreta y honesta del trabajo que implica organizarlo, qué tareas existen, qué decisiones hay que tomar y dónde están guardados los recursos que han ido acumulándose durante las cinco ediciones anteriores.
 
 No es un manual cerrado. Cada edición aporta mejoras y cosas que cambiar, y este documento debería evolucionar en la misma línea. Si encuentras algo desactualizado, incompleto o que merezca un matiz, modifícalo: forma parte de mantener viva la organización del evento.
 
