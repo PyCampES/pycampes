@@ -40,7 +40,7 @@ function Event() {
     },
     {
       icon: iconTrain,
-      title: "Transporte ida/vuelta desde la estación Santa Justa (Sevilla)",
+      title: "Transporte ida/vuelta desde la estación más cercana",
     },
     {
       icon: iconWifi,
@@ -104,10 +104,11 @@ function Event() {
                   <img src={iconCalendar} alt="" />
                 </div>
                 <h3>¿Cuándo?</h3>
-                <p className="info-highlight">25 - 28 Marzo 2027</p>
+                {/* TODO 2027: dates not confirmed yet */}
+                <p className="info-highlight">Por definir</p>
                 <p className="info-description">
-                  Semana Santa, de jueves por la mañana a domingo por la tarde.
-                  4 días intensivos de código y comunidad en un entorno natural.
+                  De jueves por la mañana a domingo por la tarde. 4 días
+                  intensivos de código y comunidad en un entorno natural.
                 </p>
               </div>
 
@@ -116,19 +117,11 @@ function Event() {
                   <img src={iconMapPin} alt="" />
                 </div>
                 <h3>¿Dónde?</h3>
-                <p className="info-highlight">
-                  <a
-                    href="https://maps.app.goo.gl/QDkbyW9bDmZmSKYD6"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Encinar de Escardiel, Sevilla
-                  </a>
-                </p>
+                {/* TODO 2027: venue not confirmed yet (add its Google Maps link) */}
+                <p className="info-highlight">Por definir</p>
                 <p className="info-description">
-                  Alojamiento rural a 1 hora de Sevilla. Un entorno natural
-                  privilegiado con todas las comodidades para trabajar y
-                  descansar.
+                  Un alojamiento rural con todas las comodidades para trabajar y
+                  descansar, en plena naturaleza.
                 </p>
               </div>
             </div>
