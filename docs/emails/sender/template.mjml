@@ -1,0 +1,84 @@
+<!--
+  Shared layout of the PyCamp España emails for Sender.net.
+
+  build.mjs replaces:
+    ${subject}, ${preheader}, ${reason} -> front matter of each content/*.md
+    ${images_url}                       -> public URL of public/emails/
+    the CONTENT comment in the body     -> the email body (content/*.md)
+
+  Sender tags (such as {{cupon}} or {$unsubscribe_link}) are left as they are:
+  Sender replaces them when it sends each email.
+  MJML docs: https://documentation.mjml.io/
+-->
+<mjml lang="es">
+  <mj-head>
+    <mj-title>${subject}</mj-title>
+    <mj-preview>${preheader}</mj-preview>
+    <mj-attributes>
+      <mj-all font-family="'Inter', Helvetica, Arial, sans-serif" />
+      <mj-section padding="0" />
+      <mj-text color="#515856" font-size="16px" line-height="165%" padding="0 50px" />
+      <mj-button
+        background-color="#edbf59"
+        color="#2d5c23"
+        border="2px solid #2d5c23"
+        border-radius="12px"
+        font-size="16px"
+        inner-padding="11px 25px"
+        padding="20px 50px"
+      />
+    </mj-attributes>
+    <mj-style inline="inline">
+      h1 { font-size: 32px; line-height: 125%; font-weight: bold; color: #2d5c23; text-align: center; margin: 0 0 20px; }
+      h2 { font-size: 20px; line-height: 130%; font-weight: bold; color: #2d5c23; margin: 24px 0 8px; }
+      p { margin: 0 0 14px; }
+      ul, ol { margin: 0 0 14px; padding-left: 22px; }
+      li { margin: 0 0 4px; }
+      a { color: #417d36; }
+      blockquote { margin: 6px 0 18px; padding: 14px 18px; background-color: #e8f3e2; border-left: 4px solid #edbf59; border-radius: 8px; font-size: 18px; }
+      blockquote p { margin: 0; }
+      .footer a { color: #eaeced; }
+    </mj-style>
+  </mj-head>
+
+  <mj-body background-color="#f4f7fa" width="640px">
+    <mj-section padding-top="20px" />
+
+    <!-- Header with the logo -->
+    <mj-section background-color="#417d36" border-radius="8px 8px 0 0" padding="24px 0">
+      <mj-column>
+        <mj-image src="${images_url}logo-pycamp.png" alt="PyCamp España" width="200px" padding="0" href="https://pycamp.es" />
+      </mj-column>
+    </mj-section>
+
+    <!-- Body -->
+    <mj-section background-color="#faf8f5" padding="30px 0 20px">
+      <mj-column>
+        <!-- CONTENT -->
+      </mj-column>
+    </mj-section>
+
+    <!-- Footer -->
+    <mj-section background-color="#417d36" border-radius="0 0 8px 8px" padding="28px 0">
+      <mj-column>
+        <mj-text color="#eaeced" font-size="14px" align="center" css-class="footer">
+          <strong style="font-size: 15px">PyCamp España</strong><br />
+          Calle La Botánica, 4, 1º · 28028 Madrid, España
+        </mj-text>
+        <mj-social icon-size="22px" mode="horizontal" padding="14px 0">
+          <mj-social-element src="${images_url}social-email.png" href="mailto:pycampes@gmail.com" background-color="transparent" alt="Email" />
+          <mj-social-element src="${images_url}social-telegram.png" href="https://t.me/pycampes" background-color="transparent" alt="Telegram" />
+          <mj-social-element src="${images_url}social-x.png" href="https://x.com/pycampes" background-color="transparent" alt="X" />
+          <mj-social-element src="${images_url}social-github.png" href="https://github.com/PyCampES" background-color="transparent" alt="GitHub" />
+          <mj-social-element src="${images_url}social-linkedin.png" href="https://www.linkedin.com/company/pycamp/" background-color="transparent" alt="LinkedIn" />
+        </mj-social>
+        <mj-text color="#eaeced" font-size="13px" align="center" css-class="footer">
+          ${reason}<br />
+          <a href="{$unsubscribe_link}" style="color: #eaeced">Darme de baja</a>
+        </mj-text>
+      </mj-column>
+    </mj-section>
+
+    <mj-section padding-bottom="20px" />
+  </mj-body>
+</mjml>
