@@ -18,10 +18,10 @@ trigger: "Solo en 2027, a mano, el miércoles 9 de diciembre (el día antes de c
 Te recordamos las fechas que estamos valorando para el PyCamp ${year}:
 
 - 📅 **Del jueves 29 de abril al domingo 2 de mayo de 2027**: 4 días y 3 noches
-- 🏡 **Encinar de Escardiel, Sevilla**
+- 🏡 **Encinar de Escardiel, Sevilla**: donde hicimos las dos últimas ediciones, ¡y nos encantó!
 - 💶 **Entre 300 y 350 €**, con alojamiento, pensión completa y PyBus incluidos
 
-**Mañana, ${preregistration_deadline}, cerramos la pre-inscripción.** Necesitamos unas 20 para confirmar estas fechas. Si piensas venir, pre-inscríbete ahora: tendrás prioridad para comprar tu entrada y una camiseta de edición limitada de regalo si vienes al evento.
+**Mañana, ${preregistration_deadline}, cerramos la pre-inscripción.** Necesitamos unas 20 para confirmar estas fechas. Si piensas venir, pre-inscríbete ahora: tendrás prioridad para comprar tu entrada y una camiseta de edición limitada de regalo cuando compres tu entrada y vengas al evento.
 
 [[Pre-inscribirme]](${preregistration_form_url})
 

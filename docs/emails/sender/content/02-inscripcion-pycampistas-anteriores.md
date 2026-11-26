@@ -34,8 +34,8 @@ Si te pre-inscribiste y todavía no rellenaste el formulario de inscripción, ha
 **¿Cómo funciona?**
 
 1. Te inscribes en el formulario.
-2. Te enviamos por email un **código personal** para comprar tu entrada en nuestra tienda.
-3. Tienes **${payment_days} días** para completar la compra. Si no, la plaza pasa a la siguiente persona.
+2. Te enviamos por email un **código personal** para comprar tu entrada en nuestra tienda. Puede tardar desde unas horas hasta un par de días.
+3. Desde que te llega el código, tienes **${payment_days} días** para completar la compra. Si no, la plaza pasa a la siguiente persona.
 
 La entrada incluye alojamiento y pensión completa durante los 4 días, espacios para programar dentro y al aire libre, conexión a internet y el transporte (PyBus) hasta el venue.
 

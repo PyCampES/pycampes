@@ -24,7 +24,7 @@ Gracias a tu pre-inscripción, y a la de mucha gente más, **confirmamos la ${ed
 **¿Qué pasa ahora?**
 
 1. El **${preregistration_registration_date}** te enviaremos el **formulario de inscripción**, antes que a nadie. Hay que rellenarlo para confirmar tu plaza: te pediremos algunos datos más que en la pre-inscripción.
-2. Al inscribirte te llegará tu **código personal** para comprar la entrada. Tendrás **${payment_days} días** para completar la compra.
+2. Después de inscribirte te enviaremos tu **código personal** para comprar la entrada. Puede tardar desde unas horas hasta un par de días. Desde que te llegue, tendrás **${payment_days} días** para completar la compra.
 3. Al llegar al PyCamp te daremos tu **camiseta de edición limitada**. 👕
 
 Hasta entonces no tienes que hacer nada. Si ya no puedes venir, responde a este email y así liberamos tu plaza para otra persona.

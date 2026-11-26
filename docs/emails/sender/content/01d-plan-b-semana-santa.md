@@ -23,7 +23,7 @@ Gracias a todas las personas que se pre-inscribieron para el puente de mayo. No 
 
 **Es una pre-inscripción nueva.** La de mayo no sirve para Semana Santa: si quieres venir en estas fechas, pre-inscríbete otra vez, aunque ya lo hayas hecho para mayo.
 
-Antes de reservar un lugar necesitamos saber que vendrían unas 20 personas, así que pre-inscríbete solo si de verdad piensas venir. No tienes que pagar nada ahora, y el premio es el mismo: prioridad para comprar tu entrada y una camiseta de edición limitada de regalo si vienes al evento.
+Antes de reservar un lugar necesitamos saber que vendrían unas 20 personas, así que pre-inscríbete solo si de verdad piensas venir. No tienes que pagar nada ahora, y el premio es el mismo: prioridad para comprar tu entrada y una camiseta de edición limitada de regalo cuando compres tu entrada y vengas al evento.
 
 [[Pre-inscribirme para Semana Santa]](${preregistration_b_form_url})
 

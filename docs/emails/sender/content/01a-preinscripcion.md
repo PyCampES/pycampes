@@ -18,7 +18,7 @@ trigger: "Solo en 2027, programada a mano en Sender para el domingo 29 de noviem
 Estamos preparando la ${edition} edición del PyCamp España y estas son las fechas que estamos valorando:
 
 - 📅 **Del jueves 29 de abril al domingo 2 de mayo de 2027**: 4 días y 3 noches de código, comunidad y naturaleza
-- 🏡 **Encinar de Escardiel, Sevilla**
+- 🏡 **Encinar de Escardiel, Sevilla**: donde hicimos las dos últimas ediciones, ¡y nos encantó!
 - 💶 **Entre 300 y 350 €**, con alojamiento, pensión completa y PyBus desde Sevilla incluidos
 
 En 2027 el 1 de mayo cae en sábado, así que para venir tendrías que pedirte el jueves 29 y el viernes 30 de abril en el trabajo.
@@ -28,7 +28,7 @@ En 2027 el 1 de mayo cae en sábado, así que para venir tendrías que pedirte e
 Pre-inscribirte tiene premio:
 
 - 🎟️ **Prioridad para comprar tu entrada**, antes que nadie.
-- 👕 **Una camiseta de edición limitada del PyCamp**, de regalo si vienes al evento.
+- 👕 **Una camiseta de edición limitada del PyCamp**, de regalo cuando compres tu entrada y vengas al evento.
 
 [[Pre-inscribirme]](${preregistration_form_url})
 
