@@ -331,6 +331,7 @@ Cuando termina el evento todavía quedan tareas durante un par de semanas. Estas
 
 - **Encuesta a participantes**: se envía durante el último día, antes de que la gente se vaya, para asegurar que todos responden. Es anónima.
 - **Email de agradecimiento**: la campaña `16-gracias` sale sola dos días después del evento, con los enlaces a las fotos y a la encuesta. Antes hay que completar `photos_url` y `survey_url` en `edition.toml`.
+- **Grupo de asistentes para la preventa**: se añade el grupo *Asistentes AAAA* de la edición a `previous_attendees_groups` en `edition.toml`, para que esas personas reciban la preventa del año siguiente.
 - **Devolver material alquilado o prestado**: proyector, antena Starlink.
 - **Reporte a la EPS** (y a la PSF si hubo grant) con asistencia, fotos y resumen.
 - **Post sobre el PyCamp** en el blog de Python España y/o pycamp.es.
