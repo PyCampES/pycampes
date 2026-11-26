@@ -8,7 +8,7 @@
 
 ## Desarrollo
 
-1. Instalar nodejs `24.11.1`
+1. Instalar nodejs `26.13.1` (LTS)
 1. Instalar las dependencias
    ```
    npm install

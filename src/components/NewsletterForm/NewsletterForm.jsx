@@ -1,48 +1,57 @@
-import { useState } from "react";
-import Button from "../Button/Button";
+import { useEffect } from "react";
 import { iconMail } from "../../assets";
 import "./NewsletterForm.css";
 
-function NewsletterForm() {
-  const [submitted, setSubmitted] = useState(false);
-  const [consent, setConsent] = useState(false);
+// Sender.net embedded form ("Newsletter").
+// The form's fields, texts and the group subscribers join are configured in
+// Sender: Forms -> Newsletter.
+const SENDER_ACCOUNT_ID = "a3e0f4e0894846";
+const SENDER_FORM_ID = "axkPM9";
+const SENDER_FORM_EMBED_HASH = "mww7jmd1axkpm90g41y";
+const SENDER_SCRIPT_URL =
+  "https://cdn.sender.net/accounts_resources/universal.js?explicit=true";
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-
-    if (!consent) {
-      return;
-    }
-
-    const formData = new FormData(e.target);
-    const response = await fetch(e.target.action, {
-      method: e.target.method,
-      body: new URLSearchParams(formData),
-      headers: {
-        Accept: "application/json",
-        "Content-Type": "application/x-www-form-urlencoded;charset=UTF-8",
-      },
-    });
-
-    if (!response.ok) {
-      return;
-    }
-
-    const result = await response.json();
-
-    if (result?.success) {
-      setSubmitted(true);
-    }
+// Load Sender's script once per page load (equivalent to its embed snippet).
+// `explicit=true` makes us responsible for rendering the form, which we need
+// because this component is mounted and unmounted on client-side navigation.
+function loadSender() {
+  if (window.sender) {
+    return;
+  }
+  window.Sender = "sender";
+  window.sender = function (...args) {
+    (window.sender.q = window.sender.q || []).push(args);
   };
+  window.sender.l = Date.now();
+
+  const script = document.createElement("script");
+  script.async = true;
+  script.src = SENDER_SCRIPT_URL;
+  document.head.appendChild(script);
+
+  window.sender(SENDER_ACCOUNT_ID);
+}
+
+function NewsletterForm() {
+  useEffect(() => {
+    loadSender();
+
+    const render = () => window.senderForms.render(SENDER_FORM_ID);
+    if (window.senderFormsLoaded) {
+      render();
+    } else {
+      window.addEventListener("onSenderFormsLoaded", render, { once: true });
+    }
+
+    return () => {
+      window.removeEventListener("onSenderFormsLoaded", render);
+      window.senderForms?.destroy(SENDER_FORM_ID);
+    };
+  }, []);
 
   return (
     <section className="newsletter">
       <div className="newsletter-container">
-        <iframe
-          name="ml-hidden-iframe"
-          title="newsletter-subscription"
-          style={{ display: "none" }}
-        />
         <div className="newsletter-icon">
           <img src={iconMail} alt="" />
         </div>
@@ -55,62 +64,16 @@ function NewsletterForm() {
           ¡te avisaremos cuando salgan las próximas entradas!
         </p>
 
-        {!submitted ? (
-          <form
-            className="newsletter-form"
-            action="https://assets.mailerlite.com/jsonp/189141/forms/178924638060939050/subscribe"
-            data-code=""
-            method="post"
-            target="ml-hidden-iframe"
-            onSubmit={handleSubmit}
-          >
-            <div className="newsletter-form-row">
-              <input
-                type="email"
-                name="fields[email]"
-                placeholder="tu@email.com"
-                data-inputmask=""
-                className="newsletter-input"
-                required
-              />
-              <Button type="submit" variant="primary">
-                Suscribirme
-              </Button>
-            </div>
+        <div
+          className="sender-form-field newsletter-form"
+          data-sender-form-id={SENDER_FORM_EMBED_HASH}
+        />
 
-            {/* GDPR checkbox */}
-            <label className="newsletter-consent">
-              <input
-                type="checkbox"
-                name="gdpr[]"
-                value="Email"
-                xp-if="gdpr.title"
-                required
-                checked={consent}
-                onChange={(e) => setConsent(e.target.checked)}
-              />
-              <span xp-if="gdpr.description">
-                Acepto recibir emails informativos sobre el PyCamp. Utilizamos
-                MailerLite como plataforma de email marketing.
-              </span>
-            </label>
-
-            <input type="hidden" name="ml-submit" value="1" />
-            <input type="hidden" name="anticsrf" value="true" />
-          </form>
-        ) : (
-          <div className="newsletter-success">
-            <h3>¡Gracias!</h3>
-            <p>
-              <strong>Ya estás suscrito a nuestra newsletter.</strong> ¡Te
-              mantendremos al tanto de cualquier novedad sobre el PyCamp!
-            </p>
-            <p className="newsletter-legal">
-              Si lo deseas, puedes <strong>darte de baja</strong> en cualquier
-              momento haciendo click en el footer de nuestros emails.
-            </p>
-          </div>
-        )}
+        <p className="newsletter-legal">
+          Al suscribirte aceptas recibir emails informativos sobre el PyCamp.
+          Utilizamos Sender como plataforma de email marketing y puedes darte de
+          baja en cualquier momento desde el pie de nuestros emails.
+        </p>
       </div>
     </section>
   );

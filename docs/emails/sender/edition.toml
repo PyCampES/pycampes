@@ -1,0 +1,66 @@
+# Datos de la edición que usan los emails de docs/emails/sender/content/.
+# En los textos se escriben como ${name}, por ejemplo ${price}.
+# Mientras un valor empiece por "POR DEFINIR", build.mjs avisa al generar los emails.
+
+year = "2027"
+edition = "6ª"
+dates = "POR DEFINIR (ej. del 29 de abril al 2 de mayo de 2027)"
+venue = "POR DEFINIR (nombre del venue, ciudad)"
+price = "POR DEFINIR (300 o 350 €)"
+
+# Formulario de Google para inscribirse en esta edición. Obligatorio para las
+# campañas de apertura de inscripción (02 y 03).
+registration_form_url = "POR DEFINIR"
+
+# Formulario de becas. Opcional: si se deja "POR DEFINIR", los emails de
+# inscripción no mencionan las becas.
+scholarships_form_url = "POR DEFINIR"
+
+# Plazas disponibles.
+max_attendees = "30"
+
+# Grupos de Sender con quienes vinieron a ediciones anteriores, separados por
+# comas. Reciben la preventa (02) antes que el resto. Al cerrar cada edición,
+# añade su grupo aquí.
+previous_attendees_groups = "Asistentes 2022, Asistentes 2023, Asistentes 2024, Asistentes 2025, Asistentes 2026"
+
+# Enlace a la tienda de pretix.eu donde se compra la entrada con el cupón.
+pretix_url = "POR DEFINIR"
+
+# Plazos del flujo de pago (en días). Deben coincidir con las esperas del
+# workflow "Inscritos sin pagar" en Sender: 3 + 3 + 4 = 10 días.
+payment_days = "10"
+days_left_first_reminder = "7"
+days_left_last_reminder = "4"
+
+# Enlace de invitación al grupo de Telegram de asistentes de esta edición.
+attendees_telegram_url = "POR DEFINIR"
+
+contact_email = "pycampes@gmail.com"
+faqs_url = "https://pycamp.es/faqs"
+
+# Fechas del evento en formato AAAA-MM-DD. schedule.mjs las usa para calcular
+# cuándo se envía cada email previo y posterior al evento.
+event_start = "POR DEFINIR (AAAA-MM-DD)"
+event_end = "POR DEFINIR (AAAA-MM-DD)"
+
+# Formulario de Google para proponer proyectos de esta edición.
+projects_form_url = "POR DEFINIR"
+
+# PyBus: transporte desde la ciudad hasta el venue.
+pybus_city = "POR DEFINIR (ej. Sevilla)"
+pybus_departure_date = "POR DEFINIR (ej. jueves 29 de abril)"
+pybus_departure_time = "POR DEFINIR (ej. 10:30)"
+pybus_meeting_point = "POR DEFINIR (ej. Estación Santa Justa)"
+pybus_maps_url = "POR DEFINIR"
+venue_arrival_time = "POR DEFINIR (ej. 11:30)"
+
+# Después del evento.
+photos_url = "POR DEFINIR"
+survey_url = "POR DEFINIR"
+
+# Camisetas (campaña 10): enlace al producto en pretix.eu, precio y fecha
+# límite para pedirlas.
+tshirts_url = "POR DEFINIR"
+tshirts_price = "POR DEFINIR (ej. 10 €)"
+tshirts_deadline = "POR DEFINIR (ej. 12 de marzo)"
