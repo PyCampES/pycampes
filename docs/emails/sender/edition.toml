@@ -10,7 +10,7 @@ price = "POR DEFINIR (300 o 350 €)"
 
 # Encuesta de fechas 2027 (campaña 01a): formulario de Google y fecha límite
 # para responderla.
-dates_survey_url = "POR DEFINIR"
+dates_survey_url = "https://forms.gle/pr6gGaNjXotsgPDt8"
 dates_survey_deadline = "jueves 10 de diciembre"
 
 # Formulario de Google para inscribirse en esta edición. Obligatorio para las
