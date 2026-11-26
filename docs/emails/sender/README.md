@@ -17,7 +17,7 @@ Está agrupado en tres bloques, separados por una línea en blanco y un comentar
 | Bloque                              | Campos                                                                                                                                                                                                   | Dónde se usa                                                                                                         |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **Lo que ve quien recibe el email** | `subject` (asunto), `preheader` (texto de vista previa en la bandeja de entrada), `reason` (motivo del pie, encima de «Darme de baja»), `image` (opcional: imagen antes del título, de `public/emails/`) | En el email. En los workflows, Sender usa el asunto que se escribe en el paso del workflow: hay que copiarlo a mano. |
-| **Cuándo y a quién se envía**       | `audience` (grupo de Sender), `days_before_event` o `days_after_event`, `send_time`                                                                                                                      | Solo en las campañas (01 y 08 a 13); lo usa `npm run emails:schedule`. No aparece en el email.                       |
+| **Cuándo y a quién se envía**       | `audience` (grupo de Sender), `days_before_event` o `days_after_event`, `send_time`                                                                                                                      | Solo en las campañas (01 a 03 y 10 a 16); lo usa `npm run emails:schedule`. No aparece en el email.                  |
 | **Documentación interna**           | `workflow`, `trigger`                                                                                                                                                                                    | Solo para el equipo: en qué workflow se pega el email y cuándo se envía. No aparece en el email.                     |
 
 Los valores van entre comillas y pueden usar datos de `edition.toml`, como `${year}`.
@@ -44,15 +44,15 @@ Convenciones del texto:
 
 Las imágenes están en [`public/emails/`](../../../public/emails/) y la web las publica en `https://pycamp.es/<año>/emails/`.
 
-Los emails de los **workflows** (00 y 02 a 07) hay que pegarlos a mano en Sender: su API permite cambiar el asunto, pero no el contenido de un email ya creado (lo probamos en noviembre de 2026). Las **campañas** (01 y 08 a 13) sí se suben solas, con `npm run emails:schedule` (ver más abajo).
+Los emails de los **workflows** (00 y 04 a 09) hay que pegarlos a mano en Sender: su API permite cambiar el asunto, pero no el contenido de un email ya creado (lo probamos en noviembre de 2026). Las **campañas** (01 a 03 y 10 a 16) sí se suben solas, con `npm run emails:schedule` (ver más abajo).
 
 ## Cuando se confirmen las fechas de la edición
 
 1. Completa los datos `POR DEFINIR` de `edition.toml`.
 2. `npm run emails` para regenerar el HTML.
 3. En Sender, pega el HTML nuevo en cada email de los workflows: `00-bienvenida` (pasa a mostrar las fechas y el lugar) y los de _Inscritos sin pagar_ y _Pagados_.
-4. `npm run emails:schedule -- --apply`: crea en Sender el anuncio `01-anuncio-fecha-y-lugar` como borrador y programa las campañas cuyos datos ya estén completos.
-5. Revisa el borrador del anuncio en Sender y envíalo (_Send_) a la Newsletter. Se envía una sola vez por edición.
+4. `npm run emails:schedule -- --apply`: crea en Sender las campañas manuales como borradores y programa las demás, siempre que sus datos ya estén completos.
+5. Revisa en Sender el borrador del anuncio `01-anuncio-fecha-y-lugar` y envíalo (_Send_) a la Newsletter. Se envía una sola vez por edición.
 
 ## Datos de cada persona en Sender
 
@@ -78,24 +78,24 @@ Los workflows se crean a mano en Sender (_Automation_): su API no permite crearl
 Plazo total para comprar la entrada: 10 días (3 + 3 + 4). Si cambia, actualiza también los días en `edition.toml`.
 
 1. **Disparador:** _Subscriber field updated_ → **Estado** es igual a `Inscrito`.
-2. **Email:** `02-haz-el-pago`.
+2. **Email:** `04-haz-el-pago`.
 3. **Espera:** 3 días.
 4. **Condición:** ¿Estado es igual a `Pagado`? **Sí** → fin. **No** → sigue.
-5. **Email:** `03-recordatorio-pago`.
+5. **Email:** `05-recordatorio-pago`.
 6. **Espera:** 3 días.
 7. **Condición:** ¿Estado es igual a `Pagado`? **Sí** → fin. **No** → sigue.
-8. **Email:** `04-ultimo-aviso`.
+8. **Email:** `06-ultimo-aviso`.
 9. **Espera:** 4 días.
 10. **Condición:** ¿Estado es igual a `Pagado`? **Sí** → fin. **No** → sigue.
 11. **Acción:** actualizar el campo **Estado** a `Vencido`. Así se ve en la lista quién perdió la plaza y hay que anular su cupón en pretix.
-12. **Email:** `05-reserva-vencida`.
+12. **Email:** `07-reserva-vencida`.
 
 ### Pagados
 
 1. **Disparador:** _Subscriber field updated_ → **Estado** es igual a `Pagado`.
-2. **Email:** `06-plaza-confirmada`.
+2. **Email:** `08-plaza-confirmada`.
 3. **Espera:** 1 día.
-4. **Email:** `07-grupo-telegram`.
+4. **Email:** `09-grupo-telegram`.
 
 Además, conviene añadir a cada persona que paga al grupo **Asistentes AAAA**, que se usa para los emails previos al evento (¿Qué llevo?, PyBus, etc.) y para la preventa del año siguiente.
 
@@ -103,18 +103,24 @@ Además, conviene añadir a cada persona que paga al grupo **Asistentes AAAA**, 
 
 Las campañas son los emails que no dependen de cada persona sino de la edición. Se crean en Sender con un comando, sin copiar nada a mano.
 
-| Email                                 | A quién         | Cuándo                                                   |
-| ------------------------------------- | --------------- | -------------------------------------------------------- |
-| `01-anuncio-fecha-y-lugar`            | Newsletter      | Una vez, a mano, al confirmar fecha y lugar con el venue |
-| `08-propone-un-proyecto`              | Asistentes AAAA | 30 días antes, 10:00                                     |
-| `09-que-llevo`                        | Asistentes AAAA | 7 días antes, 10:00                                      |
-| `10-propone-un-proyecto-recordatorio` | Asistentes AAAA | 5 días antes, 18:00                                      |
-| `11-informacion-pybus`                | Asistentes AAAA | 4 días antes, 10:00                                      |
-| `12-manana-es-el-gran-dia`            | Asistentes AAAA | 1 día antes, 10:00                                       |
-| `13-gracias`                          | Asistentes AAAA | 2 días después del final, 10:00                          |
+| Email                                   | A quién                                                          | Cuándo                                          |
+| --------------------------------------- | ---------------------------------------------------------------- | ----------------------------------------------- |
+| `01-anuncio-fecha-y-lugar`              | Newsletter                                                       | A mano, al confirmar fecha y lugar con el venue |
+| `02-inscripcion-pycampistas-anteriores` | Asistentes de ediciones anteriores (`previous_attendees_groups`) | A mano, al abrir la inscripción (preventa)      |
+| `03-inscripcion-abierta`                | Newsletter                                                       | A mano, unos días después de la preventa        |
+| `10-camisetas`                          | Asistentes AAAA                                                  | A mano, con tiempo para encargar las camisetas  |
+| `11-propone-un-proyecto`                | Asistentes AAAA                                                  | 30 días antes, 10:00                            |
+| `12-que-llevo`                          | Asistentes AAAA                                                  | 7 días antes, 10:00                             |
+| `13-propone-un-proyecto-recordatorio`   | Asistentes AAAA                                                  | 5 días antes, 18:00                             |
+| `14-informacion-pybus`                  | Asistentes AAAA                                                  | 4 días antes, 10:00                             |
+| `15-manana-es-el-gran-dia`              | Asistentes AAAA                                                  | 1 día antes, 10:00                              |
+| `16-gracias`                            | Asistentes AAAA                                                  | 2 días después del final, 10:00                 |
 
-- **El anuncio** (sin fecha en su encabezado) se crea como **borrador**: se revisa en Sender y se envía con _Send_. Si `registration_form_url` ya está definido en `edition.toml`, incluye el botón para inscribirse; si no, dice que avisaremos al abrir la inscripción.
-- **Las demás** se programan solas: el momento sale de su encabezado (`days_before_event` o `days_after_event` y `send_time`) y de `event_start` y `event_end` de `edition.toml`. Van al grupo **Asistentes AAAA**; por eso, al marcar a alguien como `Pagado`, hay que añadirlo a ese grupo.
+- **Las manuales** (sin fecha en su encabezado) se crean como **borrador**: se revisan en Sender y se envían con _Send_ cuando toca.
+- **Las demás** se programan solas: el momento sale de su encabezado (`days_before_event` o `days_after_event` y `send_time`) y de `event_start` y `event_end` de `edition.toml`.
+- Las que van a **Asistentes AAAA** necesitan que, al marcar a alguien como `Pagado`, se le añada a ese grupo.
+- `audience` puede tener varios grupos separados por comas. La preventa usa `previous_attendees_groups` de `edition.toml`: al cerrar cada edición, añade ahí su grupo.
+- Las campañas de inscripción (02 y 03) no se crean hasta que `registration_form_url` esté definido. Si `scholarships_form_url` está definido, muestran también el botón de becas.
 
 ```
 npm run emails:schedule              # muestra el plan; no cambia nada

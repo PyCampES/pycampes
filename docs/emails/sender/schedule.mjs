@@ -1,5 +1,5 @@
 // Creates in Sender.net the campaigns: the content/*.md files with an
-// `audience`. Those with days_before_event or days_after_event are scheduled
+// `audience` (one Sender group, or several separated by commas). Those with days_before_event or days_after_event are scheduled
 // relative to the event dates; the others (such as the date and venue
 // announcement) are left as drafts, to be reviewed and sent by hand.
 //
@@ -97,9 +97,7 @@ async function main() {
       : "Plan (nothing is changed; use --apply):\n"
   );
   for (const { title, when, values, pending } of campaigns) {
-    console.log(
-      `  ${when.padEnd(30)}  ${values.audience.padEnd(16)}  ${title}`
-    );
+    console.log(`  ${when.padEnd(30)}  ${title}\n      to: ${values.audience}`);
     if (pending.length) {
       console.log(`      POR DEFINIR: ${pending.join(" | ")}`);
     }
@@ -135,10 +133,14 @@ async function main() {
       console.log(`  skip (date already passed): ${title}`);
       continue;
     }
-    const groupId = groups[values.audience];
-    if (!groupId) {
-      throw new Error(`Sender has no group called "${values.audience}".`);
-    }
+    // `audience` is one group or several, separated by commas.
+    const groupIds = values.audience.split(",").map((name) => {
+      const id = groups[name.trim()];
+      if (!id) {
+        throw new Error(`Sender has no group called "${name.trim()}".`);
+      }
+      return id;
+    });
     const { data } = await api("POST", "campaigns", {
       title,
       subject: values.subject,
@@ -147,7 +149,7 @@ async function main() {
       reply_to: REPLY_TO,
       content_type: "html",
       content: html,
-      groups: [groupId],
+      groups: groupIds,
     });
     if (dated) {
       await api("POST", `campaigns/${data.id}/schedule`, {

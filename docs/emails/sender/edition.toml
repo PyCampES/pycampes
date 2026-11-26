@@ -8,9 +8,21 @@ dates = "POR DEFINIR (ej. del 29 de abril al 2 de mayo de 2027)"
 venue = "POR DEFINIR (nombre del venue, ciudad)"
 price = "POR DEFINIR (300 o 350 €)"
 
-# Formulario de Google para inscribirse en esta edición. Mientras esté
-# "POR DEFINIR", el anuncio de fecha y lugar dice que avisaremos al abrirlo.
+# Formulario de Google para inscribirse en esta edición. Obligatorio para las
+# campañas de apertura de inscripción (02 y 03).
 registration_form_url = "POR DEFINIR"
+
+# Formulario de becas. Opcional: si se deja "POR DEFINIR", los emails de
+# inscripción no mencionan las becas.
+scholarships_form_url = "POR DEFINIR"
+
+# Plazas disponibles.
+max_attendees = "30"
+
+# Grupos de Sender con quienes vinieron a ediciones anteriores, separados por
+# comas. Reciben la preventa (02) antes que el resto. Al cerrar cada edición,
+# añade su grupo aquí.
+previous_attendees_groups = "Asistentes 2022, Asistentes 2023, Asistentes 2024, Asistentes 2025, Asistentes 2026"
 
 # Enlace a la tienda de pretix.eu donde se compra la entrada con el cupón.
 pretix_url = "POR DEFINIR"
@@ -46,3 +58,9 @@ venue_arrival_time = "POR DEFINIR (ej. 11:30)"
 # Después del evento.
 photos_url = "POR DEFINIR"
 survey_url = "POR DEFINIR"
+
+# Camisetas (campaña 10): enlace al producto en pretix.eu, precio y fecha
+# límite para pedirlas.
+tshirts_url = "POR DEFINIR"
+tshirts_price = "POR DEFINIR (ej. 10 €)"
+tshirts_deadline = "POR DEFINIR (ej. 12 de marzo)"

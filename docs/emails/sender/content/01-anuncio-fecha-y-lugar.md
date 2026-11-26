@@ -23,17 +23,7 @@ Tenemos muchas ganas de contarte esto: **ya tenemos fecha y lugar confirmados pa
 
 Reserva estos días en tu calendario desde ya: son cuatro días de programar en proyectos open source, aprender con gente apasionada y desconectar en plena naturaleza.
 
-<!-- if registration_form_url -->
-
-**La inscripción ya está abierta.** Las plazas son limitadas, así que no lo dejes para el último momento:
-
-[[Inscribirme]](${registration_form_url})
-
-<!-- else -->
-
 **Muy pronto abriremos la inscripción**, y te avisaremos por este mismo medio. Las plazas son limitadas, así que estate atento/a a tu bandeja de entrada.
-
-<!-- endif -->
 
 Si todavía estás dudando, echa un vistazo a las fotos de las ediciones anteriores: hay cientos de razones para terminar de convencerte.
 
