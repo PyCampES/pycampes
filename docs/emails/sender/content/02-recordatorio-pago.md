@@ -2,7 +2,7 @@
 # Lo que ve quien recibe el email
 subject: "⏰ Recuerda comprar tu entrada para el PyCamp ${year}"
 preheader: "Te quedan ${days_left_first_reminder} días para completar la compra con tu código."
-reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
+reason: "Recibes este email porque te inscribiste en el PyCamp España."
 
 # Documentación interna (no aparece en el email)
 workflow: "Inscritos sin pagar"

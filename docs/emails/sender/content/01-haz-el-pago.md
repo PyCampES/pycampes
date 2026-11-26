@@ -2,7 +2,7 @@
 # Lo que ve quien recibe el email
 subject: "🎟️ Tu plaza en el PyCamp ${year} te espera: completa la compra"
 preheader: "Tu código personal para comprar la entrada y los pasos para hacerlo."
-reason: "Recibes este email porque te inscribiste en el PyCamp España ${year}."
+reason: "Recibes este email porque te inscribiste en el PyCamp España."
 
 # Documentación interna (no aparece en el email)
 workflow: "Inscritos sin pagar"
