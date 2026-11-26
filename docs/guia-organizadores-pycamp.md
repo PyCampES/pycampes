@@ -45,10 +45,10 @@ El equipo organizador es pequeño y voluntario. En las últimas ediciones lo hem
 Toda la organización vive en unos pocos sitios bien identificados. Cuando entres al equipo, pide acceso a estos recursos:
 
 - **Trello**: tablero por edición (ej. *PyCamp 2026*). Cada tablero se duplica del año anterior y se va adaptando.
-- **Google Drive del equipo organizador**: contiene la checklist del venue, presupuestos, formularios, plantillas de email y diseños de carteles.
+- **Google Drive del equipo organizador**: contiene la checklist del venue, presupuestos, formularios y diseños de carteles.
 - **Email de gestión del PyCamp**: se usa para todas las comunicaciones con venue, transporte, sponsors, asistentes y la PSF/EPS.
-- **Web pública**: [pycamp.es](https://pycamp.es). El código está en [github.com/PyCampES/pycampes](https://github.com/PyCampES/pycampes). En 2026 se está rehaciendo desde cero con Olga, con diseño en Figma.
-- **Newsletter en Mailchimp**: para anuncios masivos de fecha, venue y apertura de entradas.
+- **Web pública**: [pycamp.es](https://pycamp.es). El código está en [github.com/PyCampES/pycampes](https://github.com/PyCampES/pycampes). En 2026 se rehízo desde cero con Olga, con diseño en Figma. Se publica con Read the Docs y cada edición queda en su propia URL: `pycamp.es/2025/`, `pycamp.es/2026/`, etc.
+- **Newsletter en [Sender.net](https://www.sender.net/)**: para anuncios masivos de fecha, venue y apertura de entradas. La cuenta es `info@pycamp.es`.
 - **Grupo de Telegram de organizadores** y, por separado, **grupo de Telegram de asistentes** (se crea cada edición).
 
 ### Cómo está estructurado el tablero de Trello
@@ -74,7 +74,7 @@ No usamos títulos formales, pero en la práctica las tareas suelen agruparse en
 
 - **Venue**: búsqueda, visita, contrato, comunicación durante el año, restricciones alimentarias, distribución de habitaciones.
 - **Transporte (PyBus)**: solicitud de presupuestos, reserva, comunicación de horarios y paradas a los asistentes.
-- **Web, comunicación y newsletter**: actualización de la web pycamp.es, newsletter de Mailchimp, anuncios en redes sociales y en la web de Python España.
+- **Web, comunicación y newsletter**: actualización de la web pycamp.es, newsletter en Sender.net, anuncios en redes sociales y en la web de Python España.
 - **Presupuesto y sponsors**: hoja de cálculo del presupuesto, contacto con empresas patrocinadoras, gestión del grant de la EPS o PSF, coordinación con la Tesorería de Python España.
 - **Contenido del evento**: charlas de bienvenida y cierre, juegos colaborativos, encuestas, voluntarios durante el evento.
 
@@ -229,6 +229,7 @@ Una vez decidido el venue:
 - Se firma el **contrato** y se archiva en la tarjeta correspondiente del Trello (lista *Info*).
 - Se solicita el **pago del anticipo** a la Tesorería de Python España.
 - Se actualiza la tarjeta *Datos del venue* con web, dirección, teléfono fijo y móvil, nombre del contacto, mapa.
+- Se completan las fechas, el venue y el precio en `edition.toml` y se preparan los emails de la edición, siguiendo los pasos de [Cuando se confirmen las fechas de la edición](emails/sender/README.md#cuando-se-confirmen-las-fechas-de-la-edición).
 - Cerca del evento, se le envían al venue las **restricciones alimentarias** recogidas en el formulario de inscripción.
 - Si hay alergias serias o casos especiales, se contacta directamente con el venue por email para confirmar que pueden gestionarlas.
 
@@ -254,8 +255,14 @@ El email tipo de solicitud de presupuesto está en las tarjetas de *Transporte* 
 
 - **Web pública**: pycamp.es, código en GitHub. Cada edición se actualiza con fechas, venue, precio, código de conducta, FAQ y proyectos pasados.
 - **Formularios** en Google Forms para inscripción y becas. Hay formularios plantilla que solo cambian fechas y datos del venue de un año a otro; **no se cambia la redacción de los textos**.
-- **Newsletter** en Mailchimp para anuncios masivos de fecha, venue y apertura de entradas. Para emails individuales (responder dudas concretas), usamos directamente Gmail; Mailchimp es más cómodo para comunicaciones a muchas personas.
-- **Anuncio de venta de entradas** se hace en este orden: grupo de Telegram de asistentes anteriores, newsletter, redes sociales públicas (LinkedIn, Twitter/X, Instagram).
+- **Newsletter** en [Sender.net](https://www.sender.net/) para anuncios masivos de fecha, venue y apertura de entradas. Para emails individuales (responder dudas concretas), usamos directamente Gmail; Sender es más cómodo para comunicaciones a muchas personas.
+  - **Cuenta**: `info@pycamp.es`. Los emails salen desde `newsletter@pycamp.es`. Las dos direcciones (y cualquier otra `@pycamp.es`) se reenvían al Gmail del PyCamp mediante el reenvío de email de Namecheap, donde está el DNS del dominio.
+  - **Grupos**: *Newsletter* tiene a todas las personas suscritas; *Asistentes AAAA*, a quienes vinieron a cada edición. Al empezar la organización de cada edición hay que crear el grupo del año, y se añade a cada persona cuando paga su entrada. Se usa para los emails previos al evento (¿Qué llevo?, PyBus, etc.) y, en las ediciones siguientes, para la preventa de entradas.
+  - **Altas**: el formulario de la web (sección "Únete a nuestra comunidad") es un formulario incrustado de Sender que añade a las personas al grupo *Newsletter*. Su texto, colores y botón se cambian desde *Forms* en Sender, no en el código de la web.
+  - **Emails**: todos están en el repositorio, en [`docs/emails/sender/`](emails/sender/). Hay un Markdown por email en `content/`, numerados en el orden en que se envían a lo largo de la edición, y los datos de la edición (fechas, venue, precio, enlaces) están en `edition.toml`. El HTML se genera con `npm run emails` y no se guarda en el repositorio. Las campañas (anuncio, apertura de entradas, ¿Qué llevo?, PyBus, etc.) se crean y programan en Sender con `npm run emails:schedule`; los emails de los workflows (bienvenida y pagos) hay que pegarlos a mano en Sender. Todo el detalle está en el [README de los emails](emails/sender/README.md).
+  - **Email de bienvenida**: un workflow de Sender lo envía automáticamente a cada persona que entra en *Newsletter*. Su texto está en [`00-bienvenida.md`](emails/sender/content/00-bienvenida.md); si se cambia, se genera el HTML con `npm run emails` y se pega en el paso del workflow.
+- **Inscripción y pago**: la persona rellena el formulario de inscripción de Google. En Sender se le carga un cupón personal de [pretix.eu](https://pretix.eu/) y se cambia su *Estado* a `Inscrito`, lo que le envía el email con el código y, si no paga, los recordatorios hasta que vence la reserva (7 días). Cuando su compra aparece en pretix, su *Estado* pasa a `Pagado` y se la añade al grupo *Asistentes AAAA*. El paso a paso está en el [README de los emails](emails/sender/README.md#proceso-de-inscripción).
+- **Anuncio de venta de entradas** se hace en este orden: preventa para quienes vinieron a ediciones anteriores (email a los grupos *Asistentes AAAA* y grupo de Telegram de asistentes anteriores), unos días después apertura general a la newsletter y, por último, redes sociales públicas (LinkedIn, Twitter/X, Instagram).
 - **Web de Python España**: cada año hay que actualizarla para que aparezca el evento en curso. Se hace mediante un PR a [github.com/python-spain/web-ng](https://github.com/python-spain/web-ng).
 - **Eventos en python.org**: se envía un email a Events PSF para que el evento aparezca en el listado oficial de eventos de la Python Software Foundation.
 - **Anuncio en Read the Docs**: tienen un programa de [Community Ads](https://docs.readthedocs.io/en/latest/advertising/ethical-advertising.html) que aceptan eventos como el nuestro.
@@ -323,12 +330,13 @@ Lista que ha quedado consolidada de cosas que la organización lleva o consigue 
 Cuando termina el evento todavía quedan tareas durante un par de semanas. Estas son las que se han ido consolidando como rutina:
 
 - **Encuesta a participantes**: se envía durante el último día, antes de que la gente se vaya, para asegurar que todos responden. Es anónima.
+- **Email de agradecimiento**: la campaña `16-gracias` sale sola dos días después del evento, con los enlaces a las fotos y a la encuesta. Antes hay que completar `photos_url` y `survey_url` en `edition.toml`.
 - **Devolver material alquilado o prestado**: proyector, antena Starlink.
 - **Reporte a la EPS** (y a la PSF si hubo grant) con asistencia, fotos y resumen.
 - **Post sobre el PyCamp** en el blog de Python España y/o pycamp.es.
 - **Email a las personas becadas** invitándolas a escribir un artículo sobre su experiencia.
 - **Post mortem del equipo**: cantidad de asistentes, presupuesto utilizado, proyectos involucrados, problemas clave en la organización.
-- **Freezar la web del año** en una URL del estilo `2026.pycamp.es` y actualizar la principal con la edición siguiente.
+- **Freezar la web del año**: en GitHub se crea una rama con el año (ej. `2026`) a partir de `main`, y en Read the Docs se activa como versión, que queda publicada en `pycamp.es/2026/`. `main` pasa a ser la web de la edición siguiente, y en Read the Docs se cambia la versión por defecto para que `pycamp.es` redirija a ella.
 - **Página acumulativa de proyectos pasados** en pycamp.es: se añade el proyecto ganador de la votación.
 - **Dar de baja la subscripción de Starlink** hasta el siguiente evento.
 
@@ -368,3 +376,11 @@ Si has llegado hasta aquí y te apetece sumarte, lo más útil es:
 5. Si tienes dudas concretas, abrir una conversación en Telegram. La organización es informal y lo más eficiente es preguntar pronto.
 
 Bienvenida o bienvenido al equipo. 🐍🏕️
+
+---
+
+*Sobre este documento:* la fuente es este archivo Markdown ([`docs/guia-organizadores-pycamp.md`](guia-organizadores-pycamp.md)); el PDF se genera a partir de él. Después de editarlo, regenera el PDF desde la raíz del repositorio con [uv](https://docs.astral.sh/uv/):
+
+```
+uv run --with markdown --with weasyprint python docs/build_pdf.py
+```
