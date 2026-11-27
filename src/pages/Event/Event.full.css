@@ -18,7 +18,7 @@
 }
 
 .event-main-title {
-  font-size: 60px;
+  font-size: var(--font-size-7xl);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -32,15 +32,15 @@
 
 .event-subtitle {
   color: var(--text-muted);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 772px;
+  max-width: 48.25rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .event-info-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28.125rem, 1fr));
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
 }
@@ -55,8 +55,8 @@
 }
 
 .info-icon {
-  width: 45px;
-  height: 45px;
+  width: 2.8125rem;
+  height: 2.8125rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -66,12 +66,12 @@
 }
 
 .info-icon img {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
 }
 
 .info-card h3 {
-  font-size: 24px;
+  font-size: var(--font-size-xl);
   font-weight: 700;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xs);
@@ -79,7 +79,7 @@
 }
 
 .info-highlight {
-  font-size: 30px;
+  font-size: var(--font-size-3xl);
   font-weight: 700;
   color: var(--brand-green-medium);
   margin-bottom: var(--spacing-sm);
@@ -88,7 +88,7 @@
 
 .info-description {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.8;
 }
 
@@ -99,7 +99,7 @@
 }
 
 .section-title {
-  font-size: 36px;
+  font-size: var(--font-size-4xl);
   text-align: center;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
@@ -108,18 +108,18 @@
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 643px;
+  max-width: 40.1875rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .ticket-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
   gap: var(--spacing-md);
   margin-bottom: var(--spacing-xl);
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin-left: auto;
   margin-right: auto;
 }
@@ -136,8 +136,8 @@
 }
 
 .ticket-icon {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -147,21 +147,21 @@
 }
 
 .ticket-icon img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .ticket-content h3 {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--text-secondary);
   line-height: 1.4;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   font-family: "Nunito", sans-serif;
 }
 
 .ticket-content p {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   color: var(--text-secondary);
   line-height: 1.4;
   font-weight: 400;
@@ -173,19 +173,19 @@
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   text-align: center;
-  max-width: 300px;
+  max-width: 18.75rem;
   margin: 0 auto;
   box-shadow: 0 1px 20px rgba(238, 231, 221, 0.6);
 }
 
 .price-label {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   margin-bottom: var(--spacing-xs);
 }
 
 .price-amount {
-  font-size: 34px;
+  font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--brand-green-medium);
   margin-bottom: var(--spacing-xs);
@@ -194,7 +194,7 @@
 
 .price-note {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
 }
 
 /* Roadmap Section */
@@ -208,7 +208,7 @@
 }
 
 .roadmap-timeline {
-  max-width: 800px;
+  max-width: 50rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -227,8 +227,8 @@
 }
 
 .timeline-circle {
-  width: 53px;
-  height: 53px;
+  width: 3.3125rem;
+  height: 3.3125rem;
   background: var(--accent-forest);
   border-radius: 50%;
   flex-shrink: 0;
@@ -237,20 +237,20 @@
 }
 
 .timeline-icon {
-  width: 33px;
-  height: 33px;
+  width: 2.0625rem;
+  height: 2.0625rem;
   position: absolute;
-  top: 10px;
+  top: 0.625rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
 }
 
 .timeline-line {
-  width: 2px;
+  width: 0.125rem;
   flex: 1;
   background: var(--surface-accent);
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .timeline-card {
@@ -263,13 +263,13 @@
 
 .timeline-day {
   color: var(--accent-campfire);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   display: block;
   margin-bottom: var(--spacing-xs);
 }
 
 .timeline-card h3 {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xs);
@@ -278,19 +278,19 @@
 
 .timeline-card p {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.8;
 }
 
 .roadmap-footer {
   text-align: center;
   color: var(--brand-green-medium);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -319,7 +319,7 @@
 }
 
 .project-idea-container {
-  max-width: 900px;
+  max-width: 56.25rem;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-lg);
   background: var(--surface-subtle);
@@ -330,8 +330,8 @@
 }
 
 .idea-icon {
-  width: 58px;
-  height: 58px;
+  width: 3.625rem;
+  height: 3.625rem;
   background: rgba(244, 123, 37, 0.18);
   border-radius: var(--radius-sm);
   display: flex;
@@ -341,28 +341,28 @@
 }
 
 .idea-icon img {
-  width: 46px;
-  height: 46px;
+  width: 2.875rem;
+  height: 2.875rem;
 }
 
 .section-description {
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 553px;
+  max-width: 34.5625rem;
   margin: 0 auto var(--spacing-md);
 }
 
 .section-note {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 1.6;
   margin-top: var(--spacing-md);
   margin-bottom: var(--spacing-xs);
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .event-intro-container,
   .ticket-container,
   .roadmap-container {
@@ -374,7 +374,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .event-intro-container,
   .ticket-container,
   .roadmap-container {
@@ -382,11 +382,11 @@
   }
 
   .event-main-title {
-    font-size: 40px;
+    font-size: var(--font-size-5xl);
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 
   .ticket-grid {

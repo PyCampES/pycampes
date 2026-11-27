@@ -12,15 +12,15 @@
 }
 
 .cta-title {
-  font-size: 2.2rem;
+  font-size: var(--font-size-4xl);
   margin-bottom: var(--spacing-sm);
 }
 
 .cta-description {
-  max-width: 720px;
+  max-width: 45rem;
   margin: 0 auto var(--spacing-lg);
   line-height: 1.6;
-  font-size: 1rem;
+  font-size: var(--font-size-base);
 }
 
 .cta-buttons {
@@ -30,27 +30,22 @@
   flex-wrap: wrap;
 }
 
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .cta-title {
-    font-size: 2rem;
-  }
-
-  .cta-description {
-    font-size: 0.95rem;
+    font-size: var(--font-size-3xl);
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .cta-section {
     padding: var(--spacing-lg) 0;
   }
 
   .cta-title {
-    font-size: 1.75rem;
+    font-size: var(--font-size-2xl);
   }
 
   .cta-description {
-    font-size: 0.95rem;
     margin-bottom: var(--spacing-md);
   }
 
@@ -63,6 +58,6 @@
   .cta-buttons a,
   .cta-buttons button {
     width: 100%;
-    max-width: 320px;
+    max-width: 20rem;
   }
 }

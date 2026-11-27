@@ -25,7 +25,7 @@
 }
 
 .event-main-title {
-  font-size: 60px;
+  font-size: var(--font-size-7xl);
   margin-bottom: var(--spacing-sm);
 }
 
@@ -39,15 +39,15 @@
 
 .event-subtitle {
   color: var(--text-muted);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 772px;
+  max-width: 48.25rem;
   margin: 0 auto;
 }
 
 /* Shared section headings */
 .section-title {
-  font-size: 36px;
+  font-size: var(--font-size-4xl);
   text-align: center;
   color: var(--text-primary);
   margin-bottom: var(--spacing-sm);
@@ -56,9 +56,9 @@
 .section-subtitle {
   text-align: center;
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 643px;
+  max-width: 40.1875rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -70,9 +70,9 @@
 
 .ticket-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(17.5rem, 1fr));
   gap: var(--spacing-md);
-  max-width: 1000px;
+  max-width: 62.5rem;
   margin: 0 auto;
 }
 
@@ -88,8 +88,8 @@
 }
 
 .ticket-icon {
-  width: 40px;
-  height: 40px;
+  width: 2.5rem;
+  height: 2.5rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -99,21 +99,21 @@
 }
 
 .ticket-icon img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .ticket-content h3 {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   color: var(--text-secondary);
   line-height: 1.4;
-  margin-bottom: 4px;
+  margin-bottom: 0.25rem;
   font-family: "Nunito", sans-serif;
 }
 
 .ticket-content p {
-  font-size: 16px;
+  font-size: var(--font-size-base);
   color: var(--text-secondary);
   line-height: 1.4;
   font-weight: 400;
@@ -130,7 +130,7 @@
 }
 
 .roadmap-timeline {
-  max-width: 800px;
+  max-width: 50rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -149,8 +149,8 @@
 }
 
 .timeline-circle {
-  width: 53px;
-  height: 53px;
+  width: 3.3125rem;
+  height: 3.3125rem;
   background: var(--accent-forest);
   border-radius: 50%;
   flex-shrink: 0;
@@ -159,20 +159,20 @@
 }
 
 .timeline-icon {
-  width: 33px;
-  height: 33px;
+  width: 2.0625rem;
+  height: 2.0625rem;
   position: absolute;
-  top: 10px;
+  top: 0.625rem;
   left: 50%;
   transform: translateX(-50%);
   z-index: 3;
 }
 
 .timeline-line {
-  width: 2px;
+  width: 0.125rem;
   flex: 1;
   background: var(--surface-accent);
-  margin-top: 8px;
+  margin-top: 0.5rem;
 }
 
 .timeline-card {
@@ -185,13 +185,13 @@
 
 .timeline-day {
   color: var(--accent-campfire);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   display: block;
   margin-bottom: var(--spacing-xs);
 }
 
 .timeline-card h3 {
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   color: var(--text-secondary);
   margin-bottom: var(--spacing-xs);
@@ -200,19 +200,19 @@
 
 .timeline-card p {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.8;
 }
 
 .roadmap-footer {
   text-align: center;
   color: var(--brand-green-medium);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 700;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
@@ -229,7 +229,7 @@
 }
 
 /* Responsive */
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .event-intro-container,
   .ticket-container,
   .roadmap-container {
@@ -237,7 +237,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .event-intro-container,
   .ticket-container,
   .roadmap-container {
@@ -245,11 +245,11 @@
   }
 
   .event-main-title {
-    font-size: 40px;
+    font-size: var(--font-size-5xl);
   }
 
   .section-title {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 
   .ticket-grid {

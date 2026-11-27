@@ -9,27 +9,27 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 61px;
+  height: 3.8125rem;
   position: relative;
 }
 
 .navbar-logo img {
-  height: 33px;
+  height: 2.0625rem;
   width: auto;
 }
 
 .navbar-links {
   display: flex;
-  gap: 72px;
+  gap: 4.5rem;
   list-style: none;
 }
 
 .navbar-link {
   color: var(--text-inverse);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   font-weight: 500;
-  padding: 4px 12px;
-  border-radius: 7px;
+  padding: 0.25rem 0.75rem;
+  border-radius: 0.4375rem;
   transition: background 0.2s;
 }
 
@@ -46,19 +46,19 @@
 .hamburger {
   display: none;
   flex-direction: column;
-  gap: 5px;
+  gap: 0.3125rem;
   background: none;
   border: none;
   cursor: pointer;
-  padding: 8px;
+  padding: 0.5rem;
   z-index: 101;
 }
 
 .hamburger span {
-  width: 25px;
-  height: 3px;
+  width: 1.5625rem;
+  height: 0.1875rem;
   background: var(--text-inverse);
-  border-radius: 3px;
+  border-radius: 0.1875rem;
   transition: all 0.3s ease;
 }
 
@@ -81,7 +81,7 @@
 }
 
 /* Responsive */
-@media (max-width: 968px) {
+@media (max-width: 60.5em) {
   .hamburger {
     display: flex;
   }
@@ -89,11 +89,11 @@
   .navbar-links {
     position: fixed;
     z-index: 100;
-    top: 61px;
+    top: 3.8125rem;
     right: -100%;
     width: 70%;
-    max-width: 300px;
-    height: calc(100vh - 61px);
+    max-width: 18.75rem;
+    height: calc(100vh - 3.8125rem);
     background: var(--brand-green-dark);
     flex-direction: column;
     gap: 0;
@@ -132,10 +132,10 @@
   .navbar-overlay {
     display: block;
     position: fixed;
-    top: 61px;
+    top: 3.8125rem;
     left: 0;
     width: 100%;
-    height: calc(100vh - 61px);
+    height: calc(100vh - 3.8125rem);
     background: rgba(0, 0, 0, 0.5);
     z-index: 99;
     animation: fadeIn 0.3s ease;

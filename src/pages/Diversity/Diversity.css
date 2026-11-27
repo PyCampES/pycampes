@@ -19,7 +19,7 @@
 
 .diversity-title {
   font-family: "Yeseva One", serif;
-  font-size: 60px;
+  font-size: var(--font-size-7xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   margin-bottom: var(--spacing-md);
@@ -35,15 +35,15 @@
 
 .diversity-description {
   color: var(--text-muted);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 772px;
+  max-width: 48.25rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .values-title {
   font-family: "Yeseva One", serif;
-  font-size: 32px;
+  font-size: var(--font-size-3xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
@@ -52,15 +52,15 @@
 
 .values-description {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.875;
-  max-width: 643px;
+  max-width: 40.1875rem;
   margin: 0 auto var(--spacing-lg);
 }
 
 .values-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   gap: var(--spacing-md);
   margin-top: var(--spacing-xl);
 }
@@ -87,8 +87,8 @@
 }
 
 .value-icon {
-  width: 45px;
-  height: 45px;
+  width: 2.8125rem;
+  height: 2.8125rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -98,12 +98,12 @@
 }
 
 .value-icon img {
-  width: 34px;
-  height: 34px;
+  width: 2.125rem;
+  height: 2.125rem;
 }
 
 .value-title {
-  font-size: 18px;
+  font-size: var(--font-size-md);
   font-weight: 700;
   line-height: 1.67;
   letter-spacing: -0.45px;
@@ -113,7 +113,7 @@
 
 .value-description {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 1.43;
   margin: 0;
 }
@@ -126,7 +126,7 @@
 
 .section-title {
   font-family: "Yeseva One", serif;
-  font-size: 36px;
+  font-size: var(--font-size-4xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
@@ -135,7 +135,7 @@
 }
 
 .short-version-list {
-  max-width: 838px;
+  max-width: 52.375rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -158,8 +158,8 @@
 }
 
 .check-icon {
-  width: 32px;
-  height: 32px;
+  width: 2rem;
+  height: 2rem;
   background: var(--accent-forest);
   border-radius: 50%;
   display: flex;
@@ -169,13 +169,13 @@
 }
 
 .check-icon img {
-  width: 22px;
-  height: 22px;
+  width: 1.375rem;
+  height: 1.375rem;
 }
 
 .short-version-item p {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 600;
   line-height: 1.25;
   margin: 0;
@@ -184,11 +184,11 @@
 .thank-you-message {
   text-align: center;
   color: var(--brand-green-medium);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 700;
   line-height: 1.875;
   letter-spacing: -0.45px;
-  max-width: 643px;
+  max-width: 40.1875rem;
   margin: var(--spacing-lg) auto 0;
 }
 
@@ -205,14 +205,14 @@
 .section-description {
   text-align: center;
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.67;
   letter-spacing: -0.45px;
   margin-bottom: var(--spacing-lg);
 }
 
 .faq-list {
-  max-width: 866px;
+  max-width: 54.125rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -259,21 +259,21 @@
 
 .faq-question-content span {
   color: var(--text-secondary);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   font-weight: 700;
   line-height: 1.875;
   letter-spacing: -0.45px;
 }
 
 .warning-icon {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
   flex-shrink: 0;
 }
 
 .chevron-icon {
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   flex-shrink: 0;
   opacity: 0.6;
   transition: transform 0.3s ease;
@@ -290,11 +290,11 @@
 
 .faq-answer p {
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.875;
   letter-spacing: -0.45px;
   margin: 0;
-  padding-left: 40px; /* Alineado con el texto de la pregunta */
+  padding-left: 2.5rem; /* Alineado con el texto de la pregunta */
 }
 
 @keyframes slideDown {
@@ -304,7 +304,7 @@
   }
   to {
     opacity: 1;
-    max-height: 500px;
+    max-height: 31.25rem;
   }
 }
 
@@ -315,7 +315,7 @@
 }
 
 .report-container {
-  max-width: 834px;
+  max-width: 52.125rem;
   margin: 0 auto;
   padding: var(--spacing-lg);
   background: var(--surface-subtle);
@@ -330,8 +330,8 @@
 }
 
 .report-icon {
-  width: 58px;
-  height: 58px;
+  width: 3.625rem;
+  height: 3.625rem;
   background: rgba(244, 123, 37, 0.18);
   border-radius: var(--radius-sm);
   display: flex;
@@ -341,13 +341,13 @@
 }
 
 .report-icon img {
-  width: 38px;
-  height: 38px;
+  width: 2.375rem;
+  height: 2.375rem;
 }
 
 .report-title {
   font-family: "Yeseva One", serif;
-  font-size: 32px;
+  font-size: var(--font-size-3xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
@@ -356,10 +356,10 @@
 
 .report-description {
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.67;
   letter-spacing: -0.45px;
-  max-width: 553px;
+  max-width: 34.5625rem;
   margin-bottom: var(--spacing-md);
 }
 
@@ -367,11 +367,11 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
-  padding: 13px var(--spacing-md);
+  padding: 0.8125rem var(--spacing-md);
   background: rgba(244, 123, 37, 0.1);
   border-radius: var(--radius-md);
   color: var(--accent-campfire);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: 500;
   line-height: 1.5;
   letter-spacing: -0.45px;
@@ -387,13 +387,13 @@
 }
 
 .report-email img {
-  width: 24px;
-  height: 24px;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .report-reference {
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 2.14;
   letter-spacing: -0.45px;
   margin-top: var(--spacing-sm);
@@ -404,7 +404,7 @@
   text-decoration: none;
   display: inline-flex;
   align-items: center;
-  gap: 4px;
+  gap: 0.25rem;
   transition: color 0.2s;
 }
 
@@ -414,12 +414,12 @@
 }
 
 .code-link img {
-  width: 12px;
-  height: 12px;
+  width: 0.75rem;
+  height: 0.75rem;
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .diversity-hero-container,
   .short-version-container,
   .long-version-container {
@@ -427,15 +427,15 @@
   }
 
   .diversity-title {
-    font-size: 48px;
+    font-size: var(--font-size-6xl);
   }
 
   .values-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .diversity-hero-container,
   .short-version-container,
   .long-version-container {
@@ -443,20 +443,20 @@
   }
 
   .diversity-title {
-    font-size: 36px;
+    font-size: var(--font-size-4xl);
   }
 
   .diversity-description {
-    font-size: 18px;
+    font-size: var(--font-size-md);
   }
 
   .values-title,
   .section-title {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 
   .report-title {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
   }
 
   .values-grid {
@@ -472,6 +472,6 @@
   }
 
   .report-email {
-    font-size: 18px;
+    font-size: var(--font-size-md);
   }
 }

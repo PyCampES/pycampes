@@ -1,11 +1,11 @@
 .btn {
-  padding: 13px 32px;
+  padding: 0.8125rem 2rem;
   border-radius: var(--radius-md);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
+  gap: 0.625rem;
   transition:
     transform 0.2s,
     box-shadow 0.2s;

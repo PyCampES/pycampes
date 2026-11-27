@@ -23,13 +23,26 @@
   --ui-border: #e2dacf;
   --ui-border-subtle: #e8e2d9;
 
-  --spacing-xs: 8px;
-  --spacing-sm: 16px;
-  --spacing-md: 24px;
-  --spacing-lg: 40px;
-  --spacing-xl: 64px;
+  /* Font sizes. Change --font-size-base and the rest follow it. */
+  --font-size-base: 1rem; /* 16px */
+  --font-size-sm: calc(var(--font-size-base) * 0.875); /* 14px */
+  --font-size-md: calc(var(--font-size-base) * 1.125); /* 18px */
+  --font-size-lg: calc(var(--font-size-base) * 1.25); /* 20px */
+  --font-size-xl: calc(var(--font-size-base) * 1.5); /* 24px */
+  --font-size-2xl: calc(var(--font-size-base) * 1.75); /* 28px */
+  --font-size-3xl: calc(var(--font-size-base) * 2); /* 32px */
+  --font-size-4xl: calc(var(--font-size-base) * 2.25); /* 36px */
+  --font-size-5xl: calc(var(--font-size-base) * 2.5); /* 40px */
+  --font-size-6xl: calc(var(--font-size-base) * 3); /* 48px */
+  --font-size-7xl: calc(var(--font-size-base) * 3.75); /* 60px */
 
-  --radius-sm: 8px;
-  --radius-md: 17px;
-  --radius-lg: 22px;
+  --spacing-xs: 0.5rem; /* 8px */
+  --spacing-sm: 1rem; /* 16px */
+  --spacing-md: 1.5rem; /* 24px */
+  --spacing-lg: 2.5rem; /* 40px */
+  --spacing-xl: 4rem; /* 64px */
+
+  --radius-sm: 0.5rem; /* 8px */
+  --radius-md: 1.0625rem; /* 17px */
+  --radius-lg: 1.375rem; /* 22px */
 }

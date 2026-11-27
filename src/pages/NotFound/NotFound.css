@@ -29,7 +29,7 @@
 
 .not-found-code {
   font-family: "Yeseva One", serif;
-  font-size: 120px;
+  font-size: calc(var(--font-size-7xl) * 2);
   line-height: 1;
   color: var(--brand-green-light);
   margin-bottom: var(--spacing-sm);
@@ -37,7 +37,7 @@
 
 .not-found-title {
   font-family: "Yeseva One", serif;
-  font-size: 60px;
+  font-size: var(--font-size-7xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   margin-bottom: var(--spacing-md);
@@ -52,10 +52,10 @@
 }
 
 .not-found-description {
-  max-width: 540px;
+  max-width: 33.75rem;
   margin: 0 auto var(--spacing-lg);
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.67;
   letter-spacing: -0.45px;
 }
@@ -67,12 +67,12 @@
   justify-content: center;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   .not-found-code {
-    font-size: 88px;
+    font-size: calc(var(--font-size-5xl) * 2.2);
   }
 
   .not-found-title {
-    font-size: 40px;
+    font-size: var(--font-size-5xl);
   }
 }
