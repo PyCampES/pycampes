@@ -7,3 +7,6 @@ package-lock.json
 
 # Emails: MJML template
 *.mjml
+
+# Formularios: el texto tiene que coincidir exactamente con Google Forms
+docs/forms/content

@@ -1,11 +1,18 @@
-# Datos de la edición que usan los emails de docs/emails/sender/content/.
+# Datos de la edición que usan los emails de docs/emails/sender/content/ y los
+# formularios de docs/forms/content/.
 # En los textos se escriben como ${name}, por ejemplo ${price}.
 # Mientras un valor empiece por "POR DEFINIR", build.mjs avisa al generar los emails.
 
 year = "2027"
 edition = "6ª"
+# Id de la carpeta "PyCampES <year>" de Google Drive (el de su URL,
+# drive.google.com/drive/folders/<id>). docs/forms/api.mjs solo cambia los
+# formularios que están dentro de esta carpeta.
+drive_folder = "10G2ER-vNniYRiOMUyIyvRi6MMAhgrdfk"
 dates = "POR DEFINIR (puente de mayo o Semana Santa)"
 venue = "POR DEFINIR"
+# Enlace a Google Maps del venue (lo usan los formularios de inscripción y becas).
+venue_maps_url = "POR DEFINIR"
 price = "POR DEFINIR (300 o 350 €)"
 
 # Pre-inscripción 2027 (campañas 01a y 01b): formulario de Google, fecha en la
@@ -73,6 +80,7 @@ attendees_telegram_url = "POR DEFINIR"
 
 contact_email = "pycampes@gmail.com"
 faqs_url = "https://pycamp.es/faqs"
+code_of_conduct_url = "https://pycamp.es/diversity"
 
 # Fechas del evento en formato AAAA-MM-DD. schedule.mjs las usa para calcular
 # cuándo se envía cada email previo y posterior al evento.

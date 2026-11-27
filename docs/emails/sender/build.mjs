@@ -36,7 +36,7 @@ export const edition = parseToml(
   readFileSync(join(HERE, "edition.toml"), "utf-8")
 );
 const template = readFileSync(join(HERE, "template.mjml"), "utf-8");
-const globals = {
+export const globals = {
   ...edition,
   images_url: `https://pycamp.es/${edition.year}/emails/`,
 };
@@ -61,7 +61,7 @@ function resolveConditionals(text, source) {
   });
 }
 
-function interpolate(text, values, source) {
+export function interpolate(text, values, source) {
   return text.replace(/\$\{(\w+)\}/g, (_, name) => {
     if (!(name in values)) {
       throw new Error(`${source}: unknown variable \${${name}}`);

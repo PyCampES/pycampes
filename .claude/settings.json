@@ -1,0 +1,26 @@
+{
+  "permissions": {
+    "ask": [
+      "Bash(npm run forms:api -- update *)",
+      "Bash(npm run -s forms:api -- update *)",
+      "Bash(npm run --silent forms:api -- update *)",
+      "Bash(node docs/forms/api.mjs update *)",
+      "Bash(npm run emails:schedule -- --apply*)",
+      "Bash(node docs/emails/sender/schedule.mjs --apply*)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/confirm-writes.sh\"",
+            "statusMessage": "Comprobando si el comando cambia Sender o Google..."
+          }
+        ]
+      }
+    ]
+  }
+}
