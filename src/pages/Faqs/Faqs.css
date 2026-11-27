@@ -164,6 +164,7 @@
   font-weight: 700;
 }
 
+.faq-answer a,
 .scholarship-link {
   color: var(--brand-green-medium);
   font-weight: 700;
@@ -171,6 +172,7 @@
   transition: color 0.2s;
 }
 
+.faq-answer a:hover,
 .scholarship-link:hover {
   color: var(--brand-green-dark);
   text-decoration: underline;

@@ -28,6 +28,8 @@ Si todavía no compraste tus billetes de tren o de avión, ten en cuenta esta ho
 
 Si vas por tus propios medios, intenta llegar al venue sobre las **${venue_arrival_time}**, que es cuando llega el PyBus, para no perderte la bienvenida.
 
+Si el PyBus no te encaja, en el grupo de Telegram de asistentes puedes organizarte con otras personas para compartir coche.
+
 Si tienes cualquier duda, responde a este email o pregúntanos en el grupo de Telegram de asistentes.
 
 El día antes del evento te recordaremos la hora y el punto de encuentro. ¡Ya queda poco! 🐍🏕️
