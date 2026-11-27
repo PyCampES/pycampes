@@ -17,7 +17,7 @@ Está agrupado en tres bloques, separados por una línea en blanco y un comentar
 | Bloque                              | Campos                                                                                                                                                                                                   | Dónde se usa                                                                                                         |
 | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------- |
 | **Lo que ve quien recibe el email** | `subject` (asunto), `preheader` (texto de vista previa en la bandeja de entrada), `reason` (motivo del pie, encima de «Darme de baja»), `image` (opcional: imagen antes del título, de `public/emails/`) | En el email. En los workflows, Sender usa el asunto que se escribe en el paso del workflow: hay que copiarlo a mano. |
-| **Cuándo y a quién se envía**       | `audience` (grupo de Sender), `days_before_event` o `days_after_event`, `send_time`                                                                                                                      | Solo en las campañas (01 a 03 y 10 a 16); lo usa `npm run emails:schedule`. No aparece en el email.                  |
+| **Cuándo y a quién se envía**       | `audience` (grupo o segmento de Sender), `days_before_event` o `days_after_event`, `send_time`                                                                                                           | Solo en las campañas (01 a 03d y 10 a 16); lo usa `npm run emails:schedule`. No aparece en el email.                 |
 | **Documentación interna**           | `workflow`, `trigger`                                                                                                                                                                                    | Solo para el equipo: en qué workflow se pega el email y cuándo se envía. No aparece en el email.                     |
 
 Los valores van entre comillas y pueden usar datos de `edition.toml`, como `${year}`.
@@ -44,15 +44,16 @@ Convenciones del texto:
 
 Las imágenes están en [`public/emails/`](../../../public/emails/) y la web las publica en `https://pycamp.es/<año>/emails/`.
 
-Los emails de los **workflows** (00 y 04 a 09) hay que pegarlos a mano en Sender: su API permite cambiar el asunto, pero no el contenido de un email ya creado (lo probamos en noviembre de 2026). Las **campañas** (01 a 03 y 10 a 16) sí se suben solas, con `npm run emails:schedule` (ver más abajo).
+Los emails de los **workflows** (00 y 04 a 09) hay que pegarlos a mano en Sender: su API permite cambiar el asunto, pero no el contenido de un email ya creado (lo probamos en noviembre de 2026). Las **campañas** (01 a 03d y 10 a 16) sí se suben solas, con `npm run emails:schedule` (ver más abajo).
 
 ## Cuando se confirmen las fechas de la edición
 
 1. Completa los datos `POR DEFINIR` de `edition.toml`.
 2. `npm run emails` para regenerar el HTML.
 3. En Sender, pega el HTML nuevo en cada email de los workflows: `00-bienvenida` (pasa a mostrar las fechas y el lugar) y los de _Inscritos sin pagar_ y _Pagados_.
-4. `npm run emails:schedule -- --apply`: crea en Sender las campañas manuales como borradores y programa las demás, siempre que sus datos ya estén completos.
-5. Revisa en Sender el borrador del anuncio `01-anuncio-fecha-y-lugar` y envíalo (_Send_) a la Newsletter. Se envía una sola vez por edición.
+4. Crea en Sender el segmento de quienes no se inscribieron (ver [Journey «No inscritos»](#journey-no-inscritos-03a-a-03d)).
+5. `npm run emails:schedule -- --apply`: crea en Sender las campañas manuales como borradores y programa las demás, siempre que sus datos ya estén completos.
+6. Revisa en Sender el borrador del anuncio `01-anuncio-fecha-y-lugar` y envíalo (_Send_) a la Newsletter. Se envía una sola vez por edición.
 
 ## Datos de cada persona en Sender
 
@@ -108,18 +109,22 @@ Las campañas son los emails que no dependen de cada persona sino de la edición
 | `01-anuncio-fecha-y-lugar`              | Newsletter                                                       | A mano, al confirmar fecha y lugar con el venue |
 | `02-inscripcion-pycampistas-anteriores` | Asistentes de ediciones anteriores (`previous_attendees_groups`) | A mano, al abrir la inscripción (preventa)      |
 | `03-inscripcion-abierta`                | Newsletter                                                       | A mano, unos días después de la preventa        |
+| `03a-testimonios`                       | No inscritos AAAA (segmento)                                     | 85 días antes, 10:00                            |
+| `03b-proyectos-y-fotos`                 | No inscritos AAAA (segmento)                                     | 70 días antes, 10:00                            |
+| `03c-dudas`                             | No inscritos AAAA (segmento)                                     | 55 días antes, 10:00                            |
+| `03d-ultimas-plazas`                    | No inscritos AAAA (segmento)                                     | 40 días antes, 18:00                            |
 | `10-camisetas`                          | Asistentes AAAA                                                  | A mano, con tiempo para encargar las camisetas  |
 | `11-propone-un-proyecto`                | Asistentes AAAA                                                  | 30 días antes, 10:00                            |
-| `12-que-llevo`                          | Asistentes AAAA                                                  | 7 días antes, 10:00                             |
-| `13-propone-un-proyecto-recordatorio`   | Asistentes AAAA                                                  | 5 días antes, 18:00                             |
-| `14-informacion-pybus`                  | Asistentes AAAA                                                  | 4 días antes, 10:00                             |
+| `12-informacion-pybus`                  | Asistentes AAAA                                                  | 21 días antes, 10:00                            |
+| `13-que-llevo`                          | Asistentes AAAA                                                  | 7 días antes, 10:00                             |
+| `14-propone-un-proyecto-recordatorio`   | Asistentes AAAA                                                  | 5 días antes, 18:00                             |
 | `15-manana-es-el-gran-dia`              | Asistentes AAAA                                                  | 1 día antes, 10:00                              |
 | `16-gracias`                            | Asistentes AAAA                                                  | 2 días después del final, 10:00                 |
 
 - **Las manuales** (sin fecha en su encabezado) se crean como **borrador**: se revisan en Sender y se envían con _Send_ cuando toca.
 - **Las demás** se programan solas: el momento sale de su encabezado (`days_before_event` o `days_after_event` y `send_time`) y de `event_start` y `event_end` de `edition.toml`.
 - Las que van a **Asistentes AAAA** necesitan que, al marcar a alguien como `Pagado`, se le añada a ese grupo.
-- `audience` puede tener varios grupos separados por comas. La preventa usa `previous_attendees_groups` de `edition.toml`: al cerrar cada edición, añade ahí su grupo.
+- `audience` puede tener varios grupos o segmentos separados por comas. La preventa usa `previous_attendees_groups` de `edition.toml`: al cerrar cada edición, añade ahí su grupo.
 - Las campañas de inscripción (02 y 03) no se crean hasta que `registration_form_url` esté definido. Si `scholarships_form_url` está definido, muestran también el botón de becas.
 
 ```
@@ -131,6 +136,21 @@ npm run emails:schedule -- --apply   # crea el anuncio como borrador y programa 
 - Se salta, avisando, las campañas que ya existen en Sender (mismo título, por ejemplo `PyCamp 2027 · 09-que-llevo`), las que todavía tienen datos `POR DEFINIR`, las programadas si faltan las fechas del evento y las que tendrían que haberse enviado ya. Se puede ejecutar varias veces a medida que se completan los datos de la edición.
 - Si cambias un texto **después** de crearla en Sender, borra esa campaña en Sender (_Campaigns_) y vuelve a ejecutar el comando.
 - La hora se interpreta en la zona horaria de la cuenta de Sender: comprueba que sea Madrid.
+
+### Journey «No inscritos» (03a a 03d)
+
+Después de la apertura (`03`), a quien está en la Newsletter y todavía no se inscribió le llegan cuatro emails más, uno cada 15 días: testimonios, proyectos y fotos, dudas frecuentes y, por último, el cierre de la inscripción (`registration_deadline` de `edition.toml`). Es el journey que diseñamos con Olga en FigJam (_Pycamp - Flows_).
+
+Se envían a un **segmento** de Sender, no a un grupo, porque tienen que dejar fuera a quien se va inscribiendo. Antes de ejecutar `npm run emails:schedule -- --apply`, créalo a mano en Sender (_Subscribers → Segments_):
+
+- **Nombre:** el de `not_registered_segment` en `edition.toml` (por ejemplo `No inscritos 2027`).
+- **Condiciones:** está en el grupo **Newsletter** _y_ el campo **Estado** está vacío.
+
+Sender evalúa el segmento en el momento del envío, así que cada email le llega solo a quien todavía no tiene Estado. Quien rellenó el formulario pero todavía no tiene su cupón cargado sí lo recibe; por eso los emails incluyen una línea para esos casos.
+
+Las fechas salen de `days_before_event` y están pensadas para el puente de mayo (la apertura sale unos 100 días antes del evento). Si la edición es en Semana Santa y la inscripción abre más tarde, las que ya hayan pasado se saltan solas: conviene acortar los días. Si se agotan las plazas, borra en Sender las campañas que falten.
+
+**Al cerrar cada edición**, vacía el campo Estado de todo el mundo (o el segmento del año siguiente dejaría fuera a quien vino este año).
 
 ## Proceso de inscripción
 
