@@ -20,7 +20,7 @@
 
 .editions-title {
   font-family: "Yeseva One", serif;
-  font-size: 60px;
+  font-size: var(--font-size-7xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   margin-bottom: var(--spacing-md);
@@ -36,15 +36,15 @@
 
 .editions-description {
   color: var(--text-muted);
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 772px;
+  max-width: 48rem;
   margin: 0 auto var(--spacing-lg);
 }
 
 .editions-subtitle {
   font-family: "Yeseva One", serif;
-  font-size: 34px;
+  font-size: var(--font-size-4xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
@@ -60,7 +60,7 @@
 
 .photo-gallery-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -105,22 +105,22 @@
 }
 
 .photo-placeholder .placeholder-icon {
-  width: 66px;
-  height: 66px;
+  width: 4rem;
+  height: 4rem;
   opacity: 0.5;
   object-fit: contain;
 }
 
 .photo-label {
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   font-weight: 500;
   line-height: 1.5;
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 6px;
+  gap: var(--spacing-xs);
   text-decoration: none;
   transition: color 0.2s;
 }
@@ -151,8 +151,8 @@
 }
 
 .external-icon {
-  width: 16px;
-  height: 16px;
+  width: 1rem;
+  height: 1rem;
   opacity: 0.7;
 }
 
@@ -164,22 +164,22 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 4px;
-  margin-top: 4px;
+  gap: 0.25rem;
+  margin-top: 0.25rem;
 }
 
 .photo-meta-item {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: var(--spacing-xs);
   color: var(--text-muted);
-  font-size: 14px;
+  font-size: var(--font-size-sm);
   line-height: 1.5;
 }
 
 .photo-meta-item img {
-  width: 18px;
-  height: 18px;
+  width: 1rem;
+  height: 1rem;
   flex-shrink: 0;
   opacity: 0.6;
 }
@@ -196,7 +196,7 @@
 
 .projects-title {
   font-family: "Yeseva One", serif;
-  font-size: 36px;
+  font-size: var(--font-size-4xl);
   line-height: 1.2;
   letter-spacing: -0.45px;
   color: var(--text-primary);
@@ -206,16 +206,16 @@
 
 .projects-description {
   color: var(--text-muted);
-  font-size: 18px;
+  font-size: var(--font-size-md);
   line-height: 1.67;
   text-align: center;
-  max-width: 643px;
+  max-width: 40rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21rem, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -243,8 +243,8 @@
 .project-icon {
   grid-row: 1 / 4;
   grid-column: 1;
-  width: 36px;
-  height: 36px;
+  width: 2.25rem;
+  height: 2.25rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -257,7 +257,7 @@
 .project-name {
   grid-row: 1;
   grid-column: 2;
-  font-size: 20px;
+  font-size: var(--font-size-lg);
   font-weight: 700;
   line-height: 1.5;
   letter-spacing: -0.45px;
@@ -268,7 +268,7 @@
 .project-description {
   grid-row: 2;
   grid-column: 2 / 4;
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.875;
   letter-spacing: -0.45px;
   color: var(--text-muted);
@@ -282,7 +282,7 @@
   align-items: center;
   gap: var(--spacing-xs);
   color: var(--text-muted);
-  font-size: 16px;
+  font-size: var(--font-size-base);
   line-height: 1.875;
   letter-spacing: -0.45px;
   text-decoration: none;
@@ -300,8 +300,8 @@
 .external-link {
   grid-row: 1;
   grid-column: 3;
-  width: 20px;
-  height: 20px;
+  width: 1.25rem;
+  height: 1.25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -315,7 +315,7 @@
 }
 
 /* Responsive Design */
-@media (max-width: 1024px) {
+@media (max-width: 64em) {
   .editions-hero-container,
   .photo-gallery-container,
   .projects-container {
@@ -323,19 +323,19 @@
   }
 
   .editions-title {
-    font-size: 48px;
+    font-size: var(--font-size-6xl);
   }
 
   .editions-subtitle {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 
   .projects-grid {
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(19rem, 1fr));
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 48em) {
   .editions-hero-container,
   .photo-gallery-container,
   .projects-container {
@@ -343,19 +343,19 @@
   }
 
   .editions-title {
-    font-size: 36px;
+    font-size: var(--font-size-4xl);
   }
 
   .editions-description {
-    font-size: 18px;
+    font-size: var(--font-size-md);
   }
 
   .editions-subtitle {
-    font-size: 24px;
+    font-size: var(--font-size-xl);
   }
 
   .photo-gallery-container {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
   }
 
   .projects-grid {
@@ -363,10 +363,10 @@
   }
 
   .projects-title {
-    font-size: 28px;
+    font-size: var(--font-size-2xl);
   }
 
   .projects-description {
-    font-size: 16px;
+    font-size: var(--font-size-base);
   }
 }
