@@ -69,20 +69,25 @@
 
     <!--
       JSON-LD Event schema for the active edition.
-      Re-enable (and update) when the next edition is confirmed:
+      Update for every new edition:
         - "name", "description", "startDate", "endDate"
         - "image" URL path (e.g. /2027/...)
-        - "offers.name", "offers.url", "offers.validFrom"
         - "url" if the event page slug changes
+      Add an "offers" object (name, price, priceCurrency, availability, url,
+      validFrom) once tickets are on sale.
+
+      Disabled: the 2027 dates and venue are not confirmed yet. The values below
+      are the ones from the cancelled Semana Santa plan; update them before
+      re-enabling.
 
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
         "@type": "Event",
-        "name": "PyCamp España 2026",
+        "name": "PyCamp España 2027",
         "description": "Un evento inmersivo de programación Python en plena naturaleza. 4 días de código, colaboración y comunidad.",
-        "startDate": "2026-04-30T10:00:00+02:00",
-        "endDate": "2026-05-03T17:00:00+02:00",
+        "startDate": "2027-03-25T10:00:00+01:00",
+        "endDate": "2027-03-28T17:00:00+02:00",
         "eventStatus": "https://schema.org/EventScheduled",
         "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
         "location": {
@@ -95,7 +100,7 @@
             "addressCountry": "ES"
           }
         },
-        "image": "https://pycamp.es/2026/images/pycamp-group-photo.jpg",
+        "image": "https://pycamp.es/2027/images/pycamp-group-photo.jpg",
         "performer": {
           "@type": "PerformingGroup",
           "name": "Asociación Python España & Argentina en Python"
@@ -104,15 +109,6 @@
           "@type": "Organization",
           "name": "PyCamp España",
           "url": "https://pycamp.es/"
-        },
-        "offers": {
-          "@type": "Offer",
-          "name": "Entrada PyCamp 2026",
-          "price": "300",
-          "priceCurrency": "EUR",
-          "availability": "https://schema.org/LimitedAvailability",
-          "url": "https://pycamp.es/event",
-          "validFrom": "2026-01-01"
         },
         "url": "https://pycamp.es/event"
       }

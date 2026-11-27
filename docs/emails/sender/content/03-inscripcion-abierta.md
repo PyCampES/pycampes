@@ -25,11 +25,17 @@ Hay **${max_attendees} plazas** y suelen volar, así que no te lo pienses demasi
 
 [[Inscribirme]](${registration_form_url})
 
+<!-- if preregistration_form_url -->
+
+Si te pre-inscribiste y todavía no rellenaste el formulario de inscripción, hazlo ahora con este mismo botón: la pre-inscripción sola no confirma tu plaza.
+
+<!-- endif -->
+
 **¿Cómo funciona?**
 
 1. Te inscribes en el formulario.
-2. Te enviamos por email un **código personal** para comprar tu entrada en nuestra tienda.
-3. Tienes **${payment_days} días** para completar la compra. Si no, la plaza pasa a la siguiente persona de la lista de espera.
+2. Te enviamos por email un **código personal** para comprar tu entrada en nuestra tienda. Puede tardar desde unas horas hasta un par de días.
+3. Desde que te llega el código, tienes **${payment_days} días** para completar la compra. Si no, la plaza pasa a la siguiente persona de la lista de espera.
 
 **La entrada incluye:**
 

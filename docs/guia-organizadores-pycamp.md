@@ -4,7 +4,7 @@
 
 ## 1. Introducción
 
-Este documento está dirigido a personas que se están planteando sumarse al equipo organizador del PyCamp España. El objetivo es doble: por un lado, transmitir la filosofía y la dinámica del evento; por otro, dar una idea concreta y honesta del trabajo que implica organizarlo, qué tareas existen, qué decisiones hay que tomar y dónde están guardados los recursos que han ido acumulándose durante las cuatro ediciones anteriores.
+Este documento está dirigido a personas que se están planteando sumarse al equipo organizador del PyCamp España. El objetivo es doble: por un lado, transmitir la filosofía y la dinámica del evento; por otro, dar una idea concreta y honesta del trabajo que implica organizarlo, qué tareas existen, qué decisiones hay que tomar y dónde están guardados los recursos que han ido acumulándose durante las cinco ediciones anteriores.
 
 No es un manual cerrado. Cada edición aporta mejoras y cosas que cambiar, y este documento debería evolucionar en la misma línea. Si encuentras algo desactualizado, incompleto o que merezca un matiz, modifícalo: forma parte de mantener viva la organización del evento.
 
@@ -251,6 +251,8 @@ Como los venues siempre están alejados de la ciudad, alquilamos un autocar priv
 
 El email tipo de solicitud de presupuesto está en las tarjetas de *Transporte* del Trello de cada edición. La factura siempre va a nombre de la Asociación Python España.
 
+En la comunicación previa al evento siempre se ofrecen tres formas de llegar al venue: el PyBus, por medios propios o **compartiendo coche** con otras personas asistentes. El coche compartido no lo coordina la organización: lo organizan las propias personas asistentes en el grupo de Telegram de asistentes, y la organización solo lo menciona en los emails y en las FAQ de la web para que la gente sepa que puede hacerlo. Así se reduce la fricción para quien viene de zonas no cubiertas por el PyBus o no encaja en su horario, y se aprovechan mejor las plazas de quienes vienen en coche propio.
+
 ### Web, formularios y comunicaciones
 
 - **Web pública**: pycamp.es, código en GitHub. Cada edición se actualiza con fechas, venue, precio, código de conducta, FAQ y proyectos pasados.
@@ -331,6 +333,7 @@ Cuando termina el evento todavía quedan tareas durante un par de semanas. Estas
 
 - **Encuesta a participantes**: se envía durante el último día, antes de que la gente se vaya, para asegurar que todos responden. Es anónima.
 - **Email de agradecimiento**: la campaña `16-gracias` sale sola dos días después del evento, con los enlaces a las fotos y a la encuesta. Antes hay que completar `photos_url` y `survey_url` en `edition.toml`.
+- **Grupo de asistentes para la preventa**: se añade el grupo *Asistentes AAAA* de la edición a `previous_attendees_groups` en `edition.toml`, para que esas personas reciban la preventa del año siguiente.
 - **Devolver material alquilado o prestado**: proyector, antena Starlink.
 - **Reporte a la EPS** (y a la PSF si hubo grant) con asistencia, fotos y resumen.
 - **Post sobre el PyCamp** en el blog de Python España y/o pycamp.es.
@@ -350,7 +353,6 @@ Esta sección recoge cosas concretas que salieron del feedback de la edición 20
 
 - **Recordatorio sobre bebidas.** En 2026 nadie trajo bebidas para las noches y se notó. El año anterior se envió un mensaje informal al grupo de Telegram de asistentes y la gente trajo algo, y la dinámica de las noches funcionó mejor. Conviene volver a enviar un mensaje similar unos días antes del evento. Plantilla que funcionó:
   > *Friendly reminder: por las noches va a hacer calorcito y vamos a estar jugando juegos y demás en modo chill. Así que, si quieren, se pueden llevar unas cervecitas, un vinito o lo que les guste tomar. Seguramente durante el evento "haremos una vaquita" entre todos para ir a comprar algo al pueblo si nos hace falta, pero no sé qué tanta variedad habrá.*
-- **Coche compartido como opción de llegada.** Hasta ahora la comunicación previa ofrecía dos opciones para llegar al venue: PyBus o llegar por medios propios. Para 2027 conviene incluir explícitamente una tercera opción: si no se hace PyBus o si alguien no encaja en su horario, **coordinarse desde la organización para compartir coche** entre asistentes. Esto reduce la fricción para quien viene de zonas no cubiertas por el PyBus y aprovecha mejor las plazas de quienes vienen en coche propio.
 
 ### Dinámica del evento
 

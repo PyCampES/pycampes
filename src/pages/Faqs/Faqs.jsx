@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import Navbar from "../../components/Navbar/Navbar";
 import Button from "../../components/Button/Button";
 import CTA from "../../components/CTA/CTA";
@@ -34,9 +34,9 @@ function Faqs() {
       answer: (
         <>
           <p>
-            El PyCamp consiste en tomar un lugar esilo casa rural y juntarnos
-            durante 4 días un grupo de aproximadamente 30 personas a programar y a
-            divertirnos.
+            El PyCamp consiste en tomar un lugar estilo casa rural y juntarnos
+            durante 4 días un grupo de aproximadamente 30 personas a programar y
+            a divertirnos.
           </p>
           <p>
             Los asistentes proponen los proyectos open source en los que quieren
@@ -50,7 +50,7 @@ function Faqs() {
             Durante esos 4 días todos desayunamos, comemos, cenamos y dormimos
             en el mismo lugar. Eso elimina las distracciones de la rutina diaria
             y hace que se generen muchísimas conversaciones, colaboraciones y
-            amistades en torno al código y a los juegos de mesa, y caminatas.
+            amistades en torno al código, los juegos de mesa y las caminatas.
           </p>
           <p>
             El espíritu es comunitario:{" "}
@@ -80,9 +80,9 @@ function Faqs() {
             </li>
           </ul>
           <p>
-            La razón es la misma que motiva la estructura de 4 días: queremos
-            un puente con un día festivo entre semana, de forma que los
-            asistentes solo tengan que pedir un día libre en su trabajo para
+            La razón es la misma que motiva la estructura de 4 días: buscamos un
+            puente con algún día festivo, de forma que los asistentes tengan que
+            pedir el menor número posible de días libres en su trabajo para
             venir. Las fechas concretas de cada edición se publican en la
             newsletter y aquí en la web una vez confirmado el venue.
           </p>
@@ -115,7 +115,7 @@ function Faqs() {
           problema en grupo, entender cómo piensan otros programadores y cómo
           atacan el problema de diferentes formas. ¿Crees que no tienes el
           conocimiento suficiente para asistir al evento? ¡No te preocupes,
-          súmate que la vas a pasar genial y vas a aprender un montón de cosas!
+          súmate, que lo vas a pasar genial y vas a aprender un montón de cosas!
         </p>
       ),
     },
@@ -131,19 +131,64 @@ function Faqs() {
             técnicos.
           </p>
           <p>
-            Cada propuesta abre un slot que se vota brevemente y se distribuye
-            en la pizarra para los días siguientes. Varios proyectos suelen
-            ocurrir en paralelo y cada persona se mueve libremente entre los que
-            más le interesen.
+            Después de las presentaciones, cada persona vota en qué proyectos
+            quiere participar (como máximo 2 o 3, para no repartirse tanto que
+            no se aporte en ninguno) y, con esos votos, se reparten los slots en
+            la pizarra para los días siguientes. Varios proyectos suelen ocurrir
+            en paralelo y cada persona se mueve libremente entre los que más le
+            interesen. Si un proyecto recibe muy pocos votos, no ocupa un slot
+            oficial, pero quienes estén interesados pueden juntarse a charlarlo
+            en cualquier momento.
           </p>
           <p>
-            La organización <em>no</em> propone proyectos: la idea es
-            que las actividades las traigan los propios asistentes. Vale como
-            regla informal que{" "}
-            <em>
-              "quien propone un proyecto se hace cargo de coordinarlo"
-            </em>{" "}
+            La organización <em>no</em> propone proyectos: la idea es que las
+            actividades las traigan los propios asistentes. Vale como regla
+            informal que{" "}
+            <em>"quien propone un proyecto se hace cargo de coordinarlo"</em>{" "}
             durante los días del evento.
+          </p>
+          <p>
+            Al cierre del evento cada grupo muestra al resto lo que hizo, y con
+            una votación anónima elegimos el mejor proyecto de la edición, que
+            publicamos aquí en la web. Para participar, el proyecto tiene que
+            estar subido a la organización de PyCamp España en GitHub.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Cómo es un día en el PyCamp?",
+      answer: (
+        <>
+          <p>
+            Llegamos a primera hora de la mañana del primer día y nos vamos a
+            media tarde del último. Un día típico se organiza más o menos así:
+          </p>
+          <ul>
+            <li>
+              <strong>08:00 – 10:00</strong>: desayuno, cada persona a su ritmo.
+            </li>
+            <li>
+              <strong>10:00 – 13:00</strong>: hack en los proyectos.
+            </li>
+            <li>
+              <strong>13:00 – 14:30</strong>: comida.
+            </li>
+            <li>
+              <strong>14:30 – 21:00</strong>: hack en bloques largos, con
+              descansos para el coffee break.
+            </li>
+            <li>
+              <strong>21:00 – 22:00</strong>: cena.
+            </li>
+            <li>
+              <strong>22:00 – …</strong>: juegos de mesa, karaoke de charlas,
+              sobremesas largas y hack nocturno para quien tenga energía.
+            </li>
+          </ul>
+          <p>
+            No es obligatorio estar en todo: cada persona elige en qué slots
+            participa y cuándo prefiere descansar, salir a caminar o charlar.
           </p>
         </>
       ),
@@ -152,11 +197,11 @@ function Faqs() {
       question: "¿Hay Wifi en el venue?",
       answer: (
         <p>
-          Sí. La conexión a internet es uno de los requisitos no negociables
-          que pedimos al venue, y siempre la testeamos al visitarlo. Si la
-          conexión propia del venue es débil, llevamos también nuestra propia
-          solución (antena Starlink + router) para garantizar que haya
-          cobertura suficiente en los espacios de hack durante todo el evento.
+          Sí. La conexión a internet es uno de los requisitos no negociables que
+          pedimos al venue, y siempre la testeamos al visitarlo. Si la conexión
+          propia del venue es débil, llevamos también nuestra propia solución
+          (antena Starlink + router) para tener buena cobertura en los espacios
+          de hack durante todo el evento.
         </p>
       ),
     },
@@ -164,13 +209,25 @@ function Faqs() {
       question: "¿Cómo se gestionan las restricciones alimentarias?",
       answer: (
         <p>
-          Pedimos las restricciones alimentarias en el formulario de
-          inscripción y se las comunicamos al venue con antelación. Solo
-          trabajamos con venues capaces de gestionar vegetarianos, veganos,
-          intolerancias y alergias como parte normal del menú. Si
-          tienes una alergia seria o un caso especial, contactamos
-          directamente con el venue por email para confirmar que pueden
-          gestionarla.
+          Pedimos las restricciones alimentarias en el formulario de inscripción
+          y se las comunicamos al venue con antelación. Solo trabajamos con
+          venues capaces de gestionar vegetarianos, veganos, intolerancias y
+          alergias como parte normal del menú. Si tienes una alergia seria o un
+          caso especial, contactamos directamente con el venue por email para
+          confirmar que pueden gestionarla.
+        </p>
+      ),
+    },
+    {
+      question: "¿Cómo son las habitaciones?",
+      answer: (
+        <p>
+          Dormimos todos en el venue, en habitaciones compartidas con otras
+          personas asistentes. La organización reparte las habitaciones antes
+          del evento y en la puerta de cada una ponemos un cartel con quiénes
+          duermen ahí. Si roncas, o necesitas dormir en un sitio tranquilo,
+          avísanos y lo tenemos en cuenta al repartirlas. En cualquier caso, te
+          recomendamos traer tapones para los oídos.
         </p>
       ),
     },
@@ -184,16 +241,15 @@ function Faqs() {
             ambiente relajado y rodeados por amigos de la comunidad.
           </p>
           <p>
-            Por eso, puedes llevar lo que quieras que consideres necesario para
-            pasarla bien y divertirte. Desde tu ordenador portátil para poder
-            trabajar en los proyectos, hasta juegos de mesa para montar una
-            partida por las noches, incluyendo instrumentos musicales para
-            ponerle un poco de buena onda con música. ¡O incluso una impresora
-            3D para tener una sesión de makers! --tú sabes mejor que nosotros
-            qué llevar, ¡vamos!
+            Por eso, puedes llevar lo que consideres necesario para pasarlo bien
+            y divertirte. Desde tu ordenador portátil para poder trabajar en los
+            proyectos, hasta juegos de mesa para montar una partida por las
+            noches, incluyendo instrumentos musicales para animar el ambiente
+            con música. ¡O incluso una impresora 3D para tener una sesión de
+            makers! Tú sabes mejor que nosotros qué llevar.
           </p>
           <p>
-            Aquí te comentamos lo que creemos mínimo y escencial para poder
+            Aquí te comentamos lo que creemos mínimo y esencial para poder
             disfrutar del PyCamp España sin problemas.
           </p>
           <p>
@@ -223,17 +279,22 @@ function Faqs() {
             </li>
             <li>Protector solar</li>
             <li>Repelente de mosquitos</li>
+            <li>
+              Si te apetece, algo de beber para las noches (cervezas, vino o lo
+              que te guste tomar) para compartir mientras jugamos y charlamos
+            </li>
           </ul>
           <p>
             <strong>Al momento de dormir:</strong>
           </p>
           <ul>
             <li>Tapones para oídos</li>
-            {/* <li>
-              Sábana (colchón) y sobre sábana: el venue provee almohada y
-              manta/cobija pero si prefieres, puedes llevar tus propias cosas
-            </li> */}
           </ul>
+          <p>
+            Lo que pone el venue (ropa de cama, manta, almohada, toallas) cambia
+            según el lugar; te lo confirmamos por email unos días antes del
+            evento.
+          </p>
         </>
       ),
     },
@@ -259,26 +320,66 @@ function Faqs() {
       question:
         "¿Hay traslado al venue desde la ciudad principal más cercana? (PyBus)",
       answer: (
+        <>
+          <p>
+            Sí. Como los venues están alejados de la ciudad, ofrecemos un
+            servicio de autocar privado (PyBus), incluido en la entrada, que
+            traslada a los asistentes desde un punto accesible (aeropuerto o
+            estación de tren) cercano al venue, y los lleva de vuelta al final
+            del evento. Los detalles concretos del horario y punto de salida se
+            publican una vez confirmado el venue de cada edición.
+          </p>
+          <p>
+            También puedes llegar por tus propios medios. Si el PyBus no te
+            encaja (por horario o porque vienes desde otra zona), en el grupo de
+            Telegram de asistentes puedes organizarte con otras personas para
+            compartir coche.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Qué incluye la entrada?",
+      answer: (
         <p>
-          Sí. Como los venues están alejados de la ciudad, ofrecemos un servicio
-          de autocar privado (PyBus) que traslada a los asistentes desde un
-          punto accesible (aeropuerto o estación de tren) cercano al venue, y
-          los lleva de vuelta al final del evento. Los detalles concretos del
-          horario y punto de salida se publican una vez confirmado el venue de
-          cada edición.
+          La entrada incluye el alojamiento durante los 4 días y 3 noches,
+          pensión completa (desayuno, comida, merienda y cena), el PyBus de ida
+          y vuelta, la conexión a internet y el uso de todos los espacios del
+          venue. El precio y el detalle de cada edición están en la página del{" "}
+          <Link to="/event">próximo PyCamp</Link>.
         </p>
       ),
     },
     {
       question: "¿Cómo me apunto? ¿Cuándo abren las entradas?",
       answer: (
+        <>
+          <p>
+            Cuando se abre la venta, primero hay una preventa para quienes
+            vinieron a ediciones anteriores (por email y en el grupo de Telegram
+            de asistentes). Unos días después la anunciamos a toda la newsletter
+            y, por último, en redes sociales (LinkedIn, Twitter/X, Instagram).
+            Si quieres asegurarte de no perderte la apertura, suscríbete a
+            nuestra newsletter desde la página principal: te avisamos en cuanto
+            salgan las entradas.
+          </p>
+          <p>
+            Para apuntarte, rellenas el formulario de inscripción y te enviamos
+            por email un código personal para comprar tu entrada. Tienes{" "}
+            <strong>7 días</strong> para pagarla; si no, la plaza se libera para
+            otra persona.
+          </p>
+        </>
+      ),
+    },
+    {
+      question: "¿Hay código de conducta?",
+      answer: (
         <p>
-          Cuando se abre la venta lo anunciamos primero al grupo de Telegram de
-          asistentes anteriores, después por la newsletter, y finalmente en
-          redes sociales (LinkedIn, Twitter/X, Instagram). Si quieres
-          asegurarte de no perderte la apertura, suscríbete a nuestra
-          newsletter desde la página principal: te avisamos en cuanto salgan
-          las entradas.
+          Sí. Todas las personas que participan en el PyCamp aceptan nuestro{" "}
+          <Link to="/diversity">código de conducta</Link>. Lo repasamos en la
+          charla de bienvenida del primer día, donde también te contamos cómo
+          contactar con la organización si necesitas ayuda durante el evento.
         </p>
       ),
     },

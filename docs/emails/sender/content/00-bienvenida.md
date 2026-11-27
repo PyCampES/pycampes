@@ -1,7 +1,7 @@
 ---
 # Lo que ve quien recibe el email
-subject: "Bienvenido a la comunidad PyCamp España 👋"
-preheader: "Gracias por suscribirte. Te contamos qué es el PyCamp y cuándo se celebra."
+subject: "Te damos la bienvenida a PyCamp España 👋"
+preheader: "Gracias por suscribirte. Te contamos qué es el PyCamp y por qué la gente repite."
 reason: "Recibes este email porque te suscribiste a la newsletter de PyCamp España en nuestra web."
 image: "bienvenida-foto-grupal.jpg"
 
@@ -10,43 +10,58 @@ workflow: "Newsletter"
 trigger: "Al entrar en el grupo Newsletter (alta desde el formulario de la web)"
 ---
 
-# ¡Bienvenido/a!
+# ¡Hola! 👋
 
-Nos alegra mucho que te hayas suscrito a la newsletter de PyCamp España. Si estás aquí es porque, probablemente, Python te apasiona tanto como a nosotros.
+Si te has suscrito a PyCamp, seguramente te gusta programar… y puede que también tengas curiosidad por algo un poco distinto a los eventos de siempre.
 
-**¿Qué es el PyCamp?**<br>
-PyCamp es un evento de programación en plena naturaleza donde Pythonistas de toda España (¡y más allá!) nos reunimos para:
+**¿Qué es PyCamp?**
 
-- 💻 Trabajar en proyectos "open source" con impacto real en la comunidad
-- 🤝 Colaborar y aprender de gente apasionada y con experiencia
-- 🌲 Desconectar del ruido en un entorno inspirador al aire libre
-- 🎯 Debatir sobre ética, tecnología y el futuro de nuestra industria
+No es una conferencia al uso. Es más parecido a esto: **unos días en la naturaleza con gente que programa, donde cada persona propone, aprende, comparte o simplemente se deja llevar.**
 
-**No es una conferencia tradicional**. Es un espacio horizontal donde todos aportamos, creamos y aprendemos juntos. Sin horarios rígidos, sin charlas magistrales, sin presiones. Solo código, buenas conversaciones y mejor ambiente.
+- 💻 Puedes ponerte a programar en un proyecto open source
+- 💬 Unirte a una conversación sobre cualquier tema técnico
+- 🧭 Aprender algo completamente fuera de tu área
+- 🌲 O simplemente hablar con gente interesante, sin presión
 
-[[¡Quiero ver fotos!]](https://pycamp.es/previous-editions)
+Todo pasa de forma orgánica.
 
-**¿Cuándo es el próximo PyCamp?**
+**¿Por qué la gente repite?**
+
+Porque encuentra algo difícil de ver en otros eventos:
+
+- Gente accesible y apasionada, con ganas reales de compartir
+- Un ambiente relajado donde no hace falta demostrar nada
+- Conversaciones que no tendrías en una oficina ni en una conferencia
+- Y, muchas veces, conexiones que se quedan más allá del evento
+
+**Cuándo y dónde**
 
 <!-- if dates venue -->
 
-La próxima edición del PyCamp España será **${dates}** en **${venue}**. Toda la información está en la web:
+La próxima edición será **${dates}** en **${venue}**. Toda la información está en la web:
 
 [[Ver el PyCamp ${year}]](https://pycamp.es/event)
 
 <!-- else -->
 
-Solo hay dos fechas posibles en el calendario en las que celebramos el PyCamp:
+Celebramos el PyCamp en una de estas dos fechas: el puente del **1 de mayo** o **Semana Santa**. En cuanto confirmemos la próxima edición, la verás en la web:
 
-- El fin de semana del puente del **1 de mayo (Día del Trabajador)**.
-- El fin de semana de **Semana Santa**.
-
-Te avisaremos en cuanto confirmemos las fechas de la próxima edición.
+[[Ver el próximo PyCamp]](https://pycamp.es/event)
 
 <!-- endif -->
 
-**¿Tienes preguntas?**
+👉 Como estás en esta lista, **te avisaremos antes que al resto** cuando se abran las inscripciones.
 
-Escríbenos cuando quieras. Estaremos encantados de contarte más sobre PyCamp, [resolver tus dudas](${faqs_url}) o simplemente charlar sobre Python 🤗
+**Mientras tanto**
 
-¡Esperamos contar contigo en la próxima edición de PyCamp España!
+Si quieres entender mejor cómo se vive por dentro, echa un vistazo a las fotos y los proyectos de ediciones anteriores:
+
+[[¡Ver fotos!]](https://pycamp.es/previous-editions)
+
+**¿Dudas?**
+
+Escríbenos cuando quieras respondiendo a este email, o mira las [preguntas frecuentes](${faqs_url}). Estaremos encantados de contarte más sobre PyCamp o simplemente charlar sobre Python 🤗
+
+¡Esperamos contar contigo en el próximo PyCamp!
+
+— Equipo PyCamp España
