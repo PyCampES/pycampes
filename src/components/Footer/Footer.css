@@ -39,7 +39,7 @@ div.footer-container {
 }
 
 .footer-links li {
-  margin-bottom: 1rem;
+  margin-bottom: var(--spacing-sm);
 }
 
 .footer-links a {

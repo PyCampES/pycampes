@@ -250,7 +250,7 @@
   width: 2px;
   flex: 1;
   background: var(--surface-accent);
-  margin-top: 0.5rem;
+  margin-top: var(--spacing-xs);
 }
 
 .timeline-card {
@@ -290,7 +290,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
   flex-wrap: wrap;
 }
 

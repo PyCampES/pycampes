@@ -5,7 +5,7 @@
   font-weight: 500;
   display: inline-flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: var(--spacing-xs);
   transition:
     transform 0.2s,
     box-shadow 0.2s;
