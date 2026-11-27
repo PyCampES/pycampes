@@ -65,6 +65,7 @@
 }
 
 .photo-card {
+  position: relative;
   background: var(--surface-subtle);
   border: 1px solid var(--ui-border);
   border-radius: var(--radius-md);
@@ -123,8 +124,25 @@
   transition: color 0.2s;
 }
 
-.photo-label:hover {
+/* The link covers the whole card, so the card is clickable */
+.photo-label::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-md);
+}
+
+.photo-card:hover .photo-label {
   color: var(--brand-green-dark);
+}
+
+.photo-label:focus-visible {
+  outline: none;
+}
+
+.photo-card:has(.photo-label:focus-visible) {
+  outline: 2px solid var(--brand-green-dark);
+  outline-offset: 2px;
 }
 
 .external-icon {
@@ -133,24 +151,31 @@
   opacity: 0.7;
 }
 
-.photo-label:hover .external-icon {
+.photo-card:hover .external-icon {
   opacity: 1;
 }
 
-.photo-location {
+.photo-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+  margin-top: 4px;
+}
+
+.photo-meta-item {
   display: flex;
   align-items: center;
-  justify-content: center;
   gap: 6px;
   color: var(--text-muted);
   font-size: 14px;
   line-height: 1.5;
-  margin-top: 4px;
 }
 
-.map-icon {
+.photo-meta-item img {
   width: 18px;
   height: 18px;
+  flex-shrink: 0;
   opacity: 0.6;
 }
 

@@ -4,6 +4,7 @@ import {
   iconCamera,
   iconExternalLink,
   iconMapPin,
+  iconCalendar,
   iconProjectGithub,
   iconArrowRightBrown,
   photo2022,
@@ -21,30 +22,35 @@ function PreviousEditions() {
       photos: photo2026,
       link: "https://photos.app.goo.gl/k8NAepAScdPj4q2h9",
       location: "Encinar de Escardiel - Castilblanco de los Arroyos, Sevilla",
+      date: "30 de abril al 3 de mayo",
     },
     {
       year: "2025",
       photos: photo2025,
       link: "https://photos.app.goo.gl/Lw2M76V2bzYMZoFt6",
       location: "Encinares de Escardiel - Castilblanco de los Arroyos, Sevilla",
+      date: "1 al 4 de mayo",
     },
     {
       year: "2024",
       photos: photo2024,
       link: "https://photos.app.goo.gl/gPYLUEzDAokZ4PrQA",
       location: "Casa de Colonias Aiguaviva - Guixers, Lleida",
+      date: "29 de marzo al 1 de abril",
     },
     {
       year: "2023",
       photos: photo2023,
       link: "https://photos.app.goo.gl/zmtyihL3B3KaBtpF9",
       location: "El Bosc de la Massana - Vilablareix, Girona",
+      date: "7 al 10 de abril",
     },
     {
       year: "2022",
       photos: photo2022,
       link: "https://photos.app.goo.gl/GSeufqbsjHvXLJxZA",
       location: "El Bosc de la Massana - Vilablareix, Girona",
+      date: "15 al 18 de abril",
     },
   ];
 
@@ -113,9 +119,15 @@ function PreviousEditions() {
                   />
                 </a>
 
-                <div className="photo-location">
-                  <img src={iconMapPin} alt="" className="map-icon" />
-                  <span>{edition.location}</span>
+                <div className="photo-meta">
+                  <div className="photo-meta-item">
+                    <img src={iconMapPin} alt="" />
+                    <span>{edition.location}</span>
+                  </div>
+                  <div className="photo-meta-item">
+                    <img src={iconCalendar} alt="" />
+                    <span>{edition.date}</span>
+                  </div>
                 </div>
               </article>
             ))}
