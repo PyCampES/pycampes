@@ -2,8 +2,8 @@
 # Id del formulario en Google Forms: el de su URL de edición (docs.google.com/forms/d/<id>/edit)
 # o el de su enlace público (docs.google.com/forms/d/e/<id>/viewform), con la "e/" delante.
 form: "1aM55Vt1--UVdWxNUn8Ki8O39JnBEdlLMmXYdm4_suU4"
-# Los importes de las becas (225, 150 y 75 €) son para una entrada de 300 €:
-# si cambia el precio, hay que cambiarlos a mano.
+# Las becas se dan como un código de descuento en pretix: por eso solo se indican
+# porcentajes, sin importes, que dependerían del precio de la entrada.
 ---
 
 # Beca Diversidad PyCamp España ${year}
@@ -14,34 +14,33 @@ form: "1aM55Vt1--UVdWxNUn8Ki8O39JnBEdlLMmXYdm4_suU4"
 > Mapa: ${venue_maps_url}
 > Web: https://pycamp.es
 >
+> En PyCamp creemos que la comunidad Python es mejor cuanto más diversa es, y queremos que el precio no sea lo que te impida venir. Las becas de diversidad son para mujeres, personas no binarias, personas de colectivos diversos e infrarrepresentados en tecnología, estudiantes y personas con bajos recursos.
 >
-> Desde PyCamp somos conscientes de la importancia de equidad y diversidad en tecnología.
+> Tenemos 4 opciones de beca, que se aplican sobre el precio de la entrada:
 >
-> Queremos que puedas tener la posibilidad de asistir al PyCamp España, ${dates}. Más detalles del evento en https://pycamp.es
+> - Beca del 25 % de descuento.
 >
-> Actualmente, contamos con 4 opciones de beca que se aplican en el coste de la entrada:
+> - Beca 2x1: vienes con otra persona y cada una paga la mitad de la entrada. Las dos tienen que pedir esta beca e indicar el nombre y el email de la otra.
 >
-> - Becas del 25% de descuento
+> - Beca del 75 % de descuento.
 >
-> - Becas "2x1" (ambas personas que aplican a esta beca deben indicar los datos de la persona con la que aplican: nombre completo y correo electrónico)
+> - Beca del 100 %: entre las personas que la pidan, valoraremos las solicitudes y daremos las que podamos según el presupuesto de becas que consigamos. Si puedes elegir una beca de menor porcentaje, podremos ayudar a más personas.
 >
-> - Becas del 75% de descuento
+> Para todas las becas tendremos en cuenta lo que nos cuentes en "Cuéntanos un poco de ti": aprovecha ese espacio para contarnos tu motivación para venir al PyCamp.
 >
-> - Beca del 100% (entre las personas que seleccionen la beca del 100% evaluaremos las candidatas y otorgaremos las que podamos dependiendo del presupuesto de becas que consigamos. Recuerda que si tienes la posibilidad de elegir otra beca de menor porcentaje podremos ayudar a más personas con becas de diversidad)
+> Haremos todo lo posible para dar la mayor cantidad de becas, pero puede que no podamos dársela a todas las personas que la pidan. Por eso buscamos sponsors que nos ayuden a financiarlas.
 >
-> Para todas las becas tendremos en cuenta los detalles que comentes en la pregunta/apartado "Contanos un poco de vos". Aprovecha este espacio para contarnos tu motivación para asistir a PyCamp España.
+> Te responderemos antes del ${scholarships_answer_date}. Si te damos la beca, el código personal para comprar tu entrada llevará el descuento aplicado: no tienes que adelantar el dinero ni pedir ningún reembolso.
 >
-> Ten en cuenta que haremos nuestro mayor esfuerzo para otorgar la mayor cantidad de becas posible. Sin embargo, puede ser que no podamos otorgarle una beca a todas las personas que lo soliciten. Es por eso que estamos en la búsqueda de Sponsors que nos puedan ayudar a reducir el precio de la entrada para poder ofrecer becas de diversidad.
->
-> El reembolso del importe de la beca asignada se hará durante el evento. Solo se reembolsará a las personas que asistan a PyCamp España ${year}, confirmen su identidad y hayan presentado comprobante de pago.
+> Además de esta solicitud, rellena el formulario de inscripción (${registration_form_url}): ahí nos cuentas tu alimentación, tu habitación y si vienes en el PyBus.
 >
 > Si tienes cualquier duda sobre el PyCamp España, por favor ponte en contacto con nosotros enviando un correo electrónico a ${contact_email}
 
-**1. Nombre Completo** _(texto corto, obligatoria)_
+**1. Nombre completo** _(texto corto, obligatoria)_
 
-**2. Correo Electrónico** _(texto corto, obligatoria)_
+**2. Correo electrónico** _(texto corto, obligatoria)_
 
-> Te enviaremos un correo electrónico a esta dirección desde ${contact_email} (agrégalo a tus contactos para evitar que termine en SPAM) con tu código personal para comprar tu entrada.
+> Usa el mismo email que en el formulario de inscripción. Te escribiremos a esta dirección desde ${contact_email} (agrégalo a tus contactos para evitar que termine en SPAM).
 
 **3. Contacto alternativo (teléfono)** _(texto corto, opcional, valida: «Teléfono inválido (solo acepta "+" y números)»)_
 
@@ -59,26 +58,38 @@ form: "1aM55Vt1--UVdWxNUn8Ki8O39JnBEdlLMmXYdm4_suU4"
 - 41 a 50 años
 - 51 en adelante
 - Prefiero no decirlo
+
+**6. ¿Con qué te identificas?** _(varias opciones, obligatoria)_
+
+> Marca todas las que correspondan.
+
+- Mujer
+- Persona no binaria
+- Persona de un colectivo diverso o infrarrepresentado en tecnología
+- Estudiante
+- Bajos recursos
 - Otro: …
 
-**6. Aplica a una beca de diversidad** _(una opción, obligatoria)_
+**7. ¿Qué beca pides?** _(una opción, obligatoria)_
 
-- Beca de 25% de descuento: la entrada te costará € 225
-- Beca de 2x1: vení con una amiga y obtené el 50% de descuento (€ 150)
-- Beca de 75% de descuento: la entrada te costará € 75
-- Beca de 100%
+- Beca del 25 % de descuento
+- Beca 2x1: vienes con otra persona y cada una paga la mitad
+- Beca del 75 % de descuento
+- Beca del 100 %
 
-**7. Contanos un poco de vos** _(texto largo, obligatoria)_
+**8. Si pides la beca 2x1: nombre y email de la otra persona** _(texto corto, opcional)_
 
-> Usa este campo para contarnos un poco sobre vos. ¿De dónde vienes? ¿Qué te gustaría aprender en el PyCamp? ¿Porqué quieres participar del PyCamp? ¿Elegiste la beca 2x1 y vienes con una amiga? Cualquier cosa que consideres relevante al momento de otorgar las becas entre todas las personas que apliquen a la beca.
+**9. Cuéntanos un poco de ti** _(texto largo, obligatoria)_
 
-**8. Condiciones** _(varias opciones, obligatoria, valida: «Debes seleccionar todas las opciones.»)_
+> ¿De dónde vienes? ¿Qué te gustaría aprender en el PyCamp? ¿Por qué quieres participar? Cualquier cosa que te parezca relevante para valorar tu solicitud.
+
+**10. Condiciones** _(varias opciones, obligatoria, valida: «Debes seleccionar todas las opciones.»)_
 
 - Soy mayor de edad
-- Leí y estoy de acuerdo con el Código de Conducta (${code_of_conduct_url})
-- Comprendo que este formulario no confirma mi entrada a PyCamp España ${year}. La confirmación de la entrada es solo válida al momento de comprarla en la tienda con el código personal que me enviarán por email
+- He leído y acepto el Código de Conducta (${code_of_conduct_url})
+- Comprendo que este formulario no confirma mi entrada a PyCamp España ${year}. La confirmación de la entrada es solo válida al momento de comprarla en la tienda con el código personal que recibiré por email
 - Acepto que una vez realizado el pago de la entrada no se harán devoluciones en caso de no poder asistir por cualquier motivo
 
 ## Mensaje al enviar
 
-> Your response has been recorded
+> ¡Gracias por tu solicitud! Te responderemos antes del ${scholarships_answer_date}. Si todavía no lo has hecho, rellena también el formulario de inscripción: ${registration_form_url}

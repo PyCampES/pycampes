@@ -56,6 +56,9 @@ not_registered_segment = "No inscritos 2027"
 # Formulario de becas. Opcional: si se deja "POR DEFINIR", los emails de
 # inscripción no mencionan las becas.
 scholarships_form_url = "POR DEFINIR"
+# Fecha límite para responder a las solicitudes de beca (la usa el formulario
+# de becas), por ejemplo "viernes 15 de enero".
+scholarships_answer_date = "POR DEFINIR"
 
 # Plazas disponibles.
 max_attendees = "30"

@@ -23,7 +23,7 @@ Este es el último email que te mandamos sobre la inscripción: **el ${registrat
 - 🏡 Lugar: **${venue}**
 - 🎟️ Precio: **${price}**
 
-Las plazas que quedan se asignan por orden de inscripción, así que no lo dejes para el último día:
+Quedan pocas plazas, así que no lo dejes para el último día:
 
 [[Inscribirme]](${registration_form_url})
 

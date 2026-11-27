@@ -502,6 +502,14 @@ function questionBody(question, sectionIds, withGoto) {
   }
 }
 
+// Question types that can be changed into each other in place.
+function family(type) {
+  if (CHOICE.includes(type)) {
+    return "choice";
+  }
+  return ["short", "paragraph"].includes(type) ? "text" : type;
+}
+
 const CREATABLE = ["section", "text", "grid"];
 const CREATABLE_TYPES = [
   "short",
@@ -551,7 +559,13 @@ export function plan(wanted, apiForm) {
     );
   }
 
-  const pairs = align(wanted.items, current.items);
+  // A question that changes to a type of another family (text to choice,
+  // say) cannot be updated: it is deleted and created again.
+  const pairs = align(wanted.items, current.items).filter(([i, j]) => {
+    const want = wanted.items[i].question;
+    const have = current.items[j].question;
+    return !want || !have || family(want.type) === family(have.type);
+  });
   const pairOf = new Map(pairs);
   const paired = new Set(pairs.map(([, j]) => j));
 
@@ -701,17 +715,7 @@ export function plan(wanted, apiForm) {
         mask.push("questionItem.question.required");
         what.push(q.required ? "pasa a obligatoria" : "pasa a opcional");
       }
-      const family = (type) =>
-        CHOICE.includes(type)
-          ? "choice"
-          : ["short", "paragraph"].includes(type)
-            ? "text"
-            : type;
-      if (family(q.type) !== family(old.type)) {
-        manual.push(
-          `cambiar a mano el tipo de ${label(want)}: de ${TYPES[old.type] || old.type} a ${TYPES[q.type] || q.type}`
-        );
-      } else if (family(q.type) === "choice") {
+      if (family(q.type) === "choice") {
         if (q.type !== old.type || !same(q.options, old.options)) {
           question.choiceQuestion = {
             ...question.choiceQuestion,

@@ -9,24 +9,25 @@ form: "171UiTiHD_6ic_Q-X0GaOFPrEZlVl0LubA3zZ93n7nUk"
 > Datos para estadísticas divertidas y tontas sobre los PyCamps de Python España.
 > No vinculante. Sin compromiso.
 
-**1. ¿De dónde venís?** _(texto corto, opcional)_
+**1. ¿De dónde vienes?** _(texto corto, opcional)_
 
-> (poné algo que Google Maps encuentre o conozca)
+> (pon algo que Google Maps encuentre o conozca)
 
 **2. ¿En qué llegaste?** _(una opción, opcional)_
 
 > Medio de transporte
 
 - PyBus
-- Auto propio (solo)
-- Auto propio (con otros PyCampistas)
-- Auto (de otro PyCampista)
+- Coche propio (solo)
+- Coche propio (con otros PyCampistas)
+- Coche (de otro PyCampista)
 - Bus
 - Avión
 - Tren
 - Taxi
+- Bicicleta (¡respeto!)
 
-**3. ¿A cuántos PyCamp fuiste? (contando el actual)?** _(escala de 1 a 10, opcional)_
+**3. ¿A cuántos PyCamp has venido? (contando este)** _(escala de 1 a 10, opcional)_
 
 **4. ¿En cuántos proyectos participaste en este PyCamp?** _(escala de 1 a 10, opcional)_
 
@@ -40,7 +41,7 @@ form: "171UiTiHD_6ic_Q-X0GaOFPrEZlVl0LubA3zZ93n7nUk"
 - Sí
 - No
 
-**7. ¿Cuántas veces te bañaste?** _(escala de 1 a 5, opcional)_
+**7. ¿Cuántas veces te duchaste?** _(escala de 1 a 5, opcional)_
 
 > Contando la ducha del último día, si aún no la hiciste
 
@@ -56,7 +57,7 @@ form: "171UiTiHD_6ic_Q-X0GaOFPrEZlVl0LubA3zZ93n7nUk"
 - Sí
 - No
 
-**11. ¿Viniste acompañado?** _(una opción, opcional)_
+**11. ¿Viniste con alguien que no programa?** _(una opción, opcional)_
 
 > Con un familiar, pareja, hijo, etc
 
@@ -70,33 +71,61 @@ form: "171UiTiHD_6ic_Q-X0GaOFPrEZlVl0LubA3zZ93n7nUk"
 - Sí
 - No
 
-**13. Mencioná las cosas que más te gustaron** _(texto corto, opcional)_
+**13. ¿Aprendiste algo nuevo?** _(una opción, opcional)_
 
-> Poné keywords, labels, palabras clave (no prosa)
+- Sí, mucho
+- Algo
+- No mucho
 
-**14. Mencioná las cosas que menos te gustaron** _(texto corto, opcional)_
+**14. ¿Hiciste nuevas amistades?** _(una opción, opcional)_
 
-**15. ¿Qué nota le pondrías a la comida?** _(escala de 1 a 5, opcional)_
+- Sí
+- No
 
-**16. ¿Qué nota le pondrías a los dormitorios?** _(escala de 1 a 5, opcional)_
+**15. Menciona las cosas que más te gustaron** _(texto corto, opcional)_
 
-**17. ¿Qué nota le pondrías a Internet?** _(escala de 1 a 5, opcional)_
+> Pon keywords, labels, palabras clave (no prosa)
 
-**18. ¿Qué nota le pondrías al venue?** _(escala de 1 a 5, opcional)_
+**16. Menciona las cosas que menos te gustaron** _(texto corto, opcional)_
+
+**17. ¿Qué nota le pondrías a la comida?** _(escala de 1 a 5, opcional)_
+
+**18. ¿Qué nota le pondrías a los dormitorios?** _(escala de 1 a 5, opcional)_
+
+**19. ¿Qué nota le pondrías a Internet?** _(escala de 1 a 5, opcional)_
+
+**20. ¿Qué nota le pondrías al venue?** _(escala de 1 a 5, opcional)_
 
 > En general, sin tener en cuenta las otras dimensiones ya analizadas (comida, dormitorio, internet...)
 
-**19. ¿Volverías a un PyCamp en este mismo lugar?** _(una opción, opcional)_
+**21. ¿Volverías a un PyCamp en este mismo lugar?** _(una opción, opcional)_
 
 - Sí
 - No
 - Tal vez
 
-**20. ¿Dónde te gustaría que se haga un PyCamp?** _(texto corto, opcional)_
+**22. ¿Dónde te gustaría que se haga un PyCamp?** _(texto corto, opcional)_
 
-> No vinculante, sin compromiso ;-) Podés poner "Disney" si querés
+> No vinculante, sin compromiso ;-) Puedes poner "Disney" si quieres
 
-**21. Tu edad** _(una opción, opcional)_
+**23. ¿Qué fechas prefieres para el PyCamp?** _(una opción, opcional)_
+
+- Semana Santa
+- Puente de mayo
+- Me da igual
+
+**24. ¿Recomendarías el PyCamp a alguien?** _(escala de 0 a 10, opcional)_
+
+**25. ¿Cómo te enteraste del PyCamp?** _(una opción, opcional)_
+
+- Newsletter de PyCamp
+- Redes sociales
+- Alguien que ya había venido
+- Un evento o comunidad de Python
+- Ya había venido antes
+- Otro: …
+
+**26. Tu edad** _(una opción, opcional)_
 
 > Selecciona un rango
 
@@ -107,35 +136,32 @@ form: "171UiTiHD_6ic_Q-X0GaOFPrEZlVl0LubA3zZ93n7nUk"
 - 51 - 60
 - Más de 60
 
-**22. ¿Cómo describirías tu nivel de manejo de Python?** _(texto corto, opcional)_
+**27. ¿Cómo describirías tu nivel de Python?** _(una opción, opcional)_
 
-> En una o dos palabras
+- Principiante
+- Intermedio
+- Avanzado
 
-**23. ¿Usas Python en tu profesión?** _(una opción, opcional)_
+**28. ¿Usas Python en tu profesión?** _(una opción, opcional)_
 
 - Nada
 - Poco
 - Algo
 - Mucho
 
-**24. ¿Tenés preferencias o limitaciones alimentarias?** _(una opción, opcional)_
+**29. ¿Tienes hijos o personas a cargo que dependan de ti?** _(una opción, opcional)_
 
 - Sí
 - No
 
-**25. ¿Tenés hijos o personas a cargo que dependan de vos?** _(una opción, opcional)_
+**30. ¿Quieres dejar algún otro feedback?** _(texto largo, opcional)_
 
-- Sí
-- No
+**31. ¿Qué calificación le pondrías al equipo organizador?** _(escala de 1 a 5, opcional)_
 
-**26. ¿Querés dejar algún otro feedback?** _(texto largo, opcional)_
-
-**27. ¿Qué calificación le pondrías equipo organizador?** _(escala de 1 a 5, opcional)_
-
-**28. Comentario al equipo organizador** _(texto largo, opcional)_
+**32. Comentario al equipo organizador** _(texto largo, opcional)_
 
 > Cualquier cosa que creas conveniente. No vinculante y sin compromiso.
 
 ## Mensaje al enviar
 
-> (el mensaje por defecto de Google)
+> ¡Gracias por contarnos cómo lo pasaste! Con tus respuestas preparamos el próximo PyCamp. ¡Nos vemos el año que viene! 🐍
