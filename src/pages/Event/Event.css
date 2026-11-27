@@ -41,7 +41,7 @@
   color: var(--text-muted);
   font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 48.25rem;
+  max-width: 48rem;
   margin: 0 auto;
 }
 
@@ -58,7 +58,7 @@
   color: var(--text-muted);
   font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 40.1875rem;
+  max-width: 40rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -149,8 +149,8 @@
 }
 
 .timeline-circle {
-  width: 3.3125rem;
-  height: 3.3125rem;
+  width: 3.25rem;
+  height: 3.25rem;
   background: var(--accent-forest);
   border-radius: 50%;
   flex-shrink: 0;
@@ -159,8 +159,8 @@
 }
 
 .timeline-icon {
-  width: 2.0625rem;
-  height: 2.0625rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 0.625rem;
   left: 50%;
@@ -169,7 +169,7 @@
 }
 
 .timeline-line {
-  width: 0.125rem;
+  width: 2px;
   flex: 1;
   background: var(--surface-accent);
   margin-top: 0.5rem;

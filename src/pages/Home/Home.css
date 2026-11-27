@@ -21,7 +21,7 @@
 }
 
 .hero-logo {
-  width: 23.25rem;
+  width: 23rem;
   margin-bottom: var(--spacing-lg);
 }
 
@@ -30,7 +30,7 @@
   font-size: var(--font-size-lg);
   line-height: 1.8;
   margin-bottom: var(--spacing-lg);
-  max-width: 38.25rem;
+  max-width: 38rem;
 }
 
 .hero-buttons {
@@ -68,13 +68,13 @@
   text-align: center;
   color: var(--text-muted);
   font-size: var(--font-size-lg);
-  max-width: 40.1875rem;
+  max-width: 40rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .features-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(31.25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(31rem, 1fr));
   gap: var(--spacing-md);
 }
 
@@ -110,8 +110,8 @@
 }
 
 .feature-icon img {
-  width: 1.875rem;
-  height: 1.875rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .feature-title {

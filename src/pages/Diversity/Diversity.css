@@ -37,7 +37,7 @@
   color: var(--text-muted);
   font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 48.25rem;
+  max-width: 48rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -54,7 +54,7 @@
   color: var(--text-muted);
   font-size: var(--font-size-base);
   line-height: 1.875;
-  max-width: 40.1875rem;
+  max-width: 40rem;
   margin: 0 auto var(--spacing-lg);
 }
 
@@ -87,8 +87,8 @@
 }
 
 .value-icon {
-  width: 2.8125rem;
-  height: 2.8125rem;
+  width: 2.75rem;
+  height: 2.75rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -98,8 +98,8 @@
 }
 
 .value-icon img {
-  width: 2.125rem;
-  height: 2.125rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 .value-title {
@@ -135,7 +135,7 @@
 }
 
 .short-version-list {
-  max-width: 52.375rem;
+  max-width: 52rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -169,8 +169,8 @@
 }
 
 .check-icon img {
-  width: 1.375rem;
-  height: 1.375rem;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .short-version-item p {
@@ -188,7 +188,7 @@
   font-weight: 700;
   line-height: 1.875;
   letter-spacing: -0.45px;
-  max-width: 40.1875rem;
+  max-width: 40rem;
   margin: var(--spacing-lg) auto 0;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .faq-list {
-  max-width: 54.125rem;
+  max-width: 54rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
@@ -304,7 +304,7 @@
   }
   to {
     opacity: 1;
-    max-height: 31.25rem;
+    max-height: 31rem;
   }
 }
 
@@ -315,7 +315,7 @@
 }
 
 .report-container {
-  max-width: 52.125rem;
+  max-width: 52rem;
   margin: 0 auto;
   padding: var(--spacing-lg);
   background: var(--surface-subtle);
@@ -330,8 +330,8 @@
 }
 
 .report-icon {
-  width: 3.625rem;
-  height: 3.625rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: rgba(244, 123, 37, 0.18);
   border-radius: var(--radius-sm);
   display: flex;
@@ -341,8 +341,8 @@
 }
 
 .report-icon img {
-  width: 2.375rem;
-  height: 2.375rem;
+  width: 2.5rem;
+  height: 2.5rem;
 }
 
 .report-title {
@@ -359,7 +359,7 @@
   font-size: var(--font-size-md);
   line-height: 1.67;
   letter-spacing: -0.45px;
-  max-width: 34.5625rem;
+  max-width: 34.5rem;
   margin-bottom: var(--spacing-md);
 }
 
@@ -367,7 +367,7 @@
   display: inline-flex;
   align-items: center;
   gap: var(--spacing-xs);
-  padding: 0.8125rem var(--spacing-md);
+  padding: 0.75rem var(--spacing-md);
   background: rgba(244, 123, 37, 0.1);
   border-radius: var(--radius-md);
   color: var(--accent-campfire);

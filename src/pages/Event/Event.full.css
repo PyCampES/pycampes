@@ -34,13 +34,13 @@
   color: var(--text-muted);
   font-size: var(--font-size-lg);
   line-height: 1.5;
-  max-width: 48.25rem;
+  max-width: 48rem;
   margin: 0 auto var(--spacing-xl);
 }
 
 .event-info-cards {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28.125rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
   gap: var(--spacing-lg);
   margin-bottom: var(--spacing-xl);
 }
@@ -55,8 +55,8 @@
 }
 
 .info-icon {
-  width: 2.8125rem;
-  height: 2.8125rem;
+  width: 2.75rem;
+  height: 2.75rem;
   background: var(--accent-forest);
   border-radius: var(--radius-sm);
   display: flex;
@@ -110,7 +110,7 @@
   color: var(--text-muted);
   font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 40.1875rem;
+  max-width: 40rem;
   margin: 0 auto var(--spacing-xl);
 }
 
@@ -173,7 +173,7 @@
   border-radius: var(--radius-md);
   padding: var(--spacing-md);
   text-align: center;
-  max-width: 18.75rem;
+  max-width: 19rem;
   margin: 0 auto;
   box-shadow: 0 1px 20px rgba(238, 231, 221, 0.6);
 }
@@ -227,8 +227,8 @@
 }
 
 .timeline-circle {
-  width: 3.3125rem;
-  height: 3.3125rem;
+  width: 3.25rem;
+  height: 3.25rem;
   background: var(--accent-forest);
   border-radius: 50%;
   flex-shrink: 0;
@@ -237,8 +237,8 @@
 }
 
 .timeline-icon {
-  width: 2.0625rem;
-  height: 2.0625rem;
+  width: 2rem;
+  height: 2rem;
   position: absolute;
   top: 0.625rem;
   left: 50%;
@@ -247,7 +247,7 @@
 }
 
 .timeline-line {
-  width: 0.125rem;
+  width: 2px;
   flex: 1;
   background: var(--surface-accent);
   margin-top: 0.5rem;
@@ -319,7 +319,7 @@
 }
 
 .project-idea-container {
-  max-width: 56.25rem;
+  max-width: 56rem;
   margin: 0 auto;
   padding: var(--spacing-xl) var(--spacing-lg);
   background: var(--surface-subtle);
@@ -330,8 +330,8 @@
 }
 
 .idea-icon {
-  width: 3.625rem;
-  height: 3.625rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: rgba(244, 123, 37, 0.18);
   border-radius: var(--radius-sm);
   display: flex;
@@ -341,15 +341,15 @@
 }
 
 .idea-icon img {
-  width: 2.875rem;
-  height: 2.875rem;
+  width: 2.75rem;
+  height: 2.75rem;
 }
 
 .section-description {
   color: var(--text-muted);
   font-size: var(--font-size-md);
   line-height: 1.6;
-  max-width: 34.5625rem;
+  max-width: 34.5rem;
   margin: 0 auto var(--spacing-md);
 }
 

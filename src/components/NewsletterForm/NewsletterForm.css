@@ -8,7 +8,7 @@
 }
 
 .newsletter-container {
-  max-width: 53.125rem;
+  max-width: 53rem;
   margin: 0 auto;
   padding: var(--spacing-md) var(--spacing-lg);
   text-align: center;
@@ -22,8 +22,8 @@
 }
 
 .newsletter-icon {
-  width: 3.625rem;
-  height: 3.625rem;
+  width: 3.5rem;
+  height: 3.5rem;
   background: rgba(244, 123, 37, 0.18);
   border-radius: var(--radius-sm);
   display: flex;
@@ -34,8 +34,8 @@
 }
 
 .newsletter-icon img {
-  width: 2.125rem;
-  height: 2.125rem;
+  width: 2rem;
+  height: 2rem;
   object-fit: contain;
 }
 
@@ -53,7 +53,7 @@
 
 .newsletter-form {
   width: 100%;
-  max-width: 53.125rem;
+  max-width: 53rem;
   margin: 0 auto;
 }
 
