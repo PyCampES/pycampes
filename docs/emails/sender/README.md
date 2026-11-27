@@ -31,7 +31,7 @@ Los valores van entre comillas y pueden usar datos de `edition.toml`, como `${ye
    npm run emails
    ```
 
-   Avisa si queda algún dato `POR DEFINIR` en `edition.toml`.
+   Avisa si queda algún dato `POR DEFINIR` en `edition.toml`. Para ver todos los emails en el navegador, abre `html/index.html`: es solo local, no se publica.
 
 3. En Sender, abre el paso del workflow que envía ese email, elige _Custom HTML_ y pega el contenido del archivo recién generado en `html/`. Si cambiaste el asunto, cámbialo también ahí.
 
