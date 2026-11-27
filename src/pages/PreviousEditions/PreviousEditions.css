@@ -236,7 +236,7 @@
 
 .project-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(238, 231, 221, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
 .project-icon {
