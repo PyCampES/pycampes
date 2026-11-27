@@ -36,6 +36,16 @@ preregistration_b_next_steps_date = "viernes 29 de enero"
 # campañas de apertura de inscripción (02 y 03).
 registration_form_url = "POR DEFINIR"
 
+# Último día para inscribirse. Lo anuncia 03d, que sale 40 días antes del
+# evento: conviene que sea una o dos semanas después de ese envío, con margen
+# para cerrar los números con el venue y el PyBus.
+registration_deadline = "POR DEFINIR (ej. domingo 28 de marzo)"
+
+# Segmento de Sender con quienes están en la Newsletter y todavía no se
+# inscribieron (campo Estado vacío). Reciben el journey "No inscritos" (03a a
+# 03d). Se crea a mano en Sender (Subscribers → Segments).
+not_registered_segment = "No inscritos 2027"
+
 # Formulario de becas. Opcional: si se deja "POR DEFINIR", los emails de
 # inscripción no mencionan las becas.
 scholarships_form_url = "POR DEFINIR"
