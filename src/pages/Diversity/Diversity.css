@@ -83,7 +83,7 @@
 
 .value-card:hover {
   transform: translateY(-4px);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(238, 231, 221, 1);
 }
 
 .value-icon {
@@ -229,7 +229,7 @@
 }
 
 .faq-item:hover {
-  box-shadow: 0 2px 24px rgba(238, 231, 221, 1);
+  box-shadow: 0 4px 20px rgba(238, 231, 221, 1);
 }
 
 .faq-question {
