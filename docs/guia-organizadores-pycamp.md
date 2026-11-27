@@ -10,7 +10,7 @@ No es un manual cerrado. Cada edición aporta mejoras y cosas que cambiar, y est
 
 ### ¿Qué es un PyCamp?
 
-El PyCamp consiste en tomar un lugar tipo casa rural y juntarnos durante 4 días un grupo de entre 25 y 30 personas a programar y a divertirnos. Los asistentes proponen los proyectos open source en los que quieren trabajar (o ideas un poco locas que les apetece implementar) y el resto se anota para colaborar. Se acuerdan slots de tiempo para cada proyecto a lo largo de los días, y cada persona elige en qué slots participa. Esa dinámica se mantiene durante mañana, tarde y, si se anima, también la noche.
+El PyCamp consiste en alquilar un alojamiento tipo casa rural y juntarnos durante 4 días un grupo de entre 25 y 30 personas a programar y a divertirnos. Los asistentes proponen los proyectos open source en los que quieren trabajar (o ideas un poco locas que les apetece implementar) y el resto se anota para colaborar. Se acuerdan slots de tiempo para cada proyecto a lo largo de los días, y cada persona elige en qué slots participa. Esa dinámica se mantiene durante mañana, tarde y, si se anima, también la noche.
 
 Durante esos 4 días todos desayunamos, comemos, cenamos y dormimos en el mismo lugar. Eso elimina las distracciones de la rutina diaria y hace que se generen muchísimas conversaciones, colaboraciones y amistades en torno al código y al fuego del campamento. El espíritu es comunitario: nadie llega como alumno o como ponente, todos llegamos a programar juntos.
 

@@ -34,7 +34,7 @@ function Faqs() {
       answer: (
         <>
           <p>
-            El PyCamp consiste en tomar un lugar estilo casa rural y juntarnos
+            El PyCamp consiste en alquilar un alojamiento estilo casa rural y juntarnos
             durante 4 días un grupo de aproximadamente 30 personas a programar y
             a divertirnos.
           </p>
