@@ -1,11 +1,13 @@
 # Formularios de Google Forms
 
-Los textos de los formularios (inscripción, becas, pre-inscripción, proyectos y feedback) se guardan aquí, con los datos de la edición tomados del mismo [`edition.toml`](../emails/sender/edition.toml) que usan los emails. Google Forms solo se puede editar desde su web: estos archivos son la referencia para copiar los textos, y `npm run forms:check` dice qué falta cambiar.
+Los textos de los formularios (inscripción, becas, pre-inscripción, proyectos y feedback) se guardan aquí, con los datos de la edición tomados del mismo [`edition.toml`](../emails/sender/edition.toml) que usan los emails. Estos archivos mandan: se cambian aquí y `npm run forms:api -- sync` actualiza el formulario de Google Forms con la API. Lo único que sigue siendo a mano en la web de Google Forms es el mensaje al enviar, el de formulario cerrado, las preguntas de subir archivo y las imágenes.
 
 | Archivo                  | Qué es                                                                                                                        |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
 | [`content/`](content/)   | Un formulario por archivo: un encabezado entre líneas `---` con el id del formulario y, debajo, sus textos y preguntas.       |
 | [`forms.mjs`](forms.mjs) | Genera los textos con los datos de `edition.toml` y los compara con los formularios publicados.                               |
+| [`api.mjs`](api.mjs)     | Lee y cambia los formularios con la API de Google Forms.                                                                      |
+| [`sync.mjs`](sync.mjs)   | Compara un archivo de `content/` con el formulario y calcula los cambios para la API.                                         |
 | `build/`                 | Resultado: `<nombre>.md` con los textos para copiar y, al comparar, `<nombre>.live.md` con lo publicado. No se guarda en git. |
 
 | Formulario                                                                 | Cuándo se usa                                                     |
@@ -20,27 +22,31 @@ Los textos de los formularios (inscripción, becas, pre-inscripción, proyectos 
 ## Cambiar un formulario
 
 1. Cambia el texto en `content/` o los datos en `edition.toml`.
-2. Desde la raíz del repositorio:
+2. Desde la raíz del repositorio, compara con el formulario de Google Forms (no cambia nada):
 
    ```
-   npm run forms
+   npm run forms:api -- sync inscripcion
    ```
 
-   Genera `build/<nombre>.md` y avisa de los datos de `edition.toml` que siguen `POR DEFINIR`.
+   Muestra las diferencias palabra por palabra (en rojo, lo que hay ahora; en verde, cómo quedaría), la lista de cambios y lo que hay que hacer a mano, y guarda las peticiones para la API en `build/inscripcion.sync.json`. Se niega si el texto todavía tiene datos `POR DEFINIR` de `edition.toml`.
 
-3. Copia los textos en el formulario de Google Forms.
-4. Comprueba que el formulario publicado quedó igual:
+3. Si está bien, aplícalo:
 
    ```
-   npm run forms:check
-   npm run forms:check -- inscripcion   # solo uno
+   npm run forms:api -- update inscripcion docs/forms/build/inscripcion.sync.json
    ```
 
-   Muestra las diferencias palabra por palabra: en rojo, lo que falta poner en Google Forms; en verde, lo que sobra.
+   Las preguntas existentes se cambian en su sitio, sin borrarlas, para que no pierdan sus respuestas. Si el cambio borra algo (una pregunta que ya no está en `content/`), `sync` lo marca con `BORRA` y `update` solo lo hace con `--con-borrados`. Si alguien cambió el formulario después del `sync`, `update` falla: vuelve a ejecutar `sync`.
+
+4. Los mensajes al enviar y de formulario cerrado no están en la API: cópialos a mano y compruébalo todo con:
+
+   ```
+   npm run forms:check -- inscripcion
+   ```
+
+   Muestra las diferencias con el formulario publicado: en rojo, lo que falta poner en Google Forms; en verde, lo que sobra.
 
 Un formulario cerrado no muestra sus preguntas en la página pública: para comprobarlo hay que abrirlo un momento. Solo se leen los textos y las preguntas, nunca las respuestas.
-
-Para una edición nueva, duplica el formulario en Google Drive y pon el id del nuevo en el campo `form` de su archivo.
 
 ## Editar desde la API de Google Forms
 
@@ -50,6 +56,7 @@ Para una edición nueva, duplica el formulario en Google Drive y pon el id del n
 npm run forms:api -- login                            # autorizar (una vez)
 npm run forms:api -- status                           # dónde está cada formulario de content/
 npm run forms:api -- get inscripcion                  # guarda build/inscripcion.api.json
+npm run forms:api -- sync inscripcion                 # compara content/ con el formulario
 npm run forms:api -- update inscripcion cambios.json  # aplica un batchUpdate
 ```
 

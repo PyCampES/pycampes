@@ -20,7 +20,7 @@
 
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join, basename } from "node:path";
-import { fileURLToPath } from "node:url";
+import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawnSync } from "node:child_process";
 import { globals, interpolate } from "../emails/sender/build.mjs";
 
@@ -44,7 +44,7 @@ function readTemplate(path) {
   return { frontMatter, body: parts[2] };
 }
 
-function buildForms() {
+export function buildForms() {
   mkdirSync(OUTPUT_DIR, { recursive: true });
   const forms = [];
   const files = readdirSync(CONTENT_DIR)
@@ -301,7 +301,9 @@ async function main() {
   }
 }
 
-main().catch((error) => {
-  console.error(error.message);
-  process.exit(1);
-});
+if (import.meta.url === pathToFileURL(process.argv[1]).href) {
+  main().catch((error) => {
+    console.error(error.message);
+    process.exit(1);
+  });
+}

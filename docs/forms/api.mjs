@@ -1,10 +1,15 @@
 // Reads and edits the Google Forms through the Google Forms API.
 //
 //   npm run forms:api -- login                       authorize (once)
-//   npm run forms:api -- get <form>                  save the form as JSON
-//   npm run forms:api -- update <form> <requests.json>
-//                                                    apply a batchUpdate
 //   npm run forms:api -- status                      where each form is
+//   npm run forms:api -- get <form>                  save the form as JSON
+//   npm run forms:api -- sync <form>                 compare content/<form>.md
+//                                                    with the form: shows the
+//                                                    differences and writes
+//                                                    build/<form>.sync.json
+//   npm run forms:api -- update <form> <requests.json> [--con-borrados]
+//                                                    apply a batchUpdate (such
+//                                                    as the one sync writes)
 //
 // <form> is the name of a file in content/ (e.g. inscripcion) or a form id
 // (the one in docs.google.com/forms/d/<id>/edit).
@@ -21,13 +26,17 @@
 //   ~/.config/pycamp/google-token.json        written by `login`
 // PYCAMP_GOOGLE_DIR changes that folder.
 //
+// `sync` changes nothing. `update` refuses to delete items (their answers would
+// be lost) unless --con-borrados is given, and to apply a sync file if the
+// form changed after it was written.
+//
 // requests.json is the list of requests of forms.batchUpdate, as documented in
 // https://developers.google.com/workspace/forms/api/reference/rest/v1/forms/batchUpdate
 // (either the bare list or {"requests": [...]}).
 
 import { createServer } from "node:http";
 import { createHash, randomBytes } from "node:crypto";
-import { spawn } from "node:child_process";
+import { spawn, spawnSync } from "node:child_process";
 import {
   existsSync,
   mkdirSync,
@@ -39,6 +48,8 @@ import { homedir } from "node:os";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import { edition } from "../emails/sender/build.mjs";
+import { buildForms } from "./forms.mjs";
+import { fromApi, parseMarkdown, plan, render } from "./sync.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(HERE, "content");
@@ -340,20 +351,108 @@ async function get(value) {
   );
 }
 
-async function update(value, requestsPath) {
+async function update(value, requestsPath, allowDeletes) {
   const { id } = resolve(value);
   if (!requestsPath) {
     fail("Falta el archivo JSON con las peticiones de batchUpdate.");
   }
   const json = JSON.parse(readFileSync(requestsPath, "utf-8"));
   const requests = Array.isArray(json) ? json : json.requests;
+  if (json.form && json.form !== id) {
+    fail(`${requestsPath} es de otro formulario (${json.form}), no de ${id}.`);
+  }
+  if (!requests.length) {
+    console.log("No hay nada que cambiar.");
+    return;
+  }
+  const deletes = requests.filter((request) => request.deleteItem).length;
+  if (deletes && !allowDeletes) {
+    fail(
+      `Las peticiones borran ${deletes} elemento(s) y se perderían sus respuestas. ` +
+        "Si es lo que quieres, añade --con-borrados."
+    );
+  }
   await assertInEdition(id);
-  const result = await api("POST", `${FORMS_API}/${id}:batchUpdate`, {
-    requests,
-  });
+  const body = { requests };
+  if (json.revisionId) {
+    // Fails if the form changed after `sync` compared it.
+    body.writeControl = { requiredRevisionId: json.revisionId };
+  }
+  const result = await api("POST", `${FORMS_API}/${id}:batchUpdate`, body);
   console.log(
     `Aplicadas ${requests.length} peticiones. Revisión: ${result.writeControl?.requiredRevisionId}`
   );
+}
+
+async function sync(value) {
+  const { name, id } = resolve(value);
+  const built = buildForms().find((form) => form.name === name);
+  if (!built) {
+    fail(`sync necesita un nombre de content/, no un id.`);
+  }
+  const pending = built.text
+    .split("\n")
+    .filter((line) => line.includes("POR DEFINIR"));
+  if (pending.length) {
+    fail(
+      `build/${name}.md todavía tiene datos POR DEFINIR de edition.toml:\n` +
+        pending.map((line) => `  ${line.trim()}`).join("\n")
+    );
+  }
+  const wanted = parseMarkdown(built.text);
+  const apiForm = await api("GET", `${FORMS_API}/${id}`);
+  const { requests, changes, manual, deletes } = plan(wanted, apiForm);
+
+  const before = join(OUTPUT_DIR, `${name}.sync-antes.md`);
+  const after = join(OUTPUT_DIR, `${name}.sync-despues.md`);
+  writeFileSync(before, render(fromApi(apiForm)));
+  writeFileSync(after, render(wanted));
+  const diff = spawnSync(
+    "git",
+    [
+      "diff",
+      "--no-index",
+      "--color=always",
+      "--word-diff=color",
+      before,
+      after,
+    ],
+    { encoding: "utf-8" }
+  );
+  const output = join(OUTPUT_DIR, `${name}.sync.json`);
+  writeFileSync(
+    output,
+    JSON.stringify(
+      { form: id, revisionId: apiForm.revisionId, requests },
+      null,
+      2
+    ) + "\n"
+  );
+
+  if (!changes.length) {
+    console.log(`${name}: el formulario ya está igual que content/${name}.md`);
+  } else {
+    console.log(
+      `${name}: diferencias (en rojo, lo que hay ahora en Google Forms; en verde, cómo quedaría)\n`
+    );
+    console.log(diff.stdout);
+    console.log("Cambios:");
+    console.log(changes.map((change) => `  ${change}`).join("\n"));
+  }
+  if (manual.length) {
+    console.log("\nA mano en Google Forms:");
+    console.log(manual.map((line) => `  ${line}`).join("\n"));
+  }
+  console.log(
+    "\nEl mensaje al enviar y el de formulario cerrado no están en la API: " +
+      `revísalos con npm run forms:check -- ${name}.`
+  );
+  if (changes.length) {
+    console.log(
+      `\nPara aplicarlo: npm run forms:api -- update ${name} ${output}` +
+        (deletes ? " --con-borrados" : "")
+    );
+  }
 }
 
 // Lists the forms of content/ and the folder they are in.
@@ -390,12 +489,19 @@ async function main() {
     case "get":
       await get(args[0]);
       break;
+    case "sync":
+      await sync(args[0]);
+      break;
     case "update":
-      await update(args[0], args[1]);
+      await update(
+        args[0],
+        args.filter((arg) => !arg.startsWith("--"))[1],
+        args.includes("--con-borrados")
+      );
       break;
     default:
       fail(
-        "Uso: npm run forms:api -- login | status | get <form> | update <form> <requests.json>"
+        "Uso: npm run forms:api -- login | status | get <form> | sync <form> | update <form> <requests.json> [--con-borrados]"
       );
   }
 }
