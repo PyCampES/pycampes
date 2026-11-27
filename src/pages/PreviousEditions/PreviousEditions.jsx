@@ -159,20 +159,15 @@ function PreviousEditions() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="project-link"
+                    aria-label={`Ver ${project.name} en Github`}
                   >
                     <span>Ver en Github</span>
                     <img src={iconArrowRightBrown} alt="" />
                   </a>
 
-                  <a
-                    href={project.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="external-link"
-                    aria-label={`Abrir ${project.name} en nueva pestaña`}
-                  >
+                  <span className="external-link">
                     <img src={iconExternalLink} alt="" />
-                  </a>
+                  </span>
                 </article>
               ))}
             </div>

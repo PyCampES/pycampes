@@ -125,22 +125,26 @@
 }
 
 /* The link covers the whole card, so the card is clickable */
-.photo-label::after {
+.photo-label::after,
+.project-link::after {
   content: "";
   position: absolute;
   inset: 0;
   border-radius: var(--radius-md);
 }
 
-.photo-card:hover .photo-label {
+.photo-card:hover .photo-label,
+.project-card:hover .project-link {
   color: var(--brand-green-dark);
 }
 
-.photo-label:focus-visible {
+.photo-label:focus-visible,
+.project-link:focus-visible {
   outline: none;
 }
 
-.photo-card:has(.photo-label:focus-visible) {
+.photo-card:has(.photo-label:focus-visible),
+.project-card:has(.project-link:focus-visible) {
   outline: 2px solid var(--brand-green-dark);
   outline-offset: 2px;
 }
@@ -284,15 +288,11 @@
   transition: color 0.2s;
 }
 
-.project-link:hover {
-  color: var(--brand-green-dark);
-}
-
 .project-link img {
   transition: transform 0.2s ease;
 }
 
-.project-link:hover img {
+.project-card:hover .project-link img {
   transform: translateX(4px);
 }
 
@@ -309,7 +309,7 @@
     opacity 0.2s ease;
 }
 
-.external-link:hover {
+.project-card:hover .external-link {
   transform: translateY(-2px) scale(1.05);
 }
 
