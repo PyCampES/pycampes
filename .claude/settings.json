@@ -6,7 +6,7 @@
       "Bash(npm run --silent forms:api -- update *)",
       "Bash(node docs/forms/api.mjs update *)",
       "Bash(npm run emails:schedule -- --apply*)",
-      "Bash(node docs/emails/sender/schedule.mjs --apply*)"
+      "Bash(node docs/emails/schedule.mjs --apply*)"
     ]
   },
   "hooks": {

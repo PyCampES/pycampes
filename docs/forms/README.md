@@ -1,6 +1,8 @@
 # Formularios de Google Forms
 
-Los textos de los formularios (inscripción, becas, pre-inscripción, proyectos y feedback) se guardan aquí, con los datos de la edición tomados del mismo [`edition.toml`](../emails/sender/edition.toml) que usan los emails. Estos archivos mandan: se cambian aquí y `npm run forms:api -- sync` actualiza el formulario de Google Forms con la API. Lo único que sigue siendo a mano en la web de Google Forms es el mensaje al enviar, el de formulario cerrado, las preguntas de subir archivo y las imágenes.
+Los textos de los formularios (inscripción, becas, pre-inscripción, proyectos y feedback) se guardan aquí, con los datos de la edición tomados del mismo [`edition.toml`](../emails/edition.toml) que usan los emails. Estos archivos mandan: se cambian aquí y `npm run forms:api -- sync` actualiza el formulario de Google Forms con la API. Lo único que sigue siendo a mano en la web de Google Forms es el mensaje al enviar, el de formulario cerrado, las preguntas de subir archivo y las imágenes.
+
+Qué hacer en cada momento de la edición, en orden: [`docs/checklist-edicion.md`](../checklist-edicion.md).
 
 | Archivo                  | Qué es                                                                                                                        |
 | ------------------------ | ----------------------------------------------------------------------------------------------------------------------------- |
@@ -60,7 +62,7 @@ npm run forms:api -- sync inscripcion                 # compara content/ con el 
 npm run forms:api -- update inscripcion cambios.json  # aplica un batchUpdate
 ```
 
-**Solo se cambian los formularios de la edición actual.** Cada edición tiene su carpeta en Google Drive ("PyCampES 2027", etc.), y `drive_folder` en [`edition.toml`](../emails/sender/edition.toml) dice cuál es la actual. `update` se niega a tocar un formulario que no esté dentro de esa carpeta, y falla si el nombre de la carpeta no contiene el `year` de `edition.toml`.
+**Solo se cambian los formularios de la edición actual.** Cada edición tiene su carpeta en Google Drive ("PyCampES 2027", etc.), y `drive_folder` en [`edition.toml`](../emails/edition.toml) dice cuál es la actual. `update` se niega a tocar un formulario que no esté dentro de esa carpeta, y falla si el nombre de la carpeta no contiene el `year` de `edition.toml`.
 
 Para una edición nueva:
 

@@ -21,7 +21,7 @@ import "./Event.css";
 
 function Event() {
   // TODO 2027: these are the 2026 forms. Replace them with the 2027
-  // registration form (registration_form_url in docs/emails/sender/edition.toml)
+  // registration form (registration_form_url in docs/emails/edition.toml)
   // and projects form (projects_form_url) before using this page.
   const ticketForm =
     "https://docs.google.com/forms/d/e/1FAIpQLSfaFbNcw_qR5wTBJpFFO7cUfDO74YHtdanKnAlTt5gzR1mkmA/viewform";

@@ -1,4 +1,4 @@
-# Datos de la edición que usan los emails de docs/emails/sender/content/ y los
+# Datos de la edición que usan los emails de docs/emails/content/ y los
 # formularios de docs/forms/content/.
 # En los textos se escriben como ${name}, por ejemplo ${price}.
 # Mientras un valor empiece por "POR DEFINIR", build.mjs avisa al generar los emails.

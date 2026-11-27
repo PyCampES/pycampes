@@ -11,8 +11,8 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "preview": "vite preview",
-    "emails": "node docs/emails/sender/build.mjs",
-    "emails:schedule": "node docs/emails/sender/schedule.mjs",
+    "emails": "node docs/emails/build.mjs",
+    "emails:schedule": "node docs/emails/schedule.mjs",
     "forms": "node docs/forms/forms.mjs",
     "forms:check": "node docs/forms/forms.mjs check",
     "forms:api": "node docs/forms/api.mjs"

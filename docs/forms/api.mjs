@@ -16,7 +16,7 @@
 //
 // Only the forms of the current edition can be changed: `update` refuses a
 // form that is not inside the Google Drive folder drive_folder of
-// ../emails/sender/edition.toml, and that folder's name has to contain the
+// ../emails/edition.toml, and that folder's name has to contain the
 // edition's year. New forms are made by copying last year's in Google Drive
 // into that folder, never with the API (it would create them outside it).
 //
@@ -47,7 +47,7 @@ import {
 import { homedir } from "node:os";
 import { basename, dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
-import { edition } from "../emails/sender/build.mjs";
+import { edition } from "../emails/build.mjs";
 import { buildForms } from "./forms.mjs";
 import { fromApi, parseMarkdown, plan, render } from "./sync.mjs";
 

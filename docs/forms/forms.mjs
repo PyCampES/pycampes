@@ -7,7 +7,7 @@
 // Input:
 //   content/*.md   one form per file: front matter with the form id, then its
 //                  texts and questions in the format described in README.md
-//   ../emails/sender/edition.toml
+//   ../emails/edition.toml
 //                  edition data, used in the content as ${name} (the same file
 //                  the emails use)
 // Output:
@@ -22,7 +22,7 @@ import { readFileSync, readdirSync, writeFileSync, mkdirSync } from "node:fs";
 import { dirname, join, basename } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { spawnSync } from "node:child_process";
-import { globals, interpolate } from "../emails/sender/build.mjs";
+import { globals, interpolate } from "../emails/build.mjs";
 
 const HERE = dirname(fileURLToPath(import.meta.url));
 const CONTENT_DIR = join(HERE, "content");

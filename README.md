@@ -6,6 +6,10 @@
 
 ![Homepage](docs/homepage.png)
 
+## Organizar una edición
+
+Los pasos de cada año (datos de la edición, emails en Sender.net, formularios de Google Forms y web) están en [`docs/checklist-edicion.md`](docs/checklist-edicion.md).
+
 ## Desarrollo
 
 1. Instalar nodejs `26.13.1` (LTS)
