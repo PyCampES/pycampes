@@ -10,7 +10,7 @@
 // again loses the link with the answers it already has. Items that cannot be
 // paired become deletions and creations, and the plan says so.
 
-import { randomBytes } from "node:crypto";
+import { randomInt } from "node:crypto";
 
 const EMAIL = {
   VERIFIED: "verificado con su cuenta de Google",
@@ -449,10 +449,12 @@ function align(wanted, current) {
   return pairs;
 }
 
+// Item ids are positive 32-bit integers written in hexadecimal (Google rejects
+// larger ones as "Invalid ID"): 8 digits, the first one from 1 to 7.
 function newId(used) {
   let id;
   do {
-    id = randomBytes(4).toString("hex");
+    id = randomInt(0x10000000, 0x80000000).toString(16);
   } while (used.has(id));
   used.add(id);
   return id;
